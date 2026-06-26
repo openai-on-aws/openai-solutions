@@ -1,17 +1,20 @@
-## My Project
+# Workshop with OpenAI on AWS
 
-TODO: Fill this README out!
+Hands-on workshop for building and deploying OpenAI-powered applications on AWS.
 
-Be sure to:
+> This project is under active development.
 
-* Change the title in this README
-* Edit your repository description on GitHub
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Security
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+See [CONTRIBUTING.md](CONTRIBUTING.md#security-issue-notifications) for information on reporting security issues.
 
 ## License
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+This repository is dual-licensed:
 
+- **Code** is licensed under the [MIT No Attribution (MIT-0)](LICENSE) license.
+- **Documentation and text content** is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA 4.0)](LICENSE-DOCS.md) license.
