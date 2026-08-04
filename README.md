@@ -1,8 +1,8 @@
-# OpenAI Solutions on AWS
+# OpenAI on Amazon Bedrock
 
-Practical resources for building, migrating, and operating OpenAI-powered applications on
-AWS. This repository brings together runnable examples, migration guidance, and
-production-oriented architectures for developers, architects, and technical teams.
+Practical resources for building and operating applications with OpenAI models on Amazon
+Bedrock. This repository brings together runnable examples and production-oriented
+architectures for developers, architects, and technical teams.
 
 > This project is under active development.
 
@@ -10,8 +10,7 @@ production-oriented architectures for developers, architects, and technical team
 
 | Collection | Use it for |
 | --- | --- |
-| [Cookbooks](cookbooks/) | Runnable, task-focused examples that show how to build a specific capability with OpenAI and AWS. |
-| [Migrations](migrations/) | Guides, code, and checklists for moving existing AI workloads to OpenAI on AWS. |
+| [Cookbooks](cookbooks/) | Runnable, task-focused examples that show how to build a specific capability with OpenAI models on Amazon Bedrock. |
 | [Reference architectures](reference-architectures/) | Production-oriented designs that explain components, data flows, operational concerns, and tradeoffs. |
 
 ### Choosing the right collection
@@ -20,26 +19,20 @@ Add content to **cookbooks** when a reader should be able to follow a focused wo
 run the result. This includes demos when they teach a reproducible technique rather than
 only showcasing a finished application.
 
-Add content to **migrations** when the primary goal is to help readers move an existing
-workload, API integration, model workflow, or operating model. Migration content should
-make the starting point, target state, transition path, validation plan, and rollback
-strategy explicit.
-
 Add content to **reference architectures** when the primary value is a reusable system
 design. Reference architectures should emphasize requirements, component responsibilities,
 security boundaries, data flows, deployment choices, and production tradeoffs. They may
 link to a cookbook for a runnable implementation.
 
-Patterns and templates should remain with the cookbook, migration, or architecture that
-uses them. A separate top-level collection can be introduced later when an asset is reused
-across multiple independent solutions.
+Patterns and templates should remain with the cookbook or architecture that uses them. A
+separate top-level collection can be introduced later when an asset is reused across
+multiple independent solutions.
 
 ## Repository layout
 
 ```text
 openai-solutions/
 ├── cookbooks/
-├── migrations/
 └── reference-architectures/
 ```
 
@@ -52,7 +45,7 @@ they support.
 Every contribution should make it clear:
 
 - what problem it solves and who it is for;
-- which OpenAI APIs, AWS services, regions, tools, and account permissions it requires;
+- which OpenAI models, Amazon Bedrock APIs, AWS services, regions, tools, and account permissions it requires;
 - how the architecture and data flow work;
 - how to configure, deploy, run, validate, and clean up the solution;
 - which model, API, runtime, and dependency assumptions it makes;
@@ -72,15 +65,15 @@ values, and provide sample configuration through documented placeholders such as
 4. Follow the setup and validation steps.
 5. Run the documented cleanup steps when you are finished.
 
-AWS services used by these solutions may incur charges. Review the relevant AWS and OpenAI
+Amazon Bedrock and supporting AWS services may incur charges. Review the relevant AWS
 pricing before deployment and remove resources that you no longer need.
 
 ## Responsible use
 
 Treat these resources as starting points rather than production guarantees. Evaluate model
 behavior with data representative of your use case, apply appropriate safeguards and human
-oversight, and review applicable OpenAI policies, AWS service terms, and organizational
-requirements before deploying a solution.
+oversight, and review applicable AWS policies, Amazon Bedrock service terms, and
+organizational requirements before deploying a solution.
 
 ## Contributing
 

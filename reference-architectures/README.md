@@ -1,6 +1,7 @@
 # Reference Architectures
 
-Production-oriented architecture guidance for common OpenAI and AWS workloads.
+Production-oriented architecture guidance for workloads using OpenAI models on Amazon
+Bedrock.
 
 Each reference architecture should:
 
