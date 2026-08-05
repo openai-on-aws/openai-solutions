@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.aws-sam/
+node_modules/
+.next/
+target/
+build/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+npm-debug.log*
