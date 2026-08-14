@@ -1,0 +1,51 @@
+{
+  "_note": "Synthetic maintenance records for a fictional machine. AnyCompany Industries does not exist and neither does press 7731-QA-0042.",
+  "7731-QA-0042": {
+    "site": "Rotherham plant, line 3",
+    "commissioned": "2019-06-11",
+    "running_hours": 31480,
+    "hours_since_frame_bolt_check": 1120,
+    "inspections": [
+      {
+        "date": "2026-03-11",
+        "technician": "T-4471",
+        "item": "Main frame bolt C",
+        "reading_nm": 108,
+        "action": "re-torqued to specification",
+        "note": "Within band at the time of the check."
+      },
+      {
+        "date": "2026-06-02",
+        "technician": "T-4471",
+        "item": "Main frame bolt C",
+        "reading_nm": 71,
+        "action": "flagged for review",
+        "note": "Loss of preload since March. Guard bracket bolt E also loose at 11 Nm."
+      },
+      {
+        "date": "2026-06-02",
+        "technician": "T-4471",
+        "item": "Hydraulic oil",
+        "reading_nm": null,
+        "action": "sampled",
+        "note": "Particle count acceptable. Last change 2025-08-30."
+      }
+    ]
+  },
+  "7731-QA-0043": {
+    "site": "Rotherham plant, line 4",
+    "commissioned": "2019-06-14",
+    "running_hours": 29010,
+    "hours_since_frame_bolt_check": 240,
+    "inspections": [
+      {
+        "date": "2026-05-28",
+        "technician": "T-4462",
+        "item": "Main frame bolt C",
+        "reading_nm": 112,
+        "action": "no action",
+        "note": "Within band."
+      }
+    ]
+  }
+}

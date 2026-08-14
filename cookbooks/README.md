@@ -99,7 +99,7 @@ Five groups, each with its own README:
 | --- | --- |
 | [`cookbooks/01-foundations/`](01-foundations/) | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
 | [`cookbooks/02-reasoning-and-output/`](02-reasoning-and-output/) | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
-| `cookbooks/03-grounding-and-multimodal/` | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
+| [[`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/)](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
 | `cookbooks/04-agents/` | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
 | `cookbooks/05-production/` | Explicit prompt caching, PII masking, and the questions a security review will ask |
 
@@ -144,16 +144,18 @@ today still resolves after the port lands.
 | [`02-reasoning-and-output/03-tool-calling/`](02-reasoning-and-output/03-tool-calling/) | Tool calling: the flat schema, and the loop around it | intermediate | low |
 | [`02-reasoning-and-output/04-reasoning-across-turns/`](02-reasoning-and-output/04-reasoning-across-turns/) | Carrying reasoning across turns | advanced | medium |
 | [`02-reasoning-and-output/05-server-side-tools/`](02-reasoning-and-output/05-server-side-tools/) | Server-side tools: Bedrock as the MCP client | advanced | low |
+| [`03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](03-grounding-and-multimodal/01-grounded-regulatory-monitoring/) | Grounded regulatory change monitoring with native Web Search | intermediate | medium |
+| [`03-grounding-and-multimodal/02-scoring-a-grounded-answer/`](03-grounding-and-multimodal/02-scoring-a-grounded-answer/) | Trusting a grounded answer: scoring it against its sources | intermediate | medium |
+| [`03-grounding-and-multimodal/03-reading-a-scanned-manual/`](03-grounding-and-multimodal/03-reading-a-scanned-manual/) | Reading a scanned manual: photos, tables and figures | intermediate | medium |
 <!-- END GENERATED: recipe-index -->
 
-**Eleven of the twenty-one recipes are here.** `01-foundations` landed first because everything
+**Fourteen of the twenty-one recipes are here.** `01-foundations` landed first because everything
 else assumes it: the call, the permissions, the credentials, and the choice of model. The
 remaining three groups follow one pull request at a time, so each arrives small enough to
 review:
 
 | Pull request | Adds | Recipes |
 | --- | --- | --- |
-| `03-grounding-and-multimodal` | Native Web Search with citations, scoring an answer against its sources, reading photographs and scanned documents | 3 |
 | `04-agents` | An agent loop by hand, the same agent under the OpenAI Agents SDK and under Strands, and one deployed to an AgentCore harness | 4 |
 | `05-production` | Explicit prompt caching, PII masking, and the questions a security review asks | 3 |
 
