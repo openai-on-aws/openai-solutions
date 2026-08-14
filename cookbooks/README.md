@@ -142,7 +142,7 @@ today still resolves after the port lands.
 | [`02-reasoning-and-output/01-structured-claims-intake/`](02-reasoning-and-output/01-structured-claims-intake/) | Structured outputs: three levels of guarantee on an extracted record | beginner | low |
 | [`02-reasoning-and-output/02-reasoning-effort-and-verbosity/`](02-reasoning-and-output/02-reasoning-effort-and-verbosity/) | Right-sizing reasoning effort and verbosity against a quality bar | intermediate | medium |
 | [`02-reasoning-and-output/03-tool-calling/`](02-reasoning-and-output/03-tool-calling/) | Tool calling: the flat schema, and the loop around it | intermediate | low |
-| [`02-reasoning-and-output/04-reasoning-across-turns/`](02-reasoning-and-output/04-reasoning-across-turns/) | Carrying reasoning across turns, and what the default re-bills | advanced | medium |
+| [`02-reasoning-and-output/04-reasoning-across-turns/`](02-reasoning-and-output/04-reasoning-across-turns/) | Carrying reasoning across turns | advanced | medium |
 | [`02-reasoning-and-output/05-server-side-tools/`](02-reasoning-and-output/05-server-side-tools/) | Server-side tools: Bedrock as the MCP client | advanced | low |
 <!-- END GENERATED: recipe-index -->
 

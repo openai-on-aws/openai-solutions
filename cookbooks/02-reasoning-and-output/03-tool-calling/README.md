@@ -216,8 +216,9 @@ tool as one-at-a-time in its own description rather than hoping.
 - **Describe tools for a reader who cannot see your code.** The description is the entire
   basis for the model's choice; "use when the engineer has no part number" changes
   behaviour more than any parameter.
-- **Keep the tool count honest.** Every declared tool costs input tokens on every request.
-  Three tools is free; fifty is a design decision.
+- **Keep the tool count honest.** Every declared tool costs input tokens on every request,
+  whether or not the model calls it, so a catalogue of fifty is a standing cost on all of
+  them.
 
 ## Data handling and security
 

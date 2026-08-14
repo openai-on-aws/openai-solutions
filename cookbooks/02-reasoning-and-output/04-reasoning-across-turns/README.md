@@ -1,5 +1,5 @@
 ---
-title: Carrying reasoning across turns, and what the default re-bills
+title: Carrying reasoning across turns
 capabilities: [RSN-04, RSN-05]
 primary_capability: RSN-04
 industry: —
@@ -24,7 +24,7 @@ validated_with:
   openai: "2.53.0"
 ---
 
-# Carrying reasoning across turns, and what the default re-bills
+# Carrying reasoning across turns
 
 A reasoning model returns a reasoning item alongside its answer. On a conversation with
 several turns — or an agent taking several tool-calling steps — you can carry that item
