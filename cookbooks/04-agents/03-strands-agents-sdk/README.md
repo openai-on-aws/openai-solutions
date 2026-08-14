@@ -30,7 +30,7 @@ validated_with:
 [Strands](https://strandsagents.com/) is the AWS-native agent SDK, and it treats the
 Bedrock OpenAI endpoint as a first-class target rather than a generic OpenAI-compatible
 URL. If your team is already on AWS, this is the path that composes most naturally with
-[[`cookbooks/04-agents/04-agentcore-harness/`](../../04-agents/04-agentcore-harness/)](../04-agentcore-harness/) when the agent
+[`cookbooks/04-agents/04-agentcore-harness/`](../04-agentcore-harness/)](../04-agentcore-harness/) when the agent
 needs to run somewhere other than a laptop.
 
 Same scenario as the two recipes before it, so what is left to look at is the SDK.
@@ -160,7 +160,7 @@ printing the call, because you can print half an argument. So: `current_tool_use
 agent is calling get_flight", `message` for anything that needs the whole call.
 
 **A tool result has no event of its own.** This is the asymmetry with
-[[`cookbooks/04-agents/02-openai-agents-sdk/`](../../04-agents/02-openai-agents-sdk/)](../02-openai-agents-sdk/), which emits a
+[`cookbooks/04-agents/02-openai-agents-sdk/`](../02-openai-agents-sdk/)](../02-openai-agents-sdk/), which emits a
 semantic `tool_output` event carrying the object your function returned. Here the result
 arrives as a `toolResult` block, serialised to text, so a trace that summarises it parses
 it back.
@@ -215,8 +215,8 @@ so far are resent every time.
 
 ## Why this recipe keeps the transcript to itself
 
-[[`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/)](../01-the-agent-loop/) and
-[[`cookbooks/04-agents/02-openai-agents-sdk/`](../../04-agents/02-openai-agents-sdk/)](../02-openai-agents-sdk/) both store their
+[`cookbooks/04-agents/01-the-agent-loop/`](../01-the-agent-loop/)](../01-the-agent-loop/) and
+[`cookbooks/04-agents/02-openai-agents-sdk/`](../02-openai-agents-sdk/)](../02-openai-agents-sdk/) both store their
 turns and delete them when they finish. This recipe retains nothing, and the reason is
 specific rather than a matter of taste.
 
@@ -326,7 +326,7 @@ uv run python 04-agents/03-strands-agents-sdk/python/strands_agents_sdk.py
   are a different subject.
 - No cycle limit set, as noted above.
 - No AgentCore deployment here — that is
-  [[`cookbooks/04-agents/04-agentcore-harness/`](../../04-agents/04-agentcore-harness/)](../04-agentcore-harness/).
+  [`cookbooks/04-agents/04-agentcore-harness/`](../04-agentcore-harness/)](../04-agentcore-harness/).
 - The tools are in-process functions over a JSON file, not a reservation system.
 - Not a benchmark. The token figures are one run, and the section above says why they
   cannot be compared with the Agents SDK recipe's.
@@ -339,11 +339,11 @@ token expires on its own, and the write tool mutates an in-memory copy of
 
 ## Next steps
 
-- [[`cookbooks/04-agents/04-agentcore-harness/`](../../04-agents/04-agentcore-harness/)](../04-agentcore-harness/) — running an
+- [`cookbooks/04-agents/04-agentcore-harness/`](../04-agentcore-harness/)](../04-agentcore-harness/) — running an
   agent as a managed AWS deployment rather than a local process.
-- [[`cookbooks/04-agents/02-openai-agents-sdk/`](../../04-agents/02-openai-agents-sdk/)](../02-openai-agents-sdk/) — the same
+- [`cookbooks/04-agents/02-openai-agents-sdk/`](../02-openai-agents-sdk/)](../02-openai-agents-sdk/) — the same
   agent in the OpenAI Agents SDK, if you have not read it.
-- `cookbooks/05-production/01-prompt-caching/`
+- [`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/)
   — the answer to input growing every cycle.
 
 ## Further reading

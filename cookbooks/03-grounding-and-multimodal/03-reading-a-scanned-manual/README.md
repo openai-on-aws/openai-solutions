@@ -315,7 +315,7 @@ four; `input_file` always beats rasterising the same pages yourself; and a media
 always costs more per turn than a single-turn question, because the attachments go again.
 
 For how caching behaves when your prefix is text, see
-`cookbooks/05-production/01-prompt-caching/`.
+[`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/).
 
 ## Prerequisites
 
@@ -402,7 +402,7 @@ response is retained. The two documents are committed fixtures — leave them in
   — strict schemas over messy input, in depth.
 - [`cookbooks/02-reasoning-and-output/03-tool-calling/`](../../02-reasoning-and-output/03-tool-calling/)
   — the tool loop used in section C, on its own.
-- `cookbooks/05-production/01-prompt-caching/`
+- [`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/)
   — what caching does for a text prefix, since it does nothing for these.
 - [`cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](../01-grounded-regulatory-monitoring/)
   — grounding an answer in the live web rather than in a file you hold.

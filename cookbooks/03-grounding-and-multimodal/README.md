@@ -69,5 +69,5 @@ reads its two documents from `data/`. Each README states the permissions it need
 - [`cookbooks/02-reasoning-and-output/01-structured-claims-intake/`](../02-reasoning-and-output/01-structured-claims-intake/)
   — a schema with an `answered` field is how you tell a refusal from an answer before you score
   it.
-- `cookbooks/05-production/01-prompt-caching/` — a long
+- [`cookbooks/05-production/01-prompt-caching/`](../05-production/01-prompt-caching/) — a long
   stable prefix is exactly what a grounded workload accumulates.

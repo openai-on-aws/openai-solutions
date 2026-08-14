@@ -100,8 +100,8 @@ Five groups, each with its own README:
 | [`cookbooks/01-foundations/`](01-foundations/) | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
 | [`cookbooks/02-reasoning-and-output/`](02-reasoning-and-output/) | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
 | [`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
-| [[`cookbooks/04-agents/`](04-agents/)](04-agents/) | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
-| `cookbooks/05-production/` | Explicit prompt caching, PII masking, and the questions a security review will ask |
+| [`cookbooks/04-agents/`](04-agents/)](04-agents/) | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
+| [`cookbooks/05-production/`](05-production/) | Explicit prompt caching, PII masking, and the questions a security review will ask |
 
 Every recipe is one directory:
 
@@ -152,18 +152,16 @@ today still resolves after the port lands.
 | [`04-agents/02-openai-agents-sdk/`](04-agents/02-openai-agents-sdk/) | Running an agent on Bedrock with the OpenAI Agents SDK | intermediate | medium |
 | [`04-agents/03-strands-agents-sdk/`](04-agents/03-strands-agents-sdk/) | Running an agent on Bedrock with Strands | intermediate | medium |
 | [`04-agents/04-agentcore-harness/`](04-agents/04-agentcore-harness/) | Deploying an agent to AgentCore Harness | advanced | low |
+| [`05-production/01-prompt-caching/`](05-production/01-prompt-caching/) | Cutting agent cost with explicit prompt caching | intermediate | low |
+| [`05-production/02-pii-masking/`](05-production/02-pii-masking/) | Masking patient identifiers before and after the model | intermediate | low |
+| [`05-production/03-security-review/`](05-production/03-security-review/) | Answering a security review: retention, isolation, residency, audit and quotas | intermediate | low |
 <!-- END GENERATED: recipe-index -->
 
-**Nineteen of the twenty-two recipes are here.** `01-foundations` landed first because everything
-else assumes it: the call, the permissions, the credentials, and the choice of model. One group is
-left:
-
-| Pull request | Adds | Recipes |
-| --- | --- | --- |
-| `05-production` | Explicit prompt caching, PII masking, and the questions a security review asks | 3 |
-
-Each group brings its own landing page and appends its rows to the index above. The paths named
-in this README resolve as their groups land.
+**All twenty-one recipes are here.** They are meant to be read in the order above:
+`01-foundations` because everything else assumes it, then shaping what comes back, grounding it in
+information the model was not trained on, turning a tool loop into an agent, and finally what those
+choices cost in production. Each group has its own landing page, and every path named in this
+README resolves.
 
 **Recipes are plain executable Python, not notebooks**, and each one is
 self-contained. There is no shared framework to learn first: the client

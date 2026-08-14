@@ -50,4 +50,4 @@ README says so, and it cleans up after itself. Every other recipe here is infere
 - [`cookbooks/03-grounding-and-multimodal/`](../03-grounding-and-multimodal/) — giving the model
   information it was not trained on, and checking that its answer is faithful to it.
 - [`cookbooks/04-agents/`](../04-agents/) — the tool loop turned into an agent with a goal.
-- `cookbooks/05-production/` — what these choices cost at volume.
+- [`cookbooks/05-production/`](../05-production/) — what these choices cost at volume.
