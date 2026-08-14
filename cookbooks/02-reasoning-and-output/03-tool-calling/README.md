@@ -111,7 +111,7 @@ A response that wants a tool carries one or more `function_call` items instead o
 ```python
 for item in response.output:
     if item.type == "function_call":
-        result = TOOL_FUNCTIONS[item.name](**json.loads(item.arguments))
+        result = TOOL_FUNCTIONSitem.name)
 ```
 
 Each carries a `call_id`, and the result must quote it:
@@ -233,7 +233,7 @@ tool as one-at-a-time in its own description rather than hoping.
 ## Limitations and non-goals
 
 - **No agency.** This recipe answers questions; it does not pursue a goal across many
-  steps. That is `cookbooks/04-agents/01-the-agent-loop/`.
+  steps. That is [`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/).
 - **No write tools.** Every tool here reads. Letting a model change state is a different
   risk conversation.
 - **No concurrency.** Parallel calls are shown arriving together and then executed in
@@ -250,7 +250,7 @@ there is no stored response to delete.
 
 ## Next steps
 
-- `cookbooks/04-agents/01-the-agent-loop/` — the same
+- [`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/) — the same
   protocol given a goal instead of a question, with a write tool and a ceiling.
 - [`cookbooks/02-reasoning-and-output/01-structured-claims-intake/`](../01-structured-claims-intake/) — schemas for the
   answer, as opposed to schemas for the request.
