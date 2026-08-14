@@ -1,0 +1,79 @@
+[project]
+name = "openai-on-bedrock-cookbooks"
+version = "0.1.0"
+description = "Runnable recipes for OpenAI models on Amazon Bedrock"
+readme = "README.md"
+requires-python = ">=3.10"
+
+# Loose constraints only. Exact versions live in uv.lock, which is committed.
+dependencies = [
+    # The [bedrock] extra is what enables OpenAI(provider=bedrock(region=...)),
+    # the auth pattern every recipe uses. Without it, importing
+    # openai.providers fails. The extra first appears in openai 2.44.0.
+    "openai[bedrock]>=2.45.0",
+    # Bedrock control plane, ApplyGuardrail, CloudWatch, Service Quotas.
+    "boto3>=1.35.0",
+    # Reads catalog/models.yaml.
+    "pyyaml>=6.0",
+    # Typed extraction recipes.
+    "pydantic>=2.7.0",
+]
+
+# Recipes are plain executable Python, so there is no notebook toolchain here.
+# Dependency groups, named after the capability domains, carry anything a domain
+# needs beyond the base set. Install one with `uv sync --group agents`.
+[dependency-groups]
+dev = [
+    "ruff>=0.6.0",
+    "pytest>=8.0.0",
+]
+# Agent recipes. Both names and both extras are confirmed against a live run on
+# 2026-08-13: the Agents SDK authenticates with SigV4 through openai[bedrock], while
+# Strands mints a bearer token and needs its own [openai] extra to do it. The Codex
+# SDK is not here yet — it stays on the roadmap until it is tested.
+agents = [
+    "openai-agents>=0.20.0",
+    "strands-agents[openai]>=1.52.0",
+]
+# foundations/02-api-key-auth mints a short-term Bedrock API key from IAM
+# credentials. Nothing else needs this, which is why it is a group and not a
+# base dependency — the point of the other recipes is that no token is required.
+foundations = ["aws-bedrock-token-generator>=1.1.0"]
+reasoning-and-output = []
+grounding-and-multimodal = []
+production = []
+
+[tool.uv]
+# One resolution for every recipe. Recipes are thin and share almost the whole
+# stack; per-recipe lockfiles would multiply the maintenance surface with no
+# reproducibility gain.
+default-groups = ["dev"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+# `ruff check` is a gate (tools/check_style.py runs it). `ruff format` deliberately is
+# not: it explodes a two-line print into four, and recipes align their request blocks by
+# hand so the printed output reads as a table. Lint the code, leave the layout alone.
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["cookbook_utils"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Exactly one directory here is importable, and the history is worth knowing because this
+# line has now been written three ways. An early layout had cookbooks/shared/, which was
+# deleted when recipes became self-contained; the wheel target that pointed at it outlived
+# it and was briefly resolved by declaring nothing importable at all. What the recipes
+# actually needed is narrower than `shared/` and wider than nothing: cookbook_utils holds
+# work that is incidental to every lesson using it — masking account ids before printing an
+# ARN, deleting responses a recipe stored. The client construction, the API calls, the model
+# IDs and the token printing all stay written out in the recipes, because those are the
+# lesson. See `cookbook_utils/__init__.py` for the bar something must clear to go in.
+[tool.hatch.build.targets.wheel]
+packages = ["cookbook_utils"]
