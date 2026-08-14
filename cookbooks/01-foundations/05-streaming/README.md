@@ -218,7 +218,7 @@ no text between, and the message item follows. So:
 - **You cannot show them what it thought.** Asking for the trace with
   `include=["reasoning.encrypted_content"]` returns roughly a kilobyte of opaque
   ciphertext, not prose. It is meant to be passed back on a later turn, which is what
-  `cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`
+  [`cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`](../../02-reasoning-and-output/04-reasoning-across-turns/)
   does with it. If your product needs a visible rationale, ask the model to write one as
   ordinary output.
 - **The blob is complete on the event that opens the item**, not assembled from later

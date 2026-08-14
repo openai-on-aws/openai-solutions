@@ -153,7 +153,7 @@ Total tokens:     66
 A **reasoning item** appears alongside the message when the model works something out before
 answering, which depends on the prompt. This one does not need it, so only a message comes
 back. `usage.output_tokens_details.reasoning_tokens` is where that shows up either way, and
-`cookbooks/02-reasoning-and-output/02-reasoning-effort-and-verbosity/`
+[`cookbooks/02-reasoning-and-output/02-reasoning-effort-and-verbosity/`](../../02-reasoning-and-output/02-reasoning-effort-and-verbosity/)
 is the recipe that takes the subject properly.
 
 ## Why this recipe sets `store=False`

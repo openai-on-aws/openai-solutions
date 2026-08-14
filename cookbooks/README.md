@@ -98,7 +98,7 @@ Five groups, each with its own README:
 | Directory | What it covers |
 | --- | --- |
 | [`cookbooks/01-foundations/`](01-foundations/) | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
-| `cookbooks/02-reasoning-and-output/` | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
+| [`cookbooks/02-reasoning-and-output/`](02-reasoning-and-output/) | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
 | `cookbooks/03-grounding-and-multimodal/` | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
 | `cookbooks/04-agents/` | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
 | `cookbooks/05-production/` | Explicit prompt caching, PII masking, and the questions a security review will ask |
@@ -139,16 +139,20 @@ today still resolves after the port lands.
 | [`01-foundations/04-conversation-state/`](01-foundations/04-conversation-state/) | Conversation state, and who keeps the transcript | beginner | low |
 | [`01-foundations/05-streaming/`](01-foundations/05-streaming/) | Streaming, and what the typed events tell you | beginner | low |
 | [`01-foundations/06-choosing-a-model/`](01-foundations/06-choosing-a-model/) | Choosing a model: the same prompt on Luna, Terra and Sol | beginner | low |
+| [`02-reasoning-and-output/01-structured-claims-intake/`](02-reasoning-and-output/01-structured-claims-intake/) | Structured outputs: three levels of guarantee on an extracted record | beginner | low |
+| [`02-reasoning-and-output/02-reasoning-effort-and-verbosity/`](02-reasoning-and-output/02-reasoning-effort-and-verbosity/) | Right-sizing reasoning effort and verbosity against a quality bar | intermediate | medium |
+| [`02-reasoning-and-output/03-tool-calling/`](02-reasoning-and-output/03-tool-calling/) | Tool calling: the flat schema, and the loop around it | intermediate | low |
+| [`02-reasoning-and-output/04-reasoning-across-turns/`](02-reasoning-and-output/04-reasoning-across-turns/) | Carrying reasoning across turns, and what the default re-bills | advanced | medium |
+| [`02-reasoning-and-output/05-server-side-tools/`](02-reasoning-and-output/05-server-side-tools/) | Server-side tools: Bedrock as the MCP client | advanced | low |
 <!-- END GENERATED: recipe-index -->
 
-**Six of the twenty-one recipes are here.** `01-foundations` landed first because everything
+**Eleven of the twenty-one recipes are here.** `01-foundations` landed first because everything
 else assumes it: the call, the permissions, the credentials, and the choice of model. The
-remaining four groups follow one pull request at a time, so each arrives small enough to
+remaining three groups follow one pull request at a time, so each arrives small enough to
 review:
 
 | Pull request | Adds | Recipes |
 | --- | --- | --- |
-| `02-reasoning-and-output` | Strict schemas, reasoning effort and verbosity, tool calling, reasoning across turns, tools Bedrock runs for you | 5 |
 | `03-grounding-and-multimodal` | Native Web Search with citations, scoring an answer against its sources, reading photographs and scanned documents | 3 |
 | `04-agents` | An agent loop by hand, the same agent under the OpenAI Agents SDK and under Strands, and one deployed to an AgentCore harness | 4 |
 | `05-production` | Explicit prompt caching, PII masking, and the questions a security review asks | 3 |
