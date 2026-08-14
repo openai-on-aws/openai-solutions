@@ -18,7 +18,7 @@ credential chain. Three consequences shape every recipe here:
 - **Inference is authorized on a Project ARN**, not on a model ARN. That makes
   [Projects](https://docs.aws.amazon.com/bedrock/latest/userguide/projects.html) the unit of
   both access isolation and cost attribution, and it is why two workloads can share one AWS
-  account cleanly — see `cookbooks/01-foundations/02-projects/`.
+  account cleanly — see [`cookbooks/01-foundations/02-projects/`](01-foundations/02-projects/).
 - **Some capabilities have no first-party equivalent**: native
   [Web Search](https://docs.aws.amazon.com/bedrock/latest/userguide/web-search.html)
   backed by an AWS-operated index with no data egress by default, explicit
@@ -88,7 +88,7 @@ derives the regional endpoint and takes credentials from the AWS credential chai
 `store=False` is deliberate. Responses requests on Bedrock store the response by default, and
 AWS keeps it — input and output — for 30 days, which is what lets a later call reference it with
 `previous_response_id`. A single-turn example has nothing to refer back to, so it opts out.
-`cookbooks/01-foundations/04-conversation-state/` is
+[`cookbooks/01-foundations/04-conversation-state/`](01-foundations/04-conversation-state/) is
 where that choice is made properly.
 
 ## How the recipes are organized
@@ -97,7 +97,7 @@ Five groups, each with its own README:
 
 | Directory | What it covers |
 | --- | --- |
-| `cookbooks/01-foundations/` | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
+| [`cookbooks/01-foundations/`](01-foundations/) | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
 | `cookbooks/02-reasoning-and-output/` | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
 | `cookbooks/03-grounding-and-multimodal/` | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
 | `cookbooks/04-agents/` | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
@@ -131,15 +131,23 @@ today still resolves after the port lands.
 ### All recipes
 
 <!-- BEGIN GENERATED: recipe-index -->
+| Recipe | What it teaches | Level | Cost |
+| --- | --- | --- | --- |
+| [`01-foundations/01-first-call/`](01-foundations/01-first-call/) | Your first call, and the four permissions it needs | beginner | low |
+| [`01-foundations/02-projects/`](01-foundations/02-projects/) | Projects: the resource that authorizes inference and attributes cost | beginner | low |
+| [`01-foundations/03-bedrock-api-key-auth/`](01-foundations/03-bedrock-api-key-auth/) | Authenticating with a Bedrock API key | beginner | low |
+| [`01-foundations/04-conversation-state/`](01-foundations/04-conversation-state/) | Conversation state, and who keeps the transcript | beginner | low |
+| [`01-foundations/05-streaming/`](01-foundations/05-streaming/) | Streaming, and what the typed events tell you | beginner | low |
+| [`01-foundations/06-choosing-a-model/`](01-foundations/06-choosing-a-model/) | Choosing a model: the same prompt on Luna, Terra and Sol | beginner | low |
 <!-- END GENERATED: recipe-index -->
 
-**The recipes are not here yet.** This pull request adds the directory, its dependency set and
-this entry point; the twenty-one recipes follow in five pull requests, one per group, so each
-arrives small enough to review:
+**Six of the twenty-one recipes are here.** `01-foundations` landed first because everything
+else assumes it: the call, the permissions, the credentials, and the choice of model. The
+remaining four groups follow one pull request at a time, so each arrives small enough to
+review:
 
 | Pull request | Adds | Recipes |
 | --- | --- | --- |
-| `01-foundations` | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, choosing between the three models | 6 |
 | `02-reasoning-and-output` | Strict schemas, reasoning effort and verbosity, tool calling, reasoning across turns, tools Bedrock runs for you | 5 |
 | `03-grounding-and-multimodal` | Native Web Search with citations, scoring an answer against its sources, reading photographs and scanned documents | 3 |
 | `04-agents` | An agent loop by hand, the same agent under the OpenAI Agents SDK and under Strands, and one deployed to an AgentCore harness | 4 |
@@ -212,7 +220,7 @@ Failures that are easy to misdiagnose, with what actually causes them.
 
 | Symptom | Cause |
 | --- | --- |
-| `401 invalid_api_key`, but `aws sts get-caller-identity` works | `AWS_BEARER_TOKEN_BEDROCK` is set in your environment. The provider prefers a key over your IAM credentials, so a short-term key that has expired fails while the AWS CLI keeps working. The error never mentions a token. Run `unset AWS_BEARER_TOKEN_BEDROCK`. See `cookbooks/01-foundations/03-bedrock-api-key-auth/` |
+| `401 invalid_api_key`, but `aws sts get-caller-identity` works | `AWS_BEARER_TOKEN_BEDROCK` is set in your environment. The provider prefers a key over your IAM credentials, so a short-term key that has expired fails while the AWS CLI keeps working. The error never mentions a token. Run `unset AWS_BEARER_TOKEN_BEDROCK`. See [`cookbooks/01-foundations/03-bedrock-api-key-auth/`](01-foundations/03-bedrock-api-key-auth/) |
 | `AccessDenied` on the very first call, with no mention of a model | The OpenAI models are third-party AWS Marketplace subscriptions, so the calling identity needs `aws-marketplace:Subscribe`. It is in `AmazonBedrockMantleInferenceAccess` |
 | `AccessDenied` on inference with credentials that clearly work | Inference is authorized on a **Project ARN**, not a model ARN. Your policy has to cover the project you are calling — including `project/default` |
 | `ResourceNotFoundException` on a model that should exist | Wrong Region, or model access not enabled there. Sol is not served in `us-west-2`, where the same call returns `404 not_found_error: The model 'openai.gpt-5.6-sol' does not exist` |
