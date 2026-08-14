@@ -73,7 +73,7 @@ was validated in, what it costs, and what it deliberately leaves out. See the
 
 ## Where to go next
 
-- `cookbooks/02-reasoning-and-output/` — shaping what comes back:
+- [`cookbooks/02-reasoning-and-output/`](../02-reasoning-and-output/) — shaping what comes back:
   strict schemas, reasoning effort, verbosity and tool calling.
 - `cookbooks/03-grounding-and-multimodal/` — giving the model
   current information with Bedrock's native Web Search, and checking that its answer is

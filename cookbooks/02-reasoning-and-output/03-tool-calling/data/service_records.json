@@ -1,0 +1,70 @@
+{
+  "parts": {
+    "VL-4471-SEAL": {
+      "description": "Hydraulic rod seal, 45mm, for VL-880 press ram",
+      "machine_models": ["VL-880", "VL-880S"],
+      "on_hand": 0,
+      "lead_time_days": 11,
+      "stocking_location": "Central spares, Rotherham",
+      "unit_price_pence": 4850
+    },
+    "VL-4472-SEAL": {
+      "description": "Hydraulic rod seal, 45mm, uprated fluoroelastomer",
+      "machine_models": ["VL-880", "VL-880S", "VL-920"],
+      "on_hand": 6,
+      "lead_time_days": 0,
+      "stocking_location": "Central spares, Rotherham",
+      "unit_price_pence": 7325
+    },
+    "VL-3390-PUMP": {
+      "description": "Replacement hydraulic pump assembly, VL-880 series",
+      "machine_models": ["VL-880", "VL-880S"],
+      "on_hand": 1,
+      "lead_time_days": 0,
+      "stocking_location": "Regional depot, Warrington",
+      "unit_price_pence": 189000
+    },
+    "VL-1180-FILTER": {
+      "description": "Return-line filter element, 10 micron",
+      "machine_models": ["VL-880", "VL-880S", "VL-920", "VL-410"],
+      "on_hand": 42,
+      "lead_time_days": 0,
+      "stocking_location": "Van stock",
+      "unit_price_pence": 2100
+    },
+    "VL-7702-VALVE": {
+      "description": "Proportional relief valve, 250 bar",
+      "machine_models": ["VL-920"],
+      "on_hand": 0,
+      "lead_time_days": 34,
+      "stocking_location": "Supplier direct",
+      "unit_price_pence": 142500
+    }
+  },
+  "machines": {
+    "VLC-880-01192": {
+      "model": "VL-880S",
+      "installed": "2019-04-02",
+      "site": "Rheinwerk Automotive, Line 3",
+      "warranty_expires": "2024-04-02",
+      "service_contract": "Comprehensive, expires 2027-03-31",
+      "contract_covers_parts": true
+    },
+    "VLC-920-00447": {
+      "model": "VL-920",
+      "installed": "2025-11-18",
+      "site": "Rheinwerk Automotive, Line 7",
+      "warranty_expires": "2028-11-18",
+      "service_contract": "Warranty only",
+      "contract_covers_parts": true
+    },
+    "VLC-880-00031": {
+      "model": "VL-880",
+      "installed": "2014-07-21",
+      "site": "AnyCompany demo cell, Rotherham",
+      "warranty_expires": "2019-07-21",
+      "service_contract": "None",
+      "contract_covers_parts": false
+    }
+  }
+}

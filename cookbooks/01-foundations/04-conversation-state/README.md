@@ -144,7 +144,7 @@ the API telling you that you have picked half of one pattern and half of the oth
 This is not a pattern the cookbook shows once and then avoids. Two later recipes use it
 because it is the right tool for what they do:
 
-- `cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`
+- [`cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`](../../02-reasoning-and-output/04-reasoning-across-turns/)
   opens with `previous_response_id` and `store=True`, because carrying a reasoning chain
   forward is exactly what the pattern is for.
 - **An agent loop is the strongest case of all.** A loop that takes eight rounds resends its
@@ -192,7 +192,7 @@ or the service — and nothing about the model changes either way.
   customer data.
 - **Carry `response.output` forward unmodified on a reasoning-heavy thread.** The output can
   include a reasoning item, and passing it along keeps multi-turn quality. That is the subject
-  of `cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`.
+  of [`cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`](../../02-reasoning-and-output/04-reasoning-across-turns/).
 
 ## Data handling and security
 
