@@ -35,9 +35,10 @@ supports.
 - **Images and documents go in the same request as the question.** An `input_image` or an
   `input_file` block sits alongside your text, inlined as base64, so reading a scan needs no
   upload step and no OCR stage in front of it.
-- **Media is priced by size, and it does not cache.** A document costs far less than the same
-  pages rasterised into images, but a request carrying media neither writes to nor reads from the
-  prompt cache — so ask everything you need in one pass rather than returning to the same pages.
+- **Media is priced by size, and its own tokens never cache.** A document costs far less than the
+  same pages rasterised into images, and the text around it — instructions, a schema — caches
+  normally. The document itself does not, so ask everything you need in one pass rather than
+  returning to the same pages.
 
 ## Recipes
 

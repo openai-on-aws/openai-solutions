@@ -297,7 +297,7 @@ If you supplied `GUARDRAIL_ID`, nothing is deleted.
 
 ## Next steps
 
-- [[`cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](../01-grounded-regulatory-monitoring/)](../01-grounded-regulatory-monitoring/) — where
+- [`cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](../01-grounded-regulatory-monitoring/) — where
   the retrieval comes from Bedrock's own web index, and what that costs.
 - [`cookbooks/02-reasoning-and-output/01-structured-claims-intake/`](../../02-reasoning-and-output/01-structured-claims-intake/)
   — the schema that lets you tell a refusal from an answer before you score it.

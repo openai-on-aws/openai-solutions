@@ -99,7 +99,7 @@ Five groups, each with its own README:
 | --- | --- |
 | [`cookbooks/01-foundations/`](01-foundations/) | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
 | [`cookbooks/02-reasoning-and-output/`](02-reasoning-and-output/) | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
-| [[`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/)](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
+| [`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
 | `cookbooks/04-agents/` | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
 | `cookbooks/05-production/` | Explicit prompt caching, PII masking, and the questions a security review will ask |
 

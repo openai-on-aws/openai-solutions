@@ -9,6 +9,6 @@ and `tsconfig.json`. It needs only the OpenAI Node SDK: the two documents are re
 in Node, so the port carries no extra dependency either.
 
 The recipe's narrative — the nullable field the model must leave empty, what four scanned
-pages cost, and why media blocks do not cache — lives once in
+pages cost, and which half of a media request can be cached — lives once in
 [`cookbooks/03-grounding-and-multimodal/03-reading-a-scanned-manual/README.md`](../README.md)
 and applies to both languages.

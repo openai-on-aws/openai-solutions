@@ -238,20 +238,28 @@ later turn only needs the values.
 A document you ask ten questions of is sent ten times. The obvious fix is prompt caching,
 and it does not work here.
 
-**A request carrying an image or a document block neither writes to the prompt cache nor
-reads from it.** There are three places you would think to put the breakpoint, and none of
-them caches:
+**The document's own tokens never enter the cache. The text around it caches normally.** That
+distinction is the whole of it, and it decides how you arrange a request:
 
-| Where the breakpoint goes | `cache_write_tokens` | `cached_tokens` |
+| Where the breakpoint goes | `cache_write_tokens` | `cached_tokens` on the next call |
 |:--|:--|:--|
-| Explicit mode, on the `input_file` block itself | 0 | 0 |
-| Explicit mode, on an `input_text` block *after* the document | 0 | 0 |
-| Implicit mode, the identical request simply sent twice | 0 | 0 |
-| Explicit mode, on a 2,000-token `input_text` block, **no media in the request** | 1,826 | 1,826 on the next call |
+| On the `input_file` block itself | 0 | 0 |
+| On a text block **before** the document | 1,092 | 1,092 |
+| On a text block **after** the document | 1,092 | 1,092 |
+| Implicit mode, the identical request sent twice | 0 | 0 |
 
-The last row is the one that tells you where the boundary is: the same request shape, the
-same account and the same key cache normally once the media block is gone. So this is a
-property of media blocks, not of your request or your account.
+The two middle rows are the useful ones, and note what is missing from them: the request bills
+about 3,290 input tokens, of which roughly 2,200 are the four pages — and only the 1,092 tokens of
+text were cached. The prefix up to the breakpoint contains the document either way, and the
+document is not what gets written.
+
+So a document workflow can still cache its instructions, its schema and any stable preamble, and
+the position of the breakpoint relative to the document does not matter. What you cannot avoid is
+paying for the document again on every request, which is why the lever below is about how many
+questions you ask per request rather than about caching.
+
+Implicit mode caches nothing here because the only text in that request is a one-line question,
+far under the 1,024-token minimum for a cacheable prefix.
 
 The lever that does exist is batching, and here is every figure this recipe measured, in one
 place:
@@ -346,9 +354,10 @@ uv run python 03-grounding-and-multimodal/03-reading-a-scanned-manual/python/rea
   tokens and takes the bytes out of the request body, which matters as soon as your
   documents are larger than the two here. Give the model's caller `s3:GetObject` on the
   prefix and nothing wider.
-- **Extract once, then work from the extraction.** Because media blocks do not cache, a
-  workflow that asks a document twenty questions should ask them in one pass and keep the
-  structured result, which is text and does cache.
+- **Extract once, then work from the extraction.** The document is re-sent and re-billed on
+  every request, because its tokens never enter the cache, so a workflow that asks a document
+  twenty questions should ask them in one pass and keep the structured result — which is text,
+  and does cache.
 - **Give every extracted field somewhere to be empty.** A nullable field plus an explicit
   instruction is the difference between a pipeline that reports damage and one that
   invents values.
@@ -395,5 +404,5 @@ response is retained. The two documents are committed fixtures — leave them in
   — the tool loop used in section C, on its own.
 - `cookbooks/05-production/01-prompt-caching/`
   — what caching does for a text prefix, since it does nothing for these.
-- [[`cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](../01-grounded-regulatory-monitoring/)](../01-grounded-regulatory-monitoring/)
+- [`cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](../01-grounded-regulatory-monitoring/)
   — grounding an answer in the live web rather than in a file you hold.
