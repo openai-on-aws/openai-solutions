@@ -203,5 +203,5 @@ there is no stored response to delete. Importing the pricing module leaves a
 
 - [`cookbooks/01-foundations/05-streaming/`](../05-streaming/) — what the reader sees while any of the three is
   working.
-- `cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/` —
+- [`cookbooks/03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](../../03-grounding-and-multimodal/01-grounded-regulatory-monitoring/) —
   giving the model current information, which changes what any tier can answer.

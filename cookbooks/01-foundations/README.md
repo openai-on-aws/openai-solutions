@@ -75,7 +75,7 @@ was validated in, what it costs, and what it deliberately leaves out. See the
 
 - [`cookbooks/02-reasoning-and-output/`](../02-reasoning-and-output/) — shaping what comes back:
   strict schemas, reasoning effort, verbosity and tool calling.
-- `cookbooks/03-grounding-and-multimodal/` — giving the model
+- [`cookbooks/03-grounding-and-multimodal/`](../03-grounding-and-multimodal/) — giving the model
   current information with Bedrock's native Web Search, and checking that its answer is
   faithful to the sources.
 - `cookbooks/05-production/` — what changes at volume: prompt caching, PII

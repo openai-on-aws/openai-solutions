@@ -1,0 +1,34 @@
+{
+  "_comment": "Synthetic regulatory watchlist for a fictional bank. Fabricated, not derived from any real institution's register. The regulations named are real public instruments; the institution, owners and internal references are invented.",
+  "institution": "Example Bank",
+  "register_owner": "Regulatory Change Working Group",
+  "jurisdiction": "EU",
+  "topics": [
+    {
+      "id": "RCM-014",
+      "subject": "EU Payment Services Regulation and PSD3",
+      "why_monitored": "Payment services authorisation, fraud liability and open banking access rules affect the retail payments platform.",
+      "internal_owner": "Payments Compliance",
+      "question": "What is the current status of the EU Payment Services Regulation (PSR) and PSD3 in the EU legislative process, and what has most recently changed for payment service providers?"
+    },
+    {
+      "id": "RCM-021",
+      "subject": "Digital Operational Resilience Act (DORA)",
+      "why_monitored": "ICT third-party risk and incident reporting obligations affect every outsourcing arrangement, including cloud.",
+      "internal_owner": "Operational Resilience",
+      "question": "What are the most recent developments in the implementation or supervision of the EU Digital Operational Resilience Act (DORA) for financial entities?"
+    },
+    {
+      "id": "RCM-033",
+      "subject": "Instant Payments Regulation verification of payee",
+      "why_monitored": "Verification of payee and instant credit transfer obligations change the payment initiation flow.",
+      "internal_owner": "Payments Compliance",
+      "question": "What are the latest obligations taking effect under the EU Instant Payments Regulation, particularly around verification of payee?"
+    }
+  ],
+  "unanswerable_control": {
+    "id": "RCM-999",
+    "subject": "A question the index cannot settle",
+    "question": "How many payment institutions in the EU had their authorisation withdrawn for fraud-monitoring failures during the most recent complete calendar quarter, and what was the exact total value of the fines imposed?"
+  }
+}
