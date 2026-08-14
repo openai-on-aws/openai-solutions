@@ -153,7 +153,7 @@ because it is the right tool for what they do:
   items and referencing the previous response returned a correct answer, with input growing
   59 → 138 tokens across the two turns. Note that the
   growth is still there, exactly as measured above — what you save is the resend, not the
-  tokens. `cookbooks/04-agents/01-the-agent-loop/` holds
+  tokens. [`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/) holds
   its own transcript so the accumulation is visible, and its production notes cover the
   trade.
 

@@ -1,0 +1,84 @@
+{
+  "flights": {
+    "AE414": {
+      "route": "LIS-DUB",
+      "scheduled": "2026-08-14T07:40",
+      "status": "cancelled",
+      "reason": "technical",
+      "aircraft_seats": 180
+    },
+    "AE420": {
+      "route": "LIS-DUB",
+      "scheduled": "2026-08-14T13:15",
+      "status": "on time",
+      "seats_available": 2
+    },
+    "AE688": {
+      "route": "LIS-LHR",
+      "scheduled": "2026-08-14T09:05",
+      "status": "on time",
+      "seats_available": 14
+    },
+    "AE702": {
+      "route": "LHR-DUB",
+      "scheduled": "2026-08-14T14:30",
+      "status": "on time",
+      "seats_available": 9
+    },
+    "AE431": {
+      "route": "LIS-DUB",
+      "scheduled": "2026-08-15T07:40",
+      "status": "on time",
+      "seats_available": 22
+    }
+  },
+  "passengers": {
+    "AE414": [
+      {
+        "passenger_id": "PX-88120",
+        "tier": "gold",
+        "party_size": 1,
+        "onward_connection": null,
+        "notes": "Must arrive Dublin before 18:00 for a hospital appointment"
+      },
+      {
+        "passenger_id": "PX-88121",
+        "tier": "standard",
+        "party_size": 3,
+        "onward_connection": null,
+        "notes": "Travelling with two children"
+      },
+      {
+        "passenger_id": "PX-88122",
+        "tier": "standard",
+        "party_size": 1,
+        "onward_connection": "AE905 DUB-JFK 2026-08-14T16:10",
+        "notes": "Transatlantic connection, same booking reference"
+      },
+      {
+        "passenger_id": "PX-88123",
+        "tier": "silver",
+        "party_size": 1,
+        "onward_connection": null,
+        "notes": "Flexible, asked to be rebooked on the cheapest option"
+      }
+    ]
+  },
+  "entitlements": {
+    "gold": {
+      "rebooking_priority": 1,
+      "hotel_if_overnight": true,
+      "reroute_via_partner": true
+    },
+    "silver": {
+      "rebooking_priority": 2,
+      "hotel_if_overnight": true,
+      "reroute_via_partner": false
+    },
+    "standard": {
+      "rebooking_priority": 3,
+      "hotel_if_overnight": true,
+      "reroute_via_partner": false
+    }
+  }
+}

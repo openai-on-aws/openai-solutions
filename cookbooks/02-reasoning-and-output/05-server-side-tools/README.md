@@ -271,5 +271,5 @@ If you supplied `MCP_CONNECTOR_ARN`, nothing is deleted.
 
 - [`cookbooks/02-reasoning-and-output/03-tool-calling/`](../03-tool-calling/) — the client-side loop this replaces, and where
   approval and mid-loop control still live.
-- `cookbooks/04-agents/01-the-agent-loop/` — an agent that
+- [`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/) — an agent that
   owns its loop, and the write-tool decisions that come with it.

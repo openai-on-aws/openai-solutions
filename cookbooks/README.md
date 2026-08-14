@@ -100,7 +100,7 @@ Five groups, each with its own README:
 | [`cookbooks/01-foundations/`](01-foundations/) | Making a call, Projects as the workload boundary, credentials, conversation state, streaming, and choosing between the three models |
 | [`cookbooks/02-reasoning-and-output/`](02-reasoning-and-output/) | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
 | [`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
-| `cookbooks/04-agents/` | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
+| [[`cookbooks/04-agents/`](04-agents/)](04-agents/) | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
 | `cookbooks/05-production/` | Explicit prompt caching, PII masking, and the questions a security review will ask |
 
 Every recipe is one directory:
@@ -147,16 +147,18 @@ today still resolves after the port lands.
 | [`03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](03-grounding-and-multimodal/01-grounded-regulatory-monitoring/) | Grounded regulatory change monitoring with native Web Search | intermediate | medium |
 | [`03-grounding-and-multimodal/02-scoring-a-grounded-answer/`](03-grounding-and-multimodal/02-scoring-a-grounded-answer/) | Trusting a grounded answer: scoring it against its sources | intermediate | medium |
 | [`03-grounding-and-multimodal/03-reading-a-scanned-manual/`](03-grounding-and-multimodal/03-reading-a-scanned-manual/) | Reading a scanned manual: photos, tables and figures | intermediate | medium |
+| [`04-agents/01-the-agent-loop/`](04-agents/01-the-agent-loop/) | The agent loop: a goal, some tools, and a round ceiling | advanced | medium |
+| [`04-agents/02-openai-agents-sdk/`](04-agents/02-openai-agents-sdk/) | Running an agent on Bedrock with the OpenAI Agents SDK | intermediate | medium |
+| [`04-agents/03-strands-agents-sdk/`](04-agents/03-strands-agents-sdk/) | Running an agent on Bedrock with Strands | intermediate | medium |
+| [`04-agents/04-agentcore-harness/`](04-agents/04-agentcore-harness/) | Deploying an agent to AgentCore Harness | advanced | low |
 <!-- END GENERATED: recipe-index -->
 
-**Fourteen of the twenty-one recipes are here.** `01-foundations` landed first because everything
-else assumes it: the call, the permissions, the credentials, and the choice of model. The
-remaining three groups follow one pull request at a time, so each arrives small enough to
-review:
+**Eighteen of the twenty-one recipes are here.** `01-foundations` landed first because everything
+else assumes it: the call, the permissions, the credentials, and the choice of model. One group is
+left:
 
 | Pull request | Adds | Recipes |
 | --- | --- | --- |
-| `04-agents` | An agent loop by hand, the same agent under the OpenAI Agents SDK and under Strands, and one deployed to an AgentCore harness | 4 |
 | `05-production` | Explicit prompt caching, PII masking, and the questions a security review asks | 3 |
 
 Each group brings its own landing page and appends its rows to the index above. The paths named
