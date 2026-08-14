@@ -1,0 +1,112 @@
+name: Cookbooks
+
+# Scoped to cookbooks/ on two independent levels, because this repository also
+# holds migrations/ and reference-architectures/ and this workflow has nothing to
+# say about them.
+#
+#   1. `paths` below means the workflow does not start at all for a pull request
+#      that leaves cookbooks/ alone.
+#   2. Every step then addresses cookbooks/ explicitly, so nothing leaks out even
+#      if the trigger is widened later.
+#
+# 🚨 Do not make these jobs *required* status checks while the `paths` filter is
+# here. A required check that never runs leaves a pull request waiting forever,
+# which is GitHub's oldest sharp edge. Either leave them advisory, or drop the
+# filter and let the jobs no-op on their own.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cookbooks/**'
+  push:
+    branches: [main]
+    paths:
+      - 'cookbooks/**'
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python code quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find changed Python files under cookbooks/
+        id: changed
+        uses: tj-actions/changed-files@v46
+        with:
+          files: 'cookbooks/**/*.py'
+
+      - uses: astral-sh/setup-uv@v3
+        if: steps.changed.outputs.any_changed == 'true'
+
+      - name: ruff check
+        if: steps.changed.outputs.any_changed == 'true'
+        run: |
+          echo "${{ steps.changed.outputs.all_changed_files }}" | tr ' ' '\n'
+          uvx ruff check --output-format=github ${{ steps.changed.outputs.all_changed_files }}
+
+      - name: ruff format --check
+        if: steps.changed.outputs.any_changed == 'true'
+        run: uvx ruff format --check ${{ steps.changed.outputs.all_changed_files }}
+
+      - name: Nothing to do
+        if: steps.changed.outputs.any_changed == 'false'
+        run: echo "No Python changed under cookbooks/."
+
+  links:
+    name: Relative links resolve
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # A recipe README links to its own data/ and images/ and to sibling
+      # recipes. Those break silently on a rename, and a reader meets a 404
+      # rather than a diagnostic — so check them rather than trusting them.
+      #
+      # Fenced code blocks are skipped: a Python call like
+      # TOOL_FUNCTIONS[name](**json.loads(args)) contains "](" and is not a link.
+      # Found by running this against the real tree, which is the only way these
+      # get found.
+      - name: Check every relative Markdown link under cookbooks/
+        run: |
+          status=0
+          while IFS= read -r doc; do
+            dir="$(dirname "$doc")"
+            targets=$(awk '/^```/ { fence = !fence; next } !fence' "$doc" \
+              | grep -oE '\]\([^)]+\)' \
+              | sed 's/^](//; s/)$//; s/#.*$//' \
+              | grep -vE '^(https?:|mailto:|$)' || true)
+            while IFS= read -r target; do
+              [ -z "$target" ] && continue
+              if [ ! -e "$dir/$target" ]; then
+                echo "::error file=$doc::broken relative link: $target"
+                status=1
+              fi
+            done <<< "$targets"
+          done < <(find cookbooks -name '*.md')
+          exit $status
+
+  hygiene:
+    name: No stray files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # These are gitignored in the source repository, so they arrive here only
+      # when someone copies a directory rather than using git. Cheap to check,
+      # and the failure is self-explanatory.
+      - name: Refuse OS cruft and build caches
+        run: |
+          found=$(find cookbooks \
+            \( -name '.DS_Store' -o -name '._*' -o -name 'Thumbs.db' \
+               -o -name '__pycache__' -o -name '.ruff_cache' -o -name '.venv' \) \
+            -print)
+          if [ -n "$found" ]; then
+            echo "$found" | while IFS= read -r f; do echo "::error file=$f::should not be committed"; done
+            exit 1
+          fi
+          echo "Clean."
