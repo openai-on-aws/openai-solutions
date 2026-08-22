@@ -147,13 +147,14 @@ today still resolves after the port lands.
 | [`03-grounding-and-multimodal/01-grounded-regulatory-monitoring/`](03-grounding-and-multimodal/01-grounded-regulatory-monitoring/) | Grounded regulatory change monitoring with native Web Search | intermediate | medium |
 | [`03-grounding-and-multimodal/02-scoring-a-grounded-answer/`](03-grounding-and-multimodal/02-scoring-a-grounded-answer/) | Trusting a grounded answer: scoring it against its sources | intermediate | medium |
 | [`03-grounding-and-multimodal/03-reading-a-scanned-manual/`](03-grounding-and-multimodal/03-reading-a-scanned-manual/) | Reading a scanned manual: photos, tables and figures | intermediate | medium |
+| [`03-grounding-and-multimodal/04-rag-with-knowledge-bases/`](03-grounding-and-multimodal/04-rag-with-knowledge-bases/) | RAG with Bedrock Knowledge Bases: retrieve then generate with citations | intermediate | low |
 | [`04-agents/01-the-agent-loop/`](04-agents/01-the-agent-loop/) | The agent loop: a goal, some tools, and a round ceiling | advanced | medium |
 | [`04-agents/02-openai-agents-sdk/`](04-agents/02-openai-agents-sdk/) | Running an agent on Bedrock with the OpenAI Agents SDK | intermediate | medium |
 | [`04-agents/03-strands-agents-sdk/`](04-agents/03-strands-agents-sdk/) | Running an agent on Bedrock with Strands | intermediate | medium |
 | [`04-agents/04-agentcore-harness/`](04-agents/04-agentcore-harness/) | Deploying an agent to AgentCore Harness | advanced | low |
 <!-- END GENERATED: recipe-index -->
 
-**Eighteen of the twenty-one recipes are here.** `01-foundations` landed first because everything
+**Nineteen of the twenty-two recipes are here.** `01-foundations` landed first because everything
 else assumes it: the call, the permissions, the credentials, and the choice of model. One group is
 left:
 
