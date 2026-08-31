@@ -351,6 +351,5 @@ expensive.
   which is the `CreateInference` grant this recipe scopes down.
 - [`cookbooks/01-foundations/03-bedrock-api-key-auth/`](../03-bedrock-api-key-auth/) — credentials, including
   why a long-term key cannot create a project without extra permissions.
-- [`cookbooks/05-production/`](../../05-production/) — where projects come back as a cost and
-  governance tool: attributing model spend to a team, and the questions a security review asks
-  about workload isolation.
+- [`cookbooks/05-production/`](../../05-production/) — the other two levers a launch is judged
+  on: what a stable prefix costs once it is cached, and keeping identifiers out of the model.

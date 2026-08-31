@@ -1,13 +1,13 @@
 # Production
 
-> **What changes when this runs at volume, and what will the security review ask?**
+> **What changes when this runs at volume?**
 
-These three recipes are the ones to read before a launch rather than during a prototype. They
-cover the two costs that matter at volume — tokens and trust — and the questions an approval
-process will put to you.
+These two recipes are the ones to read before a launch rather than during a prototype. They
+cover the two costs that matter at volume: tokens, and the identifiers you must keep out of
+the model.
 
-None of them are about making a model answer better. They are about making the same answer
-affordable, defensible and auditable.
+Neither is about making a model answer better. They are about making the same answer
+affordable and defensible.
 
 ## What each one is for
 
@@ -16,8 +16,6 @@ affordable, defensible and auditable.
   deterministic rather than best-effort.
 - **PII masking** keeps identifiers out of the model and out of what it writes, using the same
   `ApplyGuardrail` call in front of and behind the request.
-- **The security review** answers eleven specific questions from live API calls — retention,
-  authorization, network path, audit, quotas — including the two where the honest answer is no.
 
 ## Recipes
 
@@ -26,7 +24,6 @@ affordable, defensible and auditable.
 | --- | --- | --- | --- |
 | [`01-prompt-caching/`](01-prompt-caching/) | Cutting agent cost with explicit prompt caching | intermediate | low |
 | [`02-pii-masking/`](02-pii-masking/) | Masking patient identifiers before and after the model | intermediate | low |
-| [`03-security-review/`](03-security-review/) | Answering a security review: retention, isolation, residency, audit and quotas | intermediate | low |
 <!-- END GENERATED: group-index -->
 
 ## Running these
@@ -36,9 +33,8 @@ uv sync
 uv run python 05-production/01-prompt-caching/python/prompt_caching.py
 ```
 
-One of the three, the PII recipe, creates a Bedrock guardrail and deletes it, or reuses one
-you name in `GUARDRAIL_ID`. The other two create nothing: prompt caching is inference only,
-and the security review makes read-only calls.
+One of the two, the PII recipe, creates a Bedrock guardrail and deletes it, or reuses one
+you name in `GUARDRAIL_ID`. Prompt caching creates nothing — it is inference only.
 
 ## Where to go next
 

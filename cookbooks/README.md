@@ -101,7 +101,7 @@ Five groups, each with its own README:
 | [`cookbooks/02-reasoning-and-output/`](02-reasoning-and-output/) | Strict schemas, reasoning effort and verbosity, tool calling, carrying reasoning across turns, and tools Bedrock runs for you |
 | [`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
 | [`cookbooks/04-agents/`](04-agents/)](04-agents/) | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
-| [`cookbooks/05-production/`](05-production/) | Explicit prompt caching, PII masking, and the questions a security review will ask |
+| [`cookbooks/05-production/`](05-production/) | Explicit prompt caching, and masking PII before and after the model |
 
 Every recipe is one directory:
 
@@ -154,7 +154,6 @@ today still resolves after the port lands.
 | [`04-agents/04-agentcore-harness/`](04-agents/04-agentcore-harness/) | Deploying an agent to AgentCore Harness | advanced | low |
 | [`05-production/01-prompt-caching/`](05-production/01-prompt-caching/) | Cutting agent cost with explicit prompt caching | intermediate | low |
 | [`05-production/02-pii-masking/`](05-production/02-pii-masking/) | Masking patient identifiers before and after the model | intermediate | low |
-| [`05-production/03-security-review/`](05-production/03-security-review/) | Answering a security review: retention, isolation, residency, audit and quotas | intermediate | low |
 <!-- END GENERATED: recipe-index -->
 
 **All twenty-one recipes are here.** They are meant to be read in the order above:

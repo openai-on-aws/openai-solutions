@@ -78,5 +78,5 @@ was validated in, what it costs, and what it deliberately leaves out. See the
 - [`cookbooks/03-grounding-and-multimodal/`](../03-grounding-and-multimodal/) — giving the model
   current information with Bedrock's native Web Search, and checking that its answer is
   faithful to the sources.
-- [`cookbooks/05-production/`](../05-production/) — what changes at volume: prompt caching, PII
-  screening, and the questions a security review will ask.
+- [`cookbooks/05-production/`](../05-production/) — what changes at volume: prompt caching and
+  PII screening.
