@@ -279,7 +279,7 @@ straight to triage.
 - **The notes are fabricated**, including the names, policy numbers and the trading name.
   No real claim, claimant or insurer.
 - **Real intake text contains personal data.** This recipe does not mask it — see
-  `cookbooks/05-production/02-pii-masking/` for screening
+  [`cookbooks/05-production/02-pii-masking/`](../../05-production/02-pii-masking/) for screening
   it with Bedrock Guardrails before it reaches the model.
 
 ## Limitations and non-goals

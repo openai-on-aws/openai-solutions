@@ -184,7 +184,7 @@ or the service — and nothing about the model changes either way.
   drop turns.
 - **Prompt caching rewards a stable prefix.** A long unchanging prefix followed by a short
   changing suffix is what caches well, which is another reason to control exactly what you
-  send. See `cookbooks/05-production/01-prompt-caching/`.
+  send. See [`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/).
 - **Set `store` explicitly, whichever way you want it.** Both values are reasonable; writing
   the one you mean makes the retention posture visible to the next person who reads the code.
 - **Treat response ids as pointers to retained content.** They are not secrets, but they

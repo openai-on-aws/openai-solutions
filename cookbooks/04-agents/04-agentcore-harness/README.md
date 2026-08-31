@@ -36,7 +36,7 @@ validated_with:
 
 # Deploying an agent to AgentCore Harness
 
-[[`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/)](../01-the-agent-loop/) writes the loop by hand: call the model, read
+[`cookbooks/04-agents/01-the-agent-loop/`](../01-the-agent-loop/) writes the loop by hand: call the model, read
 the tool calls, execute them, send the results back, repeat, stop at a ceiling. That is thirty
 lines and worth knowing.
 
@@ -211,7 +211,7 @@ timeout, and which tools the agent may use.
 
 ![Two panels. Custom built: your process holds the while loop bounded by MAX_ROUNDS, the transcript and the tool implementations — you own the loop. Using AgentCore Harness: your caller is one invoke_harness call with a harness ARN, a session id and messages, while AgentCore Runtime holds the loop with maxIterations 4, timeoutSeconds 120, sliding_window truncation and provisioned memory, running under its own execution role carrying AmazonBedrockMantleInferenceAccess plus memory actions. The response streams messageStart, contentBlockDelta and messageStop events. One arrow crosses back: an inline_function call the harness surfaces for your caller to run.](images/boundary-moved.drawio.svg)
 
-*The comparison is with [[`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/)](../01-the-agent-loop/), where
+*The comparison is with [`cookbooks/04-agents/01-the-agent-loop/`](../01-the-agent-loop/), where
 the same loop runs in your process. What moved is the loop and the transcript; what came back is
 `inline_function`, the one declaration that still executes on your side.*
 
@@ -280,7 +280,7 @@ If you supplied `HARNESS_ARN`, nothing is deleted.
 
 ## Next steps
 
-- [[`cookbooks/04-agents/01-the-agent-loop/`](../../04-agents/01-the-agent-loop/)](../01-the-agent-loop/) — the loop this replaces, which is still
+- [`cookbooks/04-agents/01-the-agent-loop/`](../01-the-agent-loop/) — the loop this replaces, which is still
   where you debug agent behaviour.
 - [`cookbooks/02-reasoning-and-output/05-server-side-tools/`](../../02-reasoning-and-output/05-server-side-tools/)
   — tools Bedrock executes for you, the other half of a fully managed agent.

@@ -81,5 +81,5 @@ permission to manage them.
   — the protocol underneath the loop, including `tool_choice` and parallel calls.
 - [`cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`](../02-reasoning-and-output/04-reasoning-across-turns/)
   — the parameter that decides how much of the agent's earlier thinking is replayed each round.
-- `cookbooks/05-production/01-prompt-caching/` — how to
+- [`cookbooks/05-production/01-prompt-caching/`](../05-production/01-prompt-caching/) — how to
   stop paying full price for the instruction prefix on every round.

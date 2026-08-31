@@ -244,5 +244,5 @@ The two calls in step A are stored, so AWS retains them for 30 days. Everything 
 
 - [`cookbooks/02-reasoning-and-output/02-reasoning-effort-and-verbosity/`](../02-reasoning-effort-and-verbosity/) — how much
   reasoning gets produced in the first place, which sets how much there is to replay.
-- `cookbooks/05-production/01-prompt-caching/` — the
+- [`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/) — the
   other half of the input bill in a loop.
