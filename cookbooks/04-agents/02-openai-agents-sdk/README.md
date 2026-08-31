@@ -27,7 +27,7 @@ validated_with:
 # Running an agent on Bedrock with the OpenAI Agents SDK
 
 Nobody ships the hand-written loop. You write it once to understand it — that is
-[`cookbooks/04-agents/01-the-agent-loop/`](../01-the-agent-loop/)](../01-the-agent-loop/) — and then you use a
+[`cookbooks/04-agents/01-the-agent-loop/`](../01-the-agent-loop/) — and then you use a
 framework, because retries, turn limits, tool schemas and result handling are solved
 problems. This recipe runs the identical scenario through the
 [OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents), so what you
@@ -317,10 +317,10 @@ after 30 days. Re-running is safe — deleting a response that is already gone i
 
 ## Next steps
 
-- [`cookbooks/04-agents/03-strands-agents-sdk/`](../03-strands-agents-sdk/)](../03-strands-agents-sdk/) — the same
+- [`cookbooks/04-agents/03-strands-agents-sdk/`](../03-strands-agents-sdk/) — the same
   agent again in Strands, which reaches mantle a different way and authenticates
   differently.
-- [`cookbooks/04-agents/04-agentcore-harness/`](../04-agentcore-harness/)](../04-agentcore-harness/) — running an
+- [`cookbooks/04-agents/04-agentcore-harness/`](../04-agentcore-harness/) — running an
   agent as a managed AWS deployment instead of a local process.
 - [`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/)
   — the answer to the growing input cost above.

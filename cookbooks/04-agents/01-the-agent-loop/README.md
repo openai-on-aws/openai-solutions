@@ -322,9 +322,9 @@ after 30 days. Re-running is safe — deleting a response that is already gone i
 - [`cookbooks/02-reasoning-and-output/04-reasoning-across-turns/`](../../02-reasoning-and-output/04-reasoning-across-turns/)
   — the parameter that decides how much of the agent's earlier thinking is replayed each
   round.
-- [`cookbooks/04-agents/02-openai-agents-sdk/`](../02-openai-agents-sdk/)](../02-openai-agents-sdk/) — the same loop, run
+- [`cookbooks/04-agents/02-openai-agents-sdk/`](../02-openai-agents-sdk/) — the same loop, run
   by the OpenAI Agents SDK, and the one setting a Bedrock workload must change.
-- [`cookbooks/04-agents/03-strands-agents-sdk/`](../03-strands-agents-sdk/)](../03-strands-agents-sdk/) — the same loop in
+- [`cookbooks/04-agents/03-strands-agents-sdk/`](../03-strands-agents-sdk/) — the same loop in
   Strands, which reaches mantle a different way.
 - [`cookbooks/05-production/01-prompt-caching/`](../../05-production/01-prompt-caching/) — how to
   stop paying full price for the instruction prefix on every round.
