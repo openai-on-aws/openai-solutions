@@ -7,9 +7,8 @@ requires-python = ">=3.10"
 
 # Loose constraints only. Exact versions live in uv.lock, which is committed.
 dependencies = [
-    # The [bedrock] extra is what enables OpenAI(provider=bedrock(region=...)),
-    # the auth pattern every recipe uses. Without it, importing
-    # openai.providers fails. The extra first appears in openai 2.44.0.
+    # The [bedrock] extra enables BedrockOpenAI, its AWS authentication helpers,
+    # and the provider-based interface used by some existing recipes.
     "openai[bedrock]>=2.45.0",
     # Bedrock control plane, ApplyGuardrail, CloudWatch, Service Quotas.
     "boto3>=1.35.0",
@@ -19,7 +18,8 @@ dependencies = [
     "pydantic>=2.7.0",
 ]
 
-# Recipes are plain executable Python, so there is no notebook toolchain here.
+# Plain executable Python is the reference implementation. A small number of recipes
+# also include notebooks that run on the same dependencies; no notebook server is pinned.
 # Dependency groups, named after the capability domains, carry anything a domain
 # needs beyond the base set. Install one with `uv sync --group agents`.
 [dependency-groups]
@@ -42,6 +42,9 @@ foundations = ["aws-bedrock-token-generator>=1.1.0"]
 reasoning-and-output = []
 grounding-and-multimodal = []
 production = []
+# Daybreak uses the Mantle Models API before inference, so these recipes mint
+# refreshable short-term Bedrock credentials from the standard AWS credential chain.
+cybersecurity = ["aws-bedrock-token-generator>=1.1.0"]
 
 [tool.uv]
 # One resolution for every recipe. Recipes are thin and share almost the whole

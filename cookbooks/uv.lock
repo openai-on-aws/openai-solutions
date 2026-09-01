@@ -761,6 +761,9 @@ agents = [
     { name = "openai-agents" },
     { name = "strands-agents", extra = ["openai"] },
 ]
+cybersecurity = [
+    { name = "aws-bedrock-token-generator" },
+]
 dev = [
     { name = "pytest" },
     { name = "ruff" },
@@ -782,6 +785,7 @@ agents = [
     { name = "openai-agents", specifier = ">=0.20.0" },
     { name = "strands-agents", extras = ["openai"], specifier = ">=1.52.0" },
 ]
+cybersecurity = [{ name = "aws-bedrock-token-generator", specifier = ">=1.1.0" }]
 dev = [
     { name = "pytest", specifier = ">=8.0.0" },
     { name = "ruff", specifier = ">=0.6.0" },
