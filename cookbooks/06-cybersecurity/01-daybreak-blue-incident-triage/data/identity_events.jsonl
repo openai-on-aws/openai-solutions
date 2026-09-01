@@ -1,0 +1,5 @@
+{"event_id":"evt-001","time":"2026-08-20T09:14:03Z","service":"signin","action":"ConsoleLogin","principal":"build-release","source_ip":"203.0.113.77","result":"Failure","details":{"reason":"MFA challenge failed"}}
+{"event_id":"evt-002","time":"2026-08-20T09:16:41Z","service":"signin","action":"ConsoleLogin","principal":"build-release","source_ip":"203.0.113.77","result":"Success","details":{"mfa_used":false}}
+{"event_id":"evt-003","time":"2026-08-20T09:18:22Z","service":"sts","action":"AssumeRole","principal":"build-release","source_ip":"203.0.113.77","result":"Success","details":{"role":"release-admin","session":"release-check"}}
+{"event_id":"evt-004","time":"2026-08-20T09:20:09Z","service":"cloudtrail","action":"StopLogging","principal":"release-admin/release-check","source_ip":"203.0.113.77","result":"Denied","details":{"trail":"organization-audit"}}
+{"event_id":"evt-005","time":"2026-08-20T09:22:35Z","service":"iam","action":"CreateAccessKey","principal":"release-admin/release-check","source_ip":"203.0.113.77","result":"Denied","details":{"target_user":"build-release"}}

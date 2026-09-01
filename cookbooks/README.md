@@ -10,11 +10,14 @@ exactly as written.
 ## What is different about running these models on Bedrock
 
 The GPT-5.6 family is served through the **OpenAI Responses API on the
-`bedrock-mantle` endpoint**, authenticated with SigV4 from the standard AWS
+`bedrock-mantle` endpoint**. Credentials still come from the standard AWS
 credential chain. Three consequences shape every recipe here:
 
-- **There is no API key and no token to mint.** If `aws sts get-caller-identity`
-  works, the recipes work.
+- **No long-term key is embedded in code.** Most recipes sign requests directly with
+  SigV4. Recipes that need an OpenAI-compatible endpoint, including Daybreak model
+  discovery, derive a refreshable short-term Bedrock token from the same AWS credentials.
+  `aws sts get-caller-identity` verifies the identity; model discovery and a small
+  inference request verify access.
 - **Inference is authorized on a Project ARN**, not on a model ARN. That makes
   [Projects](https://docs.aws.amazon.com/bedrock/latest/userguide/projects.html) the unit of
   both access isolation and cost attribution, and it is why two workloads can share one AWS
@@ -93,7 +96,7 @@ where that choice is made properly.
 
 ## How the recipes are organized
 
-Five groups, each with its own README:
+Six groups, each with its own README:
 
 | Directory | What it covers |
 | --- | --- |
@@ -102,6 +105,7 @@ Five groups, each with its own README:
 | [`cookbooks/03-grounding-and-multimodal/`](03-grounding-and-multimodal/) | Native Web Search with citations, and scoring whether an answer is faithful to its sources |
 | [`cookbooks/04-agents/`](04-agents/) | An agent loop written by hand, the same agent run by the OpenAI Agents SDK and by Strands, and one deployed to an AgentCore harness |
 | [`cookbooks/05-production/`](05-production/) | Explicit prompt caching, and masking PII before and after the model |
+| [`cookbooks/06-cybersecurity/`](06-cybersecurity/) | Approval-gated Daybreak examples for defensive triage and controlled vulnerability validation |
 
 Every recipe is one directory:
 
@@ -109,7 +113,8 @@ Every recipe is one directory:
 01-first-call/
 ├── README.md          the problem, the approach, the prerequisites
 ├── python/            the reference implementation
-│   └── first_call.py
+│   ├── first_call.py
+│   └── first_call.ipynb  an optional walkthrough when the recipe includes one
 ├── typescript/        the port, as those land
 └── data/              synthetic inputs, only when the recipe needs them
 ```
@@ -154,21 +159,24 @@ today still resolves after the port lands.
 | [`04-agents/04-agentcore-harness/`](04-agents/04-agentcore-harness/) | Deploying an agent to AgentCore Harness | advanced | low |
 | [`05-production/01-prompt-caching/`](05-production/01-prompt-caching/) | Cutting agent cost with explicit prompt caching | intermediate | low |
 | [`05-production/02-pii-masking/`](05-production/02-pii-masking/) | Masking patient identifiers before and after the model | intermediate | low |
+| [`06-cybersecurity/01-daybreak-blue-incident-triage/`](06-cybersecurity/01-daybreak-blue-incident-triage/) | Turning synthetic identity events into an evidence-based incident brief | beginner | low |
+| [`06-cybersecurity/02-daybreak-red-vulnerability-validation/`](06-cybersecurity/02-daybreak-red-vulnerability-validation/) | Reproducing a toy path-boundary flaw safely, then designing a patch and tests | intermediate | low |
 <!-- END GENERATED: recipe-index -->
 
-**All twenty-one recipes are here.** They are meant to be read in the order above:
+**All twenty-three recipes are here.** They are meant to be read in the order above:
 `01-foundations` because everything else assumes it, then shaping what comes back, grounding it in
 information the model was not trained on, turning a tool loop into an agent, and finally what those
 choices cost in production. Each group has its own landing page, and every path named in this
 README resolves.
 
-**Recipes are plain executable Python, not notebooks**, and each one is
-self-contained. There is no shared framework to learn first: the client
-construction and the model ID are in the recipe, where you can see them.
+**Plain executable Python remains the reference implementation.** The two Daybreak
+getting-started recipes also include notebooks for readers who prefer an interactive
+walkthrough. Both forms are self-contained and show the client construction and model ID.
 
-Every recipe was run end to end against a real Bedrock account, and its README opens with
-the date that happened on. Check it: these models and this endpoint change every few weeks,
-so a recipe last run three months ago is a weaker promise than one from last week.
+Every validated recipe was run end to end against a real Bedrock account, and its README
+opens with the date that happened. Draft recipes say so explicitly. Check the status and
+date: these models and this endpoint change every few weeks, so a recipe last run three
+months ago is a weaker promise than one from last week.
 
 ## Choosing a model
 
