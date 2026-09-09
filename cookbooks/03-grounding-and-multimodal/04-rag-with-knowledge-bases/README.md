@@ -31,15 +31,14 @@ questions grounded in that corpus — with inline citations that trace every cla
 prompting, citation formatting, model choice independent of retrieval, and room to add
 reranking or business logic between the two steps.
 
-
-|                         |                                                                                                                                    |
-| :------------------------ | :----------------------------------------------------------------------------------------------------------------------------------- |
+|                               |                                                                                                                                      |
+| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
 | **What you will learn** | How to separate retrieval (Bedrock Knowledge Bases) from generation (GPT-5.6 via Bedrock Mantle) and produce inline`[n]` citations |
-| **Capability**          | Two-step Retrieve-then-Generate with the Responses API                                                                             |
+| **Capability**          | Two-step Retrieve-then-Generate with the Responses API                                                                               |
 | **Model**               | `openai.gpt-5.6-terra`                                                                                                             |
 | **Region**              | `us-east-1`                                                                                                                        |
-| **Level**               | Intermediate                                                                                                                       |
-| **Cost**                | Low — one retrieval call plus one generation call, capped at 1024 output tokens                                                   |
+| **Level**               | Intermediate                                                                                                                         |
+| **Cost**                | Low — one retrieval call plus one generation call, capped at 1024 output tokens                                                     |
 | **You will need**       | Inference permission, an existing Bedrock Knowledge Base with ingested documents, and`bedrock:Retrieve` permission                 |
 
 > **What it does.** Retrieves the top-k chunks from a Knowledge Base, numbers them, passes
@@ -91,7 +90,7 @@ The two-step pattern gives you the managed vector search of Knowledge Bases with
 
 - The [prerequisites in the cookbooks README](../../README.md).
 - **An existing Bedrock Knowledge Base** with documents already ingested. You need its
-  Knowledge Base ID (looks like `XXXXXXXXXX`).
+  Knowledge Base ID (looks like `XXXXXXXXXX`). See [Appendix A](#appendix-a---creating-a-knowledge-base) for help creating a knowledge base.
 - **`bedrock:Retrieve` permission** on the Knowledge Base ARN. This is separate from the
   inference permission.
 - **`boto3`** for the Retrieve API call. It is already in the base cookbook dependencies —
@@ -105,7 +104,6 @@ cp .env.example .env   # set KNOWLEDGE_BASE_ID and AWS_REGION
 
 uv run --env-file .env python \
   03-grounding-and-multimodal/04-rag-with-knowledge-bases/python/rag_with_knowledge_bases.py
-
 ```
 
 Pass a custom query as a positional argument:
@@ -237,3 +235,15 @@ no resources are created. Your Knowledge Base and its documents are unaffected.
 - [`02-reasoning-and-output/01-structured-claims-intake/`](../../02-reasoning-and-output/01-structured-claims-intake/)
   — adding a structured output schema so you can programmatically detect "I don't know."
 - [`01-foundations/05-streaming/`](../../01-foundations/05-streaming/) — streaming the generation for real-time delivery.
+
+## Appendix A - Creating a Knowledge Base
+
+Start with a set of documents, either in a zip file or in an S3 bucket. You then have
+three options: console, API, or Codex. The [Bedrock Knowledge Bases creation documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html) describes how to manually configure a knowledge base using both the console and the API.
+
+However, given that we have configured the AWS MCP server, it's also possible to prompt Codex to create the knowledge base on its own. Here is a sample prompt:
+
+> Using documentation linked here as necessary
+> ([docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html)), use AWS MCP tools to create a knowledge base from the attached set of documents. Get input for any ambiguous choices, for example vector store.
+
+Attach the documents, or a link to the S3 bucket where the documents are stored.
