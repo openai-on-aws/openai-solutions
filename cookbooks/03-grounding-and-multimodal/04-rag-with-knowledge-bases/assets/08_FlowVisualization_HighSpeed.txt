@@ -1,0 +1,1685 @@
+v_
+
+
+
+
+     NASA/TM-2001-210848
+
+
+
+
+     Flow-Visualization                               Techniques   Used
+     at High Speed                        by Configuration
+     Aerodynamics                          Wind-Tunnel-Test          Team
+     Edited by
+     John E. Lamar
+     Langley   Research   Center,   Hampton,   Virginia
+
+
+
+
+     April     2001
+                               The    NASA      STI Program    Office...      in Profile
+
+
+Since its founding, NASA has been dedicated                      CONFERENCE           PUBLICATION.
+to the advancement   of aeronautics and space                    Collected papers from scientific and
+science. The NASA Scientific and Technical                       technical conferences, symposia,
+Information    (STI) Program Office plays a key                  seminars, or other meetings sponsored                 or
+part in helping NASA maintain this                               co-sponsored   by NASA.
+important   role.
+
+                                                                 SPECIAL       PUBLICATION.       Scientific,
+The NASA STI Program Office is operated by                       technical,    or historical information      from
+Langley Research Center, the lead center for
+                                                                 NASA programs,      projects, and missions,
+NASA's scientific and technical information.
+                                                                 often concerned    with subjects having
+The NASA STI Program Office provides                             substantial  public interest.
+access to the NASA STI Database, the
+largest collection of aeronautical   and space
+science STI in the world. The Program Office                     TECHNICAL      TRANSLATION.              English-
+is also NASA's institutional    mechanism   for                  language translations  of foreign        scientific
+disseminating    the results of its research and                 and technical material pertinent         to
+                                                                 NASA's mission.
+development     activities. These results are
+published    by NASA in the NASA STI Report
+Series, which includes the following report                   Specialized  services that complement       the
+types:                                                        STI Program Office's diverse offerings include
+                                                              creating custom thesauri, building customized
+  TECHNICAL        PUBLICATION.         Reports of            databases,  organizing    and publishing
+  completed    research or a major significant                research results..,    even providing    videos.
+  phase of research that present the results
+  of NASA programs        and include extensive               For more information         about   the NASA     STI
+  data or theoretical    analysis. Includes
+                                                              Program      Office, see the following:
+  compilations    of significant   scientific and
+  technical data and information        deemed
+  to be of continuing     reference value. NASA               • Access the NASA STI Program             Home
+  counterpart    of peer-reviewed    formal                     Page at http'//www.sti.nasa.gov
+  professional   papers, but having less
+  stringent limitations     on manuscript                     • Email your question         via the Internet   to
+  lengt h and extent of graphic                                 hel_sti.nasa.gov
+  presentations.
+
+                                                              • Fax your question to the NASA STI
+  TECHNICAL        MEMORANDUM.
+                                                                Help Desk at (301) 621-0134
+ Scientific and technical findings that are
+ preliminary    or of specialized interest,
+ e.g., quick release reports, working                         • Telephone   the NASA STI Help Desk at
+ papers, and bibliographies      that contain                   (301) 621-0390
+ minimal annotation.      Does not contain
+ extensive   analysis.                                          Write to:
+                                                                NASA STI Help Desk
+ CONTRACTOR              REPORT.   Scientific   and             NASA Center for AeroSpace            Information
+ technical findings by NASA-sponsored                           7121 Standard Drive
+ contractors  and grantees.                                     Hanover, MD 21076-1320
+NASA/TM-2001-210848
+
+
+
+
+Flow-Visualization                                   Techniques   Used
+at High Speed                             by Configuration
+Aerodynamics                              Wind-Tunnel-Test          Team
+Edited by
+John E. Lamar
+Langley    Research      Center,   Hampton,   Virginia
+
+
+
+
+National   Aeronautics     and
+Space Administration
+
+Langley Research Center
+Hampton, Virginia 23681-2199
+
+
+April      2001
+The use of trademarks    or names of manufacturers     in this report is for accurate reporting and does not constitute an]
+official endorsement, either expressed or implied,    of such products or manufacturers    by the National Aeronautics  and I
+Space Administration.                                                                                                       ]
+
+
+
+
+Available   from:
+
+
+NASA Center         for AeroSpace   Information   (CASI)           National     Technical  Information   Service   (NTIS)
+7121 Standard        Drive                                         5285 Port Royal Road
+Hanover,    MD 21076-1320                                          Springfield,     VA 22161-2171
+(301) 621-0390                                                     (7O3) 605-6000
+Contents
+
+Nomenclature              ......................................................................                                                                  v
+Abstract ...........................................................................                                                                              1
+1. Introduction             .....................................................................                                                                 1
+
+2. Definitions,           Expected            Results,        and Details             of Use in Facility Implementation                     ..................    1
+
+   2.1. Surface-Flow     Techniques ........................................................                                                                      1
+      2.1.1. Ultraviolet Oil .............................................................                                                                        1
+          Kevin M. Mejia (Boeing HSCT High Speed Aerodynamics)                             and
+          Gary E. Erickson and Clifford J. Obara (NASA Langley Research                                                           Center)
+       2.1.2. Colored Oil ................................................................                                                                        2
+          Kevin M. Mejia (Boeing HSCT High Speed Aerodynamics)                                                             and
+          Gelsomina Cappuccio (NASA Ames Research Center)
+       2.1.3. Fluorescent Minitufls ........................................................                                                                      4
+          Kevin G. Peterson                   (Boeing          HSCT High Speed Aerodynamics)
+   2.2. Surface Property                   Techniques              .....................................................                                          7
+       2.2.1. Oil Film Interferometry ......................................................                                                                      7
+         Robert A. Kennelly, Jr. (NASA Ames Research Center)
+       2.2.2. IR Thermography         ...........................................................                                                                 9
+          Kevin M. Mejia (Boeing HSCT High Speed Aerodynamics)
+       2.2.3. Sublimation   ..............................................................                                                                       10
+          Kevin M. Mejia (Boeing HSCT High Speed Aerodynamics)                                                             and
+          Aga Goodsell (NASA Ames Research Center)
+       2.2.4. Pressure Sensitive Paint .....................................................                                                                     12
+          James H. Bell (NASA Ames Research Center) and
+          Clifford J. Obara and Gary E. Erickson (NASA Langley Research                                                           Center)
+       2.2.5. Temperature Sensitive Paint .................................................                                                                      18
+          Clifford J. Obara (NASA Langley Research Center)
+   2.3. Off Surface Techniques                            ........................................................                                               20
+       2.3.1. Laser Vapor Screen ........................................................                                                                        20
+          Gary E. Erickson (NASA Langley Research Center)
+       2.3.2. Schlieren   ................................................................                                                                       21
+       John R. Micol and Floyd J. Wilcox, Jr. (NASA Langley                                                            Research   Center)
+    2.3.3. Shadowgraph             .............................................................                                                                 22
+       John R. Micol and Floyd J. Wilcox, Jr. (NASA Langley                                                            Research   Center)
+3. References  .....................................................................                                                                             24
+
+
+
+
+                                                                                                   iii
+iv
+Nomenclature
+
+BSWT           Boeing Supersonic             Wind Tunnel
+
+BTWT           Boeing Transonic            Wind Tunnel
+
+CCD            charged       coupled     device
+
+CFD            computational           fluid dynamics
+
+
+Cp             pressure      coefficient
+
+ESP            electronic     scanning       pressure
+
+HSR            High Speed Research
+
+IR             infrared
+
+LE             leading edge
+
+M              Mach number
+
+MSDS           Material      Safety Data Sheet
+
+NCV            nonlinear      cruise validation
+
+NTF            National      Transonic       Facility at Langley    Research   Center
+
+PC             personal      computer
+
+PSP            pressure      sensitive     paint
+
+Re             Reynolds       number
+
+nTIS           root mean square
+
+SGI            Silicon Graphics,           Inc.
+
+TSP            temperature       sensitive        paint
+
+UPWT           Langley Unitary           Plan Wind Tunnel
+
+UV             ultraviolet
+
+VIAS           video image acquisition               system
+
+16FTT          Langley       16-Foot Transonic            Tunnel
+
+
+
+
+                                                                   v
+                                                          Abstract
+
+                        This paper summarizes     a variety of optically  based JTow-visuaIization
+                   techniques  used for high-speed  research  by the Configuration  Aerodynamics
+                   l_Tnd-Tunnel-Test Team of the High-Speed Research Program during its tenure.
+                   The work of other national experts is included for completeness.   Details of each
+                   technique with applications and status in various national wind tunnels are given.
+
+
+
+1. Introduction                                                  2. Definitions, Expected  Results,
+                                                                 and Details of Use in Facility
+     During the high-speed, wind-tunnel     test phase of        Implementation
+the High-Speed Research Program, a variety of opti-
+cally based, flow-visualization   techniques were used
+by the Configuration      Aerodynamics     Wind-Tunnel-          2.1. Surface-Flow                  Techniques
+Test Team to determine flow features on and around
+the model in both a qualitative and quantitative sense.
+                                                                 2.1.1.     Ultraviolet     Oil
+Selection of an appropriate technique was dependent
+on its availability at the test facility and the informa-
+tion required. The techniques          used are divided into     Kevin M. Mejia
+three groups which highlight the type of information             Boeing HSCT High Speed Aerodynamics
+needed: (1) surface flow, (2) surface properties, and
+(3) off-surface      features.    In particular,    techniques   Gary E. Ericl_'on and Cl!fford J. Obara
+employed to obtain (1) surface-flow details were ultra-          NASA Langley Research Center
+violet (UV) oil, colored oil, and minitufts; (2) surface
+properties were oil film interferometry,         infrared (IR)        The UV oil (ref.            1) is a qualitative   surface   tech-
+thermography,      sublimation,     pressure sensitive paint     nique and uses a phosphorescent-dye-enriched       oil, in
+(PSP), and temperature          sensitive paint (TSP); and       either thin-film or dot form, that upon excitation with
+(3) off-surface     features    were     laser vapor screen,     UV illumination allows the visualization     of a surface
+schlieren, and shadowgraph.          A subset of these tech-     flow pattern over the model. This technique is used for
+niques was available at all facilities where tests were          determining   surface  flow patterns    and has been
+conducted. Many of these techniques have been docu-              employed by the Configuration    Aerodynamics    Wind-
+mented in reference 1 or are extensions of established
+                                                                 Tunnel-Test Team in a variety of industry and NASA
+practices.                                                       wind tunnels.
+
+
+     This paper was written with three main purposes
+                                                                 2.1.1.1.     Application         in Boeing      Supersonic       Wind
+in mind: (1) to document those techniques used by the
+                                                                 Tunnel
+team through definition and highlighting         the expected
+results; (2) to provide details for the use of each
+technique     and a record of its operational        status or       The procedures for obtaining UV oil photographs
+planned implementation       for the test facilities of inter-   in BSWT are given in this section.
+est to the team; and (3) to serve as a handy optical
+technique and facility reference for those researchers           Equipment       used:
+planning to acquire similar data. When this report was
+commissioned,     the contributors   identified were either           L100 industrial       grade oil
+members of the team or other national experts and                     H15 oil
+their names appear in the sections they authored. The
+eleven techniques are presented in the order given in                 UV phosphorescent             dye (Reveal     A680 plus, leak
+this section.                                                         detection additive)
+     2000-Wflashunitwith"black"UV glass                             The UV oil was excited by several UV light sources
+                                                                    which contained both continuous and 2000-W flash
+     BG39(Scott,blueglass)andE2 (Ratten,yellow
+                                                                    units. The surface flow patterns were documented
+     glass)cameralensfilters
+                                                                    with an array of externally mounted still and video
+                                                                    cameras that were positioned inside the webbing of the
+UV oil mixture:                                                     test section sidewalls. The UV oil remained on the
+                                                                    model surface in sufficient quantity            at the desired test
+     ForRe= 9 x 106/ft -                                            condition to allow several images               to be acquired at
+                                                                    three or four angles of attack. Imagery was accom-
+         Mix 4 to 6 drops of dye with 50_50-percent
+                                                                    plished    with appropriate     filters  on the 70-ram
+         mixture of El00 and H15 oil
+                                                                    Hasselblad    still cameras and the high-resolution color
+                                                                    and gray-scale digital cameras. Video streams were
+     For Re = 12 x 106/ft and 14 x 106/ft -                         acquired from color and black-and-white    cameras that
+                                                                    could be connected     to video recorders,    PC-based
+         Mix 4 to 6 drops of dye into 100-percent            mix-   video frame grabbers,     and a separate video printer
+         ture of El00 oil                                           unit. The UPWT PSP system provides scientific-grade
+                                                                    digital cameras connected to PC and SGI platforms to
+Application   process:                                              acquire and process high-resolution     UV oil images.
+                                                                    These images could be exported shortly after the flow-
+    Apply UV oil directly       onto bare          metal    wing    visualization  run series to the World Wide Web site
+    surface using quality paint brush                               established for the ongoing test. An example of a digi-
+    Run blowdown         tunnel for extended    time at that Re     tal UV oil image processed via the PSP system is
+                                                                    shown in figure 1. A recent addition to the UPWT
+                                                                    camera inventory is a high-resolution   color digital unit
+Photography   process:
+                                                                    that can be controlled remotely via a PC, which also
+                                                                    provides the means of processing      and exporting the
+    Snap images immediately          after blowdown        tunnel
+                                                                    images to remote customers.
+    run
+
+    Take pictures directly above upper or lower sur-
+                                                                    2.1.1.3.    Application       in Langle3,     16-Foot   Transonic
+    face focusing on inboard and outboard wing sec-
+                                                                    Tunnel
+    tions and LE break regions; make certain that
+    transition location can be clearly seen
+                                                                         The same technique used in the UPWT                  was used
+    Roll model wings vertically        just prior to snapping
+                                                                    in the 16FTT at transonic speeds.
+    image to facilitate process
+
+                                                                    2.1.2.     Colored   Oil
+2.1.1.2. Application         in   Langle3.,    Unitary      Plan
+Wind Tunnel
+                                                                    Kevin M. _¢e/ia
+                                                                    Boeing HSCT High Speed Aerodynamics
+     An ultraviolet oil technique was used in the low
+Mach number and high Mach number test sections in
+UPWT to visualize the surface streamline           patterns         Gelsomina Cappuccio
+about wings, bodies, and other aerodynamic       shapes at          NASA Ames Research            Center
+supersonic speeds. A uniform coating of a mixture of
+RPM Day-Glo yellow fluorescent          liquid and W140                  This qualitative surface technique uses dots of dif-
+gear oil was painted onto the bare metal model surface              ferent colored oil to trace out the flow over the model
+area. The model roll angle orientation was upright or               surface.    The colored-oil     technique     is used for observ-
++90 °, depending on the region of interest. The base of             ing surface flow features and was applied by the Con-
+the model was typically "plugged"         with tissue and           figuration Aerodynamics    Wind-Tunnel-Test  Team in
+tape to prevent oil from migrating into the fuselage                a number of wind tunnels. These include the BSWT,
+cavity and contaminating    the internal instrumentation.           UPWT,       and 16FTT. Application          details follow.
+                                                                              Oil mixtureforsupersonic
+                                                                                                    application:
+
+                                                                                  Fordots--
+
+                                                                                        Mix 2 tubesof oil paint (1.25 oz each),
+                                                                                        4 heapingtbsp.of temperapowder,and4 oz
+                                                                                        of W50 motor oil; mix in moremotor oil
+                                                                                        if necessary
+                                                                                                   until oil easilyrunsoff mixing
+                                                                                        utensil
+
+                                                                                  For   base--
+
+
+                                                                                        Use same mixture          as for dots but add an addi-
+                                                                                        tional 4 to 6 oz ofoil        (8 to i0 oz total)
+
+
+                                                                              Oil mixture     for transonic      application:
+
+
+                                                                                  For dots--
+
+
+                                                                                        Mix 2 tubes of oil paint, 4 heaping tbsp. of
+                                                                                        tempera powder, and 4 oz of W50 motor oil
+
+
+                                                                                  For base--
+
+
+                                                                                        To be determined
+
+
+                                                                              Application     process:
+
+
+                                                                                  Paint thin base coat of light-colored   oil (white)
+                                                                                  over entire area of interest; base coat should be
+           Figure    1. Example    of UV oil image     in UPWT.
+                                                                                  more viscous than colored-oil    dots and be thin
+                                                                                  enough to spread easily onto wing (i.e., brush
+2.1.2.1.      Application         in Boeing       Supersonic       Wind           marks should disappear shortly after application)
+Tunnel
+                                                                                  Apply small (l/8-in-diameter)  colored-oil dots in a
+                                                                                  densely packed pattern over the area of interest
+     The       procedures         for obtaining       colored-oil-flow            (1- by 1-in. matrix) by using a syringe needle. On
+photographs          in BSWT are given in this section.                           forebody,       space dots 2 in. streamwise
+
+                                                                                  To run, set angle            of attack and perform full
+Equipment           used:                                                         blowdown   tunnel           run (drain tanks down to
+                                                                                  approximately        50 psi)
+     Linseed oil paint (white, yellow,               blue, red)
+                                                                              Photography        process:
+     W50 motor oil
+
+     Tempera          paint                                                       Capture initial and final condition of paint by
+                                                                                  using either a digital camera or a 35-ram single-
+     Plastic syringe needle                                                       lens reflex (SLR) camera
+
+                                                                          3
+Issuesfor future:                                                    surface flow field indicating               both flow direction          and
+                                                                     the presence of separation.
+     Findmixturefor oil dotsto duplicateBSWT628
+     flow-visualization
+                      images                                         Equipment       used:
+     Validate BTWT transonicmixture in BSWT
+     transonicinsert                                                     Boeing VIAS
+
+                                                                         PT4000 Norman power                   packs,      strobe    lights and
+2.1.2.2. Application            in   Langley      Unita W     Plan       UV filters, UV goggles
+Wind Tunnel                                                              Cameras        and UV filters
+
+                                                                                Sony medium-resolution      CCD video                      camera
+     The exact same          technique    used    in BSWT      was
+                                                                                (8 bits, 640 by 480 pixels)
+applied in UPWT.
+                                                                                Kodak        DCS460     high-resolution          digital     cam-
+                                                                                era (14 bits, 1024 by 1024 pixels)
+2.1.2. 3. Application        in Langlo,     16-Foot     Transonic
+Tunnel                                                                          Hasselblad        still camera
+
+                                                                         UV      monofilament          treated     with     UV      fluorescent
+     The exact same          technique    used    in BSWT      was       dye
+applied in 16FTT.
+                                                                         Carboset       526 polymer         glue (requires          MSDS)     and
+                                                                         acetone
+2.1.3.     Fluorescent      Minitufts
+                                                                         Syringes     and scalpels       for application         of minitufts
+
+Kevin G. Peterson
+Boeing HSCT High Speed Aerodynamics                                  Adhesive    mixture      preparation:
+
+
+     The fluorescent      minituft  technique    (ref. 1) is             Prepare syringe needles by cutting off sharp tip
+qualitative     and involves    the illumination     of UV               with a jeweler's file or by any other means which
+fluorescent-filament   tufts applied to the model surface.               does not crimp the needle; also have dummy
+                                                                         plugged needle ready (keep needle on syringe
+For a snapshot of the flow field--indicating   both flow
+direction and the presence of separation--only    a short                until application process begins)
+duration of UV illumination is needed for the tufts to                   Pour chemically    pure acetone                 into container       that
+give off fluorescence,   whereas            for video      a long-       will not contaminate it
+duration UV source is required.
+                                                                         Pull 5 cm 3 of acetone             into syringe,     turn vertically
+                                                                         (needle up), and fill rest of syringe               with air
+2.1.3.1. Application           in    Langle3.,    Unitaw     Plan
+Wind Tunnel                                                              Remove          needle       and      replace       with      plugged
+                                                                         (dummy)        needle
+
+     The procedures     for fluorescent           minituft  flow-       Hold syringe vertically,  with needle down, and
+visualization data obtained in UPWT              are given in this      gently pull out plunger being careful not to douse
+section.                                                                yourself with acetone
+
+                                                                        Pour in I cm 3 of glue crystals
+Method      overview:
+                                                                        Squirt in =0.2 cm 3 of Krylon paint; paint is used to
+                                                                        eliminate    fluorescence of tuft tail under glue,
+    The        fluorescent      minituft    flow-visualization
+                                                                        which may lead to misinterpretation        of flow-
+method       involves    illumination    of UV fluorescent-
+                                                                        visualization data
+filament    tufts applied   to the model surface        with high-
+intensity UV light for a short duration. Images taken                   Gently insert end of plunger               into syringe and turn
+during the tuft illumination provide a snapshot of the                  vertically      (plunger     down)
+    Putworkingneedlebackon syringeandexpelthe                off of surface   at any point because   more difficult
+    remainingair                                             to apply glue dots; for 1.675-percent NCV model,
+                                                             a spanwise spacing of 0.38 in. was chosen
+    Replace
+          workingneedlewith dummyneedle
+                                                             Once filament     application   is complete,    take
+    Storefor 1 dayandrotateoccasionallyso paint              syringe with prepared adhesive solution and shake
+    mixeswith solution                                       vigorously to ensure that paint is properly mixed
+
+                                                             With paper towels handy, replace dummy needle
+Minituft materialselection:
+                                                             with working needle and begin glue dot applica-
+                                                             tion process; getting an appropriate adhesive flow
+   Minituft materialselectionis drivenby durability          rate is a bit tricky; best if an ample amount of air is
+andtuft brightness.
+                 TheBoeingtuft expert(JamesP.                drawn     into the syringe  and plunger    gently
+Crowder) indicated that nylon is better for exposure         depressed; best method of keeping glue dot height
+but is fragile, whereas polyester is more durable but        to a minimum is to draw needle tip gently across
+provides for a less bright image. Therefore if adequate      filament (normal     to the direction  of filament
+lighting and high-quality       cameras   are available,     travel), which seems to create a wide but very low
+polyester is the natural choice because retufting part of    profile glue dot; for 1.675-percent   NCV, a tuft
+the model is a task to be avoided. If lighting is critical   length of 0.038 in. is desirable
+and the number or duration of the required tuft runs is
+kept to a minimum,    nylon should be considered.            Starting at leading edge, place dots (fig. 3) at
+                                                             desired intervals down length of one filament line;
+                                                             best not to work over filament line on which glue
+Minituft    application (on     1.675-percent nonlinear
+                                                             dots have already been applied; working         from
+cruise validation model--one      model from a stable of
+                                                             inboard to outboard is best choice; if filament does
+models used in HSR Program):
+                                                             stand off of surface at any point, either add a small
+                                                             piece of tape or hold it against surface while adhe-
+    Clean surface of model to be applied with tufts to       sive is being applied and let cure for a couple of
+    remove oil and other contaminants                        minutes
+
+    Start at wingtips     and lay minituft    filament       Once dot application     is complete, begin cutting
+     streamwise,  from leading edge to trailing edge,        tufts; with very sharp scalpel, GENTLY slice each
+    taping at both ends as shown in figure 2; best to        tuft just ahead of glue dot for following tuft as
+    apply tufts to one surface (upper or lower) at a         shown in figure 4; each person has a method of
+    time; keeping the filament fairly loose to follow        cutting the tufts; needless to say the surface must
+    the contours of surface; filament should not stand       not be scratched
+
+
+
+
+             Figure 2. Minituft layout pattern.                      Figure 3. Application of glue dots.
+                  Figure4. Cutting of minitufis.
+
+     Remove tape from leading and trailing               edges and
+     move on to next surface
+
+     After     all surfaces      are prepared,     store remaining
+     adhesive; any work done on model will require
+     reapplication of some of tufts
+
+
+     Figure 5 shows three views of the minitufted NCV
+as a visual reference of the prepared model. Standard
+practice is to provide as much UV light as possible and
+close the aperture of the camera if overexposure    is a
+problem.      The constant-source UV lights which were
+available     for Test 1703 were borrowed from a PSP
+system and        were    used     primarily     for UV-oil   flow-
+visualization     runs.
+
+
+Equipment       setup:
+
+
+    Light sources--
+
+            Both constant-UV and flashlamp light sources
+            were successfully       used during the course of
+            UPWT Test 1703. Flashlamps provide a more
+            instantaneous    view of the flow field, whereas                  Figure 5. Minitufted NCV model.
+            the constant-light       Sources:provide     a time-
+            averaged    image. For very steady flows, the                 The Boeing      VIAS    system for minituft   flow
+            constant-source     lights may be able to provide             visualization    uses   flashlamp  systems    with
+            adequate data. For most situations, it is highly              UV transmitting filters which are triggered by
+            recommended        that flashlamps       be applied.          the VIAS computer. For UPWT Test 1703,
+            However,     constant-source      lights are invalu-          2000 W/sec flashlamps were driven by Norton
+            able because they allow the test participants to              PT-4000 Power Packs. The number of lamps
+            view the tufts during the course of the run                   required depends on the area to be illuminated
+            whereas flashlamps do not.                                    and the wind tunnel. The window material
+
+                                                                      6
+           must be transparent    to the UV light. Rohm
+           and Haas Plexiglas       acrylic is moderately
+           transparent and ordinary plate glass is usually
+           more than sufficient. Because the fluorescent
+           tuft visualization   process involves illuminat-
+           ing the model in the UV spectrum and imag-
+           ing the tufts in the visible spectrum, the filters
+           used to block the reflected         light virtually
+           eliminated the problem of model glare.
+
+
+     Cameras--
+
+
+           Three different cameras were used with vary-              Figure 6. Medium-resolution Sony CCD camera image of
+           ing degrees of success in obtaining minituft              upper wing-body obtained by VIAS computer.
+           images: medium-resolution    Sony CCD video
+           cameras, high-resolution  Kodak DCS460 digi-
+           tal camera, and Hasselblad still cameras. Each
+           camera type used had its advantages           and
+           disadvantages.     The medium-resolution     Sony
+           cameras provided instantaneous      access to the
+           images but provided lower image quality. The
+           high-resolution     DCS460     images    were    of
+           excellent quality, but the image transfer and
+           viewing     process made real time or even
+           during-run viewing of the images impossible.
+           The Hasselblad      images were of the highest               Figure 7. Hasselblad still image of upper wing surface.
+           quality but required several days of turn-
+           around     time.    Sample   images    from    the
+           medium-resolution         CCD     camera      and         capability, strobe lights, and power packs which have
+           Hasselblad    cameras    are presented   in figures   6   been successfully integrated should be available. It is
+           and 7.                                                    highly recommended      that either the Boeing VIAS or
+                                                                     similar NASA system be used during future minitufi
+                                                                     testing. This usage has the potential of dramatically
+2.1.3.2.    General     Comments"     on Minituft   Testing          reducing the frustration and head scratching associated
+                                                                     with attempting to integrate and debug a new system
+      Although minituft testing has the potential to pro-            on the fly.
+vide a great deal of information about the surface flow
+field, it requires      significant     equipment     and time
+investment.    In order to minimize the impact of the                2.2.     Surface     Property       Techniques
+minitufi runs on the overall test schedule, it is highly
+recommended       that a system be used (computer, power             2.2.1.     Oil Film Interferomet_
+packs, lights, and cameras) which has been success-
+fully integrated prior to the test. Having personnel
+                                                                     Robert A. Kennelly, Jr.
+familiar with the intricacies of the system and familiar             NASA Ames Research Center
+with minituft application         techniques   is also highly
+desirable. The Boeing VIAS system used during Test
+1703 was a bare-bones          system pieced together from           2.2.1.1.    Method    Overview
+available    equipment     because      the primary     systems
+were committed to other tests. If enough lead time is                     Oil film interferometry    (refs. 2 to 6) is both a
+provided,    a system with high-resolution          cameras, a       qualitative and quantitative technique for determining
+powerful     computer      with significant       data storage       skin friction. Interference fringes are produced when a
+film of transparent oil, thinnedby the actionof the       125°F.Theresultingfringespacings
+                                                                                         wereontheorder
+fluid passingoverthetestarticle,is illuminatedby a        of 1.8mm(laminar)and3.0mm(turbulent)andcould
+monochromatic   light source.With somesimplifying         be measuredfrom a photographto within a few
+assumptions, thespacingof thefringesis proportional       percentwitha caliper.
+to surfaceshearin thedirectionperpendicular  to the
+leadingedgeof theoil film. Asa qualitativetool,the          Constancyof the IocaIskin friction coefficient
+techniquemay be usedto observeboundary-layer              wasassumed.
+                                                                    Skin frictioncoefficientis difficult to
+transition.                                               assess directly, but this source of error can be brought
+                                                          under control (for reasonable       flows) by varying the
+    Oil film interferometry is a relativelynonintrusive   run time--for      a sufficiently long run, the effect of
+technique  formeasuring  skinfrictiononmodelsandis        nonconstant     skin friction coefficient  should become
+discussedin references2 to 6. No specialmodel             negligible.
+preparationis needed,althoughan opticallysmooth
+surfaceis required.This conditioncan be inexpen-          2.2.1.2. Application         in   Langley     Unitar),      Plan
+sivelyproduced   by athinlayerof DuPontMylarpoly-         Wind Tunnel
+esterfilm temporarilygluedto the model.Dedicated
+runsatconstantwind-tunnelconditions     arerequiredto          Figure 8 shows the model          installed   in one    test
+obtainthe flow-visualizationimagesfor analysis.A          section of the UPWT.
+line or dot of transparent siliconeoil (Dow Coming
+DC-200Fluid)graduallythinsunderthe influenceof
+                                                               The vertical orientation of the wings proved to be
+surfaceshear.Undersuitableassumptions,     theslopeof
+                                                          advantageous     during post-run    photography  of the
+theoil surfaceat theleadingedgeof theoil is simply
+                                                          fringe images, permitting     near normal illumination
+relatedto thecomponent    of localskinfrictionperpen-
+                                                          and viewing angles. Three patches of black Top Flite
+dicularto theedge.Opticalinterferometry     providesa
+                                                          MonoKote plastic are visible on the upper surface of
+sensitiveprobefor measuring     thewedgeangleof the
+film.                                                     the left wing.
+
+                                                                The Iwasaki reflector lamps in the figure are those
+     Theoil is nontoxicandhasa lowvaporpressure.          used for obtaining     the interference    images, but in
+It is availablein a widerangeof kinematicviscosities      actual use their light is bounced off a large white card
+from10to 30000cSt(5 percent,     at25°C).Wefoundit        to provide a uniform, diffuse source against whose
+necessary  to calibratetheoil viscosityat severaltem-     reflection in the Mylar film the interference fringes are
+peratures in therangeof interestbecause thereissome       visible. The lamps are 160-W, self-ballasted,       high-
+evidence  thattheviscositydriftsslowlyovera period        intensity  discharge mercury  type, with a strong
+of months.(Otherrelevantpropertiesuchasdensity            spectral peak at a wavelength  of 546.1 nm (green).
+andindexof refractionstill needtobeinvestigated.)         This peak is isolated by photographing   through a
+
+    The interference
+                   fringeswereeasilyseenby eye
+andwerenot too difficult to photograph,
+                                     althougha
+tripod was neededto permit the long exposures
+(typically0.5to2.0see),andsmall ensopenings
+                                          were
+requiredfor adequate
+                   depthof field.
+
+    Wind-tunnelrun timesmustbe long enoughto
+rendernegligiblethe effectsof startupandshutdown
+transientsandthe oil viscositychosento producea
+convenientfringespacingin thatlengthof time.The
+demonstration test for the HSR programusedrun
+lengthsof 30min of"on condition,"with startupand
+shutdowneachtakingabout5-10min. Oil viscosity
+wasnominally10000cSt,andtotaltemperature     was                        Figure 8. Model installed in UPWT.
+greenfilter. Variousfilters havebeenused,ranging
+from simple dyed photographicfilters to dichroic
+processfilters to custom-made    interferencefilters.
+Althoughmoreexpensive,    thelatteris preferred.
+
+   Figure9 showsanexampleof theresultsobtained
+onanHSRmodel.
+
+   Interferencefringesare clearly visible, having
+formeddownstream     of threespanwiseoil lines.The
+boundary-layer  trip consistedof epoxy dots large
+enoughto provoketransition,andthemiddleonethird
+hadno trip applied.A jump in fringespacingfrom                      Figure 9. Closeup of HSR model showing typical results.
+broadlyspacedfringesdownstream   ofthedotsto more
+narrowlyspacedfringesin the presumablylaminar                      2.2.2.1.    Application       in Boeing      Supersonic    Wind
+regionis clearlyvisible.                                           Tunnel
+
+
+    Thezigzagpatternin thefringesnearthe leading                        The procedures for IR transition      photographs
+edgeis significant.A detailedlookatthedotwakesin                   obtained in BSWT are given in this section.
+a low-speedfacility revealedpatternsthatwereeven
+morecomplex.Theoscillationsdieoutasthedistance                     Equipment     used:
+fromtheoil linetothetransitionstripincreases.
+                                                                        lnframetrics     760 IR camera
+
+    Thestreaksin theoil suggestsurfacestreamlines,                      White Krylon (spray paint)
+but thesehavesometimes   beenmisleadingin other
+work.Thepathof anoil dropletonthedryMylar film                     Preparation    process:
+surfaceis not necessarilya reliableindication;we
+suggestanothertechniquesuchasUV fluorescentoil                          Apply thin base coat of light white Krylon paint
+flow and a completelywetted surfacefor such                             over entire area of interest and allow to dry; use
+visualization.
+                                                                        backside of black 100 grit sandpaper to smooth
+                                                                        paint (base coat should be smooth to the touch and
+2.2.2.   IR Thermography                                                "feel" only slightly rougher than bare model
+                                                                        surface
+
+Kevin M. Mejia                                                          Heat outboard        panel with heat gun until too hot to
+                                                                        touch
+Boeing HSCT High Speed Aerodynamics
+                                                                        Set camera temperature         sensitivity   range to 20°C
+     IR thermography   (ref. 1) is a qualitative surface
+                                                                        Center IR camera temperature        scale by using
+technique    and uses the principle that laminar and
+                                                                        heated wingtip prior to running (10 ° to 30°C is
+turbulent   flows have different surface heat-transfer
+                                                                        good starting point for hot outboard wing)
+rates during wind-tunnel      testing. The IR illumination
+exposes these regions on the surface with different
+rates in order to facilitate, in a global sense, the identi-       Run and photography          process:
+fication of the dominant flows and where boundary-
+layer transition    occurs. This technique        has been              For M = 2.4, Re = 9 × 106/ft,        and wingtip--
+employed     in a variety of wind tunnels; however,
+the Configuration     Aerodynamics       Wind-Tunnel-Test                     When tunnel starts up, have wingtip initially
+Team only used it in BSWT. The specific application                           off scale (30+°C); let wing cool down approx-
+practices used in that tunnel are detailed.                                   imately 3-5 sec after model gets on condition
+
+                                                               9
+          before adjusting  temperature    scale to allow           as that of the IR thermography.  However, this surface
+          wing temperatures   to fall within temperature            application uses a chemical which sublimates at differ-
+          scale                                                     ent rates depending on whether the flow is laminar or
+                                                                    turbulent. Hence, it can also be used quantitatively     to
+          As run progresses, adjust camera temperature
+                                                                    measure the spatial location of boundary-layer     transi-
+          scale by approximately-l°C/sec        to keep as
+                                                                    tion. This technique was employed by the Configura-
+          much of laminar region as possible visible in
+                                                                    tion Aerodynamics      Wind-Tunnel-Test    Team in a
+          monitor; at end of blowdown tunnel run, low
+                                                                    variety of industry and NASA wind tunnels.
+          end of scale should be at - 10 ° to - 15 °C
+
+
+     For M = 2.4, Re = 12 x 106/ft, and wingtip_                    2.2.3.1.    Application      in Boeing       Supersonic      Wind
+                                                                    Tunnel
+
+          Set initial temperature      scale to 15 ° to 35°C
+                                                                        The procedures for obtaining sublimation                photo-
+          Adjust temperature        scale by-l.5°C/sec
+                                                                    graphs in BSWT are presented in this section.
+
+     For M = 2.4, Re = 14 x 106/ft, and wingtip--
+                                                                    Equipment      used:
+
+          Set initial temperature      scale to 20 ° to 40°C
+                                                                        Naphthalene
+          Adjust temperature       scale by -2°C/sec                    Allied Chemical        Genesolve     solvent
+
+Issues for future:                                                      Air sprayer with supply line set to 30 psi
+
+                                                                        Portable    spray booth
+     Determine technique       for transonic    Mach numbers
+                                                                        Two fans
+     when using transonic      insert
+
+     Determine process for forebody and inboard wing
+                                                                    Sublimation     mixture:
+     laminar runs--thick    sections are out of easy view-
+     ing range because viewing portal in BSWT allows
+                                                                        Mix until      Genesolve     solvent     is saturated     with
+     only limited visibility of model: portal could be
+     rotated within circular window blank to view                       naphthalene material, usually 8 parts Genesolve             to
+                                                                        1 part naphthalene by volume
+     inboard    wing, but nose viewing would be prob-
+     lematic;   angling of camera could also help
+                                                                    Application    process:
+     Determine effect on boundary layer of preheating
+     outboard wing panel: Does artificial heating used
+                                                                        Erect spray tent around model, direct fans to blow
+     to produce IR imaging cause premature boundary-
+                                                                        air out of diffuser (make sure diffuser "garage"
+     layer    transition   relative  to standard testing
+                                                                        door is open), open bay door to outside, dress
+     conditions?     What adjustments should be made to
+                                                                        technician appropriately, that is, protective cloth-
+     calculate laminar run drag effect?
+                                                                        ing and respirator
+
+2.2.3.   Sublimation                                                    Apply material on lower surface           first
+
+                                                                        Run blowdown tunnel for extended wind-on time;
+Kevin M. Mejia                                                          watch  to make   sure that sufficient  material
+Boeing HSCT High Speed Aerodynamics                                     remains for pictures;       adjust    run time (longer      or
+                                                                        shorter) as necessary
+
+Aga Goodsell
+NASA Ames Research        Center                                        For Re = 9 × 106/ft -
+
+
+     Sublimation (refs. 1 and 7) is another qualitative                        Rotate model 90 ° so that wings are vertical        for
+surface technique and is based on the same principle                           application
+
+                                                               10
+           Clean entire surfaceto be sprayedwith                                 2.2.3.2. Application          in   Langl_        Unitary     Plan
+           Genesolvesolvent;if modelhasbeenrecently                              Wind Tunnel
+           run,warmsurfaceto roomtemperaturewith a
+           heatgun                                                               Equipment      used:
+           Apply sublimationmaterialdirectlyto bare
+           metalholdingspraynozzleperpendicular   to                                 Fluorene
+           mode[surfaceand approximately8-10 in.                                     Allied Chemical     Genesolve      solvent
+           away;makesurethat entireinboardleading
+           edgeis coveredby sublimationmaterial;to                                   Air sprayer with supply line set to 30 psi
+           easilyachievethisholdspraygunat45° angle                                  Portable    spray booth
+           to leading edge; do three slow, even passes
+                                                                                     Two fans for ventilation
+           over entire wing (leading-edge       highlight to
+           trailing edge), paying close attention to apply-                          Two Hasselblad        cameras,     one    per   side   of test
+           ing an even coat; do an additional             three passes               section
+           on inboard wing segment only
+                                                                                     40-ram wide-angle      lens to capture entire wing
+
+    For Re = 12 x 106/ft and 14 x 106tft -                                           Four lights, two per side of test section
+
+                                                                                     70-mm,      monochrome,        ISO 400, Tri-X     film with-
+           Apply sublimation material as instructed for                              out special processing
+           Re = 9 x 106/ft; do only two slow, even passes
+           over entire wing (leading-edge       highlight to
+                                                                                 Test setup procedure:
+           trailing edge), paying close attention to apply-
+           ing even coat; do additional three passes on
+                                                                                     Mount two video cameras, one on each side of the
+           inboard wing segment only
+                                                                                     test section, and use hand-held  camcorder   for
+                                                                                     closeup     shots during run
+Photography      process:
+                                                                                     With stencil and spray paint, paint trip dot height,
+                                                                                     run number, and date on both upper and lower
+    Snap      images     immediately     after blowdown            tunnel
+                                                                                     surfaces in regions without sublimation material
+    run
+                                                                                     Before spraying sublimation      mixture on model,
+    Take pictures     directly  above upper or lower
+                                                                                     leave a few isolated dots on either side of the wing
+    surface focusing on inboard and outboard wing
+                                                                                     so that transition   wedges    are clearly    visible;
+    sections and the LE break regions. Make certain
+                                                                                     depending on wing sweep, two or three dots may
+    that transition location can be clearly seen
+                                                                                     be removed on either side of isolated dot; for
+    Roll      model      wings    vertically      to    facilitate    the            HSCT tests, three dots were removed on highly
+    process                                                                          swept inboard wing and two dots outboard
+
+    Photograph         some zoom images with ruler in place
+                                                                                 Sublimation     mixture and procedure:
+    Measure   laminar run at several                   locations     with
+    ruler and hand sketch transition                    location     with            Mixture      is saturated      solution   of    fluorene    in
+    measurements                                                                     Genesolve (1:8 parts by volume) passed through a
+                                                                                     coarse filter; Binks Model 2001 spray gun was
+Issues for future:                                                                   used to apply the sublimation material; this spray
+                                                                                     gun uses compressed air (can containing solution
+                                                                                     is not pressurized)   to produce a high-velocity jet
+    Determine         technique   for transonic        Mach numbers
+                                                                                     of air and sublimation solution is siphoned into air
+    in BSWT
+                                                                                     stream by suction; full application (both surfaces)
+    Changing the sublimation chemicals                    is needed at               required   approximately     1.5 qt of mixture   for
+    higher Mach numbers (see ref. 7)                                                 Reynolds number of 4 x 106
+
+                                                                            11
+    Forconsistency of application,spraymaterialon                                 Problemswith lighting needto be improved;
+    warmmodel,eitherafterhavingrunmodelor by                                      because  websonoutsideof testsection,lightingis
+    heatingmodelwith heatlampsovernight;tomain-                                   difficult to control,causingglarein barespotson
+    taina constantcoating,spraymanylight coatings                                 model,which makesanalysissomewhatmore
+    while frequentlyalternatingbetweenupperand                                    difficult in thoseareas
+    lowersurfaces
+                                                                                  Try usingUV illumination,with suitablefiltration
+                                                                                  on cameralens,to seeif recordingjust fluores-
+Photography
+         process:                                                                 cenceof fluorenematerialunderUV canreduce
+                                                                                  glare
+    f-stopwasf/ll andshutterspeedwas 1/15sec
+    for still camerawith high intensityfloodlamps;                          2.2.3.3.     Application     in Langley         16-Foot   Transonic
+    with two400-W-sec  strobes,exposure wasf/11at                           Tunnel
+    1/125sec
+    Camera      should be focused     with model pitched          in            Development         work was done in 16FTT                during
+    running     position                                                    Test 508 using         much of what was learned               in the
+                                                                            UPWT.
+    Two Polaroid cameras needed to check               exposure
+    settings for Hasselblad cameras
+                                                                            2.2.3.4.       Application         in      National       Transonic
+    Take Polaroid      pictures   to determine     proper   expo-           Facili O,
+    sure settings
+
+    Before start of run, take two Hasselblad pictures                           This same technique           has been used on occasion           in
+                                                                            NTF.
+    to ensure that camera     is ready for first data
+    photograph
+                                                                            2.2.4.     Pressure   Sensitive         Paint
+    Take picture with camera         lens covered     to signify
+    true beginning of run
+                                                                            James H. Bell
+    Turn on videotapes    so that         entire    sublimation             NASA Ames Research           Center
+    process can be documented
+
+    After tunnel start, set block to obtain desired            free-        Cli[ford J Obara and Gary E. Ericla9on
+    stream Mach number                                                      NASA Langley Research Center
+
+    Pitch strut was to desired      angle of attack                              PSP (refs. 8 and 9) is a quantitative  surface tech-
+                                                                            nique and takes advantage       of the chemistry     of a
+    Start pictures at l-min intervals when nearly on
+                                                                            special fluorescent paint that varies in brightness with
+    condition (Note: This is good time to verify that
+                                                                            air pressure (partial pressure of oxygen). The paint,
+    both cameras are advancing properly)
+                                                                            when applied to a model and illuminated       with either
+    Run tunnel until most of sublimation            material     on         UV or blue lights, is excited under both wind-on and
+    upper and lower surfaces is scrubbed off in turbu-                      wind-off test conditions.   These paint images on the
+    lent region. (Note: A data point is recorded simul-                     model   are recorded      by using specialized    video
+    taneously    with each    picture  so that tunnel                       cameras during testing. After processing,   the images
+    conditions are recorded during run but data not                         show quantitative   pressure data and can be mapped
+    corrected    for side flow angularity)                                  onto a model surface geometry for comparison       with
+                                                                            CFD or calculation of model loads.
+
+Issues for future:
+                                                                            2.2.4.1.    General    Procedure
+    40-mm lens may be too wide; using a lens that can
+    zoom more closely onto the areas of interest may                             First paint model with PSP paint; illuminate               with
+    be preferable                                                                either UV or blue lights to excite paint
+
+                                                                       12
+    Imagesof modelrecordedduringtest by using                      Typical    PSP accuracy       in Co:
+    specializedvideo cameras;after processing,
+    imageshowquantitative  pressure  dataandcanbe                       This is the rms difference between pressure                  tap
+    mappedontomodelsurfacegeometryforcompar-                            data and PSP data at the tap locations.
+    isonwith CFDor calculationof modeloads(see
+    refs.8 and9 foradditionaldetailsanddocumented
+                                                                   Notes:
+    applications);accuracyvariesfrom0.02in Co at
+    transonicand supersonicspeedsto 0.15 at low
+    subsonic speeds                                                     These comments           are tunnel specific.
+
+    Problemswiththistechnique  includesensitivityto
+    temperaturevariations,largemodeldowntimefor                    2.2.4.2.   Application         in Ames    12 ft Pressure        Wind
+    paintapplication,andlow datarates,especiallyin                 Tunnel
+    low-speedwindtunnels
+                                                                   Status:
+   PSPcapabilityfor selectedgovernment   facilities
+ispresentedinthissectionin theformatof thefollow-
+ingdefineditems:                                                        Operational
+
+
+Status:                                                            Downtime        for PSP application:
+
+                                                                        2 shifts
+    Statusis "operational"if PSPhasbeenusedin the
+    facility previously,or "implementation"if PSP
+    workis plannedbuthasnotbeendonepreviously.                     Data acquisition      rate:
+    This category includes tunnels in which      PSP was
+    used before the tunnel was refurbished.
+                                                                        1 3 min/data point + 100 percent                extra   time for
+                                                                        wind-off images
+Downtime    for PSP application:
+
+    This is the number     of shifts the tunnel cannot   be        Typical PSP accuracy          in Cp:
+
+    run because of PSP application. Actual schedule
+                                                                        0.2 for M= 0.2 at 1-2 atm; 0.3 for M= 0.2 at
+    impact could be lower because paint application                     3-6 atm
+    could be performed   over weekend or off shift.
+    Downtime for PSP removal is typically 0.5 shift.
+                                                                   Notes:
+
+Data acquisition   rate:
+                                                                        PSP applications   in 12 ft tunnel tend to involve
+    This is the time per data point. The total data                large, complex models for which painting is difficult
+    acquisition  time is composed      of two compo-               and require a large number of cameras to get all the
+    nents-actual    wind-on time of image recording                desired views. In the past, this difficulty has led to
+    and required wind-off calibration--with  the latter            longer than anticipated    setup times and lower than
+    being a fraction of former. The calibration time is            anticipated  data rates. PSP flow intrusiveness     is a
+    typically   larger for low-speed     wind tunnels              concern for subsonic high-lift models but has not been
+    because of the lower PSP signal-to-noise    ratio at           observed on delta wing models. Optical access is very
+    low speeds. Selected reduced data are typically                good for semispan and vertically mounted models and
+    available 1-2 hr after data acquisition, with the              for the upper surface of horizontal     models. Optical
+    complete reduced data set available within 2 wk to             access for the lower surface of horizontally   mounted
+    ! mo, depending on test complexity and priority                models is fair to poor.
+
+
+
+                                                              13
+2.2.4.3.    Application         in Ames    7 x    I0 ft       Wind        Notes:
+Tunnel
+                                                                              PSP was used in this facility before refurbishment,
+                                                                          but acoustic modifications    to the test section since
+Status:
+                                                                          then have severely restricted optical access. PSP capa-
+     Operational                                                          bility will depend on the construction      of in-tunnel
+                                                                          pods to hold lamps closer to the model or the use of
+                                                                          special projection lamps. PSP application to the large
+Downtime        for PSP application:
+                                                                          models used by the 40 x 80 ft tunnel will be time-
+      1-2 shifts                                                          consuming.    Large translucent panels installed in the
+                                                                          contraction and diffuser sections of this tunnel admit
+                                                                          sunlight,    making it difficult       to use PSP during daylight
+Data acquisition      rate:                                               hours.
+
+     2-5 min/data point + 100 percent            extra time for
+     wind-off images                                                      2.2.4.5.    Application         in Ames      80 x 120 fi     Wind
+                                                                          Tunnel
+
+Typical PSP accuracy          in Cp:
+                                                                          Status:
+     0.1-0.15      for M = 0.2 and 0.2 for M = 0.1
+                                                                               No PSP work planned
+Notes:
+                                                                          Notes:
+     This is a good facility for PSP work at low speeds
+(M = 0.1). Optical access is very good for semispan                             PSP testing would be quite difficult in this facility
+and vertically    mounted models and for the upper                        because of the large size of the test section, low maxi-
+surface of horizontal models. Optical access for the                      mum flow speed, and natural light entry into the test
+lower surface of horizontally mounted models is poor.                     section.
+
+
+2.2.4.4.   Application         in Ames    40   x 80 fi    Wind            2.2.4.6.    Application       in Ames     l l fi Transonic   Wind
+Tunnel                                                                    Tunnel
+
+
+Status:                                                                   Status:
+
+     Implementation                                                            Implementation
+
+
+Downtime        for PSP application:                                      Downtime      for PSP application:
+
+     2 shifts (estimate)                                                       1-2 shifts (estimate)
+
+
+Data acquisition      rate:                                               Data acquisition     rate:
+
+     5 min/data  point + 100 percent           extra   time    for             5-10 sec/data point + 25 percent             extra   time for
+     wind-off images (estimate)                                                wind-off images (estimate)
+
+
+Typical PSP accuracy          in Cp:                                      Typical PSP accuracy          in Cp:
+
+     0.2 for M = 0.2 (estimate)                                                0.02 at transonic       speeds (estimate)
+
+
+
+                                                                     14
+Notes:                                                                     Data acquisition       rate:
+
+                                                                                5-10 sec/data point           + 25 percent         extra   time for
+    PSPwas usedsix times in this facility before
+                                                                                wind-off images
+refurbishment  with goodto excellentresults.Optical
+accessis fairlygoodfromall sides.
+                                                                           Typical PSP accuracy            in Cp:
+
+2.2.4. 7. Application          in Ames     9 × 7.fi Supersonic                  0.03 at transonic         speeds
+Wind Tunnel
+
+                                                                           Notes:
+Status:
+                                                                               Fully automated eight-camera    system allows very
+     Implementation
+                                                                           good optical access from all sides.
+
+Downtime     for PSP application:
+                                                                           2.2.4.9.    Application         in AEDC           Transonic     4T Wind
+     1 2 shifts (estimate)                                                 Tunnel
+
+
+Data acquisition      rate:                                                Status:
+
+     5-10 sec/data point + 25 percent              extra time for               Planned
+     wind-off images (estimate)
+                                                                           Downtime        for PSP application:
+Typical PSP accuracy           in Cp:
+                                                                                1 shift
+     0.02 at transonic        and supersonic   speeds (estimate)
+                                                                           Data acquisition      rate:
+Notes:
+                                                                                5-10 sec/data point + 25 percent                   extra time for
+                                                                                wind-off images
+     PSP was used         four    times   in this facility   before
+refurbishment    with fair to good results. Optical access
+is fairly good from the sides but poor from top                            Typical PSP accuracy            in Cp:
+and bottom. Problems using PSP include condensa-
+                                                                                0.03 at transonic         speeds
+tion at some Mach-stagnation-pressure       combinations
+(although the refurbishment     should improve this). PSP
+tests in this facility should include paint-on-paint-off                   Notes:
+flow intrusiveness checks.
+                                                                                Optical access       is fairly good from all sides.
+
+2.2.4.8. Application             in     AEDC    Transonic      16T
+Wind Tunnel                                                                2.2.4.10.      Application       in AEDC          Tunnel A
+
+
+Status:                                                                    Status:
+
+     Operational                                                                Operational      (dedicated        system)
+
+
+Downtime     for PSP application:                                          Downtime        for PSP application:
+
+     1-2 shifts                                                                 1 shift
+
+
+
+
+                                                                      15
+Dataacquisitionrate:                                                            Downtime       for application:
+
+     5-10 sec/datapoint + 25 percentextratime for                                    1 shift
+     wind-offimages
+                                                                                Data acquisition       rate:
+Typical     PSP accuracy       in Cp:
+                                                                                     5-10 sec/data point + 100 percent                 extra time for
+     0.03 at transonic        speeds
+                                                                                     wind-off images
+
+Notes:
+                                                                                Typical accuracy       in Cp:
+
+    Optical access is very good from the sides, fair to                              0,2
+poor from top and bottom.
+
+                                                                                Notes:
+2.2.4.11.      Application         in Langley      Low-Turbulence
+Pressure       Tunnel
+                                                                                     Optical access is fairly good from all sides. PSP
+                                                                                tests in this facility should include paint-on-paint-off
+Status:                                                                         flow intrusiveness checks.
+
+     No dedicated system available; however                    tests can
+     be set up on a case-by-case basis                                          2.2.4.13.       Application             in       Langle 3,   16-Foot
+                                                                                Transonic      Tunnel
+Downtime        for application:
+                                                                                Status:
+     1 shift
+
+                                                                                    Operational       (dedicated       system)
+Data acquisition      rate:
+
+     5-10 sec/data point + 100 percent                    extra time for        Downtime       for application:
+     wind-off images
+                                                                                    Less than 1 shift
+
+Typical accuracy       in Cp:
+                                                                                Data acquisition      rate:
+    0.2
+                                                                                    5-10 sec/data point + 100 percent                  extra time for
+Notes(                                                                              wind-off images
+
+
+     Optical     access      is fair, PSP tests in this facility                Typical    accuracy    in Cp:
+should include        paint-on-paint-off        flow intrusiveness
+checks.                                                                             0.03 at transonic         speeds
+
+
+2,2.4.12.      Application         in Langley       14-    by 22-Foot           Notes:
+Subsonic       Tunnel
+                                                                                     Optical access is fair. A two-camera        system is
+Status:                                                                         available with both mounted in the ceiling. UV lights
+                                                                                (up to 12) are used to illuminate the model. PSP tests
+    No dedicated          system available;        however     tests can        in this facility should include paint-on-paint-off     flow
+     be set up on a case-by-case           basis                                intrusiveness checks.
+
+
+
+                                                                           16
+2.2.4.14.       Application             in   National       Transonic         facility should include paint-on paint-off flow intru-
+Facility                                                                      siveness checks. PSP has been applied in UPWT low
+                                                                              Mach number and high Mach number test sections to
+                                                                              obtain global surface static pressure mapping and flow
+Status:
+                                                                              visualization  on selected airplane models at supersonic
+     Planned     (see section 2.2.5)                                          speeds. Several PSP chemistries based on formula-
+                                                                              tions from the University    of Washington,  Ames
+Downtime        for application:                                              Research Center, and Langley Research Center have
+                                                                              been successfully   implemented,  and an example of a
+     I shift                                                                  false-colored  PSP image of a generic delta wing con-
+                                                                              figuration tested in the low Mach number test section
+Data acquisition       rate:                                                  of UPWT is shown in figure I0. The acquisition of
+                                                                              PSP images is done simultaneously     with the measure-
+     5-10   sec/data     point + 100 percent            extra time for        ment of the model surface static pressures at numerous
+     wind-off     images                                                      discrete locations using an ESP system. The ESP tap
+                                                                              data are instrumental   to the in-situ calibration of the
+Typical accuracy        in Cp:                                                PSP images. The ESP modules are mounted internally
+                                                                              to the model and are configured with purge air lines to
+     0.03 at transonic         speeds
+                                                                              prevent contamination      of the pressure orifices during
+                                                                              the paint application.      Preparation    for PSP testing
+Notes:                                                                        requires approximately      1 shift, and includes the sepa-
+                                                                              rate application and curing ofa Krylon white base coat
+     Optical access is fair. Two cameras are available                        and the special luminescent paint to the model surface
+for overhead    (ceiling or floor application)    and one                     area of interesi. Registration    marks are applied at sev-
+in the sidewall.     Illumination is accomplished     with                    eral locations on the model surface after the paint has
+flashlamps.                                                                   fully cured. The model is rolled +90 ° to provide the
+                                                                              required optical access for high-resolution scientific-
+2.2.4.15. Application               in Langley          Unitary   Plan        grade digital cameras.   These special liquid-cooled
+Wind Tunnel
+
+
+Status:
+
+     Operational       (dedicated       system)
+
+
+Downtime        for PSP application:
+
+     Less than 1 shift
+
+
+Data acquisition       rate:
+
+     5-10 sec/data point + 100 percent                  extra time for
+     wind-off images
+
+
+Typical accuracy        in Cp:
+
+     0.03 at transonic         speeds
+
+
+Notes:
+
+
+   Optical access is f_airly good from both sides.                            Figure 10. False-colored   PSP image of generic delta wing
+Mode[ must be rotated 90 ° for testing. PSP tests in this                     configuration in UPWT.
+
+                                                                         17
+cameras
+      aremountedin thewebbingof the test section                      run. Successive   images are acquired while the tunnel
+sidewall   which, in turn, is sealed by a lighttight,                 temperature   is changing. The amount of temperature
+"walk-in" enclosure. The cameras are remotely con-                    change can vary based on the other test conditions;
+trolled via SGI and PC computer workstations, and all                 however, a 5°F change is often enough to detect the
+image files are subsequently stored on optical disks for              state of the boundary layer. Problems with this tech-
+off-line processing. Excitation of the PSP is provided                nique include large model down time for paint appli-
+by continuous ultraviolet lights that are also mounted                cations and low data rates.
+in the webbing of the test section sidewall. Several
+wind-off and wind-on images are acquired at selected                       The requirement     to change tunnel temperature     in
+angles of attack and Math number. Exposure of the                     order to obtain transition data means that TSP can only
+PSP to the UV illumination is limited as much as pos-                 be used for this purpose in temperature-controlled
+sible to avoid the adverse effects ofphotodegradation.                tunnels. Many of the facilities discussed         have this
+Postprocessing      of the PSP images is conducted on an              capability.   Using TSP for transition        detection   in
+SGI platform using a software package developed by                    non-temperature-controlled      facilities may be possible
+the Ames Research Center. Approximately          I shift is           if the model can be heated or cooled prior to a run.
+required to provide a limited transmittal         of final            Even without model heating or cooIing, TSP can still
+results. These results are typically presented       in the           be used in these tunnels to get an indication of temper-
+form of composite         plots showing the false-colored             ature variation on a model.
+images, comparisons        of the PSP and ESP static pres-
+sure distributions,    and detailed PSP pressure distribu-
+                                                                      2.2.5.1.   Application       in Ames      12 fi Pressure   Wind
+tions at selected chordwise and streamwise stations on
+                                                                      Tunnel
+the model surface.
+
+                                                                      Status:
+2.2.5. Temperature        Sensitive   Paint
+                                                                           Operational
+Cl_,zl J. Ohara
+NASA Langley Research       Center                                    Downtime       for TSP application:
+
+                                                                           1 shift
+     TSP (refs. l and 91 is a quantitative surface tech-
+nique and is similar to PSP but the paint chemistry is
+sensitive to temperature       rather than oxygen partial             Data acquisition     rate:
+pressure.    TSPs     are commonly           used    to detect
+boundary-layer     transition;   this is accomplished       by             7 sec/data point + 100 percent extra time for refer-
+generating     a temperature       difference     between  the             ence images
+model and the flow. Because the turbulent boundary
+layer convects heat more efficiently than the laminar                 Typical TSP accuracy:
+boundary layer, the transition region is marked by a
+surface temperature    change. Note that TSP detects                       2- to 3-percent     chord location    (estimate)
+transition in the same manner as IR thermography.
+                                                                      Notes:
+     The TSP paint is capable of showing boundary-
+layer transition as well as shock location over the                        For TSP studies          in the 12 ft Tunnel, a paint
+entire model surface. The model is coated with a spe-                 consisting of EuTTA          (europium (IIl) Thenoyltrifluo-
+cial fluorescent paint whose brightness changes with                  roacetonate,   formula:   (CsH402SF3)3Eu)      in model
+varying temperature.    The model is illuminated    with              airplane dope is applied over a base coat of white
+blue lights to excite the paint. The resulting emission               Krylon or RPM Rust-Oleum enamel. To obtain TSP
+from the paint is recorded by using scientific CCD                    data, the tunnel radiator is turned off and the tunnel is
+cameras. In order to detect the subtle differences often              allowed to heat to about 80 ° 85°F, which takes about
+occurring between a laminar and a turbulent boundary                  15 20 rain. A set of reference images is taken at the
+layer, the tunnel ternperature is varied over the test                same model angles where transition data are to be
+
+                                                                 18
+obtained. Then the radiator is turned back on and the                   Notes:
+tunnel cooled at the maximum rate. Good transition
+images can be obtained for about 3 rain during cool-                         TSP data have not been obtained in this facility,
+ing. The 12 ft TSP system uses flash illumination. The                  but the PSP system is capable of obtaining TSP data.
+same system can be used to take minituft data as well.
+
+                                                                        2.2.5.4. Application               in   AEDC       Transonic       16T
+2.2.5. 2. Application          in A rues 11 ft Transonic   Wind         Wind Tunnel
+Tunnel
+                                                                        Status:
+Status:
+                                                                             Planned
+     Planned
+
+                                                                        Downtime        for TSP application:
+Downtime       for TSP application:
+                                                                             1 shift (estimate)
+     1 shift (estimate)
+                                                                        Data acquisition        rate:
+Data acquisition       rate:
+                                                                             7-10    sec/data      point    + 25 percent     extra     time for
+     7 sec/data point + 25 percent          extra time for wind-             wind-off     images (estimate)
+     off images (estimate)
+                                                                        Typical TSP accuracy:
+Typical TSP accuracy:
+                                                                             2- to 3-percent       chord location      (estimate)
+     2- to 3-percent      chord location    (estimate)
+                                                                        Notes:
+Notes:
+                                                                             TSP data have not been obtained                 in this facility,
+     TSP data have not been obtained in this facility,                  but the PSP system is capable of obtaining                  TSP data.
+but the PSP system is capable of obtaining TSP data.
+
+                                                                        2.2.5.5.    Application         in Langl O, Low-Turbulence
+2.2.5.3. Application           in Ames     9 x 7 ft Supersonic          Pressure     Tunnel
+Wind Tunnel
+                                                                        Status:
+Status:.
+                                                                             No dedicated system, however               tests can be set up
+     Planned                                                                 on a case-by-case basis
+
+
+Downtime       for TSP application:                                     Downtime        for TSP application:
+
+     ! shift (estimate)                                                      1 shift (estimate)
+
+
+Data acquisition       rate:                                            Data acquisition        rate:
+
+     7 sec/data point + 25 percent          extra time for wind-             7-10 sec/data point + 25 percent                extra    time for
+     off images (estimate)                                                   wind-off images (estimate)
+
+
+Typical TSP accuracy:                                                   Typical TSP accuracy:
+
+     2- to 3-percent      chord location    (estimate)                       2- to 3-percent       chord location      (estimate)
+
+                                                                   19
+Notes:                                                                         Notes:
+
+
+     TSP data have not been obtained in this facility,                               Optical access is fair. Two cameras for overhead
+but the PSP system is capable of obtaining TSP data.                           (ceiling or floor application)  and one in the sidewall
+                                                                               will be available. Illumination   is accomplished   with
+2.2.5.6.    Application        in Langl©'      I 6-Foot      Transonic         flashlamps.
+Tunnel
+                                                                               2.2.5.8. Application                in Langley            Unitarv      Plan
+Status:                                                                        Wind Tunnel
+
+     Operational       (dedicated    system)
+                                                                               Status:
+
+Downtime       for TSP application:                                                 Operational        (dedicated        system)
+
+     1 shift (estimate)
+                                                                               Downtime           for TSP application:
+
+Data acquisition       rate:
+                                                                                        1 shift (estimate)
+     7-10 sec/data point + 25 percent                extra     time for
+     wind-off images (estimate)                                                Data acquisition         rate:
+
+
+Typical TSP accuracy:                                                               7-10 sec/data point + 25 percent                     extra     time for
+                                                                                    wind-off images (estimate)
+     2- to 3-percent      chord location       (estimate)
+
+                                                                               Typical TSP accuracy:
+Notes:
+                                                                                    2- to 3-percent          chord location        (estimate)
+    TSP data have not been obtained in this facility,
+but the PSP system is capable of obtaining TSP data.                           Notes:
+
+
+2.2.5. 7.      Application          in   National            Transonic              TSP data have not been obtained in this facility,
+Facilio,                                                                       but the PSP system is capable of obtaining TSP data.
+
+
+Status:
+                                                                               2.3. Off        Surface          Techniques
+     Planned     (expected     by 12/01/01 )
+
+                                                                               2.3.1.     Laser     Vapor       Screen
+Downtime       for application:
+
+     1 shift                                                                   Ga O, E. Erickson
+                                                                               NASA Langley Research              Center
+
+Data acquisition       rate:
+                                                                                    The laser vapor screen technique (ref. 1) is quali-
+    5-10 sec/data point           + 25 percent       extra     time for        tative and primarily used to identify off-surface  flow
+    wind-off images                                                            features, such as shocks and vortices.       The vapor
+                                                                               screen makes visible these flow features through the
+Typical TSP accuracy:                                                          introduction of a vapor, such as water, and then the
+                                                                               cross-section   illumination of a laser sheet. These
+     1- to 2-percent      chord location                                       images are then recorded             for analysis.
+
+                                                                          2O
+2.3.1.1. Application        in   Langl_     Unitary     Plan          model and sting to reduce the flaring effects when the
+Wind Tunnel                                                           laser light impinges the metal surfaces. Observation
+                                                                      and documentation      of the flow patterns are accom-
+                                                                      plished with a 70-ram Hasselblad camera and a minia-
+     The laser vapor screen technique is applied in the               ture color or black-and-white    video camera, which are
+low Mach number and high Mach number test sections                    mounted in the test section in protective enclosures.
+of UPWT to visualize the cross-flow     patterns about                Alternatively,  mirrors may be installed in the webbing
+airplane, missile, and spacecraft models at supersonic                of the test section sidewall to allow viewing and
+speeds. Features that are typically revealed include                  recording of the vapor screen patterns with an exter-
+vortical flows, shock waves, and the interaction      of              nally positioned video camera. Proper control of the
+these flow phenomena. Water is injected into the tun-                 water injection allows extended vapor screen runs for
+nel circuit in sufficient quantity to create condensation             ranges of angle of attack, sideslip,   and Mach number.
+in the test section, and the flow phenomena of interest
+about the model are generally revealed as dark regions
+that lack condensate. The cross-flow patterns are illu-               2.3.2.   Schlieren
+minated by an intense sheet of light produced by an
+ion-argon laser operating in a continuous,         all-lines,
+                                                                      John R. MicoI and Floyd J. Wilcox, Jr.
+multimode configuration.    An example of a laser light-
+                                                                      NASA Langley Research Center
+sheet flow pattern obtained at UPWT is shown in
+figure 11. The laser system consists of a laser head and
+power supply and fiber-optic components        that refocus                The schlieren technique (ref. 1) is off surface and
+and direct the laser beam to an optics package            that        qualitative and is primarily used to observe the shock
+generates a thin sheet of light of controllable thickness             waves generated by and around a wind-tunnel        model
+and spread angle. The light-sheet optical package is                  and the associated reflections off the tunnel walls.
+secured to the test section sidewall and remains fixed
+during the flow-visualization  runs. The flow patterns
+                                                                      2.3.2.1. Application       in   Langl_,      Unitary     Plan
+at different model longitudinal stations are observed
+                                                                      Wind Tunnel
+by forward and aft traversal of the model support
+mechanism.   A flat paint is uniformly applied to the
+                                                                           Each test section of the UPWT        is equipped   with a
+                                                                      single-pass,   off-axis schlieren system. A schematic of
+                                                                      the system is shown in figure 12. The complete
+                                                                      schlieren system consists of a light source, two spheri-
+                                                                      cal mirrors, knife edge, optical beam splitter, still
+                                                                      camera, fiat mirror, video camera, and image screen.
+                                                                      The entire system is supported from a beam as a unit
+                                                                      and can be positioned along the longitudinal axis of
+                                                                      the test section to provide schlieren images of any pan
+                                                                      of the test section. The light source is provided by a
+                                                                      xenon vapor arc lamp that is operated continuously.
+                                                                      An optical beam splitter is located just behind the
+                                                                      knife edge and is used to provide a schlieren image for
+                                                                      both the still and video cameras. The still photo-
+                                                                      graphic images are recorded with a 70-mm Hasselblad
+                                                                      camera that is equipped with an annotation        device
+                                                                      which records such items as the run number, point
+                                                                      number,      Mach number       from the data acquisition
+                                                                      system on the negative for each photograph. A typical
+                                                                      schlieren photograph is shown in figure 13 (vertical
+                                                                      black lines in photograph    are test section window
+   Figure 11. Example of laser light-sheet flow pattern.              support bars).
+
+                                                                 21
+                                                                                                                                  lb,
+
+                       22.3 fl
+                                                 screen
+                                                                                                           22.3 ft                v
+                    Video camera
+                                                                                            J
+
+
+
+
+                 Optical   beam
+                                                                                      Test section
+                                                                                      window support     bars
+
+
+
+                                               camera
+                                       Knife edge
+
+
+
+
+             Spherical  mirror,
+             49.0-in. diameter                                                                                   Spherical   mirror,
+                                                                                      Light source               49.0-in. diameter
+
+
+
+
+                                               Figure 12. Schematic of schlieren system.
+
+
+
+                                                                        including the annotation    is also           supplied         to a PC
+                                                                        having frame-grabber     capability.           MPEG            files are
+                                                                        generated and downloaded to the HSR Adapt Website
+                                                                        providing wide distribution   of the flow-visualization
+                                                                        images. Exposed film (70 ram, ISO 400, TriX) from
+                                                                        the Hasselblad camera is processed and 8- by 10-in.
+                                                                        B&W photographs      are made. The photographs          are
+                                                                        scanned via a high-resolution    digital scanner. These
+                                                                        digital images are then manipulated using off-the-shelf
+                                                                        software to achieve greater detail for analyzing shock
+                                                                        shapes observed in the flow field.
+
+
+                                                                        2.3.3.   Shadowgraph
+
+
+                                                                        John R. Micol and Floyd J. Wilcox, Jr.
+                                                                        NASA Langley Research Center
+Figure 13. Typical schlieren photograph        of a High-Speed
+Research airplane model.
+                                                                             The shadowgraph         technique       (ref. 1) is also        off
+                                                                        surface and qualitative      and is primarily    used to
+     Output from the video camera            is supplied to a           observe the shock waves generated by and around the
+video cassette  recorder  used to           record schlieren            modeI. It is a simpler system than the schlieren, that is,
+movies. A title generator is used to annotate the image                 can be thought of as a subset, and can sometimes be
+so that such items as run number, point number, Mach                    used when the schlieren is not available or its opera-
+number   may be recorded.         This video    camera    output        tion not accommodated        in a test facility.
+
+                                                                   22
+                                                                      63.0 ft
+
+
+
+
+                                                                                                   [_             22.3 ft
+
+                                                                      Airflow
+
+                                                                                                   section
+                                                                                              window support bars
+
+
+
+                                      Polaroid
+
+                                       film holder   \1
+
+
+
+
+              Spherical  mirror,                                                                                       Spherical mirror,
+              49.0-in. diameter                                                               Light source             49.0-in. diameter
+
+
+
+
+                                             Figure 14. Schematic of shadowgraph system.
+
+
+
+                                                                                between the test section window support bars at the
+                                       shock
+                                                                                location of interest as shown in figure 14. The lights
+                                                                                in the test section are turned off, the Polaroid film
+                                                                                (Type 57, ISO 3000, high speed 4 by 5 in.) is uncov-
+                                                                                ered, and the light source is flashed which exposes the
+                                                                                film. Only a small area of the test section, the size of
+                                                                                the Polaroid film (approximately     4.5 in. by 3.5 in.),
+                                                                                can be captured in a shadowgraph.     A typical shadow-
+                                                          tipped
+                                                          cylinder              graph is shown in .figure 15.
+
+
+                                                                                     Like photographs    obtained with the Hasselblad
+                 Flat plate                                                     camera, the Polaroid photographs      are scanned via a
+                                                                                high-resolution  digital scanner. These digital images
+Figure 15. Typical shadowgraph images showing spherical-
+                                                                                are then manipulated    by using off-the-shelf  software
+tipped cylinder mounted on fiat plate.                                          to achieve greater detail for analyzing shock shapes
+                                                                                observed in the flow field.
+2.3.3.1. Application          in   Langlo_       Unitary       Plan
+Wind Tunnel
+                                                                                2.3.3.2.   Application       in Langle 3, 16-Foot      Transonic
+                                                                                Tunnel
+     Shadowgraphs      are obtained     with the    same
+schlieren system described in section 2.3.2 except that
+the light source is operated in a flash mode rather than                             The same technique    used in UPWT                    has   been
+a continuous mode. A Polaroid film holder is placed                             applied in the 16FTT tunnel as well.
+
+
+
+
+                                                                         23
+3. References                                                                      5.   Mateer,       George G.; Monson,   Daryl J.; and           Menter,
+                                                                                        Florian      R.: Shear and Pressure Measurements            on an
+                                                                                        Airfoil at Angle of Attack.      AIAA-95-2    ! 92, June    1995.
+I.       Yang, Wen-Jei, ed.: Handbook          of Flow       Visualization.        6.   Tanner, L. H.; and Blows, L. G.: A Study of the Motion
+         Hemisphere  Publ. Corp., 1989.                                                 of Oil Films on Surfaces in Air Flow, With Applications
+                                                                                        to the Measurement      of Skin Friction. J. Phys. E.: Sci.
+     .   Drake, Aaron: Effects of Cylindrical     Surface Protru-                       Inst., vol. 9, no. 3, Mar. 1976, pp. 194 202.
+         sions on Boundary      Layer Transition.    Ph.D. Diss.,
+         Washington State Univ., May 1998.                                         7.   Obara, Clifford J.: Sublimating Chemical Technique for
+                                                                                        Boundary-Layer     Flow Visualization  in Flight Testing. 3'.
+3.       Drake, A.; and Kennelly, R. A., Jr.: In-Flight Skin Fric-                      Aircr., vol. 25, June [988, pp. 493_198.
+         tion Measurements       Using Oil Film Interferometry.  J.
+                                                                                   8.   McLachlan,       B. G.; and Bell, J. H.: Pressure-Sensitive
+         Aircr., vol. 36, no. 4, July 1999, pp. 723-725.
+                                                                                        Paint in Aerodynamic       Testing. Exp.      Therm.       & Fluid
+                                                                                        Sei., vol. 10, no. 4, 1995, pp. 470-485.
+ .       Kennelly,   Robert   A., Jr.; Westphal,   Russell     V., Mateer,
+         George G.; and Stee[en, June: Surface Oil Film Interfer-                  9.   Liu,   T.;     Campbell,    B.   I".;   and   Sullivan,      J.   E:
+         ometry on a Swept Wing Model in Supersonic         Flow.                       Temperature-     and   Pressure-Sensitive          Luminescent
+         Flow Visualization I_71,J. E Crowder, ed., Begell House,                       Paints in Aerodynamics.      Appl. Mech.         Rev., vol. 50,
+          1995, pp. 302 307.                                                            no. 4, Apr. 1997, pp. 227-246.
+
+
+
+
+                                                                              24
+                                                                                                                                                            Form Approved
+                                   REPORT                   DOCUMENTATION                          PAGE                                                     OMeNo 0704-0188
+ Public reporting burden for this collection of information is estimated to average I hour per response, including the time for reviewing instructions, searching existing data sources
+ gathering end maintaining the data needed, and completing and reviewing the collection of information.     Send comments regarding this burden estimate or any other aspect of this
+ collection of information, including suggestions for reducing this burden, to Washington Headquarters Services, Directorate for Information Operations and Reports, 1215 Jeffersor
+ Davis Highway, Suite 1204, Arlington, VA 22202_4302, and to the Office of Management and Budget, Paperwork Reduction Project (0704-0188), Washington, DC 20503
+
+ I.     AGENCY     USE     ONLY     (Leave   blank)          2.    REPORT       DATE                        3. REPORT      TYPE    AND   DATES      COVERED
+
+                                                                   April 200 !                                  Technical Memorandum
+                                             I   I   I
+
+
+
+
+ 4. TITLE        AND    SUBTITLE                                                                                                         5.     FUNDING     NUMBERS
+
+        Flow-Visualization    Techniques   Used at High Speed by Configuration
+        Aerodynamics      Wind-Tunnel-Test   Team                                                                                               WU 522-31-3 i-03
+
+
+ 6. AUTHOR(S)
+
+       Edited by John E. Lamar
+
+
+
+ 7. PERFORMING             ORGANIZATION                  NAME(S)        AND    ADDRESS(ES)                                               8. PERFORMING             ORGANIZATION
+                                                                                                                                               REPORT     NUMBER
+
+       NASA Langley Research                             Center                                                                                 L-17973
+       Hampton, VA 23681-2199
+
+
+
+ 9.     SPONSORING/MONITORING                    AGENCY            NAME(S)      AND    ADDRESS(ES)                                       10.    SPONSORING/MONITORING
+                                                                                                                                                AGENCY      REPORT        NUMBER
+
+
+       National Aeronautics and Space Administration                                                                                            NASA/TM-2001-210848
+       Washington,  DC 20546-0001
+
+
+
+ 11.    SU PP LEMENTARY            NOTES
+
+
+
+
+ 12a.    DISTRIBUTION/AVAILABILITY                        STATEMENT                                                                      12b.    DISTRIBUTION           CODE
+
+
+         Unclassified-Unlimited
+         Subject Category 02               Distribution:                                      Standard
+         Availability: NASA CASi (30 I) 621-0390
+
+13.     ABSTRACT        (Maximum       200   words)
+
+        This paper summarizes     a variety of optically based flow-visualization    techniques used for high-speed research by
+        the Configuration   Aerodynamics    Wind-Tunnel-Test   Team of the High-Speed        Research Program during its tenure.
+        The work of other national experts is included for completeness.        Details of each technique with applications  and
+        status in various national wind tunnels are given.
+
+
+
+
+14.     SUBJECT        TERMS                                                                                                                              15.   NUMBER         OF PAGES
+        High-speed   research; Flow-visualization                                 techniques;        Research     facilities;     Surface       flow:                           32
+        Surface properties; Off-surface   features                                                                                                        16.   PRICE    CODE
+
+                                                                                                                                                                               A03
+17.     SECURITY       CLASSIFICATION                       18.    SECURITY       CLASSIFICATION          19.   SECURITY    CLASSIFICATION                20.   LIMITATION
+        OF   REPORT                                                OF   THIS    PAGE                            OF ABSTRACT                                     OF ABSTRACT
+
+       Unclassified                                               Unclassified                                  Unclassified                                                   UL
+
+NSN     7540-0t-280-5500                                                                                                                                  Standard    Form 298 (Rev. 2-89)
+                                                                                                                                                          Prescribed by ANSI Std Z39-18
+                                                                                                                                                          298-102
+

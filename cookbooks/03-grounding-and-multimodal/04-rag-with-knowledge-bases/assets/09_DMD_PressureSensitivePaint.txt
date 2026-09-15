@@ -1,0 +1,146 @@
+ Analysis of Dynamic Mode Decomposition Outputs of
+  Unsteady Pressure-Sensitive Paint Measurements in
+             the NASA Wind Tunnel Tests
+    Jie Li1, Nettie H. Roozeboom2, E. Lara Lash2, Marc A. Shaw-Lecerf2, Jennifer K. Baerny2,
+     Theodore J. Garbeff2, Lawrence A. Hand2, Christopher E. Henze2, David D. Murakami2,
+                                       Nathanial T. Smith1
+                                       1
+                                           Metis Technology Solutions, Inc.
+                                              Moffett Field, CA 94035
+                                           2
+                                               NASA Ames Research Center
+                                                Moffett Field, CA 94035
+
+                                                    Extended Abstract
+
+     This paper discusses the Dynamic Mode Decomposition (DMD) outputs of the Unsteady Pressure-Sensitive Paint
+(uPSP) measurements, which were collected with four Phantom high-speed cameras at a constant sample frequency
+in the Ascent Transient Aerodynamics Test (ATAT) of the Space Launch System (SLS) Block 1 cargo vehicle in the
+11-by-11-foot transonic test section of the Unitary Plan Wind Tunnel (UPWT) at NASA Ames Research Center in
+September 2019. Fig. 1 shows the ATAT scale model installed in the wind tunnel with uPSP applied to the model
+surface.
+
+     The DMD is based on the eigendecomposition of a best-fit linear operator that approximates the dynamics present
+in the data. Given the timeseries of data, DMD computes a set of modes, each of which is associated with a fixed
+oscillation frequency and growth/decay rate (Refs. [1] and [2]). The conventional DMD algorithm is based on the
+Singular Value Decomposition (SVD). For the data with zero mean, the DMD is equivalent to the Discrete Fourier
+Transform (DFT) (Refs. [3] and [4]). Since the uPSP is mainly used to determine the unsteady property of the
+aerodynamic flow, the DMD of the uPSP measurements is implemented in two steps (Ref. [5]): (1) subtract the mean
+value from the uPSP measurement; (2) apply the Fast Fourier Transform (FFT) on the resulting data with zero mean.
+
+     The uPSP measurements collected with the Phantom cameras were projected to the grid nodes on the surface of
+the scale model, and the first 1,024 frames were processed and the DMD outputs were generated. As an example, the
+DMD outputs of a test of the SLS ATAT are shown below. The Mach number of the test was 0.73, and the angle of
+attack and the angle of the sideslip were both zeros.
+
+     Fig. 2 shows the average Power Spectral Density (PSD) of the timeseries of uPSP measurements on the grid nodes
+in the test, in which the peaks corresponding to the fundamental component and the 1st harmonic of the vortex shedding
+can be observed. The vortex shedding was generated when the flow passed the connection between the core and the
+Solid Rocket Boosters (SRBs) of the SLS. In Figs. 3(a) and 3(b), the DMD modes at the vortex shedding frequency,
+corresponding to the real and imaginary parts of the DFT coefficients, are visualized on the surface of the model. Two
+waves originated at the connection between the core and the SRBs can be observed in the DMD modes, traveling in
+upstream and downstream directions respectively.
+
+    Fig. 4 shows the phase of the DMD modes at the vortex frequency, plotted in a plane of x coordinate and azimuth
+angle of the grid nodes. The grid nodes with the phase close to -180o are plotted in blue and the grid nodes with the
+phase close to +180o are plotted in yellow. It is obvious that the phase of the grid nodes located on the edge of the blue
+and yellow regions is exactly -180o, or equivalently +180o. As shown in the figure, the two red lines, located upstream
+and downstream respectively referenced to the connection between the core and the SRBs, link the grid nodes on the
+edge of the blue and yellow regions along the streamline. Therefore, the lengths of the two red lines are equal to the
+
+
+                                                            1
+wavelengths of the waves traveling in upstream and downstream directions respectively. The propagation velocities
+of the waves traveling upstream and downstream, denoted as 𝑣!"#$%&'( and 𝑣)*+,#$%&'( , are computed with the
+following equations:
+
+               𝑣!"#$%&'( = 𝜆!"#$%&'( ∙ 𝑓-*%$&./0&))1,2                                                              (1)
+
+and
+
+               𝑣)*+,#$%&'( = 𝜆)*+,#$%&'( ∙ 𝑓-*%$&./0&))1,2                                                          (2)
+
+where 𝜆!"#$%&'( and 𝜆)*+,#$%&'( are wavelengths of the waves traveling upstream and downstream, determined as
+the lengths of the two red lines respectively. 𝑓-*%$&./0&))1,2 is the vortex shedding frequency.
+
+     Further investigations show the computed propagation velocity of the wave traveling in the upstream direction is
+approximately equal to the difference of the speed of the sound (denoted as c) and the speed of the free stream flow
+of the test (denoted as vfreeStream). Considering the propagation velocity of the wave is measured in a reference frame
+fixed to the wind tunnel, its propagation velocity is approximately equal to the speed of the sound c in a reference
+frame fixed to the free stream flow. Therefore, the wave observed in the DMD modes at the vortex shedding frequency,
+traveling in the upstream direction, is actually acoustic wave. The computed propagation velocity of the wave traveling
+in the downstream direction is approximately 79% of vfreeStream, and the value is consistent with the aerodynamic
+convection velocity estimated.
+
+     In this paper, the effectiveness to use the DMD outputs of uPSP measurements in the diagnosis and analysis of
+the aerodynamic and acoustic phenomena in the SLS ATAT is demonstrated. The work described in the paper is a
+part of NASA’s development of a new state-of-the-art uPSP capability in production wind tunnels. Funding was
+provided by the NASA Aerosciences Evaluation and Test Capabilities (AETC) Project.
+
+
+                                                    References
+[1] Schmid, P.J., “Dynamic Mode Decomposition of Numerical and Experimental Data”, Journal of Fluid Mechanics,
+    Vol.656, Aug. 2010, pp.5-28.
+[2] Taira, K., Brunton, S.L., Dawson, S. T. M., Rowley, C.W., Colonius, T., McKeon, B.J., Schmidt, O.T., Gordeyev,
+    S., Theofilis, V., and Ukeiley, L.S., “Modal Analysis of Fluid Flows: An Overview”, AIAA Journal, Vol.55,
+    No.12, 2017, pp.4013-4041.
+[3] Rowley, C.W., Mezić, I., Bagheri, S., Schlatter, P., and Henningson, D. S., “Spectral Analysis of Nonlinear
+    Flows”, Journal of Fluid Mechanics, Vol. 641, No. 1, 2009, pp. 115–127.
+[4] Chen, K. K., Tu, J. H., and Rowley, C.W., “Variants of Dynamic Mode Decomposition: Boundary Condition,
+    Koopman, and Fourier Analyses,” Journal of Nonlinear Science, Vol. 22, No. 6, 2012, pp. 887–915.
+[5] Li, J., Lash, E. L., Roozeboom, N. H., Garbeff, T. J., Henze, C. E., Murakami, D. D., Smith, N. T., Baerny, J. K.,
+    Hand, L. A., Shaw-Lecerf, M. A., Stremel, P. M., and Tang, L. Z., “Dynamic Mode Decomposition of Unsteady
+    Pressure-Sensitive Paint Measurements for the NASA Unitary Plan Wind Tunnel Tests”, AIAA Paper 2022-0141,
+    AIAA SciTech Forum, San Diego, CA & Virtual, January 2022.
+
+
+
+
+                                                          2
+ Fig. 1 Scale model of the SLS Block 1 cargo vehicle with uPSP in the 11-by-11-foot transonic test section
+                  of the UPWT at NASA Ames Research Center during the ATAT.
+
+
+
+
+                    Vortex Shedding:
+                 Fundamental component
+                                                          Vortex Shedding:
+                                                               st
+                                                             1 Harmonic
+
+
+
+
+Fig. 2 Average PSD of the timeseries of uPSP measurements on the grid nodes in the test of the SLS ATAT.
+                                The Mach number of the test was 0.73.
+
+
+
+
+                                                    3
+                                                      (a)
+
+
+
+
+                                                      (b)
+
+Fig. 3 DMD modes at the vortex shedding frequency of the test of the SLS ATA, corresponding to the real (a) and
+        imaginary (b) parts of the DFT coefficients respectively. The Mach number of the test was 0.73.
+
+
+
+
+                                                      4
+                   𝜆upstream                                    𝜆downstream
+
+
+Fig. 4 Phase of the DMD modes at the vortex shedding frequency of the test of the SLS ATAT.
+                      The Mach number of the test was 0.73.
+
+
+
+
+                                            5
+

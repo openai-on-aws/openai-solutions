@@ -1,0 +1,537 @@
+       NASA Ames Research Center
+
+Capabilities of the Unitary Plan Wind Tunnel
+
+
+                     Frank Kmak
+             Chief, Wind Tunnel Division
+              Ames Research Center
+
+                    January 11, 2015
+ARC Unitary Plan Wind Tunnel
+               NASA Ames Research Center
+               Wind Tunnel Division Facilities
+                                             High Pressure Air
+Fluid Mechanics                              (HPA) Storage
+Laboratory (FML)                             Tanks
+
+                                             High Pressure Air
+High Pressure Air                            (HPA)
+(HPA) Compressor                             Compressor C1D
+C1A & HPA Control
+Room
+                                             Unitary Plan
+                                             Wind Tunnel
+                                             (UPWT)
+12-Ft PWT Model
+Preparation Rooms
+(MPR)
+                                             Balance
+                                             Calibration
+12-Ft PWT                                    Laboratory
+Mitsubishi Makeup
+Air (MUA)                                    Compressor
+Compressor                                   Blade Shop
+                                                         Reynolds Number Range
+                                                  11x11-Foot Transonic Wind Tunnel          9x7-Foot Supersonic Wind Tunnel
+                                       10.0!
+
+
+
+                                        9.0!
+Reynolds Number (Millions per foot)!
+
+
+
+
+                                        8.0!
+
+
+
+                                        7.0!
+
+
+
+                                        6.0!
+
+
+
+                                        5.0!
+
+
+
+                                        4.0!
+
+
+
+                                        3.0!
+
+
+
+                                        2.0!
+
+
+
+                                        1.0!
+
+
+
+                                        0.0!
+                                           0.0!           0.5!         1.0!          1.5!           2.0!         2.5!         3.0!
+                                                                               Mach Number!
+11-by 11-Foot Transonic Test Section
+                    •   Excellent Flow Quality
+                         •Turbulence Reduction System
+                    •   Excellent optical access
+                    •   Wall interference correction system
+                    •   Sting mount and turntable model
+                        supports
+                    •   Complete automation of tunnel and
+                        model support operations
+                    •   Modern control room
+                    •   Slotted-wall test section (22’) with
+                        baffles and 6% porosity
+                    •   3-stage compressor and variable
+                        camber inlet guide vanes
+
+
+
+                   T11-0245/0255 - NASA ERA UHB
+                   Powered Semi-span Test
+                                                          OPERATING CHARACTERISTICS OF THE!
+                                                             NASA AMES RESEARCH CENTER !
+                                                        11-BY 11-FOOT TRANSONIC WIND TUNNEL!
+
+                                            12.0!
+
+                                                              Stagnation Temperature = 560° R!                                                           Total!
+                                                                                                                                                       Pressure!
+                                            11.0!                                                                                                       (psfa)!
+
+                                                                                                               1900!                    176 MW Power Limit!
+                                                                                                            1800!
+                                            10.0!                              Test Section !            1700!
+                                                                             Dynamic Pressure!        1600!
+                                                                                  q (psf)!         1500!                                                 4608!
+                                                                                                 1400!
+                                             9.0!                                              1300!
+                                                                                                                                                         4320!
+                                                               Maximum!                        1200!
+     Reynolds Number (Millions per foot)!                      Operating!                   1100!
+                                             8.0!              Pressure!
+                                                               4608 psfa!                1000!
+                                                                                        900!
+                                                                                                                                                         3600!
+                                                                                     800!
+                                             7.0!
+                                                                                 700!
+
+                                                                              600!
+                                             6.0!
+                                                                          500!                                                                           2880!
+
+                                                                       400!
+                                             5.0!
+
+                                                                   300!                                                                                  2160!
+                                             4.0!
+
+                                                               200!
+
+                                             3.0!
+                                                                                                                                                         1440!
+                                                          100!
+                                             2.0!
+
+                                                                                                                                                         720!
+                                             1.0!
+                                                                                                                                                         432!
+                                                                                               Minimum Operating Pressure 432 psfa!
+                                             0.0!
+                                                0.0!   0.1!    0.2!   0.3!    0.4!   0.5!   0.6!    0.7!   0.8!   0.9!   1.0!   1.1!    1.2!   1.3!    1.4!   1.5!
+
+                                                                                               Mach Number!                            Lower limit of PES!
+
+
+
+
+Source: Test 11-0051 IST                                                                                                                              Revised 2/2015
+Sting Mounted Models in 11x11-Foot
+       Transonic Test Section
+Semi-Span Models in 11x11-Foot
+   Transonic Test Section
+          PIV in the 11x11-Foot Transonic Test Section
+          T11-0247 NESC 120-CA CPAS
+Comprehensive Study of the Flow Around a Simplified
+              Orion Capsule Model
+
+•   Wind-tunnel testing of Orion showed boundary-layer
+    state on heat shield significantly affected Crew Module
+    aerodynamics
+•   Agreement between CFD and experiments was poor
+    below ~M 0.8
+•   Study initiated by NASA Engineering and Safety
+    Center (NESC) to reduce uncertainty in Orion wake
+    flow
+•   Comprehensive measurement suite
+     – Particle Image Velocimetry (PIV)
+     – Pressure Sensitive Paint (PSP)
+     – Infrared (IR) thermography to locate transition and
+         separation lines
+     – Unsteady pressures around heat-shield shoulder
+         and in back shell
+     – Boundary-layer measurements at one location on
+         the heat shield
+     – High-speed shadowgraph videos (6,000 frames
+         per second)
+11x11-Foot TWT Optical Access
+
+
+
+
+                 PSP cameras
+                  and lights
+
+
+     IR window                  High-speed
+                                PIV camera
+
+
+
+
+     IR window
+                 UPWT Production PSP Capability
+•   PSP Objectives
+     •   Provides global pressure distributions for CFD
+         validation
+     •   Provides an alternative for surface pressure
+         measurement on thin model surfaces
+     •   Provides integrated loads on model surfaces
+•   PSP Deliverables
+     •   Preliminary processed data is available in near-
+         time during test
+     •   Final data is delivered 4-6 weeks post-test
+•   PSP System
+     •   8 Photometric CoolSnap Cameras
+     •   40 ISSI 400nm LED lamps
+     •   1 Linux cluster containing 9 computers
+     •   Custom Steady-State Lifetime PSP Data
+         Processing Suite
+           • 3-10 second acquisition time                    T11-0307- NASA AATT
+           • Automated data acquisition coordinated         SUGAR TRUSS BRACED
+              with SDS                                              WING
+•   Active Collaboration with AEDC
+                          Production Infrared Flow Visualization
+                     Multi-camera infrared data systems provide real-time flow
+                          visualization with no impact on test productivity
+• Four megapixel research grade IR cameras.
+• No need for tunnel temperature ramps.
+• Optical modeling for simulation of views / test planning.
+• Laboratory setup to quantify coating IR effectiveness.
+• Synchronized, automatic acquisition with in-line image
+  processing and real-time video feeds.
+• Image processing routines adapted from medical
+  imaging and cockpit display.
+• Secure deliver of data products as they are processed.
+    •Standard Configuration Data Products:
+    • 1 megapixel movie (.avi) per camera recorded throughout the
+        duration of a pitch-pause vector or continuous sweep.
+    • Series of still images (.tiff) rendered at each pause point.
+    • Any test parameter computed by the data system (SDS) may be
+        overlaid onto image data real-time.
+    • IRIG-B timing.
+    • All image data named and organized based on Run and
+        Sequence number.
+       9-by 7-Foot Supersonic Test Section
+
+
+                                                 •   Complete automation of
+                                                     tunnel and model support
+                                                     systems
+                                                 •   Good optical access
+                                                 •   Sting mount model
+                                                     support system
+                                                 •   Modern control room
+                                                 •   Contoured sliding block
+                                                     nozzle
+                                                 •   11-stage compressor
+
+
+
+
+T97-0259 – Boeing N+2 Phase II Validation Test
+                                                                 OPERATING CHARACTERISTICS OF THE
+                                                                    NASA AMES RESEARCH CENTER
+                                                                9-BY 7-FOOT SUPERSONIC WIND TUNNEL
+
+                                            8.0
+                                                                Stagnation Temperature = 560° R
+                                            7.5
+
+
+                                            7.0
+
+                                                                Test Section
+                                            6.5               Dynamic Pressure
+                                                                  q (psf)
+                                                                                                                     176 MW Power Limit
+                                            6.0
+
+                                                                                                                                                 Total
+      Reynolds Number (Millions per foot)
+                                                    1200
+                                            5.5                                                                                                Pressure
+                                                                                                                                                (psfa)
+                                                    1100
+                                            5.0
+
+                                                    1000
+                                            4.5                                                                                                    3600
+                                                        900
+                                            4.0
+
+                                                        800
+                                            3.5                                                                                                    2880
+                                                        700
+                                            3.0
+                                                                                                                                                   2475
+                                                        600
+                                                                                                                                                   2160
+                                            2.5
+                                                        500
+
+                                            2.0
+                                                        400                                                                                        1440
+                                            1.5
+                                                                                                                                                   1414
+                                                        300
+
+                                            1.0
+                                                                                                200                                                720
+                                                                                                                                                   634
+                                            0.5                  Nozzle Block Operating Range is
+                                                                                                                      Minimum Operating Pressure
+                                                                  between 1414 and 2475 psfa
+                                                                                                                         is 643 psfa (4.4 psia)
+                                            0.0
+                                                  1.4     1.5       1.6    1.7    1.8     1.9      2.0   2.1   2.2      2.3    2.4    2.5    2.6     2.7
+
+                                                                                             Mach Number
+
+
+
+Source: Test 97-0065 IST                                                                                                                             12/2001
+Models in 9x7-Foot Supersonic Test Section
+                     Production High-Speed Shadowgraph/Schlieren
+            Dual shadowgraph systems provide simultaneous low-speed and high-
+                                 speed image acquisition
+                 •   State-of-the-art high-speed cameras.
+                 •   High-powered pulsed LED light sources.
+                 •   Automatic acquisition with in-line image processing and real-time video feeds.
+                 •   Secure deliver of data products as they are processed.
+Standard Configuration Data Products:
+•Low-Speed:
+• ~4 megapixel 20 FPS movie (.avi) recorded
+   throughout the duration of a pitch-pause vector
+   or continuous sweep.
+• Series of high-resolution still images (.tiff)
+   rendered at each pause point.
+•High-Speed:
+• ~1 megapixel movie (.avi) ~50,000 FPS typical
+   recorded at each point in pitch-pause vector.
+• Mean and variance still images (.tiff) computed
+   and rendered at each pause point.
+• Any test parameter computed by the data
+   system (SDS) may be overlaid onto image data
+   real-time.
+• IRIG-B timing.
+• All image data named and organized based on
+   Run and Sequence number.
+         9x7-Foot SWT Control Room
+              Operations Area
+                        Operations Area
+
+
+
+
+                                          Customer Area
+
+
+
+
+Facility Control Area
+    Steady-State Standard Data System (SDS)
+SDS is a multi-tasking, multi-user steady-
+state data system:
+•   Flexible, robust, distributed data platform
+    implemented on open systems
+    architecture.
+•   Real-time processing, data recording,
+    numerical and graphical displays.
+•   Concurrent data acquisition & re-compute
+    capabilities.
+•   User definable displays.
+•   On-line diagnostic tools for trouble
+    shooting and data quality checks.
+•   Interfaces with facility control system,
+    customer analysis computers, test
+    dependent data systems, and model
+    controls.
+•   Secure (isolated) network.
+•   Expandable to match test specific
+    requirements.
+•   Supports multiple 6-component balances (5 standard).
+•   Support up to 2048 static pressure measurements.
+•   48 channels of general purpose strain gage measurements.
+•   Supports RTD, thermocouples, & thermistor temperature measurements
+•   Measures tunnel conditions and test article attitude.
+•   Optional real-time wall corrections (up to Mach 0.9).
+                         Dynamic Data System (DDS)
+The Dynamic Data System (DDS) provides high speed simultaneous acquisition and analysis
+of fluctuating pressures, acoustics, vibrations, buffet, and other dynamic signals.
+Functions and Features
+•   Real-time graphical display in time and frequency
+    domain.
+•   Concurrent signal monitoring and recording.
+•   Simultaneous Signal Sampling on all channels.
+      o 1kS/sec – 204.8kS/sec (DC – 80KHz)
+•   Expandable PXI based architecture:
+      o 300+ channel capability.
+      o 24 Bit Delta-sigma Analog to Digital Converter
+      o Fully anti-aliased 32fs– 128fs oversample rate
+      o ±0.316 Vpk to ±42 Vpk input Ranges
+      o AC/DC coupling (AC cutoff 3dB point: 3.4Hz)
+      o Built-in IEPE signal conditioning (4 & 10 mA)
+•   Interfaced with Standard Data System.
+      o Dynamic data linked to tunnel conditions & point ID.
+      o Supports automated data acquisition.
+•   Near Time Signal Processing:
+      o Time domain statistics (Min, Mean, Max, RMS,
+        nSamples, etc.)
+      o Frequency domain results (PSD’s, Third Octave, ect.)
+• Custom fixed gain (50x) pre-amplifier/line-drivers for
+  Kulite® style transducers.
+            UPWT Model Support Systems
+•   Sting Model Support System
+     • Knuckle-Sleeve Device
+     • 150 cone and changeable
+     adaptors
+•   Kick-Sting for Increased
+    Angle of Attack
+•   Roll capability
+•   Data acquisition modes
+     • Move-pause mode
+     • Continuous pitch, yaw or
+     roll mode
+     • Hybrid mode
+•   Turntable model support       AIM-9 using roll mechanism
+    systems in 11’ by 11’                and kick sting
+                         Additional UPWT Systems
+•   Precision Instrumentation
+     • QA-2000 Angle sensors
+     • Flow Reference System
+     • DTC ESP surface pressure
+     scanners
+•   Flow Visualization
+     • Pressure Sensitive Paint
+     • High-Speed Schlieren
+     • IR Thermography
+     • Particle Image Velocimetry
+     • Oil flows
+     • Mini-tufts
+     • Laser Vapor Screen
+•   Balance Alarm System (BLAMS)
+                                    F-18 with pressure sensitive paint
+•   Video Systems
+                         High Pressure Air (HPA)
+•   Typical uses of High Pressure Air
+     • Turbine propulsion simulators
+     • Ejector systems
+     • Plume simulations
+•   Air storage capacity of 7.8 million
+    SCF at 3000 psig
+•   HPA Capabilities
+     • Computer controlled mass
+     flow, pressure and temperature
+     • Two 3,000 psia lines delivered
+     at up to 80 lbm/sec.
+     • 1 MW heater capable of heating
+     air to 400o F
+
+
+
+                                   T97-0186 - CEV 51AS ORION Launch Abort Test
+              Flow Quality and Calibration
+                                                                                M=0.80, Post-Mod                                                                     M=0.80, Post-Mod
+                                                                                M=0.95, Post-Mod                                                                     M=0.95, Post-Mod
+                                                                                M=0.80, Pre-Mod                                                                      M=0.80, Pre-Mod
+
+•   11x11-Foot TWT Calibration                                     0.50                                                                           0.50
+
+
+
+
+                                 Probe Height, z/H, (H = 11 ft)
+
+
+
+
+                                                                                                                Probe Height, z/H, (H = 11 ft)
+    • Static Pipe                                                  0.25                                                                           0.25
+
+
+
+    • Flow Uniformity Survey                                       0.00                                                                           0.00
+
+
+    • Turbulence and Acoustics                                    -0.25                                                                          -0.25
+    Survey (AIAA 2000-2681)
+    • LB-435 Calibration Model                                    -0.50                                                                          -0.50
+                                                                      -0.50    -0.25    0.00    0.25     0.50                                        -0.50        -0.25     0.00     0.25         0.50
+                                                                              CROSSFLOW, (deg)                                                                      UPFLOW, (deg)
+•   9x7-Foot SWT Calibration                                      0.6                                                                                       2000, 11' TWT, Slots Normal
+                                                                                Post-Mod, Slots Normal
+                                                                                                                                                            2001, 11' TWT, Slots Normal
+    • Flow Survey
+                                                                                Post-Mod, Slots Taped
+                                                                                                                                                            2001, 11' TWT, Partially Taped Slots
+                                                                  0.5           Pre-Mod, Slots Normal
+                                                                                                                                                            1972, 11' TWT, AIAA 72-1004
+                                 Streamwise Turbulence, %
+
+
+    • Acoustics Measurements                                      0.4
+                                                                                                                                                 1.5%
+
+                                                                                                                CP'rms=
+                                                                  0.3                                           p'rms/q
+
+                                                                                                                                                 1.0%
+                                                                  0.2
+
+
+                                                                  0.1                                                                            0.5%
+
+
+
+                                                                   0
+                                                                                                                                                 0.0%
+                                                                        0.2   0.4      0.6       0.8       1                                            0           0.5          1          1.5
+                                                                                       Mach                                                                               Mach
+              NASA Ames UPWT
+
+• Ames UPWT has an outstanding history of
+  serving the aerospace community
+• Ames UPWT offers high Reynolds number
+  testing over a broad range of Mach numbers
+• Our modernized tunnels are extremely capable,
+  reliable and productive
+• Validation and calibration tests have
+  demonstrated outstanding data quality
+• Ames UPWT staff are capable and eager to
+  respond to the needs of wind tunnel customers
+NASA Ames UPWT
+
+
+QUESTIONS ?
+

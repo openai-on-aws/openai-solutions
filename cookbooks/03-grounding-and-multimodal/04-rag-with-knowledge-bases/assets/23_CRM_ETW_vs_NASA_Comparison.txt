@@ -1,0 +1,1913 @@
+       Comparison of the NASA Common Research Model
+    European Transonic Wind Tunnel Test Data to NASA Test
+                         Data (Invited)
+
+                                             Melissa B. Rivers1
+                       NASA Langley Research Center, Mail Stop 267, Hampton, VA 23681
+
+                                              Jürgen Quest2
+                      ETW, European Transonic Wind tunnel, D-51147, Cologne, Germany
+
+                                              Ralf Rudnik3
+                        DLR, German Aerospace Center, 38108 Braunschweig, Germany
+
+
+           Experimental aerodynamic investigations of the NASA Common Research
+        Model have been conducted in the NASA Langley National Transonic
+        Facility, the NASA Ames 11-ft wind tunnel, and the European Transonic
+        Wind Tunnel. In the NASA Ames 11-ft wind tunnel, data have been
+        obtained at only a chord Reynolds number of 5 million for a wing/body/tail =
+        0 degree incidence configuration. Data have been obtained at chord Reynolds
+        numbers of 5, 19.8 and 30 million for the same configuration in the National
+        Transonic Facility and in the European Transonic Facility. Force and
+        moment, surface pressure, wing bending and twist, and surface flow
+        visualization data were obtained in all three facilities but only the force and
+        moment, surface pressure and wing bending and twist data are presented
+        herein.
+
+
+                                               Nomenclature
+b      =     wing span, in.
+c      =     wing mean aerodynamic chord, in.
+CD     =     drag coefficient
+CL     =     lift coefficient
+Cm     =     pitching moment coefficient referenced to 0.25 of the wing mean aerodynamic chord
+Cp     =     pressure coefficient
+CRM    =     Common Research Model
+DPW    =     Drag Prediction Workshop
+E      =     modulus of elasticity
+ESWIRP =     European Strategic Wind Tunnels Improved Research Potential
+M∞     =     freestream Mach number
+NTF    =     National Transonic Facility
+pt     =     total pressure, psi
+q∞     =     dynamic pressure, psf
+
+1
+  Research Engineer, Configuration Aerodynamics Branch, Mail Stop 267, Senior Member AIAA
+2
+  Chief Aerodynamicist, European Transonic Wind Tunnel, Ernst-Mach Strasse, D-51147 Cologne, Germany,
+Associate Fellow AIAA
+3
+  Head Transport Aircraft, Institute of Aerodynamics and Flow Technology, Lilienthalplatz 7, 38112 Braunschweig,
+Germany, Member AIAA
+                                                          1
+                                  American Institute of Aeronautics and Astronautics
+Rec        = Reynolds number based on mean aerodynamic chord
+S          = model reference area, ft2
+Tt         = Total temperature, °F
+WBT0       = Wing/Body/Tail=0º
+x/c        = longitudinal distance from wing leading edge nondimensionalized by local wing
+             chord
+α          = angle of attack, degree
+η          = fraction of wing semi-span
+
+                                                 I. Introduction
+     The NASA Common Research Model (CRM) serves as a backbone for providing wind tunnel data for code
+validation and verification for transonic commercial aircraft. The model has been designed and built as part of the
+AIAA drag prediction workshop (DPW) introduced with the DPW IV.
+     The latest use of the model in the European Transonic Wind Tunnel (ETW) is embedded in the framework of the
+European project ESWIRP (European Strategic Wind Tunnels Improved Research Potential). This so-called
+infrastructure project is part of the 7th framework program. The objective has been to improve the capabilities of
+selected strategic wind tunnel facilities in Europe, and, at the same time, to provide efficient access to these facilities
+to academia and research establishments for selected research projects addressing fundamental aerodynamic topics.
+The focus for the use of the ETW is on improving unsteady testing capabilities for exploring limits of the flight
+envelope. For this purpose, an international consortium has been formed under the coordination of ONERA
+consisting of the University of Stuttgart and the German Aerospace Center, DLR (Germany), the Federal State
+Unitary Enterprise Central Aerohydrodynamic Institute, TSAGi (Russia), the Academy of Sciences (Czech
+Republic), the Aerospace Research and Test Establishment VZLU (Czech Republic), and the Von Karman Institute
+for fluid Dynamics (Belgium). The consortium submitted a scientific proposal entitled “Time-Resolved Wake
+Measurements of Separated Wing Flow & Wall Interference Investigations”, which has been evaluated and selected
+for realization by an expert panel in 2012. The proposal addresses unsteady wake interference effects between the
+wake of an aircraft wing and the horizontal tail plane. Due to the international character of the study and the
+intention to provide test data to the general public, NASA’s CRM, representing a typical commercial aircraft
+configuration appears to be an ideal candidate to serve as a wind tunnel model for the experimental investigations as
+it is also suited for cryogenic testing. Based on a bilateral agreement between NASA and DLR, the model has been
+provided by NASA, while it is introduced to the consortium by DLR. The overall project is described in reference 1.
+     The background of the experimental activities is the high-speed stall of transport aircraft at the boundaries of the
+flight envelope, which produces massively separated flow on the wing itself and in its wake. Unsteady oscillating of
+the separation point and large-scale turbulent fluctuations lead to strong unsteadiness of the wake flow. The
+relevance to investigate these aerodynamic effects is given by the fact that they bear the risk of exciting structural
+vibrations due to unsteady air loads in a certain frequency domain. Moreover, they influence the efficiency of
+control surfaces on the horizontal stabilizer and the elevator. In the case of asymmetry in some separation areas of
+the wing and the resulting wake, unsteady rolling moments may be excited and induced to the tail plane. These
+effects of flow unsteadiness at the tail plane can become critical and might require potential load alleviation systems
+at the tail plane. Thus, the knowledge of the formation, propagation, and impact of large-scale turbulent fluctuations
+are of interest for the design of commercial aircraft.
+     A key element to understanding these effects is time-resolved (TR) measurement in the wing wake. Such
+measurements, carried out by DLR with a special Particle Image Velocimetry System (PIV), are the main element of
+the ETW test in the current framework. The corresponding TR-PIV measurements under cryogenic conditions are
+described in reference 2. Complementary to these measurements, the test provides reference data on the wind tunnel
+walls to study wall interference effects and eventually improve wall correction methods.
+     The tests have been carried out on the wing/body/tail = 0 (WBT0) degree incidence configuration of the CRM
+for low and high speed conditions in the linear lift range up to the highest possible angles of attack. Complementary
+to the unsteady flow field measurements, classical aerodynamic parameters such as forces, moments, and wall
+pressure distributions have been recorded. These data are supplemented by wing deformation measurements as the
+test has been conducted in a low temperature and high-pressure environment to produce flight Reynolds number
+conditions.
+     The test matrix has been set-up such that a comparison of the ETW test data to existing data from the NASA’s
+NTF and the Ames 11ft wind tunnel is possible. The present contribution describes the classical experimental results
+
+
+                                                          2
+                                  American Institute of Aeronautics and Astronautics
+of the ETW test and compares the data to corresponding results of previous tests with the CRM in the afore
+mentioned facilities.
+
+                                        II. Experimental Approach
+
+A. Facility Description
+    1. National Transonic Facility
+    The NTF3 is a unique national facility (Figure 1) that enables testing of aircraft configurations at conditions
+ranging from subsonic to low supersonic speeds at Reynolds numbers up to full-scale flight values. The NTF is a
+conventional, closed circuit, continuous-flow, fan-driven, pressurized wind tunnel (Figure 2) capable of operating in
+either dry air at warm temperatures or nitrogen from warm to cryogenic temperatures. Elevated pressures in
+combination with cryogenic temperatures enable testing to the highest Reynolds numbers. The test section is 8.2 by
+8.2 by 25 ft. and has a slotted floor and ceiling. In addition, four damping screens in the settling chamber and a
+contraction ratio of 14.95-to-1 reduce turbulence from the settling chamber to the nozzle throat. Fan-noise effects
+are minimized by acoustic treatment both upstream and downstream of the fan. Thermal insulation resides inside the
+pressure shell to aid in maintaining tunnel temperature and thus minimize energy consumption.
+    The NTF has an operating pressure range of approximately 15 to 125 psia, a temperature range of -250 to
++120°F, and a Mach number range of 0.2 to 1.2. The maximum Reynolds number per foot is 146 x 106 at Mach 1.
+When the tunnel is operated cryogenically, heat is removed by the evaporation of liquid nitrogen, which is sprayed
+into the tunnel circuit upstream of the fan. During this operational mode, venting is necessary to maintain a constant
+total pressure. When air is the test gas, heat is removed from the system by a water-cooled heat exchanger at the
+upstream end of the settling chamber. A mixed mode of operation can be used to reach higher Reynolds numbers.
+This mode uses liquid nitrogen to augment the cooling coil without the expense of fully crossing over into nitrogen
+mode. Further tunnel details and facility information are provided in Ref. 4.
+    2. Ames 11-ft Transonic Wind Tunnel
+    The Ames Unitary Plan Wind Tunnel (UPWT) consists of three tunnel legs: the 11-by-11-Foot Transonic Wind
+Tunnel (TWT), the 9- by 7-Foot Supersonic Wind Tunnel, and the 8- by 7-Foot Supersonic Wind Tunnel (Figure 3).
+The two supersonic legs share a common 11-stage axial-flow compressor and aftercooler drive leg, and they use
+diversion valves at the ends of a common drive leg. A three-stage axial-flow compressor drives the 11-by-11-Foot
+TWT. A common drive motor system can be coupled to either the 3-stage or 11-stage compressor. One tunnel can
+therefore be run while test articles are being installed in or removed from the other two.
+    The 11-by 11-Foot TWT leg, also known as the Ames 11-ft wind tunnel, is a closed circuit, variable-pressure,
+continuous operation wind tunnel (Figure 4). Subsonic Mach number control involves setting the compressor drive
+speed to one of ten set points and using variable-camber inlet guide vanes for fine Mach number control. Supersonic
+Mach number control involves setting the flexible wall nozzle to achieve the proper area ratio in addition to setting
+the compressor drive speed and the inlet guide vanes. A tandem diffuser system with an annular diffuser followed by
+a wide-angle diffuser is upstream of a 70-ft-diameter aftercooler section in the drive leg. Flow-smoothing vanes are
+located in the tandem diffuser to improve flow uniformity entering the heat exchanger and temperature uniformity in
+the test section. The settling chamber upstream of the contraction is 38 feet in diameter. A Turbulence Reduction
+System (TRS) located in the settling chamber includes a 1-in.-cell-diameter, 20-in. long honeycomb for flow
+straightening followed by two 0.041-in.-diameter-wire, 6-mesh screens for turbulence reduction. The contraction
+provides a transition from the circular cross section of the settling chamber to the square cross section of the test
+section. The contraction ratio is 9.4. The test section is 11-by 11-feet in cross section and 22 feet in length. Slots in
+all four walls run the full length of the test section. The slots contain baffles that provide a 6-percent porosity into
+the plenum chamber. Ejector flaps on all four walls at the exit of the test section can be set remotely to control the
+plenum flow bypassed from the test section. Flow exits the test section and enters a transition region back to the
+circular main diffuser. A Plenum Evacuation System (PES) provides an active method of removing air from the test
+section plenum by using the Make-Up Air (MUA) compressor system of the auxiliaries facility. References 5 and 6
+provide more detailed information about the Ames 11-ft wind tunnel.
+   3. European Transonic Wind Tunnel
+   The European Transonic Wind Tunnel (ETW) is similar to the National Transonic Facility, a pressurized
+cryogenic, closed circuit, continuous-flow, fan-driven wind tunnel. It can be operated in closed and slotted wall
+configurations for testing full and half-models from Mach numbers of 0.15 up to light supersonic conditions at
+M∞=1.35. Pure high quality nitrogen is used as test gas only. The capability of varying the gas temperature, pressure
+                                                         3
+                                 American Institute of Aeronautics and Astronautics
+and speed independently allows for pure Reynolds number and/or aeroelastic investigations. The test section
+dimensions are 7.87 ft (2.4 m) in width, 6.56 ft (2 m) in height and about 30 ft (9 m) in length. High flow quality is
+provided by 2 filling screens in the wide angle diffuser combined with a flow straightener (honeycomb) and 2 anti-
+turbulence screens followed by a fixed contraction and a flexible nozzle for supersonic operation as given in Figure
+5. Additionally, the tunnel features a second throat downstream of the re-entry preventing flow disturbances
+eventually generated in the high-speed diffuser from propagating upstream into the test-section.
+    The ETW operating range covers pressures from 110kPa to 450kPa and temperatures from 313K down to 110K
+allowing the achievement of maximum Reynolds numbers of 50 million for full models and 90 million for semi-
+span models at a Mach number around 0.85. While the tunnel shell is internally insulated against heat losses the heat
+generated by the fan is compensated by the evaporation of the injected liquid nitrogen, which is sprayed into the
+tunnel upstream of the compressor. Further details about the facility and its operation can be found at www.etw.de.
+
+B. Model Description
+    The model used in the current investigation was the NASA Common Research Model. This configuration
+consists of a contemporary supercritical transonic wing and a fuselage that is representative of a wide-body
+commercial transport aircraft. The CRM is designed for a cruise Mach number of M∞ = 0.85 and a corresponding
+design lift coefficient of CL = 0.5. A sketch of the CRM with reference quantities listed is shown in Figure 6. The
+aspect ratio is 9.0, the leading edge sweep angle is 35 degrees, the wing reference area (S) is 3.01 ft2, the wing span
+(b) is 62.47 inches, and the mean aerodynamic chord (c) is 7.45 inches. The model moment reference center is
+located 35.8 inches back from the fuselage nose and 2.04 inches below the fuselage centerline. Pressure distributions
+are measured on both the left and right wings using 291 pressure orifices located in 9 span-wise wing stations (η =
+0.131, 0.201, 0.283, 0.397, 0.502, 0.603, 0.727, 0.846, and 0.950). All pressure measurements were made using
+Electronically Scanned Pressure (ESP) modules mounted inside the forward portion of the fuselage. Based on
+quoted accuracies from the ESP module manufacturer, surface pressure measurements should be in error no more
+than +/- 0.015 psi. This in turn would correspond to a variation of no more than +/- 0.0026 in terms of Cp. The
+model is mounted in the wind tunnel using a blade sting arrangement in all three tunnels. The only difference
+between the NTF and Ames 11-ft arrangement occur downstream of the model support system, as shown in Figure 7
+and Figure 8. The difference between the sting arrangement of the NTF and ETW begins earlier, i.e., downstream
+of the blade part of the model support system, as shown in Figure 9. No corrections have been made in any of the
+data sets for this mounting arrangement. Further details on this geometry are given in Ref. 7.
+
+C. Test Conditions
+    1. National Transonic Facility
+    The investigation, conducted over a 6-week period, provided force and moment, surface pressure, model
+deformation, and surface flow visualization data. Testing was conducted at 5, 19.8 and 30 million Reynolds
+number. The 5 and 19.8 million Reynolds number data were collected to provide a comparison to previously
+calculated CFD results and all of the Reynolds numbers were used to provide an assessment of Reynolds number
+effects. The 19.8 million Reynolds number data were collected at two different q∞ levels – a high and a low q∞
+condition. Having two q∞ levels at the same Reynolds number provides an aeroelastic step in the data. All Reynolds
+number values presented in this paper are based on mean aerodynamic chord. The data were collected at
+temperatures ranging from -250ºF up to 120º F.
+    All data presented in this paper were obtained at freestream Mach numbers of 0.7 and 0.85. Data were generally
+obtained over an angle-of-attack range from -3° to +12° at 5 million Reynolds number and from -3° to +6° at 19.8
+and 30 million Reynolds numbers. The reduced angle-of-attack range at the higher Reynolds number was required
+such that safe model stress levels would not be exceeded. Flow angularity measurements were made and upflow
+corrections ranging from 0.092° to 0.173° were applied to the final NTF data. Classical wall corrections accounting
+for model blockage, wake blockage, tunnel buoyancy, and lift interference have been applied.
+    In order to ensure a consistent and repeatable transition from laminar to turbulent flow and to support the goal of
+the wind tunnel data being used for CFD validation purposes, it was important to apply a proven and reliable method
+to fix transition on the model. Evercoat trip dots measuring 0.05 inches in diameter and spaced 0.1 inches apart
+(center to center) were used for the current investigation. For a chord Reynolds number of 5 million, a trip dot height
+of 0.0035 inches was used from the SOB (side of body) to the yehudi break and 0.003 inches was used from the
+yehudi break to the wing tip. These trip dots were installed at 10% chord. Vinyl adhesive trip dots were applied at
+the nose of the fuselage and left on for the entire test. When the tails were on the model, trip dots were located at
+10% chord and measured 0.003 inches.
+                                                            4
+                                  American Institute of Aeronautics and Astronautics
+    Another important set of data obtained in this investigation was model deformation measurements. Since an
+effective correlation of computational and experimental data will be directly tied to how well the computational and
+experimental model geometries match one another, it is important to obtain an accurate definition of the model
+geometry as tested under aerodynamic loads. In order to obtain this information, a video model deformation
+measurement technique8 has been developed and employed multiple times at the NTF. This system was used in the
+current investigation to obtain wing deflection and twist measurements due to aerodynamic loading and this data is
+presented herein.
+    2. Ames 11-ft Wind Tunnel
+    The investigation, conducted over a 5-week period, provided force and moment, surface pressure, and surface
+flow visualization data. Testing was conducted at a chord Reynolds number of 5 million. The data were collected at
+temperatures of approximately 100º F.
+    All data presented in this paper were obtained at freestream Mach numbers of 0.7 to 0.85. Data were generally
+obtained over an angle-of-attack range from -3° to +12° at 5 million chord Reynolds number. Flow angularity
+measurements were made and upflow corrections ranging from 0.013° to 0.067° were applied to the final data.
+Classical wall corrections accounting for tunnel buoyancy and lift interference have been applied.
+    Transition was also fixed on the model when tested at the Ames 11-ft wind tunnel. For this investigation,
+though, only vinyl adhesive trip dots were applied. These trip dots measured 0.05 inches in diameter and were
+spaced 0.1 inches apart. For a chord Reynolds number of 5 million, a trip dot height of 0.0035 inches was used from
+the SOB (side of body) to the yehudi break, and 0.003 inches was used from the yehudi break to the wing tip. These
+trip dots were installed at 10% chord. Vinyl adhesive trip dots were also applied at the nose of the fuselage and left
+on for the entire test. Finally, when the tails were on the model, trip dots were located at 10% chord and measured
+0.003 inches.
+    3. European Transonic Wind Tunnel
+    Since this investigation was funded by the European Commission as part of the ESWIRP project, the available
+budget only allowed for testing over a limited range of conditions. The test plan for the 5-day test campaign in the
+ETW was determined based on a compromise between test requirements from the European project group chaired
+by J.L. Goddard from ONERA-France which focused on acquiring data for CFD validations of unsteady wake flows
+and a repeat of the conditions at which the used CRM model had been tested in the NTF. A few polars were added at
+a very low Reynolds number to provide comparative aerodynamic data for the Japanese research organisation JAXA
+who have tested the CRM in a downscaled version in their transonic tunnel.
+    For achieving the scientific goal of the project, newly integrated measurement capabilities were operated during
+the campaign: unsteady PIV for wake flow analysis and unsteady and steady model deformation measurements
+combined with the recording of unsteady balance signals taking the benefit of an upgraded fast high capacity data
+acquisition system. In the frame of the present paper only aerodynamic data like force, moments and wing pressure
+distributions combined with the wing deformation are presented. Although, data were acquired at 12 different Mach
+numbers ranging from 0.25 to 0.87 the majority focussed on M=0.7 and the model design Mach number of 0.85. So,
+with respect to the intended comparison of results, the reference test conditions of the NTF at these two Mach
+numbers were carefully set and controlled. To cover the relevant Reynolds numbers of 5, 19.8 and 30 million the
+tunnel temperature was varied between 302 K and 117 K combined with corresponding pressures between 200 and
+300 kPa. As to be seen in Figure 10, the operating envelopes of NTF and ETW do not allow achieving the minimum
+and maximum Reynolds number at the identical q/E value. Hence, it was decided to duplicate the 19.8 million
+Reynolds number at a lower and higher q/E value allowing an additional comparison of the model deformation
+assessment as a function of the different aeroelastic effects. By performing lift polars with the model in upright and
+inverted position the upwash could be assessed as 0.010 to 0.015 deg over the full operating range. The measured
+data were additionally corrected for wall interference based on the ETW experimental assessment established in the
+past. Extreme care is always given to the measurement of the model angle of attack. Before starting the test
+campaign the electrical offset and misalignment of the relevant inclinometer inside the model is checked even under
+load applied to it. Special care was also given to the application of the transition band classically used when testing
+at a chord Reynolds number of 5 million. Performing this work in close cooperation with the NTF experts
+minimised the risk for later mismatches in the results originated by this sensitive item.
+    Before facilities like NTF and ETW went into operation engineers were convinced of the rigidity of wind tunnel
+models not suffering remarkable deformations generated by aerodynamic loads especially present in pressurised
+facilities. Using the unique capabilities of these tunnels for establishing identical Reynolds numbers at different
+pressure or better q/E levels the opposite could be proven. Nowadays, the correct assessment of the wing shape
+under load is mandatory for all comparisons to CFD results. Starting with the developments of appropriate
+                                                         5
+                                 American Institute of Aeronautics and Astronautics
+measurement systems with a Moirée tool today, ETW may operate 4 systems in parallel, e.g. for monitoring the
+shape of the main wing and all high lift components of a half-model. The Stereo Pattern Tracking systems (SPT) are
+capable of monitoring the shift in space of markers pasted on the lower wing surface as to be seen in Figure 9. In the
+test campaign reported here one system was looking on the main wing with 58 frames/sec while a second one
+monitored unsteady HTP movements with 386 frames/sec. More details and results can be found in Reference 9.
+
+                                       III. Results and Discussion
+
+A. Force & Moment Comparisons
+     One of the primary purposes of this paper is to present the comparison data between the NASA tunnels and the
+ETW wind tunnel. First, the lift, drag and pitching moment are examined. Figures 11 and 12 show the comparisons
+between all three wind tunnels at Rec=5x106. These figures show that at this Reynolds number, the NTF drag data is
+~1 count higher than the ETW data and is 5 counts higher than the Ames data for the M=0.7 case and the NTF drag
+data is 16 counts lower than the ETW data and 5 counts higher than the Ames data for the M=0.85 case. The NTF
+lift data is lower than both the Ames and ETW data and the pitching moment is more nose down than the Ames data
+but less nose down than the ETW data for both Mach numbers presented.
+     Figures 13 and 14 show the lift, drag and pitching moment comparisons for the Rec=19.8x106 case at a low q∞
+value. At Mach = 0.7, the drag data is almost identical, the NTF lift data is lower than the ETW data and the
+pitching moment is less nose down than the ETW data. For the Mach=0.85 case, the NTF drag data is 12 counts
+lower than the ETW data, the NTF lift data is lower than ETW and the pitching moment is once again predicting
+less nose down than ETW.
+     The results for the Rec=19.8x106 case at a high q∞ value cases are given in Figures 15 and 16. For Mach=0.7, the
+drag data is again almost identical between the two tunnels, the NTF lift data is lower than the ETW data and the
+NTF pitching moment data is once again predicting a less nose down value than the ETW data. At Mach = 0.85, a
+similar picture is seen. At this Mach number, the NTF drag data is 10 counts lower than the ETW data and the NTF
+lift data is lower than the ETW lift data and the pitching moment is once again predicting less nose down moment
+than the ETW data.
+     At a flight Reynolds number of Rec=30x106, the comparisons show essentially the same differences as for the
+Rec=19.8x106 at a high q∞ case, as shown in Figures 17 and 18. For Mach=0.7, the NTF and ETW drag data are
+almost identical, the NTF lift data is lower than the ETW data and the NTF pitching moment data is less nose down
+then ETW. At Mach=0.85, the NTF drag data is 9 counts lower than the ETW data, the NTF data is lower than
+ETW and the pitching moment data is less nose down than ETW.
+
+B. Surface Pressure Comparisons
+    Another goal of these investigations was to examine the surface pressure differences between the NTF and ETW
+wind tunnels. Figures 19 through 26 show the surface pressure distributions for the Mach=0.7 and 0.85 cases at
+Rec=5, 19.8 and 30 million. In each of these figures, two points are given for the ETW data. These two points were
+chosen such that they bracket the CL value of the NTF data. This does result in comparison of different angles of
+attack but closer comparison of the CL values. For most of the Mach and Reynolds numbers plotted, the data
+compares very well across the entire wing. There are several minor differences between the data sets but only a few
+major differences are seen. The first major difference is seen in Figure 20. At Mach=0.85, Rec=5x106, the shock on
+the wing at η=0.603 is stronger in the ETW data than in the NTF data. The only other major difference is shown on
+Figure 26, which is the Mach=0.85, Rec=30x106 comparison. At this condition, the shock on the wing at η=0.502 is
+stronger in the NTF data than in the ETW data.
+
+C. Wing Bending & Twist Comparisons
+   The wing bending and twist was measured in both the NTF and the ETW during testing of the CRM. The
+comparison of the results of these measurements are shown in Figures 27 through 32 for Mach numbers of 0.7 and
+0.85 and Reynolds numbers ranging from 5 to 30 million. There was no data taken at Mach=0.7 at Rec=5 or 30
+million therefore no comparisons are given herein for these conditions. The data that is shown indicates that the
+wing twist and wing bending at the two wind tunnels agree well, mostly within the accuracy of the data taken.
+
+
+
+
+                                                        6
+                                American Institute of Aeronautics and Astronautics
+                                               IV. Summary
+   A successful investigation of the new NASA Common Research Model has been completed in the National
+Transonic Facility, the Ames 11-ft Wind Tunnel and the European Transonic Wind Tunnel. Data have been
+obtained at chord Reynolds numbers of 5 million for the WBT0 configuration in all three wind tunnels and in
+addition, at Reynolds numbers of 19.8 and 30 million in the NTF and ETW. Force and moment, surface pressure,
+wing bending and twist data are presented herein. Tunnel-to-tunnel effects have been assessed for all of these data.
+   1)     For all of the data presented herein, the NTF data predicted a lower lift value than both the Ames 11-ft and
+          ETW.
+   2)     The drag differences varied depending on Mach and Reynolds number. At a M=0.7 and Rec=5x106, the
+          NTF drag data was higher than the ETW and Ames 11-ft data but at M=0.7 at the other three Reynolds
+          number and dynamic pressure conditions, the NTF and ETW drag data were almost identical. For all of
+          the M=0.85 cases presented, the NTF drag data is predicted lower than the ETW data by as much as 16
+          drag counts.
+   3)     At a Reynolds number of 5 million based on chord, the NTF pitching moment was more nose down than
+          the Ames 11-ft data but less nose down than the ETW data. At the other three Reynolds number and
+          dynamic pressure conditions, the NTF data was consistently predicted as being less nose down than the
+          ETW data.
+   4)     All of the surface pressures presented herein show good agreement between the NTF and ETW data across
+          the wing, with only a couple of exceptions.
+   5)     The wing bending and twist data agree well – to within data tolerance for most of the conditions presented
+          herein.
+
+                                               Acknowledgments
+    The authors would like to gratefully acknowledge the efforts of the NASA and ETW teams throughout all phases
+of these experimental investigations. NTF, Ames 11-ft and ETW staff are recognized for their efforts in effectively
+obtaining all desired experimental data.
+
+
+
+
+                                                        7
+                                American Institute of Aeronautics and Astronautics
+                                                  References
+1.
+   Lutz, Thorsten, Gansel, Philipp, Godard, Jean-Luc, Gorbushin, Anton, Konrath, Robert, Quest, Jürgen, and Rivers, S.
+ Melissa B., “Going for Experimental and Numerical Unsteady Wake Analyses Combined with Wall Interference
+ Assessment Using the NASA CRM Model in ETW,” AIAA Paper 2013-0871, 51st AIAA Aerospace Sciences Meeting
+ including the New Horizons Forum and Aerospace Exposition, Grapevine, TX, January 2013.
+2.
+   Konrath, Robert, “High-Speed PIV Applied to Wake of NASA CRM Model in ETW Under High Re-Number Stall
+ Conditions for Sub- and Transonic Speeds,” 53rd AIAA Aerospace Sciences Meeting, Kissimmee, FL, January 2015,
+ (submitted for publication).
+3.
+   Gloss, B. B., “Current Status and Some Future Test Directions for the US National Transonic Facility. Wind Tunnels and
+ Wind Tunnel Test Techniques,” Royal Aeronautical Society, 1992, pp. 3.1-3.7.
+4.
+   Fuller, D. E., “Guide for Users of the National Transonic Facility,” NASA TM-83124, 1981.
+5.
+   Kmak, F., “Modernization and Activation of the NASA Ames 11-by-11-Foot Transonic Wind Tunnel,” AIAA Paper
+ 2000-2680, 21st Aerodynamic Measurement Technology and Ground Testing Conference, June 2000.
+6.
+   Amaya, M.A. and Murthy, S.V., “Flow Quality Measurements in the NASA Ames Upgraded 11-by-11-Foot Transonic
+ Wind Tunnel (invited Paper),” AIAA Paper 2000-2681, 21st Aerodynamic Measurement Technology and Ground Testing
+ Conference. June 2000.
+7.
+   J. C. Vassberg, M. A. DeHaan, S. M. Rivers, and R. A. Wahls. “Development of a Common Research Model for Applied
+ CFD validation studies.” AIAA Paper 2008-6919, 26th AIAA Applied Aerodynamics Conference, Hawaii, HI, August 2008.
+8.
+   Burner, A. W. and Liu, T., “Videogrammetric Model Deformation Measurement Technique,” Journal of Aircraft, Vol. 38,
+ No. 4, July-August 2001, pp. 745-754.
+9.
+   Quix, H., Hensch, A.K., “Dynamic Measurements on the NASA CRM Model tested in ETW,” 53rd AIAA Aerospace
+ Sciences Meeting, Kissimmee, FL, January 2015, (submitted for publication).
+
+
+
+
+                                                      8
+                              American Institute of Aeronautics and Astronautics
+                         Figure 1. Aerial view of the National Transonic Facility.
+
+
+
+
+Figure 2. Sketch of the National Transonic Facility tunnel circuit. Linear dimensions are given in feet.
+
+
+
+
+                                                   9
+                           American Institute of Aeronautics and Astronautics
+Figure 3. Unitary Plan Wind Tunnel (UPWT) at the NASA Ames Research Center.
+
+
+
+
+            Figure 4. Sketch of the Ames 11-Foot Wind Tunnel.
+
+                                     10
+             American Institute of Aeronautics and Astronautics
+        &# $                                     ' + %  !#$$ #,3/ -         
+
+$ &$
+  %#  
+ '+ 
+
+
+
+
+                                                                                                       00*2
+                                           '#%                          "& %#  
+                                                   $%% '%                % 
+                                                    ##%  
+
+
+
+
+                                            &$%      # %     %$$%
+     % #'%#$
+                                                ))                       #$$&#'%
+       (  # '%#%
+                                                                            %# $&% 
+                                                    41*1
+             Figure 5. Sketch of the European Transonic Wind Tunnel aerodynamic circuit.
+
+
+
+
+                                                    11
+                            American Institute of Aeronautics and Astronautics
+                              a) Top View
+
+
+
+
+                            b) Isometric View
+
+Figure 6. Sketch of the Common Research Model with reference quantities.
+
+
+
+
+                                    12
+            American Institute of Aeronautics and Astronautics
+Figure 7. Photo of the Common Research Model in the National Transonic Facility.
+
+
+
+
+ Figure 8. Photo of the Common Research Model in the Ames 11-ft Wind Tunnel.
+                                         13
+                 American Institute of Aeronautics and Astronautics
+Figure 9. Photo of the Common Research Model in the European Transonic Wind Tunnel.
+
+
+
+
+                    Figure 10. ETW test envelope at Mach = 0.85.
+                                           14
+                   American Institute of Aeronautics and Astronautics
+                                                                  o
+                                 Facility       Run           Tt F    pt,psi   q',psf
+
+                               NTF Test 197     87.           120.1   33.76    1201.
+                           Ames 11ft Test 216   63.           79.86   30.85    1098.
+                           ETW ESWIRP Test      141.          82.26   30.71    1095.
+
+
+     .24                                                   .030
+
+     .20                                                   .028
+     .16
+                                                           .026
+CD
+
+
+
+
+                                                      CD
+     .12
+                                                           .024
+     .08
+
+     .04                                                   .022
+
+      0                                                    .020
+
+
+     1.0                                                    .60
+      .8
+      .6                                                    .55
+
+      .4
+CL
+
+
+
+
+                                                       CL
+
+
+
+
+                                                            .50
+      .2
+      0
+                                                            .45
+     -.2
+     -.4                                                    .40
+
+
+     .32                                                    .06
+
+     .24
+                                                            .04
+     .16
+Cm
+
+
+
+
+                                                       Cm
+
+
+
+
+     .08                                                    .02
+
+      0
+                                                              0
+ -.08
+ -.16                                                       -.02
+     -4 -2     0   2   4   6     8 10 12                        2.5    3.0     3.5      4.0   4.5
+                       _                                                       _
+
+     Figure 11. Lift, drag and pitching moment coefficients, Mach = 0.7, Rec = 5x106.
+
+
+                                            15
+                    American Institute of Aeronautics and Astronautics
+                                                                   o
+                                  Facility       Run          Tt F     pt,psi   q',psf
+
+                                NTF Test 197     92.          120.0    30.49    1383.
+                            Ames 11ft Test 216   77.          93.35    28.74    1304.
+                            ETW ESWIRP Test      153.         84.33    27.83    1265.
+
+
+     .24                                                    .030
+
+     .20                                                    .028
+     .16
+                                                            .026
+CD
+
+
+
+
+                                                       CD
+     .12
+                                                            .024
+     .08
+
+     .04                                                    .022
+
+       0                                                    .020
+
+
+     1.0                                                     .60
+      .8
+      .6                                                     .55
+
+      .4
+CL
+
+
+
+
+                                                        CL
+
+
+
+
+                                                             .50
+      .2
+       0
+                                                             .45
+     -.2
+     -.4                                                     .40
+
+
+     .32                                                     .10
+
+     .24
+                                                             .08
+     .16
+Cm
+
+
+
+
+                                                        Cm
+
+
+
+
+     .08                                                     .06
+
+       0
+                                                             .04
+ -.08
+ -.16                                                        .02
+     -4 -2      0   2   4   6     8 10 12                       2.0    2.5      3.0      3.5   4.0
+                        _                                                       _
+
+     Figure 12. Lift, drag and pitching moment coefficients, Mach = 0.85, Rec = 5x106.
+
+
+
+                                             16
+                     American Institute of Aeronautics and Astronautics
+                                                                           o
+                                             Facility     Run           Tt F      pt,psi         q',psf
+
+                                           NTF Test 197   209.         -250.1     32.33          1148.
+                                       ETW ESWIRP Test    223.         -250.8     32.21          1147.
+
+
+
+
+          .10                                                  .028
+
+          .08                                                  .026
+
+          .06                                                  .024
+     CD
+
+
+
+
+                                                          CD
+          .04                                                  .022
+
+          .02                                                  .020
+
+           0                                                   .018
+
+
+          1.0                                                    .60
+           .8
+           .6                                                    .55
+
+           .4
+     CL
+
+
+
+
+                                                           CL
+
+
+
+
+                                                                 .50
+           .2
+           0                                                     .45
+          -.2
+          -.4                                                    .40
+
+
+          .32                                                    .06
+          .28
+          .24
+                                                                 .04
+          .20
+          .16
+    Cm
+
+
+
+
+                                                          Cm
+
+
+
+
+          .12                                                    .02
+          .08
+          .04
+                                                                   0
+            0
+         -.04
+         -.08                                                    -.02
+             -4   -2   0   2       4   6      8    10                2.5        3.0        3.5            4.0   4.5
+                               _                                                           _
+
+
+
+Figure 13. Lift, drag and pitching moment coefficients, Mach = 0.7, Rec = 19.8x106, q∞ = 1148 psf.
+
+                                                   17
+                           American Institute of Aeronautics and Astronautics
+                                                                           o
+                                              Facility     Run           Tt F      pt,psi         q',psf
+
+                                            NTF Test 197   212.         -250.5     28.92          1312.
+                                        ETW ESWIRP Test    226.         -250.0     29.00          1317.
+
+
+
+
+           .10                                                  .028
+
+           .08                                                  .026
+
+           .06                                                  .024
+     CD
+
+
+
+
+                                                           CD
+           .04                                                  .022
+
+           .02                                                  .020
+
+            0                                                   .018
+
+
+           1.0                                                    .60
+            .8
+            .6                                                    .55
+
+            .4
+      CL
+
+
+
+
+                                                           CL
+
+
+
+
+                                                                  .50
+            .2
+            0                                                     .45
+           -.2
+           -.4                                                    .40
+
+
+           .32                                                    .08
+           .28
+           .24
+                                                                  .06
+           .20
+           .16
+     Cm
+
+
+
+
+                                                           Cm
+
+
+
+
+           .12                                                    .04
+           .08
+           .04
+                                                                  .02
+             0
+          -.04
+          -.08                                                     0
+              -4   -2   0   2       4   6      8    10              2.0          2.5        3.0            3.5   4.0
+                                _                                                           _
+
+
+
+Figure 14. Lift, drag and pitching moment coefficients, Mach = 0.85, Rec = 19.8x106, q∞ = 1312 psf.
+
+                                                    18
+                            American Institute of Aeronautics and Astronautics
+                                                                          o
+                                             Facility     Run           Tt F     pt,psi     q',psf
+
+                                           NTF Test 197   103.         -181.8    48.77          1736.
+                                       ETW ESWIRP Test    211.         -184.0    48.29          1720.
+
+
+
+
+          .10                                                   .028
+
+          .08                                                   .026
+
+          .06                                                   .024
+     CD
+
+
+
+
+                                                          CD
+          .04                                                   .022
+
+          .02                                                   .020
+
+           0                                                    .018
+
+
+          1.0                                                    .60
+           .8
+           .6                                                    .55
+
+           .4
+     CL
+
+
+
+
+                                                           CL
+
+
+
+
+                                                                 .50
+           .2
+           0                                                     .45
+          -.2
+          -.4                                                    .40
+
+
+          .32                                                    .06
+          .28
+          .24
+                                                                 .04
+          .20
+          .16
+    Cm
+
+
+
+
+                                                          Cm
+
+
+
+
+          .12                                                    .02
+          .08
+          .04
+                                                                   0
+            0
+         -.04
+         -.08                                                    -.02
+             -4   -2   0   2       4   6      8    10                2.5        3.0       3.5           4.0   4.5
+                               _                                                          _
+
+
+
+
+Figure 15. Lift, drag and pitching moment coefficients, Mach = 0.7, Rec = 19.8x106, q∞ = 1736 psf.
+
+                                                   19
+                           American Institute of Aeronautics and Astronautics
+                                              Facility     Run           TtoF     pt,psi     q',psf
+
+                                            NTF Test 197   106.         -181.6    43.68          1983.
+                                        ETW ESWIRP Test    213.         -182.7    43.54          1977.
+
+
+
+
+           .10                                                   .028
+
+           .08                                                   .026
+
+           .06                                                   .024
+     CD
+
+
+
+
+                                                           CD
+           .04                                                   .022
+
+           .02                                                   .020
+
+            0                                                    .018
+
+
+           1.0                                                    .60
+            .8
+            .6                                                    .55
+
+            .4
+      CL
+
+
+
+
+                                                            CL
+
+
+
+
+                                                                  .50
+            .2
+            0                                                     .45
+           -.2
+           -.4                                                    .40
+
+
+           .32                                                    .08
+           .28
+           .24
+                                                                  .06
+           .20
+           .16
+     Cm
+
+
+
+
+                                                            Cm
+
+
+
+
+           .12                                                    .04
+           .08
+           .04
+                                                                  .02
+             0
+          -.04
+          -.08                                                     0
+              -4   -2   0   2       4   6      8    10              2.0          2.5       3.0           3.5   4.0
+                                _                                                          _
+
+
+
+Figure 16. Lift, drag and pitching moment coefficients, Mach = 0.85, Rec = 19.8x106, q∞ = 1983 psf.
+                                                    20
+                            American Institute of Aeronautics and Astronautics
+                                            Facility     Run           TtoF      pt,psi         q',psf
+
+                                          NTF Test 197   220.         -250.0     49.03          1740.
+                                      ETW ESWIRP Test    232.         -250.9     48.79          1739.
+
+
+
+
+         .10                                                  .028
+
+         .08                                                  .026
+
+         .06                                                  .024
+    CD
+
+
+
+
+                                                         CD
+         .04                                                  .022
+
+         .02                                                  .020
+
+          0                                                   .018
+
+
+         1.0                                                    .60
+          .8
+          .6                                                    .55
+
+          .4
+    CL
+
+
+
+
+                                                          CL
+
+
+
+
+                                                                .50
+          .2
+          0                                                     .45
+         -.2
+         -.4                                                    .40
+
+
+         .32                                                    .06
+         .28
+         .24
+                                                                .04
+         .20
+         .16
+   Cm
+
+
+
+
+                                                         Cm
+
+
+
+
+         .12                                                    .02
+         .08
+         .04
+                                                                  0
+           0
+        -.04
+        -.08                                                    -.02
+            -4   -2   0   2       4   6      8    10                2.5        3.0        3.5            4.0   4.5
+                              _                                                           _
+
+
+Figure 17. Lift, drag and pitching moment coefficients, Mach = 0.7, Rec = 30x106, q∞ = 1740 psf.
+
+                                                  21
+                          American Institute of Aeronautics and Astronautics
+                                             Facility     Run           TtoF      pt,psi         q',psf
+
+                                           NTF Test 197   223.         -249.7     43.83          1985.
+                                       ETW ESWIRP Test    233.         -250.0     43.90          1995.
+
+
+
+
+          .10                                                  .028
+
+          .08                                                  .026
+
+          .06                                                  .024
+    CD
+
+
+
+
+                                                          CD
+          .04                                                  .022
+
+          .02                                                  .020
+
+           0                                                   .018
+
+
+          1.0                                                    .60
+           .8
+           .6                                                    .55
+
+           .4
+     CL
+
+
+
+
+                                                           CL
+
+
+
+
+                                                                 .50
+           .2
+           0                                                     .45
+          -.2
+          -.4                                                    .40
+
+
+          .32                                                    .08
+          .28
+          .24
+                                                                 .06
+          .20
+          .16
+    Cm
+
+
+
+
+                                                          Cm
+
+
+
+
+          .12                                                    .04
+          .08
+          .04
+                                                                 .02
+            0
+         -.04
+         -.08                                                     0
+             -4   -2   0   2       4   6      8    10              2.0          2.5        3.0            3.5   4.0
+                               _                                                           _
+
+
+Figure 18. Lift, drag and pitching moment coefficients, Mach = 0.85, Rec = 30x106, q∞ = 1985 psf.
+
+                                                   22
+                           American Institute of Aeronautics and Astronautics
+                                      Facility      Run        Point   q',psf    _       CL
+
+                                  ETW ESWIRP Test   141.0      390.0   1095.    3.57    0.485
+                                    NTF Test 197    87.00      1012.   1202.    3.67    0.489
+                                  ETW ESWIRP Test   141.0      395.0   1095.    3.65    0.493
+
+
+
+
+  -1.6                                               -1.6
+                                  d=0.201                                                       d=0.283
+  -1.2                                               -1.2
+   -.8                                                -.8
+Cp -.4                                           Cp -.4
+
+    0                                                     0
+    .4                                                 .4
+    .8                                                 .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                     0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                       x/c                                                        x/c
+
+  -1.6                                               -1.6
+                                  d=0.502                                                       d=0.603
+  -1.2                                               -1.2
+   -.8                                                -.8
+Cp -.4                                           Cp -.4
+
+    0                                                     0
+    .4                                                 .4
+    .8                                                 .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                     0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                       x/c                                                        x/c
+  -1.6                                               -1.6
+                                  d=0.846                                                       d=0.950
+  -1.2                                               -1.2
+   -.8                                                -.8
+Cp -.4                                           Cp -.4
+
+    0                                                     0
+    .4                                                 .4
+    .8                                                 .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                     0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                       x/c                                                        x/c
+
+
+
+                   Figure 19. Surface pressures, Mach = 0.7, Rec = 5x106.
+                                             23
+                     American Institute of Aeronautics and Astronautics
+                                      Facility      Run        Point   q',psf    _      CL
+
+                                  ETW ESWIRP Test   153.0      340.0   1264.    2.79   0.486
+                                    NTF Test 197    92.00      1149.   1384.    2.94   0.493
+                                  ETW ESWIRP Test   153.0      345.0   1264.    2.88   0.498
+
+
+
+
+  -1.6                                               -1.6
+                                 d=0.201                                                       d=0.283
+  -1.2                                               -1.2
+   -.8                                                -.8
+Cp -.4                                           Cp -.4
+
+    0                                                     0
+    .4                                                 .4
+    .8                                                 .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                     0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                       x/c                                                       x/c
+
+  -1.6                                               -1.6
+                                 d=0.502                                                       d=0.603
+  -1.2                                               -1.2
+   -.8                                                -.8
+Cp -.4                                           Cp -.4
+
+    0                                                     0
+    .4                                                 .4
+    .8                                                 .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                     0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                       x/c                                                       x/c
+  -1.6                                               -1.6
+                                 d=0.846                                                       d=0.950
+  -1.2                                               -1.2
+   -.8                                                -.8
+Cp -.4                                           Cp -.4
+
+    0                                                     0
+    .4                                                 .4
+    .8                                                 .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                     0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                       x/c                                                       x/c
+
+
+                  Figure 20. Surface pressures, Mach = 0.85, Rec = 5x106.
+
+                                             24
+                     American Institute of Aeronautics and Astronautics
+                                       Facility      Run        Point   q',psf    _      CL
+
+                                   ETW ESWIRP Test   223.0      130.0   1147.    3.32   0.480
+                                     NTF Test 197    209.0      2743.   1148.    3.60   0.495
+                                   ETW ESWIRP Test   223.0      135.0   1147.    3.53   0.502
+
+
+
+
+  -1.6                                                -1.6
+                                   d=0.201                                                      d=0.283
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+  -1.6                                                -1.6
+                                   d=0.502                                                      d=0.603
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+  -1.6                                                -1.6
+                                   d=0.846                                                      d=0.950
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+
+           Figure 21. Surface pressures, Mach = 0.7, Rec = 19.8x106, q∞ = 1148 psf.
+
+                                              25
+                      American Institute of Aeronautics and Astronautics
+                                       Facility      Run        Point   q',psf    _      CL
+
+                                   ETW ESWIRP Test   226.0      110.0   1317.    2.31   0.440
+                                     NTF Test 197    212.0      2775.   1310.    2.63   0.470
+                                   ETW ESWIRP Test   226.0      115.0   1317.    2.52   0.474
+
+
+
+
+  -1.6                                                -1.6
+                                  d=0.201                                                       d=0.283
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+  -1.6                                                -1.6
+                                  d=0.502                                                       d=0.603
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+  -1.6                                                -1.6
+                                  d=0.846                                                       d=0.950
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+
+           Figure 22. Surface pressures, Mach = 0.85, Rec = 19.8x106, q∞=1310 psf.
+
+                                              26
+                      American Institute of Aeronautics and Astronautics
+                                       Facility      Run        Point   q',psf    _       CL
+
+                                   ETW ESWIRP Test   211.0     370.0    1720.    3.47    0.484
+                                     NTF Test 197    103.0     1338.    1737.    3.67    0.491
+                                   ETW ESWIRP Test   211.0     375.0    1720.    3.56    0.492
+
+
+
+
+  -1.6                                                -1.6
+                                   d=0.201                                                       d=0.283
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                        x/c
+
+  -1.6                                                -1.6
+                                   d=0.502                                                       d=0.603
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                        x/c
+  -1.6                                                -1.6
+                                   d=0.846                                                       d=0.950
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                        x/c
+
+
+           Figure 23. Surface pressures, Mach = 0.7, Rec = 19.8x106, q∞ = 1737 psf.
+
+                                              27
+                      American Institute of Aeronautics and Astronautics
+                                       Facility      Run        Point   q',psf    _      CL
+
+                                   ETW ESWIRP Test   213.0      265.0   1977.    2.74   0.488
+                                     NTF Test 197    106.0      1376.   1985.    2.91   0.493
+                                   ETW ESWIRP Test   213.0      270.0   1978.    2.83   0.502
+
+
+
+
+  -1.6                                                -1.6
+                                  d=0.201                                                       d=0.283
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+  -1.6                                                -1.6
+                                  d=0.502                                                       d=0.603
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+  -1.6                                                -1.6
+                                  d=0.846                                                       d=0.950
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+
+          Figure 24. Surface pressures, Mach = 0.85, Rec = 19.8x106, q∞ = 1985 psf.
+
+                                              28
+                      American Institute of Aeronautics and Astronautics
+                                       Facility      Run        Point   q',psf    _      CL
+
+                                   ETW ESWIRP Test   232.0      130.0   1739.    3.49   0.490
+                                     NTF Test 197    220.0      2887.   1739.    3.64   0.491
+                                   ETW ESWIRP Test   232.0      135.0   1739.    3.72   0.513
+
+
+
+
+  -1.6                                               -1.6
+                                   d=0.201                                                      d=0.283
+  -1.2                                               -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+  -1.6                                               -1.6
+                                   d=0.502                                                      d=0.603
+  -1.2                                               -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+  -1.6                                               -1.6
+                                   d=0.846                                                      d=0.950
+  -1.2                                               -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+
+            Figure 25. Surface pressures, Mach = 0.7, Rec = 30x106, q∞ = 1739 psf.
+
+                                              29
+                      American Institute of Aeronautics and Astronautics
+                                       Facility      Run        Point   q',psf    _      CL
+
+                                   ETW ESWIRP Test   233.0      100.0   1995.    2.33   0.434
+                                     NTF Test 197    223.0      2919.   1985.    2.66   0.461
+                                   ETW ESWIRP Test   233.0      105.0   1995.    2.56   0.467
+
+
+
+
+  -1.6                                                -1.6
+                                  d=0.201                                                       d=0.283
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+  -1.6                                                -1.6
+                                  d=0.502                                                       d=0.603
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+  -1.6                                                -1.6
+                                  d=0.846                                                       d=0.950
+  -1.2                                                -1.2
+   -.8                                                 -.8
+Cp -.4                                            Cp -.4
+    0                                                      0
+    .4                                                  .4
+    .8                                                  .8
+         0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0                      0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0
+
+                        x/c                                                       x/c
+
+
+           Figure 26. Surface pressures, Mach = 0.85, Rec = 30x106, q∞ = 1985 psf.
+
+                                              30
+                      American Institute of Aeronautics and Astronautics
+                     1.0
+
+
+                      .5
+
+
+                      0
+e, deg
+
+
+
+
+                     -.5
+
+
+                -1.0
+
+
+                -1.5
+                                                                                                       Facility    Run    Point   CL
+
+                -2.0                                                                                 NTF Test 197  92.    1139. -0.021
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0                   NTF Test 197  92.    1143. 0.240
+                                                                                                     NTF Test 197  92.    1149. 0.494
+                                                     d                                               NTF Test 197  92.    1156. 0.647
+                                                                                                     NTF Test 197  92.    1159. 0.704
+                                                                                                   ETW ESWIRP Test 182.   132.0 -0.034
+                                                                                                   ETW ESWIRP Test 182.   331.0 0.226
+                     1.5                                                                           ETW ESWIRP Test 182.   531.0 0.514
+                                                                                                   ETW ESWIRP Test 182.   702.0 0.643
+                                                                                                   ETW ESWIRP Test 182.   845.0 0.698
+
+
+
+
+                     1.0
+ Wing Bending, in.
+
+
+
+
+                      .5
+
+
+
+
+                      0
+
+
+
+
+                     -.5
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0
+                                                     d
+
+
+                               Figure 27. Wing bending and twist comparison, Mach = 0.85, Rec = 5x106.
+                                                                      31
+                                              American Institute of Aeronautics and Astronautics
+                     1.0
+
+
+                      .5
+
+
+                      0
+e, deg
+
+
+
+
+                     -.5
+
+
+                -1.0
+
+
+                -1.5
+                                                                                                       Facility    Run    Point   CL
+
+                -2.0                                                                                 NTF Test 197  209.   2733. -0.003
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0                   NTF Test 197  209.   2737. 0.219
+                                                                                                     NTF Test 197  209.   2741. 0.440
+                                                     d                                               NTF Test 197  209.   2747. 0.600
+                                                                                                     NTF Test 197  209.   2750. 0.695
+                                                                                                   ETW ESWIRP Test 225.   100.0 0.003
+                                                                                                   ETW ESWIRP Test 225.   240.0 0.228
+                     1.5                                                                           ETW ESWIRP Test 225.   380.0 0.448
+                                                                                                   ETW ESWIRP Test 225.   508.0 0.605
+                                                                                                   ETW ESWIRP Test 225.   624.0 0.700
+
+
+
+
+                     1.0
+ Wing Bending, in.
+
+
+
+
+                      .5
+
+
+
+
+                      0
+
+
+
+
+                     -.5
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0
+                                                     d
+
+
+                      Figure 28. Wing bending and twist comparison, Mach = 0.7, Rec = 19.8x106, q∞ = 1148 psf.
+
+
+
+                                                                      32
+                                              American Institute of Aeronautics and Astronautics
+                     1.0
+
+
+                      .5
+
+
+                      0
+e, deg
+
+
+
+
+                     -.5
+
+
+                -1.0
+
+
+                -1.5
+                                                                                                       Facility    Run    Point   CL
+
+                -2.0                                                                                 NTF Test 197  212.   2768. -0.013
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0                   NTF Test 197  212.   2772. 0.254
+                                                                                                     NTF Test 197  212.   2776. 0.548
+                                                     d                                               NTF Test 197  212.   2782. 0.664
+                                                                                                     NTF Test 197  212.   2784. 0.689
+                                                                                                   ETW ESWIRP Test 227.   101.0 -0.012
+                                                                                                   ETW ESWIRP Test 227.   240.0 0.255
+                     1.5                                                                           ETW ESWIRP Test 227.   379.0 0.547
+                                                                                                   ETW ESWIRP Test 227.   506.0 0.662
+                                                                                                   ETW ESWIRP Test 227.   622.0 0.719
+
+
+
+
+                     1.0
+ Wing Bending, in.
+
+
+
+
+                      .5
+
+
+
+
+                      0
+
+
+
+
+                     -.5
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0
+                                                     d
+
+
+                     Figure 29. Wing bending and twist comparison, Mach = 0.85, Rec = 19.8x106, q∞ = 1312 psf.
+
+
+
+                                                                      33
+                                              American Institute of Aeronautics and Astronautics
+                     1.0
+
+
+                      .5
+
+
+                      0
+e, deg
+
+
+
+
+                     -.5
+
+
+                -1.0
+
+
+                -1.5
+                                                                                                       Facility    Run    Point    CL
+
+                -2.0                                                                                 NTF Test 197  103.   1327.   0.115
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0                   NTF Test 197  103.   1333.   0.331
+                                                                                                     NTF Test 197  103.   1339.   0.543
+                                                     d                                               NTF Test 197  103.   1341.   0.642
+                                                                                                     NTF Test 197  103.   1343.   0.725
+                                                                                                   ETW ESWIRP Test 212.   218.0   0.112
+                                                                                                   ETW ESWIRP Test 212.   356.0   0.330
+                     1.5                                                                           ETW ESWIRP Test 212.   494.0   0.540
+                                                                                                   ETW ESWIRP Test 212.   609.0   0.640
+                                                                                                   ETW ESWIRP Test 212.   723.0   0.720
+
+
+
+
+                     1.0
+ Wing Bending, in.
+
+
+
+
+                      .5
+
+
+
+
+                      0
+
+
+
+
+                     -.5
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0
+                                                     d
+
+
+                      Figure 30. Wing bending and twist comparison, Mach = 0.7, Rec = 19.8x106, q∞ = 1737 psf.
+
+
+
+                                                                      34
+                                              American Institute of Aeronautics and Astronautics
+                     1.0
+
+
+                      .5
+
+
+                      0
+e, deg
+
+
+
+
+                     -.5
+
+
+                -1.0
+
+
+                -1.5
+                                                                                                       Facility    Run    Point   CL
+
+                -2.0                                                                                 NTF Test 197  106.   1365. -0.013
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0                   NTF Test 197  106.   1369. 0.249
+                                                                                                     NTF Test 197  106.   1377. 0.529
+                                                     d                                               NTF Test 197  106.   1380. 0.653
+                                                                                                     NTF Test 197  106.   1382. 0.705
+                                                                                                   ETW ESWIRP Test 218.   30.00 -0.020
+                                                                                                   ETW ESWIRP Test 218.   167.0 0.244
+                     1.5                                                                           ETW ESWIRP Test 218.   303.0 0.528
+                                                                                                   ETW ESWIRP Test 218.   428.0 0.655
+                                                                                                   ETW ESWIRP Test 218.   540.0 0.707
+
+
+
+
+                     1.0
+ Wing Bending, in.
+
+
+
+
+                      .5
+
+
+
+
+                      0
+
+
+
+
+                     -.5
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0
+                                                     d
+
+
+                     Figure 31. Wing bending and twist comparison, Mach = 0.85, Rec = 19.8x106, q∞ = 1737 psf.
+
+
+
+                                                                      35
+                                              American Institute of Aeronautics and Astronautics
+                     1.0
+
+
+                      .5
+
+
+                      0
+e, deg
+
+
+
+
+                     -.5
+
+
+                -1.0
+
+
+                -1.5
+                                                                                                       Facility    Run    Point   CL
+
+                -2.0                                                                                 NTF Test 197  223.   2913. 0.064
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0                   NTF Test 197  223.   2916. 0.250
+                                                                                                     NTF Test 197  223.   2920. 0.533
+                                                     d                                               NTF Test 197  223.   2926. 0.663
+                                                                                                     NTF Test 197  223.   2928. 0.690
+                                                                                                   ETW ESWIRP Test 237.   100.0 -0.001
+                                                                                                   ETW ESWIRP Test 237.   236.0 0.251
+                     1.5                                                                           ETW ESWIRP Test 237.   372.0 0.534
+                                                                                                   ETW ESWIRP Test 237.   497.0 0.665
+                                                                                                   ETW ESWIRP Test 237.   610.0 0.719
+
+
+
+
+                     1.0
+ Wing Bending, in.
+
+
+
+
+                      .5
+
+
+
+
+                      0
+
+
+
+
+                     -.5
+                           0   .1   .2   .3     .4    .5   .6   .7   .8   .9   1.0
+                                                     d
+
+
+
+                      Figure 32. Wing bending and twist comparison, Mach = 0.85, Rec = 30x106, q∞ = 1985 psf.
+                                                                      36
+                                              American Institute of Aeronautics and Astronautics
+

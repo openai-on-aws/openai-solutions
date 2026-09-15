@@ -1,0 +1,1233 @@
+                                                  NASA TN D-1766
+
+
+
+
+        TECHNICAL NOTE
+                      D-I 766
+
+        WIND-TUNNEL TESTS OF TWO VTOL
+
+             PROPELLERS IN DESCENT
+
+        By Paul F. Yaggy and Kenneth W. M o r t
+
+               Ames Research C e n t e r
+                Moffett Field, Calif.
+
+
+
+
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+WASHINGTON                                  March 1963
+                            NATIONAL AERONAUTICS AND SPACE ADMINISTMTION
+
+
+                                               TECHNICAL NOTE D-1766
+
+
+                                        WIND-TUNNEL TESTS OF TWO VTOL
+
+                                              PROPELLERS I N DESCENT
+
+                                  By Paul F. Yaggy and Kenneth W. Mort
+
+
+                                                         SUMMARY
+                                                                                            /3
+          The v e r t i c a l o r n e a r - v e r t i c a l descent of p r o p e l l e r - d r i v e n , VTOL a i r c r a f t
+causes t h e p r o p e l l e r s t o experience negative inflow angles. A s t h e r a t e of
+descent i s increased from zero, t h e p r o p e l l e r passes through t h e t u r b u l e n t
+v o r t e x - r i n g s t a t e . Tests of a r i g i d and a f l a p p i n g p r o p e l l e r were made a t v a r i -
+ous r a t e s of descent from 0 t o 6,000 f e e t p e r minute t o determine t h e e f f e c t s of
+o p e r a t i o n i n t h e v o r t e x - r i n g s t a t e upon t h e t h r u s t f o r c e produced by t h e p r o p e l -
+l e r s . The t e s t s covered a d i s c loading range from 0 t o 36 pounds p e r square f o o t .
+
+        The r e s u l t s of t h e s e t e s t s showed t h a t t h r u s t o s c i l l a t i o n s as l a r g e as
++75 p e r c e n t of t h e s t e a d y - s t a t e t h r u s t occurred, and t h a t t h e average p e r i o d of
+t h e o s c i l l a t i o n s w a s about 0.2 second, apparently independent of o t h e r t e s t
+parameters.
+
+
+                                                    INTRODUCTIOU
+
+
+         V e r t i c a l o r n e a r - v e r t i c a l descent of VTOL-type, p r o p e l l e r - d r i v e n a i r c r a f t
+s u b j e c t s t h e p r o p e l l e r s t o o p e r a t i o n a t negative inflow angles. As t h e descent
+v e l o c i t y i s increased, t h e p r o p e l l e r passes from t h e normal operating s t a t e i n t o
+t h e l e s s s t a b l e v o r t e x - r i n g s t a t e . Operation i n t h i s l e s s s t a b l e s t a t e gives
+r i s e t o o s c i l l a t i n g s h a f t f o r c e s on t h e p r o p e l l e r (see, e.g., r e f . 1).
+
+         Tests of two p r o p e l l e r s were made i n t h e Aines 40- by 8 0 - ~ o o tWind Tunnel t o
+i n v e s t i g a t e t h e e f f e c t s of descent r a t e on t h e s h a f t t h r u s t f o r c e . The p r o p e l -
+l e r s s e l e c t e d f o r t h e s e t e s t s provided a disc-loading range from 0 t o 36 pounds
+p e r square f o o t . They were t e s t e d a t t u n n e l a i r s p e e d s equivalent t o r a t e s of
+descent from 0 t o 6,000 f e e t p e r minute. Although r e f e r e n c e 1 showed t h a t t h e
+o s c i l l a t i n g t h r u s t f o r c e s were accompanied by o s c i l l a t i n g torque, o s c i l l a t i n g i n -
+p l a n e f o r c e s , and o s c i l l a t i n g out-of-plane moments, no attempt w a s made t o
+measure t h e values of t h e s e parameters i n t h e p r e s e n t i n v e s t i g a t i o n .
+                                                          NOTATION
+
+
+           p r o p e l l e r d i s c a r e a , sq f t
+
+           p r o p e l l e r blade chord, f t
+
+           p r o p e l l e r b l a d e - s e c t i o n design l i f t c o e f f i c i e n t , s e c t i o n design l i f t
+                                                                                                            qlb
+                                                     T
+CT         t h r u s t c o e f f i c i e n t , 2y
+                                                  Pn D
+D          p r o p e l l e r diameter, f t
+
+h          p r o p e l l e r b l a d e thickness, f t
+
+J          p r o p e l l e r advance r a t i o ,    YL
+                                                    nD
+
+n          p r o p e l l e r r o t a t i o n a l speed, rps
+
+           r a d i a l d i s t a n c e t o any p r o p e l l e r blade s e c t i o n
+
+           l o c a l dy-namic p r e s s u r e a t any p r o p e l l e r blade s e c t i o n , l b / f t 2
+
+           propeller blade t i p radius
+
+           thrust, l b
+
+           free-stream v e l o c i t y , rCps
+
+           r a t e of v e r t i c a l descent, f’pm
+
+           dimensionless r a d i a l l o c a t i o n of any p r o p e l l e r blade s e c t i o n , r / R
+
+           geometric angle of a t t a c k of t h e t h r u s t axis t o t h e f r e e stream, deg
+
+           p r o p e l l e r b l a d e angle measured a t t h e 0.7-radius s t a t i o n , deg
+
+           maximum amplitude of t h e o s c i l l a t i n g t h r u s t c o e f f i c i e n t
+
+           mass d e n s i t y of a i r , slugs/cu f t
+
+
+                                                   MODEL AND APPARATUS
+                                                          Propellers
+
+
+          The p r o p e l l e r s s e l e c t e d f o r t h e i n v e s t i g a t i o n were g r e a t l y d i f f e r e n t i n
+design. One w a s of conventional r i g i d design, and t h e o t h e r w a s an a r t i c u l a t e d
+( f l a p p i n g o u t of p l a n e only) p r o p e l l e r designed t o e l i m i n a t e s h a f t out-of -plane
+
+
+2
+moments. The p h y s i c a l c h a r a c t e r i s t i c s of t h e p r o p e l l e r s are l i s t e d i n t h e f o l -
+lowing t a b l e :
+
+
+
+                                                    No. 1                                   No. 2
+          Propeller
+                                                   Vert01 76                        Curt i s s ~634s -c5 00
+
+           Diameter                                 9.5 f t                            12.0 f t
+
+          No. of blades                             3                                  3
+          Blade c o n s t r u c t i o n            Wood and s t e e l                  Hollow s t e e l
+
+          A i r f o i l section                    NACA 0009                          NACA 16 S e r i e s
+
+          Blade d e s i g n a t i o n              ~76~1002                           858 -7 c4-36
+
+          Activity f a c t o r b l a d e           178                                150
+          Flapping hinge o f f s e t               3 in.                               ---
+          Blade plan-form curves f o r t h e two p r o p e l l e r s a r e p r e s e n t e d i n f i g u r e 1.
+
+
+
+
+          For t h e t e s t s , t h e p r o p e l l e r s were mounted on t h e p r o p e l l e r t e s t s t a n d i n
+t h e Ames 40- by 8 0 - ~ o o tWind Tunnel as shown i n f i g u r e 2. The shroud o r wind
+f a i r i n g w a s i s o l a t e d from t h e t u n n e l balance system so t h a t only p r o p e l l e r f o r c e s
+and moments w e r e measured. To simulate t h e descent condition, t h e p r o p e l l e r s
+were mounted with t h e t h r u s t i n g f a c e d i r e c t e d downstream rather t h a n i n t h e
+conventional manner.
+
+
+                                                  Instrumentation
+
+
+       Strain-gaged beams were a t t a c h e d t o t h e t e s t s t a n d i n such a manner as t o be
+deformed when t h e s t a n d d e f l e c t e d under t h r u s t loading. The beams were c a l i b r a t e d
+and t h e d a t a recorded dynamically on a recording o s c i l l o g r a p h . Both s t e a d y - s t a t e
+and o s c i l l a t i n g loads were then obtained by a n a l y s i s of t h e wave forms appearing
+on t h e o s c i l l o g r a p h records.
+
+
+
+
+                                                                                                                            3
+                                                         Tests
+
+
+        The p r o p e l l e r s were t e s t e d under t h e following conditions:
+
+                                                   Rigid p r o p e l l e r        Flapping p r o p e l l e r
+     1. R o t a t i o n a l speed, rpm               700 t o 1100                     T O O t o 1410
+
+     2. Velocity along t h e f l i g h t                 o t o 6000                      o t o 3000
+        path, fpm
+
+     3. Angle of a t t a c k of t h e                    180                         120    t o 180
+         propeller axis t o the
+         f l i g h t path, deg
+
+          A t each t e s t condition, t h e blade angle of t h e p r o p e l l e r w a s v a r i e d t o
+o b t a i n t h e e f f e c t s of varying d i s c loading.
+
+
+                                               Reduction of Data
+
+
+      The data obtained during t h e t e s t s were s t e a d y - s t a t e t h r u s t measurements
+from t h e wind-tunnel balance and dynamic t h r u s t measurements from t h e s t r a i n -
+gaged beams on t h e support s t r u t s . Values of both t h e average t h r u s t and t h e
+amplitude of t h e o s c i l l a t i n g t h r u s t were obtained from t h e dynamic measurements.
+The average values agreed w e l l with t h e wind-tunnel balance measurements. The
+values of s t e a d y - s t a t e and o s c i l l a t i n g t h r u s t were reduced t o c o e f f i c i e n t form
+and a r e p r e s e n t e d as functions of t h e p r o p e l l e r advance r a t i o .
+
+
+                                           RESULTS AND DISCUSSION
+
+
+          The s t e a d y - s t a t e t h r u s t c o e f f i c i e n t f o r t h e two p r o p e l l e r s i s shown as a
+f u n c t i o n of p r o p e l l e r advance r a t i o i n f i g u r e s 3 and 4. The curve shapes r e f l e c t
+t h e t r a n s i t i o n of t h e p r o p e l l e r s through t h e various working s t a t e s as advance
+r a t i o i s decreased. The t r a n s i t i o n proceeds from t h e normal-propeller s t a t e
+through t h e v o r t e x - r i n g s t a t e toward t h e windmill-brake s t a t e . The l o s s i n t h r u s t
+during t h e t u r b u l e n t vortex-ring s t a t e i s c l e a r l y i n d i c a t e d . The amount of t h r u s t
+l o s s i s seen t o vary with t h r u s t - a x i s angle of a t t a c k . This v a r i a t i o n i s due t o
+t h e sweeping away of t h e vortex r i n g by t h e crossflow on t h e p r o p e l l e r .
+
+          The o s c i l l a t i o n of t h e t h r u s t i n t h e region of t h e v o r t e x - r i n g s t a t e i s
+demonstrated i n f i g u r e s 5 and 6. The envelope of t h e o s c i l l a t i o n i s shown super-
+posed on t h e v a r i a t i o n of t h e s t e a d y - s t a t e t h r u s t c o e f f i c i e n t . It i s seen t h a t
+o s c i l l a t i o n s as l a r g e as +75 p e r c e n t of t h e s t e a d y - s t a t e t h r u s t occurred. The
+p e r i o d of o s c i l l a t i o n was about O.2+O.O3 second f o r a l l t h e conditions represented
+and appeared t o be independent of t h e t e s t parameters.
+
+
+
+
+4
+     The significance of the thrust oscillations in terms of operating
+characteristics is more clearly seen when the oscillating thrust is considered as
+a percentage of the steady-state thrust at various disc loadings and rates of
+descent. Such variations were calculated from the data in figures 5 and 6 using
+12-foot diameter and 111’7 rpm for the rigid propeller, and 9.5-foot diameter and
+1410 rpm for the flapping propeller. The results are shown in figure 7 for the
+flapping propeller at several angles of attack, and in figure 8 for the rigid
+propeller at 180° angle of attack. In each case, the descent velocity is the
+true-vertical rate of descent.
+
+     From figures 7 and 8 it is seen that, f o r a given rate of descent, the thrust
+oscillation generally diminishes as disc loading is increased. This trend is
+observed until maximum thrust oscillation occurs. Beyond this condition, the
+behavior varies depending upon the angle of attack. Further, for a given disc
+loading, it is seen that the thrust oscillation increases in magnitude with rate
+of descent as the propeller moves into the vortex-ring state. Then, with further
+increase in the rate of descent the oscillation decreases as the propeller moves
+toward the windmill-brake state.
+
+Ames Research Center
+     National Aeronautics and Space Administration
+          Moffett Field, Calif., Dec. 19, 1962
+
+
+                                     REFERENCE
+
+
+1. McLemore, H. Clyde, and Canon, Michael D.: Aerodynamic Investigation of a
+     Fout;-BladePropeller Operating Through an Angle-of-Attack Range From 0’ to
+     180  . NACA TN 3228, 1954.
+
+
+
+
+                                                                                  5
+0
+e    0
+     m         E         -
+                         0
+
+
+
+
+      ' =
+     OD        *
+          a-
+                     n
+                     \
+                     c
+(9   e         c\!       0
+
+
+
+
+                             7
+         c9   .u
+                   (D       d;   cv   0
+              J
+              0
+
+
+
+
+    9
+    cu
+                            00   *
+
+    -
+    9    00        (4
+                        r   *    Y    0
+
+
+
+
+8
+                                                                               A- 25877
+
+Fi gure 2 . - The flapping propeller mount ed in the Ames 40 - by 80-Foot Wind Tunnel .
+
+                                                                                          9
+                                                                  P  P=9"
+
+
+
+
+                                                                                                          -Q
+                                                                                                               \
+                                                                                                          d
+                                                                                                                    \
+                                                 0
+                                                 -\
+                                                   \
+                                                       \                                                       R PM
+                                                           \
+                                                                                                           a   700
+                                                                                                             900
+                                                                                                          B 1100
+                                                                                                          0 1200
+                                                                                                            1300
+                                                                                                          0 I400
+
+                 - .4         -.2            I                                                                      .I
+
+
+                                J                                                          J
+                                                       ( a ) a = 180'
+
+ Figure 3.- S t e a d y - s t a t e t h r u s t c o e f f i c i e n t as a f u n c t i o n of p r o p e l l e r advance
+                                  r a t i o f o r the flapping propeller.
+
+
+
+
+10
+.I6                                              .I6
+
+
+
+
+.I2                                              .I2
+
+
+
+
+.08                                             -08
+
+
+
+-04                                             .04
+
+       8.6"                                              /3 =9"
+
+ 0                                               0
+
+
+
+.I6                                              .I6
+
+
+
+
+*I2                                             .I 2 .
+
+
+
+
+      +
+                                                                        RPM
+                                                                      3 700
+                                                                      r
+.08                                             08
+                                                                      Ll   900
+                                                                      A 1100
+04                                              .O4                   0 1200
+                                                                      El 1300
+       /3=12O                                            /3=15O
+                                                                      0 1400
+ 0                                              '0-
+ -.4            -.2                               - .4            -.2
+                J                                                 J
+
+                          (b) a, = 1-65'
+
+                      Figure 3 . - Continued.
+
+                                                                                 11
+     .I6                                      .I6
+
+
+
+
+                                                    tr,
+     .I 2                                     .I2
+
+
+
+
+     .08                                      .08
+
+            1
+
+            I
+     .04                                      .04
+
+                                                    B=9"
+
+       0                                       0
+
+
+
+
+                                                                      RPM
+                                                                 0 700
+                                                                 LI   900
+                                                                 A 1100
+                                                                 0 1200
+                                                                      1300
+                                                                 0 1400
+
+                                          -4:              -.2               0
+                J                                           J
+                        (c) u = 150°
+                    Figure 3 . - Continued.
+
+12
+      .I6                                                  .I6
+
+
+
+
+ I-
+0     .I2                                             u' .I2
+t
+C
+.-0
+ W                                                    c
+                                                      C
+.-
+Y-
+
+
+
+      .08                                             8 .08
+4-
+ln                                                    c
+                                                      ln
+                                                      1
+                                                      L
+                                                      f
+L                                                     L
+0,                                                    W
+f .04                                                 = .04
+                                                      Q)
+a                                                     a
+2                                                     2
+a                                                     a
+
+
+       0                                                   0
+       - .4   -.2             0                            -4        - .2   0
+               J                                                      J
+
+
+
+
+                                                                 I
+
+
+
+
+                               H
+                    Y-
+                    Y-
+                    W
+                    0
+                                                      RPM
+                    0
+
+                    +    .08                     El   700
+                    u)
+                    13
+                    L                            El   900
+
+                    L
+                    W
+                    2 .04                        0 1200
+
+                    a                            El 1300
+                                                 0 1400
+                          W
+                          -4              - .2               0
+                                           J
+
+                                  ( d ) a = 135'
+
+                         Figure 3 . - Continued.
+            .I6                                            .I6
+
+
+
+
+            .I 2                                           .I2
+
+
+
+
+            .08                                            .08
+
+
+
+
+            .04                                            .04
+      t-
+     o              P=6O                                              P=9"
+       L
+     c
+     c
+     .-a2
+     .-
+     +
+      0
+              0                                                 0
+     +
+     a2
+     0
+     0
+     c
+     v)
+     3
+     L
+     c
+     c
+            .I6
+     L
+     -
+     a2
+     a2
+     P
+     2
+     a
+            .I2
+
+
+
+
+                    r
+                                                                                       RPM
+            .08                                                                        700
+                                                                                    dl 900
+                                                                                    Ll 1100
+            .04                                                                     0 1200
+                                                                                    El 1300
+                    P= I20
+                                                                                    0 1400
+              0
+              -                                            -0
+              -.4            -.2     0                          -.4          -. 2             0
+                              J                                               J
+
+                                         ( e ) a = 120'
+
+                                   F i g u r e 3.- Concluded.
+
+14
+      .I6                                                 .20
+
+
+     .I 2                                                  .I 6
+
+
+     .O8                                                   .I2
+
+
+     .04                                                  .O 8
+
+
+       0                                                   .O4
+
+
+    -.04                                                     0
+
+
+
+
+                               J                                                    J
+Figure 4.- S t e a d y - s t a t e t h r u s t c o e f f i c i e n t as a f u n c t i o n of p r o p e l l e r advance
+                        r a t i o f o r t h e r i g i d p r o p e l l e r ; u = 180~.
+      .I 2
+
+
+
+      .O 8
+
+
+      .04
+  c
+c
+c
+.-0
+Q)
+
+.-
+z o
+Q)
+0
+0
+
+t
+u)
+
+2 .I6
+f
+L
+-
+Q)
+
+
+
+E .I2
+a
+
+      .08
+
+
+      .04
+
+
+
+        0
+         -.6   -.4    -.2      0        .2   -.6    - .4   -.2       0       .2
+                      J                                      J
+
+                                   (a) a = 1800
+
+Figure 5.- Steady-state and oscillating thrust coefficients as functions of pro-
+                peller advance ratio f o r the flapping propeller.
+
+
+
+
+16
+      .I6                                                         .I6
+                                                                        \
+                                                                            \
+                                                                                \
+                                                                                    \
+                                                                 .I 2
+
+
+
+
+                                                                        L
+      .I2
+
+            \
+                \
+
+
+     .08                                                         .08
+
+                                                                        \
+                                                                            \
+                                                                                    ' - A
+     .04                                                         .O4
+                                  /
+                              /
+                                                            I-                  p=9"
+I-                                                         o
+o
+C
++-    0
+al
+
++
+al
+0
+V
+c
+cn
+     .20
+3                                                          cn
+L                                                          3
+                                                           L
+
+
+
+
+            y-
+f           \                                              f
+L                                                          L
+
+-
+al                                                         -al
+G .I6                                                      ;.I6
+a                                                          Q
+                                                           0
+2                                                          L
+a                   \                                      a
+
+
+
+
+                                                                            +
+     .I2                                                         .I 2
+
+
+
+
+     .08                                                         .08
+
+
+
+     .O4                                                         .O4
+
+                p=12"                                                           p = 15"
+
+      0                                                           0         A
+                        -.2
+                         J              0                           -                   -. 2    0
+                                                                                            J
+
+                                            (b) u = 1650
+
+                                      Figure 5.- Continued.
+           .I6                                                          .I6
+
+
+
+
+           .I2                                                          .I2
+
+
+
+           .08                                                          .08
+
+
+
+           .04                                                          .04
+
+                                                                   I-
+     o
+      I-                                                           O
+                                                                   c
+                                                                    -
+     c
+     +-     0
+      Q,
+     .-
+      0
+     .-
+     z
+     Q,
+     0
+     V
+     c
+     v)
+           .24
+     3
+     L
+     f
+     L
+
+     -
+     Q,
+
+     5 .20
+     Q
+     z
+     a
+
+           .I6
+
+
+
+
+           .I2
+
+                                        /
+                                    /
+                              4’
+
+                          /
+           .08        /
+                  /
+                  /3=12O
+
+           04 -~
+            -.4               -.2            0
+                               J                                              J
+
+                                                 ( c ) CL = 150°
+
+                                            Figure 5.- Continued
+
+
+18
+                                                                L*20L
+       .20
+
+
+             \
+       .I6
+                 \
+                                                               6 .I6
+                                                               +
+  L
+
+
+
+
+                                                                          I
+c
+C
+.-a0                 \                                         c
+                                                                                '\
+.-                       \                                     .-a
+                                                                0
++
+a .I2
+                                                               .c 12
+                                                                                           '.
+y-
+0                                                              a
+0                                                              0
+                                                               0                                   \
+c                                                              c
+#
+                                                               fn
+2 .08                                                          = .08
+
+
+
+                                                               z*04F
+f
+                                                               L                               /
+                                                               t                           /
+L                                                              L
+-
+a                                                              W
+
+       .04
+2                                                              2
+a                                                              a
+
+        0
+        -
+             p=60              I
+                             -. 2            0
+                                                                     0-
+                                                                     - .4
+                                                                              p=9"
+
+                                                                                     -. 2
+                              J                                                        J
+
+                                          .20
+
+
+                                          .I8
+                                     I-
+                                    o
+                                     L
+
+
+
+
+                                    .-s
+                                    c
+                                        .I6
+                                                      \ I
+                                    .-+
+                                      0
+                                    +-
+                                    a
+                                    0
+                                    0
+                                          .I 2
+                                    t
+                                    cn
+
+
+
+
+                                                 -I
+                                    2
+                                    f
+                                    L     .08
+                                    -
+                                    W
+                                    a
+                                    a
+                                    2
+                                    a .04
+                                                  p =12O
+                                           0
+                                           - .4        -.2                0
+                                                           J
+                                                  (d) CL = 135'
+
+                                          Figure 5 . - Continued.
+           .20                                            .20
+
+
+
+           .I 6                                           .I6
+                  \
+                      \
+                          \
+                              \
+           .I 2                                           .I2
+
+
+
+           .08                                            .08
+
+      I-                                             0'. .04
+     0
+     t
+       -   .04
+                                                     c
+                                                      c
+
+                                  I
+     t                                                W
+     .-
+     W                                               .-         p=9"
+     0                                               .-
+                                                      0
+
+     G=           p=60                               Y-
+                                                     \c
+     -W    0                                          a
+                                                      0
+                                                           0
+     0                                               V
+     0
+                                                     c
+     c                                               u)
+     In                                               3
+     3                                                L
+                                                     f    .24
+                                                     L
+                                                     -
+                                                     Q,
+
+                                                     W
+                                                     Q
+                                                     2 .20
+                                                     a
+
+
+                                                          .I6
+
+
+
+                                                          .I2
+
+
+
+                                                          .08
+
+
+
+                                                                   -. 2   0
+                                                                      J
+                                          (e) a = 1.200
+
+                                      Figure 5 . - Concluded.
+
+20
+                                                                  .28 -
+
+                                                                            \
+                                                                                \
+                                                                  .24       \
+                                                                                \ -
+                                                                                \
+                                                                                        ‘ I
+                                                                                        \               I
+                                                                  .20               \
+
+
+
+                                                                   .I 6
+
+
+
+
+                                      J
+                                                                   .I2
+
+
+
+                                                                  .08
+                                                                     -.8  -P=16”
+
+                                                                                 -.6
+                                                                                              I
+                                                                                            -.4
+                                                                                              J
+                                                                                                     -.2
+                                                                                                        1
+                                                                                                                  0
+
+
+                                              ( a ) p = -8’    t o +16O
+
+Figure 6. - S t e a d y - s t a t e and o s c i l l a t i n g t h r u s t c o e f f i c i e n t s as functions of p r o -
+               p e l l e r advance r a t i o f o r t h e r i g i d p r o p e l l e r ; a = 180~.
+
+
+                                                                                                                       21
+      .36
+
+
+
+
+c
+W
+0
+0
+ I-
+o .28
+4.-
+
+0
+ c
+ W
+._
+
+
+
+.-
+      .32
+
+
+
+
+      .24
+              /
+              \
+
+
+
+
+              3n  \
+                              -0scilloting envelope
+
+
+
+                              ksteodylstote
+                                                      I                               \
+                                                                                      2-
+                                                                                      t
+m
+              \                                                                       /
+3
+L
+
+f                 \
+L
+
+-e,                   \
+ W
+                          \
+;. 2 0
+a
+
+
+
+       .I 6
+
+
+
+
+       .I2
+                                          J                                       J
+
+                                                           (b) P = 24O and 30'
+
+                                                          Figure 6.- Concluded.
+
+
+
+
+      22
+                   d
+                   C
+                  a0
+                  -0
+                   8 24
+                  .-
+                  U
+                   I
+                  -Q)
+
+                   Q)
+
+                   2-20
+                  h
+
+                        16
+
+
+                        12
+
+
+
+                        8
+
+
+                        4
+
+
+
+                         C                                                             I00
+
+
+
+                                       ( a ) a = 1800 and 165O
+
+Figure 7 . - Thrust o s c i l l a t i o n as a f u n c t i o n of d i s c loading and r a t e of descent
+                                      f o r the flapping propeller.
+
+                                                                                                       23
+          24
+
+
+
+          20
+
+
+
+          16
+
+
+
+          12
+
+
+           8
+
+     .
+     cc
+
+
+     <u 4
+     e
+               a=150°
+
+
+
+
+          16
+
+
+
+          12
+
+
+
+           a
+
+           4
+               a= 135'
+
+
+           0        1000     2000 3000          4000   5000
+                       Rote of descent, Vd, ft/min
+
+                         ( b ) a = 150° and 135O
+
+                        Figure 7.- Continued.
+
+
+24
+     24
+
+
+
+
+     20
+
+
+
+c
+rc
+
+
+
+
+ .
+
+
+
+
+              R a t e of descent ,Vd ,fpm
+
+
+              (c) a = 120°
+
+          Figure 7.- Concluded.
+                                     2
+                        I
+                       /I / I/
+                        I
+
+     5 x 1 0 0= 5
+      CT           I        '   I     20
+
+
+
+
+                                                                                  -I
+                                                                                   -!
+                                                                                   I-
+           IC 10   2000             3000   4000      5000       6000
+                                           Rate of descent, Vd, f t/min
+                                                                          7000
+                                                                                   T
+                                                                                 8000      9000 l0,OOO
+
+
+Figure 8.-Thrust oscillation as a function of disc loading and rate of descent
+                       for the r i g i d propeller; a = 180~.
+
+
+
+
+26                                                                                  NASA-Langley, 1983   A-625
+

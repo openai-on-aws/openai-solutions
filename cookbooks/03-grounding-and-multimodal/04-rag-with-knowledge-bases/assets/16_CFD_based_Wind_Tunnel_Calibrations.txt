@@ -1,0 +1,933 @@
+             In Pursuit of CFD-based Wind Tunnel Calibrations
+
+                                                     Jan-Reneé Carlson∗
+                                                 NASA Langley Research Center,
+                                                   Hampton, VA 23681, USA
+
+             Computational fluid dynamic simulations of models tested in wind tunnels require a high
+         level of fidelity and accuracy, particularly for the purposes of CFD validation efforts. Consid-
+         erable effort is required to ensure a sufficient characterization of both the physical geometry of
+         the wind tunnel, the thermodynamics of the tunnel, and flow conditions in the test section. The
+         condition setting process among subsonic wind tunnels, with either a closed or an open throat,
+         is generally the same, though they can differ in specific details of the thermodynamics. The
+         derivation, application, and error estimation of condition setting and calibration is discussed.
+         Computational flow solutions of the high-speed leg of the NASA Langley Research Center 14-
+         by 22-Foot Subsonic Tunnel are used to evaluate the calibration process and assess calibration
+         curve sensitivities. Duplicating the characteristics of a particular wind tunnel is difficult at
+         best. A calibration curve derived from the computational method is demonstrated to be the
+         most consistent method to use for tunnel condition setting.
+
+
+                                                         Nomenclature
+Roman letters
+A                                  area
+a                                  speed of sound
+C0                                 14x22 facility calibration function
+C𝑘0                                specific kinetic energy method calibration function
+C𝑝0                                incompressible method calibration function
+cp                                 specific heat at constant pressure
+Floss                              arbitrary loss coefficient
+h                                  specific enthalpy
+K                                  designates an unknown multiplication factor
+Kpr                                pitot loss coefficient, 0.998
+M                                  Mach number
+p                                  pressure
+q                                  dynamic pressure
+R                                  gas constant
+Re                                 Reynolds number
+T                                  temperature
+V                                  velocity magnitude
+x                                  streamwise Cartesian directions
+Subscripts
+i                                  incompressible
+local                              relating to a particular tunnel station
+ref                                reference condition
+t                                  total conditions
+vapor                              vapor pressure
+∞                                  freestream condition
+Conventions
+CFD                                computational fluid dynamics
+EC                                 entrance cone
+   ∗ Research Scientist, Computational Aerosciences Branch, Associate Fellow AIAA.
+
+
+
+
+                                                                   1
+RH                               relative humidity
+Sta.                             tunnel station
+SC                               settling chamber
+TS                               test section
+Symbols
+𝛾                                ratio of specific heats, (1.4 for air)
+𝜇                                bulk viscosity
+𝜌                                density
+
+
+                                                      I. Introduction
+   nitially part of the NASA Junction Flow (JF) experiment [1, 2], the use of computational fluid dynamics (CFD) for
+I  modeling the flow in many NASA testing facilities is on-going. Understanding and improving modeling of the Langley
+Research Center 14- by 22-Foot Subsonic Tunnel (14 × 22) has been a major part of that effort. In the report by Rumsey
+et al. [3], inviscid and viscous calculations were performed on grids modeling the empty tunnel, and viscous calculations
+were performed using grids with the JF test article placed in the test section. For the empty tunnel simulations, the
+importance of highly accurate (as built) geometric descriptions was emphasized.
+    Along with the importance of using a faithful representation of the test section geometry, and to some degree the
+overall tunnel shape, the setting of boundary conditions was discussed as an equally critical aspect of the computations.
+Rogers et al. [4] also brought this issue up and developed a calibration formula to more closely align the conditions
+in the CFD with the conditions in the wind tunnel. That approach was carried one step further where the software
+for computing facility flow conditions was internally coupled with the CFD, allowing for both automated and manual
+methods to be used [3, 5, 6].
+    This paper examines the tunnel calibration process, comparing results between two thermodynamic equation
+assumptions and the physical facility. Computational solutions of the flow in the high-speed leg of the 14x22 are
+discussed. Calibration curves are calculated for several tunnel calibration and flow scenarios. The influence of flow
+survey locations on the calibration curves are discussed.
+
+
+                 II. Survey of Subsonic Tunnel Calibration and Condition Equations
+    In order to make an acceptably accurate statement about the flow in the test section, the thermodynamic state of the
+tunnel must be measured in a sufficiently unbiased and consistent fashion so as to arrive at the same flow condition
+regardless of the contents of the test section, i.e., with or without a test article installed. Calibration and condition setting
+equations can vary depending on the tunnel design, flow speed, pressure, temperature, and medium. The calibration
+curves in subsonic, atmospheric tunnels like the 14x22, can vary with the test section geometry, e.g., closed vs. open
+throat, and flow conditioning, e.g., with and without boundary layer suction at the start of the test section. The following
+subsections review the background of two tunnel condition and calibration equation methodologies; one starting from
+incompressible flow assumptions and one starting from compressible flow assumptions, that can be applied to closed
+throat, subsonic tunnel configurations.
+
+
+A. Incompressible Pressure-Based Theory
+    A notional sketch of the high-speed section of a wind tunnel, excluding the diffuser, is shown in Fig. 1. Three
+locations are noted in Fig. 3.29 in "Low-Speed Wind Tunnel Testing" by Pope[7], for gathering information concerning
+the flow in the tunnel. The nomenclature in this discussion will use SC (settling chamber), EC (entrance cone), and TS
+(test section) for 𝐿, 𝑆, and 𝐽, respectively, that are used in Pope’s book. The starting point for both calibration theories
+discussed here is the Euler dynamic equation shown in Eq. 1.
+                                                      1     1
+                                                        𝑑𝑝 + 𝑑𝑉 = 0                                                          (1)
+                                                      𝜌     V
+Assuming an isothermal process and integrate over the interval from SC to EC in Eq 1.
+                         ∫ EC                
+                                1       1           1             1             
+                                  𝑑𝑝 + 𝑑𝑉 =             pEC − pSC +     V2EC − V2SC = 0                                      (2)
+                          SC    𝜌       V          𝜌𝑖                2
+
+                                                               2
+                     Fig. 1     Schematic of the two-point method, (taken from Pope [7], Fig. 3.29).
+
+
+After rearranging the terms, the result is the familiar incompressible Bernoulli equation relating the pressure, p,
+and incompressible dynamic pressure, q𝑖 . Additional aspects of incompressible flow are that the speed of sound is
+indeterminate and the Mach number equal to zero.
+                                                                                                     1
+                                          pSC + q𝑖,SC = pEC + q𝑖,EC , where q𝑖 =                       𝜌 𝑖 V2                               (3)
+                                                                                                     2
+An estimation of the incompressible dynamic pressure in the test section can be made using upstream flow information
+at SC and EC combined with the incompressible Bernoulli and continuity equations, Eqs. 4 and 5, respectively. The
+term Floss q𝑖,EC represents some small energy loss between SC and EC.
+
+                                               pSC + q𝑖,SC =          pEC + q𝑖,EC − Floss q𝑖,EC                                             (4)
+                                                   (VA) SC = (VA) EC = (VA) TS                                                              (5)
+
+The first point, at SC, measures the pressure of the tunnel flow in the large settling chamber and the second point, at EC,
+measures the pressure at some point upstream of the test section. The expectation, and primary assumption, is that the
+flow survey at EC is not significantly influenced by the presence of a model in the test section at TS.∗ The density terms
+in the continuity equation are constants due to the incompressible flow assumption and so drop out in these equations.
+The continuity equation, Eq. 5, is used to derive expressions for the dynamic pressures SC and EC.
+                                                                     2                                  2
+                                                                AEC                                  ATS
+                                          q𝑖,SC = q𝑖,EC                    ,    q𝑖,EC = q𝑖,TS                                               (6)
+                                                                ASC                                  AEC
+
+                                                            2!              2           )
+                                                                                                                        
+                                             AEC                      ATS
+                    pSC = pEC + 1 − Floss −                                         q𝑖,TS       =⇒ q𝑖,TS = C𝑝0 pSC − pEC                    (7)
+                                             ATS                      AEC
+                               |             {z                                }
+                                            1/C𝑝0
+
+Substituting Eq. 6 into Eq. 4 and after some manipulation, the change in the static pressure from the settling chamber to
+the entrance cone can be related to the dynamic pressure at a point in the test section, as shown in Eq. 7. The pressure
+difference, pSC − pEC , known as the indicated pressure, works quite well since differential measurements can typically
+be made more accurately than the process of measuring the absolute values of each pressure independently and then
+subtracting. The indicated pressure is adjusted per the tunnel calibration and is used to calculate a pressure, velocity and
+Mach number to be associated with the conditions in the test section.
+    In the chapter on tunnel calibrations in the first edition of Pope [7], the argument is made that if the inflow Mach
+number at SC is low enough, the pressure ratio, p/pt , is very close to unity. Pope then substitutes the total pressure for
+the static pressure in the settling chamber as shown in Eq. 8. Assuming isentropic flow, for the range of Mach numbers
+   ∗ Each facility and calibration process could guide the choice of EC and decide what may constitute a significant degree of influence.
+
+
+
+
+                                                                           3
+- M 𝐿 < 0.05, the pressure ratio is 0.9983 / p/pt , and the total pressure is within 0.2% of the static pressure. This
+argument does not preclude using the static pressure in the settling chamber.
+                                                           
+                                     q𝑖,TS = C𝑝0 pt,SC − pEC = C𝑝0 q𝑖,indicated                                    (8)
+
+With a pitot probe placed in the empty test section to measure the conditions at TS, the calibration equation can then
+be written as Eq. 9. The indicated incompressible dynamic pressure of the tunnel, q𝑖,indicated , is the difference in the
+pressures between locations SC and EC and the test section incompressible dynamic pressure, q𝑖,TS , is the pressure
+difference measured by the pitot probe at TS.
+                                                          q𝑖,TS
+                                              C𝑝0 =                   , where q𝑖,TS = pt,TS − pTS                                                  (9)
+                                                       q𝑖,indicated
+
+    The condition setting equations are summarized in Eqs.10 through 15. The incompressible dynamic pressure, q𝑖,TS ,
+is calculated using the calibration function, C𝑝0 , and the upstream pressure difference, also known as the indicated
+pressure, q𝑖,indicated , shown in Eq. 8. The incompressible Bernoulli equation is used to determine the static pressure
+at TS from the total pressure, pt,SC , and the incompressible dynamic pressure, q𝑖,TS . Assuming isentropic, ideal gas
+relations, compressibility corrections are used to calculate the tunnel parameters, Mach number, MTS , the compressible
+dynamic pressure, qTS , and the density in the test section, 𝜌TS . The equation for the dynamic pressure is used then to
+calculate the velocity in the test section, VTS .†
+
+                                          q𝑖,TS = C𝑝0 q𝑖,indicated                                                                                (10)
+                                            pTS = pt,SC − q𝑖,TS                                                                                   (11)
+                                                                  ! 𝛾−1        1/2
+                                                  2 © p              𝛾
+                                                                             ª
+                                                              t,SC
+                                           MTS =                        − 1®®
+                                                         ­                                                                                       (12)
+                                                  𝛾 − 1 ­ pTS                 
+                                                                              
+                                                         «                  ¬
+                                           qTS = 12 𝛾 pTS M2TS                                                                                    (13)
+                                                         pt,SC −1/𝛾
+                                                               !
+                                                                                       pt,SC
+                                           𝜌TS = 𝜌t,SC                , where 𝜌t,SC =                                                             (14)
+                                                          pTS                         𝑅 Tt,SC
+                                                 q
+                                           VTS = 2 qTS /𝜌TS                                                                                       (15)
+
+
+B. Compressible Enthalpy-Based Theory: Specific kinetic energy
+    This section will propose an alternate method for calibration assuming isentropic, compressible flow, rather than
+using the isothermal, incompressible flow assumptions discussed in Sec. II.A. The same starting point is used here with
+the dynamic equation previously shown in Eq. 1. Assuming an isentropic process, p/𝜌 𝛾 ≡ constant, and integrating
+over the interval from SC to EC results in the relationship shown in Eq 17.
+                                  ∫ EC                              1/𝛾 ∫ EC                  ∫ EC
+                                           1     1                p               −1/𝛾                 1
+                                             𝑑𝑝 + 𝑑𝑉            = t              p       𝑑𝑝 +            𝑑𝑉                                       (16)
+                                    SC     𝜌     V                 𝜌t      SC                    SC    V
+                                                                                           !
+                                                                      𝛾   pEC pSC   1 2         
+                                                                =            −    +   VEC − V2SC                                                  (17)
+                                                                    𝛾 − 1 𝜌EC 𝜌SC   2
+
+If the flow velocity at SC is brought isentropically to zero and the velocity and pressure at EC are taken as V and p, then
+Eq. 17 is just an expression of the compressible Bernoulli equation, more often written as in Eq.18.
+                                                          𝛾 p 1 2     𝛾 pt
+                                                              + V =                                                                               (18)
+                                                         𝛾−1 𝜌 2    𝛾 − 1 𝜌t
+    † This derivation assumes that the total conditions in the test section are equal to the total conditions measured in the upstream settling chamber.
+
+Additionally, any transverse variation of the total pressure in the settling chamber, for example, would not be captured by single probe measurements.
+
+
+                                                                          4
+Using the definitions, the specific enthalpy, h, and specific kinetic energy, k, the equation can be written as Eq.19.
+                                                                   𝛾 p         1
+                                   h + k = ht ,    where h =            and k = V2                                     (19)
+                                                                  𝛾−1 𝜌        2
+Using the same notional sketch, Fig. 1, the tunnel calibration problem is cast starting from the compressible specific
+kinetic energy equation rather than the incompressible, Bernoulli equation. An estimation of the kinetic energy in the
+test section is made by extrapolating the specific enthalpy from two upstream points, SC and EC. The specific enthalpy
+and a compressible form of the continuity equations are shown in Eqs. 20 and 21, respectively: essentially the same
+starting point used for developing the incompressible theory just discussed. The term Floss kEC represents some small
+amount of energy loss between the two stations.
+                                          hSC + kSC =       hEC + kEC − Floss kEC                                      (20)
+                                           (𝜌VA) SC = (𝜌VA) EC = (𝜌VA) TS                                              (21)
+Using the compressible continuity equation, Eq. 21, to relate the specific kinetic energy at EC with the specific kinetic
+energy at TS, shown in Eq. 22, and the equation for total enthalpy, ht,SC = hSC + kSC , into the enthalpy balance, Eq. 20,
+the extrapolation equation can be written as Eq. 23. The parameters in front of the kTS term are grouped together and
+represented by the inverse of the calibration function C𝑘0 .
+                                                       𝜌 2       2
+                                                          TS   AEC
+                                              kEC =                     kTS                                          (22)
+                                                        𝜌EC    ATS
+
+                                                  𝜌TS 2  AEC  2
+                                                     !                   )
+                                                                                                  
+                       ht,SC = hEC + (1 − K)                          kTS =⇒ kTS = C𝑘0 ht,SC − hEC                     (23)
+                                                  𝜌EC       ATS
+                                      |            {z             }
+                                                  1/C𝑘0
+The calibration equation, in this case, is the measured specific kinetic energy in the test section divided by the enthalpy
+change between stations SC and EC shown in Eq. 24.
+                                                                  kTS
+                                                    C𝑘0 =                                                              (24)
+                                                            ht,SC − hEC
+Assuming the flow is calorically and thermally perfect, the specific enthalpy can be expressed as h = c 𝑝 T; such that
+Eq. 24 can be written as Eq. 25.
+                                                            Tt,TS − TTS
+                                                    C𝑘0 =                                                              (25)
+                                                            Tt,SC − TEC
+Assuming isentropic flow, the temperature, TEC , can be calculated using the pressure measured at EC and the stagnation
+conditions of the tunnel as written in Eq. 26. This relation is equally applicable to conditions calculated at TS.
+                                                                p  𝛾−1𝛾
+                                                                  EC
+                                                TEC = Tt,SC                                                        (26)
+                                                                pt,SC
+    After calibration, the velocity in the test section is solved for from the definition of the specific kinetic energy and
+Eq. 25, as shown in Eq. 27. The rest of the condition setting equations are shown in Eqs. 28 through 32.
+                                            q
+                                   VTS = 2 kTS , where kTS = C𝑘0 cp Tt,SC − TEC
+                                                                                         
+                                                                                                                        (27)
+
+                                   a2TS = a2t,SC − (𝛾 − 1) kTS , where a2t,SC = 𝛾R Tt,SC                               (28)
+                                  MTS = VTS /aTS                                                                       (29)
+                                                                  −𝛾/𝛾−1
+                                  pTS = pt,SC 1 + 21 (𝛾 − 1) M2TS                                                      (30)
+
+                                                pt,SC −1/𝛾
+                                                     !
+                                                                            pt,SC
+                                  𝜌TS = 𝜌t,SC              , where 𝜌t,SC =                                             (31)
+                                                pTS                        R Tt,SC
+                                   qTS = 𝜌TS kTS                                                                       (32)
+
+
+                                                              5
+                                               III. The 14x22 Tunnel
+
+A. Physical description
+    The 14x22 is a closed-circuit, continuous flow atmospheric tunnel. The test section can be set up in open, partially
+open, slotted or closed configurations. The test section is 50 ft long with a cross-sectional shape of approximately
+14.5-ft high by 21.75-ft wide in the closed-throat configuration. The dynamic pressure can vary up to approximately
+140 lbf/ft2 depending on the test section geometry, and a Reynolds number up to 2.2 million per foot can be attained.
+The full tunnel circuit, shown in Fig. 2, is 770 feet long. The settling chamber starts around Sta. 700. The test section
+starts at Sta. 0 (coincident with Sta. 770). The diffuser extends from the end of the test section, Sta. 50, to the first
+corner at Sta. 192. Further details of the facility can be found in Applin [8] and Gentry [9].
+
+
+
+
+                  Fig. 2   Schematic of the 14x22 tunnel circuit, from Hallissy [10], Appendix B.
+
+
+
+B. 14x22 Calibration Equation
+    The 14x22 wind tunnel uses the calibration equation following the incompressible methodology described in
+Sec. II.A. The nomenclature for the survey points as they apply to this facility are listed in Table 1. Figure 3 is a sketch
+of the tunnel showing the flow survey locations used in the 14x22. The calibration function, C0, is defined as the ratio of
+
+
+
+
+Table 1   14x22 tunnel survey locations.
+
+ Parameter                    Tunnel         x
+                              station      (ft)
+ Settling chamber (SC)           711.    -56.3
+ Entrance cone (EC)              758.    -12.0
+                                                                   Fig. 3    Schematic of tunnel survey locations.
+ Test section (TS)              17.75    17.75
+
+the incompressible dynamic pressure in the test section, q𝑖,TS , to the measured dynamic pressure upstream of the test
+section, q𝑖,indicated , shown in Eq. 33 (repeating Eq. 9). An extensive analysis of measurement errors associated with this
+equation can be found in Hemsch [11].
+                                                       q𝑖,TS           pt,TS − pTS
+                                             C0 =                  =                                                   (33)
+                                                    q𝑖,indicated       pt,SC − pEC
+
+
+
+                                                               6
+C. 14x22 Condition Equations
+    Subsequent to the calibration process, the condition setting equations are used by the 14x22 tunnel to calculate
+representative values for parameters such as dynamic pressure, static pressure, and Mach number, for the flow in the test
+section. The equations used for calculating tunnel conditions are listed in Eqs. 34 through 41. The condition equations
+are based on the theory discussed in Sec. II.A with the addition of corrections due to water vapor content. ‡ In this
+section, the subscript ∞ is used to denote the state of the test section, with or without a test article present. It is assumed
+that the single probe measurements in the settling chamber and entrance cone, that are used for condition setting, are
+representative of the tunnel flow in those regions. In reality, there exists some degree of transverse variation of the tunnel
+flow that is not necessarily captured by these measurement probes, which could result in imprecise condition setting.
+    The tunnel condition equations were written for pressure in [lbf/ft2 ]; density in [slug/ft3 ]; temperature in degrees
+Rankine; the gas constant, 1716.2290 [ft2 /s2 - R]; velocity in [ft/s]; viscosity of air corrected for temperature in [slug/ft-s];
+and unit Reynolds number in [1/ft]. In the CFD code Fun3D (described in Sec. IV.B), all nondimensional parameters
+that are solved for in the code are converted into Imperial units, where applicable, in order to compare with the results
+calculated using the facility equations.
+    The incompressible freestream dynamic pressure, q𝑖,∞ , is calculated by multiplying the incompressible dynamic
+pressure (or indicated pressure), q𝑖,indicated , and the calibration coefficient, C0, with a pitot-static probe recovery factor,
+Kpr , as shown in Eq. 34.
+
+                                   q𝑖,∞ = C0 Kpr q𝑖,indicated , where   q𝑖,indicated = pt,SC − pEC                           (34)
+
+The calibration equations for C0are shown in Fig. 4, next to the plot of C0against the indicated pressure. Other details of
+the calibration equations can be found in Quinto [12] and Boney [13].
+
+
+
+
+              
+              
+                 1.1381 + 1.7194 × 10−4 q𝑖,indicated
+              
+                     + 5.0536 × 10−6 q2
+              
+              
+                                                         ,
+              
+                                           𝑖,indicated
+              
+              
+              
+              
+                       0.0 < q𝑖,indicated < 46.0
+              
+              
+              
+              
+                  1.06032 + 3.54687 × 10−3 q𝑖,indicated
+              
+              
+              
+       C0 =
+              
+              
+                    − 3.1557 × 10−5 q2𝑖,indicated ,
+              
+                       46.0 ≤ q𝑖,indicated < 52.5
+              
+              
+              
+              
+              
+              
+              
+              
+                  1.1473 + 2.3339 × 10−4 q𝑖,indicated ,
+              
+              
+              
+              
+              
+                        q𝑖,indicated ≥ 52.5
+              
+              
+              
+
+
+         Fig. 4    14x22 facility calibration equation and curve, closed throat, no boundary layer suction.
+
+    The incompressible Bernoulli equation is used to calculate the freestream static pressure associated with the test
+section, p∞ , shown in Eq. 35. A compressible freestream dynamic pressure, q∞ , is calculated from the freestream Mach
+number, M∞ , as shown in Eqs. 36 and 37.
+
+                                                p∞ = pt,SC − q𝑖,∞                                                            (35)
+                                                     v
+                                                     u
+                                                     t                 ! (𝛾−1)/𝛾
+                                                               p                   
+                                                          2       t,SC
+                                                M∞ =                             −1                                          (36)
+                                                        𝛾−1       p∞
+                                                 q∞ = 21 𝛾 p∞ M2∞                                                            (37)
+   ‡ The presence of water vapor is not accounted for in the CFD.
+
+
+
+
+                                                                    7
+The equations for vapor pressure, the corrected density, pvapor , and compressible density, 𝜌∞ , are shown in Eqs. 38
+and 39, respectively.
+                                                       ((9.72334 Tdewpoint ) − 311.147)
+                                                                                       
+                           pvapor = 12.7654 ∗ 𝑒𝑥 𝑝                                                               (38)
+                                                      ((0.555556 Tdewpoint ) + 223.192)
+                                      pt,SC − 0.3789 pvapor             p
+                                                                          t,SC
+                                                                                −1/𝛾
+                               𝜌t =                         , 𝜌∞ = 𝜌t                                            (39)
+                                        1716.2290 Tt,SC                   p∞
+
+The freestream velocity, V∞ , is then calculated from the compressible freestream dynamic pressure, q∞ , instead of the
+incompressible form, q𝑖,∞ , as listed in Eq. 40. The equations for unit Reynolds number and bulk viscosity are shown in
+Eq. 41. The temperature in the entrance cone, TEC , used to calculate the bulk viscosity, is a measured parameter in the
+14x22, rather than a calculated parameter seen previously in Eq. 26.
+                                             q
+                                     V∞ = 2 q∞ /𝜌∞                                                                  (40)
+                                             𝜌 ∞ V∞                                 3/2
+                                                               0.0002672      TEC
+                                  ReL,∞ =           , 𝜇∞ =                                                          (41)
+                                               𝜇∞            TEC + 198.72 518.69
+
+
+D. Tunnel computational models
+    The set of a priori grid presented in Rumsey et al. [3] were also utilized for the initial solution sensitivity study
+in this paper. A sketch of the outer shell of the high-speed leg is shown in Fig. 5a. The inflow boundary was at Sta.
+700 (x = -70 ft.), just upstream of the screens, and a 92 foot extension, shown as the gray shaded portion of the tunnel
+in Fig. 5a, was added downstream of the actual tunnel diffuser that ended at Sta. 192. The extension was added to
+minimize the chance of reversed flow impinging the outflow boundary. The screens in the upstream portion of the
+settling chamber were not modeled in this study. Further details of these modeling choices are discussed in Ref. [3].
+The area distribution of the tunnel circuit from tunnel Sta. 700 to Sta. 284 is plotted in Fig. 5b. A perspective view,
+looking downstream from the inflow boundary, showing the locations of the survey points used by both the physical
+tunnel and the CFD is presented in Figure 6. The computational simulations extracted the density, velocity and pressure
+in the settling chamber (SC), entrance cone (EC), and model center to calculate the total and static pressures at each
+location. In the 14x22 facility, pitot and static pressure tubes were used to measure the total pressure in the settling
+chamber (SC) and the static pressure in entrance cone (EC), respectively.
+
+
+
+
+       (a) High-speed leg with constant area extension.                     (b) Area distribution of high-speed leg.
+
+                                      Fig. 5     Description of the computational model.
+
+
+
+
+                                                                8
+Fig. 6 Sketch of flow survey points, perspective view looking downstream from the settling chamber into the
+test section.
+
+
+                                         IV. Computational Methods
+   This section will present a brief overview of the one- and three-dimensional computational methods used in
+developing solutions for this study.
+
+
+A. One-Dimensional Theory
+    The area distribution of the high-speed leg plotted in Fig. 5b can be used to generate a one-dimensional inviscid
+solution of the flow. Specifying the Mach number and cross-sectional area in the test section (minimum area), the Mach
+number at all other locations can be determined. A Newton’s method can be used to solve the transcendental equation,
+Eq. 42, to determine the Mach number at any location in the tunnel, (see Ref. [14], Eq. 80).
+
+                                                    𝛾
+                                              12 − 𝛾−1                             1− 𝛾
+                                   𝛾−1 2                        ATS          𝛾 − 1 2 2 𝛾−1
+                        Mlocal 1 +    Mlocal            = MTS             1+      MTS                               (42)
+                                    2                           Alocal         2
+
+
+B. FUN3D
+    Fun3D is an unstructured three-dimensional, implicit, Navier-Stokes code. Roe’s flux difference splitting [15] is
+used for the calculation of the inviscid terms. In this work, the method for calculation of the Jacobian was the flux
+function of van Leer [16], and flux limiters were not used in any of the simulations. Solutions were developed using the
+SA-neg turbulence model with the QCR2020 Reynolds stress correction.[17]. Other details regarding Fun3D can be
+found in the manual [18], as well as in the extensive bibliography that is accessible at the Fun3D website [19].
+
+
+                                         V. Problem Characterization
+
+A. Reference and Freestream Parameters
+     This section will discuss the use and setting of reference parameters for Fun3D and how they relate to freestream
+conditions. Using the ideal gas path in Fun3D, the user input of reference Mach number, Mref , unit Reynolds number,
+ReL , and reference temperature, T̃ref , completely defines the dimensional reference parameters of bulk viscosity, speed
+of sound (sonic speed), velocity, density, and pressure. The subscript ‘ref’ denotes a reference quantity, a tilde ‘ ˜ ’
+denotes a dimensional quantity, and the subscript ‘∞’ denotes a freestream quantity. An exhaustive list of the variables
+used in the code are discussed in Sec. 2 of the Fun3D manual [18].
+     A comparison of several dimensional and equivalent nondimensional reference parameters used in the code are
+listed in Table 2. The reference temperature, reference density, reference speed of sound, and reference bulk viscosity
+are used to nondimensionalize parameters in the code. The nondimensional reference values for external flows are the
+
+
+                                                           9
+same for internal flows. The nondimensional reference values for temperature, density and the speed of sound are 1.0 in
+the ideal gas path. The nondimensional reference static pressure is a constant equal to 1/𝛾.
+
+                                         Table 2 Fun3D reference parameters.
+
+                      Parameter          Units       Dimensional                   Non-dimensional
+                                                                                      (Compressible)
+                                                              p
+                      Sonic speed        m/s         c̃ref = 𝛾 R T̃ref             cref = 1
+                      Velocity           m/s         Ṽref = Mref c̃ref            Vref = Mref
+                      Density           kg/m3        𝜌˜ ref = ReL 𝜇˜ ref / Ṽref   𝜌ref = 1
+                      Pressure            Pa         p̃ref = 𝜌˜ ref R T̃ref        pref = p̃ref / 𝜌˜ ref c̃2ref = 1/𝛾
+                      Temperature         K          T̃ref                         Tref = 1
+
+
+
+B. External and Internal Flow Characterization
+    Whether a simulation is an external flow or an internal flow is largely dependent upon the boundary conditions of
+the numerical model. External flow simulations typically have a farfield region with no outer boundary constraint, other
+than setting the farfield Mach number to the reference Mach number. The conditions in the farfield are the same as the
+reference conditions, for example M∞ = Mref , p̃∞ = p̃ref , and T̃∞ = T̃ref . A common exception is when a simulation of
+a rotorcraft-in-hover uses rotor tip speed as the reference Mach number and the freestream Mach number is set to a
+different, usually smaller, value via the vinf_ratio parameter in the &reference_physical_properties
+namelist.
+    The concept of a farfield where the flow is considered fixed regardless of the aerodynamic problem being modeled
+does not exist for purely internal flow simulations. In this study, the concept of ‘freestream’ for the wind tunnel is
+defined as the current state of the flow in the test section. The goal is to set the outflow static pressure level such that the
+calculated Mach number for the test section, i.e., the freestream Mach number, is equal to the reference Mach number. If
+the freestream Mach number does not match the reference Mach number, the freestream static pressure in the test section
+will differ from the reference static pressure. The most noticeable consequence of a reference condition mismatch will
+be a shift in the pressure coefficients. The simulation is in the correct state when the conditions in the test section match
+the reference conditions of the problem. A comparison of freestream parameters is shown in Table 3.
+
+                    Table 3    Comparison of External and Internal flow freestream parameters.
+
+                            Parameter                External                        Internal
+                                                      flow                              flow
+                                                                                    p
+                                c∞                      1                             T∞ / Tref
+                                M∞                     Mref                              M∞
+                                𝜌∞                      1                            𝜌∞ / 𝜌ref
+                                p∞                     1/𝛾                          pref /(𝛾p∞ )
+                                                             𝛾/𝛾−1                            𝛾/𝛾−1
+                                pt,∞        pref 1 + 𝛾−1 2
+                                                      2 Mref                  pref 1 + 𝛾−1   2
+                                                                                         2 Mref
+                                T∞                        1                            T∞ /Tref
+                                                                                                 
+                                Tt,∞        Tref 1 + 𝛾−1 2
+                                                      2 Mref                  Tref 1 + 𝛾−1 2
+                                                                                        2 Mref
+
+
+
+
+C. Boundary conditions
+    There are several combinations of boundary conditions that can completely define an internal flow simulation. In
+this study, the specification of the total pressure, total temperature and velocity flow angle at the inflow boundary and
+static pressure at the outflow boundary was used. In the ideal gas path of Fun3D, the normalizations as discussed in
+
+
+                                                                 10
+Stitt [20] were used; where the user inputs for those boundary conditions are divided by the reference static pressure and
+temperature, for pressure and temperature boundary conditions, respectively. Further details on the implementation
+boundary conditions in Fun3D can be found in Carlson [21].
+
+
+1. Setting the inflow boundary conditions
+     Consider the simulation of the flow through a simple contraction section followed by a constant area test section as
+pictured in Fig. 7. Of specific interest is the Mach number, pressure, and temperature occurring in the test section of the
+wind tunnel. These quantities are primarily driven by the upstream inflow total conditions and the downstream outflow
+static pressure (back pressure) [22, 23]. There is a direct comparison with the freestream conditions of an external flow
+
+
+
+
+                                      Fig. 7   Sketch of simple converging duct.
+
+simulation when using the total conditions at the inflow boundary of an internal flow simulation as shown in Table 3.
+Though the Mach number in the test section can be increased or decreased somewhat arbitrarily as the static pressure
+imposed at the outflow boundary is decreased or increased, the proper value of the test section static pressure will only
+occur when the inflow boundary conditions are set using the isentropic relation with the reference Mach number; that is,
+Eqs. 43 and 44 and when the Mach number measured in the test section is equal to the reference Mach number. At these
+conditions, the local static pressure will then equal the reference static pressure, i.e., p = pref = 1/𝛾, and the pressure
+coefficient will be zero, Cp = 0., see Eq. 45.
+
+                                                               (𝛾/𝛾−1)
+                                              pt       𝛾−1 2
+                                                  = 1+    Mref                                                          (43)
+                                             pref       2
+                                                              
+                                              Tt       𝛾−1 2
+                                                  = 1+    Mref                                                          (44)
+                                             Tref       2
+
+                                                                    
+                                                       2      p
+                                                 Cp =             −1                                                    (45)
+                                                      𝛾M2ref pref
+
+
+2. Setting the outflow boundary condition
+    For inviscid flow simulations, the Mach number at the outflow boundary, Moutflow , can be calculated using Eq. 42 by
+replacing Alocal with the outflow boundary area, Aoutflow , and replacing MTS with Mref . The area ratio between the test
+section of the tunnel and the outflow area at the end of the computational tunnel diffuser, ATS /Aoutflow , will determine
+the static pressure at the outflow boundary. Newton’s method is used to solve the transcendental equation for Moutflow .
+Assuming no total pressure loss in the tunnel, i.e., pt,ts = pt,outflow = pt,ref , the static pressure ratio is then computed
+using Eq. 46.
+                                                                                              −𝛾
+                                                                                              𝛾−1
+                                                                             𝛾−1     2
+                                         p̃outflow p̃outflow /p̃t,ref    1 +  2   M  outflow
+                                 pback =          =                   =                     −𝛾                          (46)
+                                           p̃ref     p̃ref /p̃t,ref                         𝛾−1
+                                                                           1 + 𝛾−1
+                                                                                2   M  2
+                                                                                       ref
+
+
+                                                            11
+    The inviscid value of pback can be used as a starting point for viscous simulations. The degree of viscous loss is not
+known a priori, as discussed in the report by Rumsey et al. [3] and Rogers et al. [4], though, so pback in the viscous flow
+case is somewhat lower than the pressure calculated for the inviscid flow case.
+
+
+                                                 VI. Results and Discussions
+    This section starts with a discussion of the motivation to use CFD-based calibration curves, followed by computational
+results from the two calibration methodologies described in Sec. II. Centerline Mach and dynamic pressure distributions
+using the physical tunnel calibration curve and condition equations are discussed in Sec. VI.A. Section VI.B shows the
+calibration curves derived from a series of CFD simulations of the tunnel. Section VI.C examines the changes in the
+calibration curve due to a streamwise shift in the static pressure survey point in Sec. VI.C.
+
+
+A. Using the 14x22 calibration curve in the CFD.
+    This section discusses solutions that were developed using the facility calibration curve shown in Fig. 4 for the
+condition q∞ = 60 psf and M∞ = 0.20122. The longitudinal (streamwise) centerline dynamic pressure and Mach number
+distributions are plotted in Figs. 8a and 8b. The model testing area extends from tunnel Sta. 5 to 30, as noted by the
+vertical bars in each plot. According to the 14x22 tunnel calibration curve, the dynamic pressure and Mach number
+should be at the levels of 60 psf and .20122, respectively. What is observed is that neither the dynamic pressure nor the
+concomitant Mach number distribution were within ± 0.5% of the reference condition inside the bounds of the test
+section. At the location of the model center, Sta. 17.75, the dynamic pressure is about 1.5% low, and the Mach number
+is around .75% low.
+
+
+
+
+              (a) Centerline dynamic pressure.                          (b) Centerline Mach number.
+
+                   Fig. 8     CFD using 14x22 facility calibration curve, q = 60 psf, medium grid.
+
+
+
+B. Calibration of the 14x22 using CFD
+     The calibration process using CFD parallels much of the process used by the facility: the indicated pressure, that
+is, the pressure difference between the settling chamber and the entrance cone, is measured for several tunnel flow
+conditions; the incompressible dynamic pressure of the test section flow is calculated; and a piecewise continuous
+calibration function of the incompressible dynamic pressure with the indicated pressure is created. Solutions were
+developed using the coarse, medium, and fine a priori grids at test section dynamic pressures of 20, 40, 60, 80, and
+100 psf. The variation in streamwise incompressible dynamic pressure distributions along the tunnel centerline for a
+dynamic pressure of 60 psf is shown in Fig. 9. Solutions developed with the three grid levels predicted nearly identical
+pressure distributions. This comparison is not a grid convergence study because the boundary condition controller
+adjusted the back pressure slightly differently for each grid to achieve the requested condition in the tunnel test section.
+
+
+                                                             12
+Following the format of Gentry[9] (Fig. 16), the streamwise distributions for the range of tunnel conditions are shown in
+Fig. 10. Using Eq. 9 derived in Sec. II.A, and Eq. 25 in Sec. II.B, the calibration curves resulting from these CFD runs
+are plotted in Fig. 11 for the three grid density levels. The CFD calibration curves are relatively straight by comparison
+with the published 14x22 calibration curves; not displaying the change in slope and quadratic dependence with the
+indicated pressure, pt,SC - pEC , below 50 psf. The CFD calibration curves were closely grouped, varying less than 0.2%
+between grid density levels for the range of flow conditions. For this range of tunnel conditions, the incompressible
+and compressible theories produced essentially the same results. The maximum deviation of the CFD curve from the
+facility curve was approximately 2%. Predicting CFD calibration curves that are this close to the experimental data
+could indicate that modeling the high-speed leg with a uniform inflow captures at least the first order features of the test
+section flow.
+
+
+
+
+     Fig. 9 Centerline incompressible dynamic pres-              Fig. 10 Centerline incompressible dynamic
+     sures, a priori grid sensitivity, Q = 60 psf.               pressures, a priori grid, medium density mesh.
+
+
+
+
+                               Fig. 11 Variation in calibration curves with grid den-
+                               sity and thermodynamic theory, a priori grids.
+
+
+
+
+                                                            13
+C. Variation of calibration curves with entrance cone survey position
+   The variance of the C0 function in the calibration equation, Eq. 47, with respect to the centerline pitot-static probe
+and the indicated pressure measurements, has been discussed in Hemsch [11].
+                                                           pt,TS − pTS
+                                                    C0 =                                                               (47)
+                                                           pt,SC − pEC
+
+The sensitivities of C0 with respect to each of the pressures are given by Eq. 48.
+
+          𝜕 C0          1            𝜕 C0          1              𝜕 C0           C0          𝜕 C0       C0
+                 =             ,           =−             ,              =−             ,         =                    (48)
+         𝜕 pt,TS   pt,SC − pEC       𝜕 pTS    pt,SC − pEC        𝜕 pt,SC    pt,SC − pEC      𝜕 pEC pt,SC − pEC
+
+The check standard probe for measuring pt,TS and pTS , and the pitot probe for measuring pt,SC , are typically in regions
+of low streamwise pressure gradients and are also expected to be outside the influence of any boundary layer flows. In
+contrast, the flow passing by the static pressure probe in the entrance cone, pEC , is rapidly accelerating as transits from
+the settling chamber into the test section. To examine the change of C0 with respect to changes in the entrance cone
+survey location, the static pressure survey was translated upstream two feet and downstream two feet from the baseline
+survey location listed in Table 1. These locations, along with the current 14x22 survey point, are superimposed on the
+centerline pressure distribution plotted in Fig. 12. The pressure gradient varied from 1.63 psf/ft at the upstream survey
+point, x = -14.0 ft, to 0.59 psf/ft at the downstream survey point, x = -10 ft, giving a rate of change of the pressure
+gradient around 0.26 psf/ft/ft. At a dynamic pressure of 60 psf, the CFD predicts about a 2% shift above the 14x22
+tunnel C0function using the upstream survey location and about a 6% shift below the 14x22 tunnel C0equation using
+the downstream survey location, as shown in Fig. 13. Even though the level of the predicted calibration curve is very
+sensitive to the location of the entrance cone static pressure survey location, the CFD solutions remain unchanged as
+long as the condition setting survey locations are consistent with the calibration survey locations.
+
+
+
+
+Fig. 12 Predicted pressure distribution through             Fig. 13 CFD calibration curves due to streamwise
+entrance cone with survey locations marked.                 variation of the static pressure survey location.
+
+
+
+D. Verification of the 14x22 CFD condition setting
+    The previous sections discussed setting wind tunnel conditions using the 14x22 facility calibration curve, calibrating
+the tunnel using CFD, and the sensitivity of the calibration curve with respect to the location of the entrance cone
+pressure survey. This section will compare the output from the 14x22 tunnel data system with the output from the
+two condition setting methodologies using the respective CFD-based calibrations. Tunnel experimental condition data
+were extracted from three empty 14x22 runs at dynamic pressures of 40, 60, and 100 psf. For completeness, all three
+conditions are listed in Table 4. For brevity, only experimental parameters from the dynamic pressure of 100 psf are
+compared to empty tunnel computations in this discussion. Solutions were developed using the coarse, medium, and fine
+density sequence of hexahedral unstructured grids described in Sec. III.D. For each grid, the back pressure was adjusted
+
+
+                                                            14
+by the code to achieve a test section dynamic pressure of 100 psf. The settling chamber total pressure and entrance
+cone static pressure were measured and were used to calculate the tunnel conditions using both the incompressible and
+specific kinetic energy tunnel condition theories. Since the back pressure varied slightly grid-to-grid, the comparisons
+are not an indication of grid convergence, but are used for condition setting verification and sensitivity evaluation. A
+selection of parameters predicted by the two CFD condition setting methods are compared with the experimental data in
+Table 5. The dynamic pressure, Mach number, unit Reynolds number, velocity, and density in the test section were
+matched typically less than 0.1% when comparing between the 14x22 tunnel and all grid levels for each condition
+setting methods. Given the same tunnel parameter input, the output from the software for computing facility flow
+conditions and the CFD predictions closely agree. The following section will now revisit the simulation discussed in
+Sec. VI.A using the CFD-based calibration tools just discussed.
+
+                       Table 4       Experimental data used for CFD calibration check points.a
+
+  Run     Point        q∞        Mach∞         Re         Tt           V∞          Δpb              qi c    pt,SC /p∞ d       𝜌∞
+                      (psf)                  (1/ft)      (°R)        (ft/sec)   (psf)             (psf)                   (slugs/ft3 )
+  136      638        40.003     0.1657     1.06226     555.3         191.86    35.048        40.28         1.01934       0.0021735
+  112      555        60.008     0.2038     1.28560     559.6         236.41    52.396        60.63         1.02937       0.0021474
+  133      623       100.004     0.2657     1.67384     552.5         305.60    87.340       101.78         1.05030       0.0021416
+   a Tunnel data from Test 635.
+   b Indicated differential pressure: Δp
+                                         i,indicated = pt,SC − pEC .
+   c Incompressible dynamic pressure, see Eq. 35.
+   d Ratio of stagnation pressure to test section static pressure used in Eq. 36.
+
+
+
+                            Table 5    Calibration theory comparison with data, q = 100 psf.
+
+                                            Incompressible theory                           Specific kinetic energy
+   Parameter            Tunnel                  Grid Density                                    Grid Density
+                         Dataa          Coarse    Medium        Fine                    Coarse      Medium        Fine
+   Δp (psf) b,e             87.340         88.790        88.874           88.943           87.517             87.601         87.668
+   qi (psf) c               101.78         101.78        101.80           101.77
+   𝜌∞ (slugs/ft3 )     0.0021416       0.0021454      0.0021454       0.0021454       0.0021454            0.0021454      0.0021454
+   V∞ (fps)               305.60          305.34         305.37           305.34           305.46             305.44         305.46
+   pt,SC /p∞ d           1.05002         1.05003        1.05001          1.05002
+   q∞ (psf)              100.004         100.012        100.032          100.009           100.01             100.03         100.01
+   Mach∞                  0.2657          0.2650         0.2650           0.2650          0.2650              0.2650         0.2650
+   Re (1/ft)             1.67384         1.67294        1.67311          1.67294         1.67294             1.67311        1.67294
+    a Tunnel data from Test 635, Run 133, Point 623.
+    b Indicated differential pressure using incompressible theory: p
+                                                                                   t,SC - pEC .
+    c Incompressible dynamic pressure.
+    d Ratio of stagnation pressure to test section static pressure used in Eq. 12.
+    e Indicated differential pressure using specific kinetic energy: 𝛾 R 𝜌
+                                                                                          
+                                                                      𝛾−1   EC Tt,SC − TEC .
+
+
+
+
+E. Evaluation of the CFD-based calibration curves
+    In this section, the results plotted in Fig. 8, are reexamined using the proposed CFD-based calibration and condition
+setting tools. New solutions were developed using the new calibration curve plotted in Fig. 11 with both of the
+incompressible and the specific kinetic energy condition setting equations that were discussed in Sec. II. The only
+
+
+                                                                15
+difference between the previous simulations and the revisited simulations is the calibration function used. All other
+code inputs were unchanged. Both theories yield the same results where the dynamic pressure and the concomitant
+Mach number distribution now match the reference conditions within the area of the test section, as shown in Fig. 14.
+
+
+
+
+                 (a) Centerline dynamic pressure.                                (b) Centerline Mach number.
+
+                       Fig. 14     CFD using CFD calibration curve, q = 60 psf, medium grid.
+
+
+
+                                                     VII. Summary
+    The goals of this work were to better understand the calibration and condition setting process, to more accurately
+predict the flow in a wind tunnel test section, and to verify a more complete thermodynamic calibration and condition
+setting method. A brief review of the incompressible, pressure-based calibration theory historically used for closed-
+throat, subsonic tunnels was presented. To side-step the incompressible (isothermal) assumptions of the historical
+pressure-based calibration method, a compressible, enthalpy-based version calibration process was formulated and
+discussed. Calibration and condition setting simulations were performed using the 14x22 facility calibration and both
+the incompressible and the compressible methodologies. The effect of the entrance cone pressure survey location was
+also discussed. The calibration curves predicted by the computational method did not duplicate the shape nor match the
+level of the facility calibration curve. Simulations using the 14x22 facility calibration curve did not produce results that
+matched the requested test-section conditions. Tunnel simulations using the CFD-based calibrations were self-consistent
+and achieved the requested conditions in the test section. The incompressible, pressure and compressible, specific
+kinetic energy calibration and condition setting methodologies produced similar calibration curves and predicted nearly
+identical tunnel centerline dynamic pressure distributions.
+
+
+                                                    Acknowledgments
+   This work was supported by the Transformational Tools and Technologies (TTT) Project of the NASA Transformative
+Aeronautics Concepts Program (TACP) and the Aerosciences Evaluation and Test Capabilities (AETC) Portfolio Office
+under the Aeronautics Research Mission Directorate.
+
+
+
+
+                                                            16
+                                                         References
+ [1] Kegerise, M., and Neuhart, D. H., “Wind Tunnel Test of a Risk-Reduction Wing/Fuselage Model to Examine Juncture-Flow
+     Phenomena,” NASA TM-2016-219348, NASA Langley Research Center, Nov. 2016.
+
+ [2] Rumsey, C. L., and Morrison, J. H., “Goals and Status of the NASA Juncture Flow Experiment,” STO Applied Vehicle
+     Technology (AVT) Panel, Progress and Challenges in Validation Testing for Computational Fluid Dynamics Paper Number
+     AVT-246-03, Avila, Spain, Sep. 2016.
+
+ [3] Rumsey, C. L., Carlson, J.-R., Hannon, J. A., Jenkins, L. N., Bartram, S. M., Pulliam, T. H., and Lee, H. C., “Boundary
+     Condition Study for the Juncture Flow Experiment in the NASA Langley 14x22-Foot Subsonic Wind Tunnel,” AIAA Paper
+     2017-4126, Jun. 2017. doi:10.2514/6.2017-4126.
+
+ [4] Rogers, S. E., Roth, K., and Nash, S. M., “CFD Validation of High-lift Flow with Significant Wind-tunnel Effects,” AIAA Paper
+     2000–4218, August 2000. doi:10.2514/6.2000-4218.
+
+ [5] Carlson, J.-R., “Setting Boundary Conditions For Slotted Throat Wind Tunnels Using Calorically Imperfect Gas Assumptions,”
+     AIAA Paper 2022-0807, Jan. 2022. doi:10.2514/6.2022-0807.
+
+ [6] Carlson, J.-R., “Assessment of Using Ideal Gas for Predicting Boattail Flow at Cryogenic Temperatures,” AIAA Paper
+     2023-2275, Jan. 2023. doi:10.2514/6.2023-2275.
+
+ [7] Pope, A., and Rae, W. H., Low-Speed Wind Tunnel Testing, 2nd ed., New York : Wiley, 1984.
+
+ [8] Applin, Z. T., “Flow Improvements in the Circuit of the Langley 4- by 7-Meter Tunnel,” NASA TM–1983-85662, Dec. 1983.
+
+ [9] Gentry Jr., C. L., Quinto, P. F., Gatlin, G. M., and Applin, Z. T., “The Langley 14- by 22-Foot Subsonic Tunnel: Description,
+     Flow Characteristics, and Guide for Users,” NASA TP-3008, NASA Langley Research Center, Sep. 1990.
+
+[10] Hallissy, J. B., “14x22-ft Subsonic Tunnel Reference Condition Measurement Systems,” Internal facility document, Feb. 2008.
+
+[11] Hemsch, M. J., and Houlden, H. P., “Repeatability Modeling for Wind-Tunnel Measurements: Results for Three Langley
+     Facilities,” AIAA Paper 2014–0096, 2014. doi:10.2514/6.2014-0096.
+
+[12] Quinto, P. F., and Boney, A. D., “Dynamic Pressure Equations Used at the Langley 14- by 22-Foot Subsonic Tunnel,” Technical
+     Report L-32662, NASA Langley Research Center, May 2019. URL http://hdl.handle.net/2060/20190018049.
+
+[13] Boney, A. D., “Data Reduction Functions for the Langley 14- by 22-Foot Subsonic Tunnel,” NASA TM-2014-218513, NASA
+     Langley Research Center, August 2014.
+
+[14] “Equations, Tables, and Charts for Compressible Flow,” NACA Rept. 1135, Jan. 1953.
+
+[15] Roe, P. L., “Approximate Riemann Solvers, Parameter Vectors, and Difference Schemes,” J. Comp. Phys., Vol. 43, 1981, pp.
+     357–372. doi:10.1016/0021-9991(81)90128-5.
+
+[16] van Leer, B., “Towards the Ultimate Conservative Difference Schemes V. A second order sequel to Godunov’s Method,” J.
+     Comp. Phys., Vol. 32, 1979, pp. 101–136. doi:10.1016/0021-9991(79)90145-1.
+
+[17] Rumsey, C., Smith, B., and Huang, G., “Description of a Website Resource for Turbulence Model Verification and Validation,”
+     AIAA Paper 2010-4742, June 2010. doi:10.2514/6.2010-4742, see also http://turbmodels.larc.nasa.gov.
+
+[18] Anderson, W. K., et al., “FUN3D Manual: 14.0.1,” NASA TM–2023-0004211, Apr. 2023.
+
+[19] https://fun3d.larc.nasa.gov, 2023. Accessed: 2023-04-11.
+
+[20] Stitt, L. E., “Exhaust Nozzle for Propulsion Systems With Emphasis on Supersonic Cruise Aircraft,” NASA RP-1990-1235,
+     May 1990.
+
+[21] Carlson, J., “Inflow/Outflow Boundary Conditions with Application to FUN3D,” NASA TM–2011-217181, October 2011.
+
+[22] Jirasek, A., “Mass Flow Boundary Conditions for Subsonic Inflow and Outflow Boundary,” AIAA Journal, Vol. 44, No. 5, 2006,
+     pp. 939–947.
+
+[23] Carlson, J.-R., “Automated Boundary Conditions for Wind Tunnel Simulations,” NASA TM–2018-219812, Mar. 2018.
+
+
+
+
+                                                               17
+
