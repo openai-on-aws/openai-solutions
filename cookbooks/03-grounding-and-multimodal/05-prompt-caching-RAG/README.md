@@ -361,14 +361,28 @@ REFERENCES
 - **Citation syntax is model-generated.** The script validates IDs but does not prove that
   every factual sentence has a citation. Pair it with a grounding evaluator for that.
 - **It does not create or ingest a Knowledge Base.** Use the
-  [Bedrock Knowledge Bases documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html)
+  [`create_knowledge_base.py` helper](../04-rag-with-knowledge-bases/utils/create_knowledge_base.py)
+  in the sibling RAG recipe, or the
+  [Bedrock Knowledge Bases documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html),
   to prepare one first.
 
 ## Clean up
 
-There is nothing to tear down. Retrieval is read-only, no resources are created, the local
-working set disappears at process exit, and prompt-cache entries expire automatically.
-Your Knowledge Base and its documents are unaffected.
+This recipe has nothing to tear down. Retrieval is read-only, no resources are created, the
+local working set disappears at process exit, and prompt-cache entries expire automatically.
+
+Your Knowledge Base, however, does consume billable resources (stored vectors, and stored
+objects for its data source), so delete it when you are finished. If you created it with the
+[`create_knowledge_base.py` helper](../04-rag-with-knowledge-bases/utils/create_knowledge_base.py)
+in the sibling RAG recipe, tear everything down with its `--teardown` flag:
+
+```bash
+uv run --env-file .env python \
+  03-grounding-and-multimodal/04-rag-with-knowledge-bases/utils/create_knowledge_base.py --teardown
+```
+
+Otherwise, delete the Knowledge Base and its vector store from the console or with the
+[Bedrock Knowledge Bases documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html).
 
 ## Next steps
 
