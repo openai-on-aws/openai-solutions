@@ -186,6 +186,19 @@ def source_from_location(location: dict[str, Any]) -> str:
     return serialized if serialized != "{}" else "unknown"
 
 
+def source_for(location: dict[str, Any], metadata: dict[str, Any]) -> str:
+    """Resolve a citation source, preferring the source_url metadata attribute.
+
+    Documents ingested by utils/create_knowledge_base.py carry a source_url
+    metadata attribute (the real document URL) so citations point at the source
+    rather than the S3 URI. Fall back to the physical location when it is absent.
+    """
+    source_url = metadata.get("source_url")
+    if source_url:
+        return str(source_url)
+    return source_from_location(location)
+
+
 def label_for(source: str, metadata: dict[str, Any]) -> str:
     """Choose a short deterministic label without making another model call."""
     for key in ("title", "topic", "document_title", "x-amz-bedrock-kb-source-uri"):
@@ -207,7 +220,7 @@ def make_chunk(result: dict[str, Any]) -> Chunk | None:
     metadata = result.get("metadata", {})
     identity = f"{canonical_json(location)}\n{text}"
     fingerprint = hashlib.sha256(identity.encode("utf-8")).hexdigest()
-    source = source_from_location(location)
+    source = source_for(location, metadata)
 
     return Chunk(
         id=fingerprint[:16],
