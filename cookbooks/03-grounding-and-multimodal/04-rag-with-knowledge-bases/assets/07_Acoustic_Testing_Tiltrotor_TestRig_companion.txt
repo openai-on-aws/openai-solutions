@@ -1,0 +1,507 @@
+Acoustic Testing of the Tiltrotor Test Rig in the National Full-Scale Aerodynamics
+                      Complex 40- by 80-Foot Wind Tunnel
+                           Natasha L. Schatzman                                Carlos Malpica
+                            Aerospace Engineer                               Aerospace Engineer
+                         NASA Ames Research Center                        NASA Ames Research Center
+                           Moffett Field, CA, USA                           Moffett Field, CA, USA
+                                                           ABSTRACT
+      The Tiltrotor Test Rig (TTR) was tested in the National Full-Scale Aerodynamics Complex (NFAC) 40- by 80-Foot
+      Wind Tunnel from 2017 to 2018. The primary goal of the test was to understand the operational capabilities of the
+      TTR, while also acquiring research data, including acoustic data. Four microphones were placed around the TTR: two
+      on the wind tunnel floor and two on struts. Acoustic measurements of the TTR rotor were acquired to 1) understand the
+      acoustic testing capabilities of the TTR in the NFAC 40- by 80-Foot Wind Tunnel, 2) compare to previous XV-15 rotor
+      acoustic data acquired in the NFAC 80- by 120-Foot Wind Tunnel, and 3) provide data for future validation studies.
+      A data quality study revealed that the NFAC 40- by 80-Foot Wind Tunnel is an adequate acoustic environment to test
+      the TTR rotor. For a given thrust and advance ratio, a shaft angle sweep was performed and acoustic measurements
+      were compared against 1996 and 1999 XV-15 data in the NFAC 80- by 120-Foot Wind Tunnel; differences between
+      the three tests are discussed.
+
+
+                        NOTATION                                          µ    Advance ratio, V∞ /Vtip
+                                                                          σ    Rotor solidity, NπR
+                                                                                                 b cR
+                                                                                                    2
+ BPF          Blade passage frequency, Nb 60RPM
+                                                (Hz)
+ BV ISPL      Blade Vortex Interaction Sound Pressure Level
+              (dB; reference: 2×10−5 Pa), integrated from                                    INTRODUCTION
+              filtered spectrum SPL
+                                          T                              The Tiltrotor Test Rig (TTR) provides the National Aeronau-
+ CT           Rotor thrust coefficient, ρAV 2
+                                           tip                           tics and Space Administration (NASA) and the Department of
+ MAT          Advancing tip Mach number, (1 + µ)Mtip                     Defense (DoD) with a new national test capability to conduct
+ Mtip         Hover tip Mach number                                      technology development, testing and evaluation of new large-
+ Nb           Number of blades (per rotor)                               scale proprotors for performance, control, loads, and stability
+ OASPL        Overall sound pressure level                               in the National Full-Scale Aerodynamics Complex (NFAC).
+              (dB; reference: 2×10−5 Pa), integrated from                The TTR is unique because it allows for the universal test-
+              unfiltered spectrum SPL                                    ing of various rotors instead of having specific configurations
+ R            Rotor radius (ft)                                          for each type of rotor (Ref. 1). This is possible because the
+ RPM          Rotor rotational speed, revolutions per minute             TTR is able to rotate using the test-section turntable and oper-
+ SPL          Sound pressure level (dB; reference: 2×10−5 Pa)            ate at various angles from airplane mode to helicopter mode,
+ T            Rotor thrust (lb f )                                       from 0- to 100-deg shaft tilt angles. The TTR is designed
+ V∞           Tunnel velocity (ft/s)                                     to be used in both the NFAC 40- by 80- and 80- by 120-
+ Vtip         Rotor blade rotational speed at tip (ft/s)                 Foot Wind Tunnels, and it was subjected to a comprehensive
+ x            Uptream coordinate relative to rotor hub at                checkout test program in the NFAC 40- by 80-Foot Wind Tun-
+              αs = 0◦ , positive into the wind                           nel (Refs. 2, 3). Initial testing of a full-scale proprotor on the
+ y            Vertical coordinate relative to rotor hub at               TTR was completed in March 2018 with acoustics being one
+              αs = 0◦ , positive down                                    of the program elements. Though various flight conditions
+ z            Lateral coordinate relative to rotor hub at                were tested, this paper will only present data in helicopter
+              αs = 0◦                                                    mode, particularity for Blade Vortex Interaction (BVI) flight
+ αs           Rotor shaft angle (deg), measured normal to                conditions.
+              tunnel flow
+ ω            Rotor rotational speed (rad/sec),                          Acoustic Test Objectives
+              counter-clockwise
+                                                                         The primary acoustic goal of the TTR test was to measure ro-
+Presented at the Vertical Flight Society 75th Annual Forum & Tech-
+nology Display, Philadelphia, Pennsylvania, May 13–16, 2019.This
+                                                                         tor noise at various BVI flight conditions in order to: 1) under-
+is a work of the U.S. Government and is not subject to copyright         stand the acoustic testing capabilities of the TTR in the NFAC
+protection in the U.S. All rights reserved.                              40- by 80-Foot Wind Tunnel, 2) compare acoustic data with
+                                                                     1
+previous tiltrotor tests and 3) provide data for future validation
+studies. Comparisons will be made against acoustic data from
+the XV-15 taken in the 80- by 120-Foot NFAC wind tunnel
+from 1996 and 1999 (Refs. 4–6).
+
+
+                  TEST HARDWARE
+
+TTR and Rotor Description
+
+The TTR is a horizontal axis rig mounted in the wind tunnel
+on a three-strut support system that rotates on the test-section
+turntable. The turntable can either face the rotor into the wind
+at high speed (up to 273 knots) for airplane mode or fly edge-
+wise at low speed (up to 120 knots) for helicopter mode, or at
+any angle in between. Figure 1 shows the downstream view
+of the TTR in the NFAC 40- by 80-Foot Wind Tunnel in he-
+licopter mode. The NFAC 40- by 80-Foot Wind Tunnel test
+section walls are treated with acoustically absorbent material           Fig. 1. TTR in helicopter mode with microphone locations
+to reduce reflections and minimize standing waves that can               in the NFAC 40- by 80-Foot Wind Tunnel test section, view
+contaminate the noise field. This provides an absorptivity of            looking downstream
+greater than 90-percent at frequencies above approximately
+100 Hz (Ref. 7).
+                                                                         Microphone Placement
+The rotor tested on the TTR was a 3-bladed research rotor
+derived from the right-wing rotor of the Leonardo (Agusta-               Four microphones were placed around the TTR to take acous-
+Westland) 609 rotor (Ref. 1). The basic parameters of the                tic measurements in the NFAC 40- by 80-Foot Wind Tunnel
+checkout rotor on the TTR, designated as Bell Model No.                  (Tables 2 and 3). Microphones were positioned near the ex-
+699, are shown in Table 1 alongside the XV-15 parameters for             pected peak BVI noise directivity angle, with microphone 3
+comparison. The blades were manufactured using the same                  positioned to match data acquired in both XV-15 tests, while
+molds as the production rotor, and therefore twist, blade tip            ensuring they did not affect the inflow to the rotor in air-
+and all other geometric blade parameters are identical. The              plane and conversion modes. Microphones 1 and 2 were
+differences between the TTR rotor and the Leonardo (Agusta-              mounted on 5.625 ft struts and microphones 3 and 4 were
+Westland) 609 rotor are that the TTR rotor has no deicing and            flush-mounted with the test section floor. Table 2 shows the
+pendulum absorbers, has additional instrumentation, and the              microphone positions with respect to the center of the TTR
+pitch horn lugs are inverted. These differences should have no           rotor in helicopter mode, while Table 3 shows the microphone
+effect on acoustics measurements.                                        azimuthal and elevation angles. The x-direction is positive in
+                                                                         the upstream direction, positive y-direction is downward, and
+                                                                         positive z-direction is the cross-flow direction (see Fig. 1).
+Table 1. TTR Bell Model 699 and XV-15 rotor parameters                   Tests of the XV-15 rotor were performed in the NFAC 80- by
+(Ref. 1).                                                                120-Foot Wind Tunnel in 1996 and 1999 (Refs. 4–6). The
+  Parameter                TTR Bell      XV-15                           acoustic measurements from these two tests will be compared
+                           Model 699                                     to TTR rotor acoustic measurements. The test in 1996 had six
+  Radius (ft)              13            12.5                            microphones, as shown in Table 2. Microphones 1 through
+  Number of Blades         3             3                               4 were placed on a traverse under the rotor to capture BVI,
+  Chord at tip (in)        14.83         14.0                            while microphones 5 and 6 were placed to match previously
+  Solidity                 0.0908        0.089                           acquired flight test data (Ref. 5). The test in 1999 had nine
+  Hub precone angle (deg) 2.75           1.5                             microphones, also shown in Table 2. Microphones 1 through
+  Twist (deg)              47.5          41                              8 were placed on a traverse under the rotor to capture BVI,
+                                         (nonlinear)                     while microphone 9 was placed to match previously acquired
+  Airfoils                 XN12          NACA                            wind tunnel and flight test data (Ref. 5).
+                            (Refs. 8, 9) 64-series
+  Blade tip shape          square        square                                  DATA INSTRUMENTATION AND
+  Rotor RPM,               569           589
+                                                                                        ACQUISITION
+  helicopter mode
+  Blade planform           linear taper constant chord                   All TTR acoustics data were acquired with the NFAC’s
+                                                                         dynamic data system (DDAS) and a backup system
+                                                                     2
+Table 2. Microphone positions for the TTR test in the
+NFAC 40- by 80-Foot Wind Tunnel and XV-15 tests in the
+NFAC 80- by 120-Foot Wind Tunnel, with respect to center
+of hub in helicopter mode (αs = 0◦ ).
+   Wind Tunnel Mic X/R            Y/R       Z/R Distance
+   Model           #                             (R)
+   NFAC 80-        1*     0.00    0.58      1.82 1.91
+   by 120-Foot     2*     0.00    0.75      1.82 1.97
+   XV-15           3*     0.00    1.11      1.82 2.13
+   (1996)          4*     0.00    1.46      1.82 2.33
+                   5      4.87    2.82      2.05 5.99
+                   6      3.60    -4.20 2.05 5.90                  Fig. 2. TTR microphone locations in the NFAC 40- by 80-
+   NFAC 80-        1*     -0.20 0.35        1.80 1.84              Foot Wind Tunnel in the a) XY and b) ZY plane.
+   by 120-Foot     2*     -0.20 0.54        1.80 1.89
+   XV-15           3*     -0.20 0.74        1.80 1.95              (DEWETRON TrendCorder). Analog feed from the four mi-
+                   5*     -0.20 1.12        1.80 2.13              crophones was routed from the test section into the acous-
+                   6*     -0.20 1.31        1.80 2.24              tics station in the computer room where the microphone
+                   7*     -0.20 1.51        1.80 2.36              power supply (G.R.A.S. 12AG 8-Channel Power Module),
+                   8*     -0.20 1.70        1.80 2.48              the DEWETRON TrendCorder, and the near real-time display
+                   9      -4.89 2.82        2.05 6.01              were located (see Fig. 3). Microphones 1 and 2 were free-
+   NFAC 40-        1      1.85    1.07      2.15 3.03              field G.R.A.S. 40AC 1/2" microphones with a G.R.A.S. 26AJ
+   by 80-Foot      2      0.92    1.07      2.46 2.84              1/2" preamplifer. Microphones 3 and 4 were precision surface
+   TTR             3      2.66    1.54      1.12 3.27              G.R.A.S. 40LS 1/4" CCP microphones used with a G.R.A.S.
+   (2018)          4      2.15    1.54      1.54 3.06              AG0002 CCP input adapter.
+  ∗ Denotes microphones on traverse, where X/R is closest
+                                                                   The microphone conditioner served as a power supply for the
+              distance to the center of the hub.                   microphones and provided gain-control as well as a high pass
+                                                                   filter for each microphone output signal. Each microphone
+                                                                   channel was routed through a 3-pole Butterworth high-pass
+Table 3. Microphone azimuth and elevation angle for the            filter with a –1 dB cut-off at a frequency of 20 Hz. This filter
+TTR test in the NFAC 40- by 80-Foot Wind Tunnel and                reduced unwanted low-frequency signals, e.g., wind-induced
+XV-15 tests in the NFAC 80- by 120-Foot Wind Tunnel,               noise on the microphone. The microphone channel gains were
+with respect to center of hub in helicopter mode (αs = 0◦ ).       set prior to the start of every data point to maximize signal-
+        Wind Tunnel Mic Azimuth Elevation                          to-noise ratio. The gain setting values were recorded on the
+        Model            #      (deg)        (deg)                 near real-time display computer for each microphone, which
+        NFAC 80-         1*     90           72                    was connected to the NFAC DDAS data system. Acoustic
+        by 120-Foot      2*     90           68                    time history data (in volts) were subsequently digitized by the
+        XV-15            3*     90           59                    DDAS at a sampling rate of 2048 points per revolution for
+        (1996)           4*     90           51                    128 revolutions. A start trigger, 1/rev, and 2048/rev signal
+                         5      150          20                    were sent from the NFAC to the DEWETRON TrendCorder
+                         6      229          20                    in order to ensure consistent post processing of the data with
+        NFAC 80-         1*     120          77                    the two data systems.
+        by 120-Foot      2*     110          72
+        XV-15            3*     105          67
+        (1999)           4*     102          62
+                                                                                    TEST CONDITIONS
+                         5*     100          58                    The acoustic testing included a sweep of shaft angle (αs ) at an
+                         6*     99           54                    advance ratio (µ) of 0.125, tip Mach number (Mtip ) of 0.684
+                         7*     98           50                    and a blade loading coefficient (CT /σ ) of 0.075. Shaft angles
+                         8*     97           46                    included -10, -8, -6, -4, -2, and -1 through 10◦ . The rotor was
+                         9      150          20                    trimmed to zero flapping, such that the tip path plane angle of
+        NFAC 40-         1      150          45                    attack is equal to the shaft angle. Acoustic data were analyzed
+        by 80-Foot       2      131          60                    for the shaft angle sweep in order to identify the shaft angle
+        TTR              3      150          20                    that yielded the peak BVI noise. The shaft angle identified
+        (2018)           4      144          30                    was used in a blade loading coefficient sweep.
+  ∗ Denotes microphones on traverse, where X/R is closest
+                                                                   A flight condition of CT /σ = 0.100, µ = 0.125, Mtip = 0.684,
+              distance to the center of the hub.
+                                                                   at αs = 0◦ was used to analyze repeatability. Additionally,
+                                                               3
+Fig. 3. NFAC 40- by 80-Foot Wind Tunnel acoustics data
+acquisition station.
+                                                                         Fig. 4. TTR acoustic data post-processing procedure.
+sweeps of advance ratio for CT /σ = 0.050 and CT /σ = 0.100,
+at αs = -15◦ , were performed to show effect of advancing tip          by 80-Foot Wind Tunnel (Ref. 7), which is acoustically treated
+Mach number on BVI noise.                                              for 100 Hz and above.
+                                                                       Because of the positioning of the TTR, the furthest that mi-
+            DATA POST-PROCESSING                                       crophone 3 could be positioned from the rotor hub was 3.3
+                                                                       rotor radii away, where as microphone 5 from the 1996 test
+The acoustic data post-processing procedures are shown in              and microphone 9 from the 1999 test in the NFAC 80- by
+Fig. 4. The raw data was first converted from volts to pressure        120-Foot Wind Tunnel were placed at 6 rotor radii away. The
+by applying a calibration constant and associated gain input.          difference in propagation distance was accounted for by the
+The converted data was then averaged using all 128 revolu-             inverse-square law (Ref. 10), to adequately compare acoustic
+tions of data. Filtering and integration were then performed           metrics between tests.
+to provide the time histories and acoustic metrics for further
+analysis.                                                                                  DATA QUALITY
+The two primary acoustics metrics computed are the overall
+sound pressure level (OASPL) and the blade-vortex interac-             To investigate the quality of acquired acoustic data in the
+tion sound pressure level (BVISPL). The OASPL is deter-                NFAC 40- by 80-Foot Wind Tunnel for the 2018 TTR test, an
+mined by performing a Fast Fourier Transform (FFT) on the              analysis was performed on the wind tunnel background noise
+averaged acoustic pressure time histories and then integrating         and TTR acoustic repeatability. For the background noise
+the resulting power spectrum. The BVISPL is computed by                analysis (blades off), data presented includes a wind tunnel
+integrating the spectrum only between the 10th through 50th            velocity sweep and a shaft angle sweep at 60, 105 and 155
+blade passage frequencies (284.4–1422 Hz). The first blade             knots. A flight condition performed over multiple runs and
+pass frequency (BPF) for the TTR rotor is 28.45 Hz and 29.45           days was selected for the repeatability analysis. Consideration
+Hz for the XV-15. A bandpass filter was identified to filter the       was also given to investigate the sensitivity of the BVISPL
+averaged acoustic pressure time histories prior to the FFT cal-        metric to bandpass filter settings.
+culation, including all background noise measurements. This            There are additional concerns about the quality of the data
+frequency band was selected to match the BVISPL metrics                that arise from the positions of the hardware in the wind tun-
+for the 1996 and 1999 XV-15 rotor test in the NFAC 80- by              nel. These many not affect the repeatability, but rather bias
+120-Foot Wind Tunnel (Refs. 4–6), and is well within the test          the measurements. One concern is that the TTR aerodynamic
+section acoustic liner absorption capability for the NFAC 40-          performance may be affected by the wall proximity. It is noted
+                                                                   4
+Fig. 5. BVI pulse peak-to-peak, slope, and width identifi-
+cation for one blade passage.
+                                                                       Fig. 6. TTR in the NFAC 40- by 80-Foot Wind Tunnel
+Table 4. Unfiltered and filtered BVI pulse peak-to-peak,               acoustic time history bandpass filter study for microphone
+slope, and width calculations for microphone 1 (µ = 0.125,             1 (µ = 0.125, CT /σ = 0.075 and αs = 0◦ ).
+Mtip = 0.684, CT /σ = 0.075 and αs = 0◦ ).
+     BPF          BVISPL       Pk-Pk    Slope       Width              from 10th to the 50th blade passage was considered adequate
+                  (dB)         (Pa)     (Pa/deg)    (deg)              and chosen to be consistent with the NFAC 80- by 120-Foot
+     Unfiltered   117.43       106.7    90.64       3.07               Wind Tunnel test. The calculated BVI pulse peak-to-peak,
+     5th-40th     113.61       106.5    62.04       3.19               slope, and width is shown in Table 4 for all filters applied.
+     5th-50th     113.66       107.4    71.23       3.44
+     10th-50th    113.37       101.2    68.60       2.89               Background Noise
+     10th-40th    113.31       99.6     58.96       3.10
+                                                                       Background noise measurements (acoustic tares) were ac-
+that in the configuration shown in Fig. 1, the rotor tip is 6.5        quired with the rotor hub spinning without blades. The back-
+feet (y-direction) from the floor/ceiling. The TTR rotor hub           ground noise includes the combination of wind noise over the
+center is 19.5 feet from the tunnel wall (negative z-direction         test hardware and microphones, mechanical noise from the
+from origin). Because microphones 3 and 4 are located on               hydraulic TTR pump and motor, and tunnel drive noise.
+the wind tunnel floor, another concern is they will capture
+low frequency acoustic (first rotor harmonic is 9.48 Hz) re-           Figure 7 shows the background noise for microphones 1
+flections off of the floor. Because of this reason, the acquired       through 4 for tunnel airspeeds ranging from 0 to 257 knots
+acoustic data may be contaminated due to possible reflections          at αs = -90◦ (airplane mode) for OASPL and BVISPL. As ex-
+and standing waves (Ref. 7). At this time, no corrections have         pected, both OASPL and BVISPL metrics increase with air-
+been made to account for reflections, standing wave, or wall           speed, with OASPL always greater than BVISPL.
+proximity.                                                             Background noise for a variation of shaft angle for wind tun-
+                                                                       nel speed of 60, 105, and 155 knots is shown in Fig. 8 in
+BVI Bandpass Filtering Considerations                                  terms of a) OASPL and b) BVISPL for microphone 1. For
+                                                                       OASPL the variation in shaft angle resulted in a delta of 6.05,
+For the BVISPL metric, desired bandpass filter settings are            8.58, and 6.17 dB for a wind tunnel speed of 60, 105, and
+required to preserve the BVI occurrence pulse peak-to-peak,            155 knots, respectively. For BVISPL, shaft angle resulted in
+slop and width, while also attenuating potentially contaminat-         a delta of 3.90, 4.07, and 2.74 dB for the same airspeeds. The
+ing low or high frequency inputs. A graphic defining the pulse         variations in OASPL and BVISPL are likely caused by the
+peak-to-peak (Pk-Pk), slope, and width is shown in Fig. 5 for          wind noise over the TTR at different positions of the TTR.
+one rotor blade passage. The peak-to-peak value is the am-             A comparison of the background noise to a typical rotor-on
+plitude of the pulse from the maximum and minimum values.              BVI condition is shown in Fig. 9. Figure 9 a) shows the acous-
+BVI pulse slope is determined at the steepest slope between            tic time history from microphone 1 at a flight condition of µ =
+the maximum and minimum pulse, while the pulse width is                0.125, Mtip = 0.684, CT /σ = 0.075 and αs = 0◦ , and associated
+the width of the first pulse at 50 percent amplitude.                  background noise (60 knots, αs = 0◦ , blades off). Figure 9 b)
+The effect of different bandpass filter settings for the BVISPL        shows the resultant acoustic frequency spectrum. The OASPL
+metric are shown in Fig. 6 and Table 4. Though a filter of the         background noise for this condition is 72.4 dB which results
+5th through the 50th BPF is probably best, a bandpass filter           in a good signal-to-noise ratio for this flight condition.
+                                                                   5
+Fig. 7. TTR background noise as a function of airspeed in
+the NFAC 40- by 80-Foot Wind Tunnel at αs = -90◦ (air-
+plane mode) for OASPL and BVISPL.
+
+
+Repeatability
+
+Data repeatability was evaluated in three ways: a) comparing
+the rev-to-rev variability for a single data point, b) comparing
+the blade-to-blade variability for an averaged time history, and
+c) comparing average time histories for multiple data points.
+Figure 10 shows averaged (red) versus the 128 revolutions
+(gray) of a sample acoustic time history data for microphone
+1 for a flight condition of CT /σ = 0.075, µ = 0.125, Mtip =
+0.684, and αs = 0◦ . The peak-to-peak for each revolution of
+data was compared to the averaged revolution of data and re-
+vealed a maximum of 20% difference, for this data point and
+                                                                       Fig. 8. TTR microphone 1 background noise as a function
+microphone.
+                                                                       of αs in the NFAC 40- by 80-Foot Wind Tunnel at V∞ = 60,
+A blade-to-blade difference can be seen by comparing the               105, and 155 knots for a) OASPL and b) BVISPL.
+peak-to-peak difference of the three pulses. From Fig. 10,
+the acoustic pressure pulse associated with a blade-vortex in-                                 RESULTS
+teraction with blade one is the first pulse from 70 to 90◦ az-
+imuth, blade two is the 2nd pulse from 190 to 210◦ azimuth,            Representative time histories and acoustic metrics are pre-
+and blade 3 is the 3rd pulse from 310 to 330◦ azimuth. In Fig.         sented in this section for various TTR test conditions. Com-
+11, the third pulse shows on average a consistently slightly           parisons to acoustic data from the 1996 and 1999 NFAC 80-
+larger peak-to-peak difference compared to pulse one and two.          by 120-Foot Wind Tunnel XV-15 tests are also discussed.
+While blades are nominally identical, this could point to slight       As discussed earlier, a shaft angle (αs ) sweep was performed
+differences in the tracking of each blade. Acoustically, how-          at an advance ratio (µ) of 0.125 (or MAT = 0.69) at a blade
+ever, these differences are insignificant.                             loading coefficient (CT /σ ) of 0.075. The sweep was per-
+A flight condition of µ = 0.125, Mtip = 0.684, CT /σ = 0.050           formed for shaft angles from -10 to 10◦ to identify a peak BVI
+and αs = 0◦ was repeated to assess the point-to-point repeata-         flight condition. Figure 13 shows a) OASPL and b) BVISPL
+bility of the acoustic data, as shown in Fig. 12. Eight points,        versus αs for microphones 1 through 4 for this condition. The
+each from different runs over different days for microphone            peak OASPL is at a shaft angle of 7◦ (Fig. 13 a) for all micro-
+1 are shown in Fig. 12. For the repeating flight condition,            phones, while the peak BVISPL is at a shaft angle of 0◦ (Fig.
+microphones 1 showed a difference in OASPL of 0.40 dB.                 13 b)).
+Not shown, microphones 2 through 4 measured a compara-                 The two peak shaft angle conditions are further investigated
+ble difference in OASPL of 0.38, 0.50, and 0.73 dB, respec-            by comparing the unfiltered and filtered acoustic time history
+tively. The slight variation in OASPL is due to day-to-day             for microphone 1 (see Fig. 14). Figure 14 a) for a shaft angle
+atmospheric conditions and rotor flight condition control.             of 0◦ shows a higher peak-to-peak BVI pulse compared to
+                                                                   6
+                                                                       Fig. 10. TTR averaged (red) versus the 128 revolutions
+                                                                       (gray) of a sample acoustic time history data for micro-
+                                                                       phone 1 in the NFAC 40- by 80-Foot Wind Tunnel, for a
+                                                                       flight condition of CT /σ = 0.075, µ = 0.125, Mtip = 0.684,
+                                                                       and αs = 0◦ .
+
+                                                                       as with a different shaft angle the trend is different due to
+                                                                       the behavior of the wake interacting with the rotor. Further-
+                                                                       more, due to the location of the microphones, the directivity
+                                                                       of the source is different, resulting in different trends from
+                                                                       microphone-to-microphone.
+                                                                       An example of the effects of advance ratio on BVI noise is
+                                                                       shown in Fig. 17. Results are plotted in terms of advanc-
+                                                                       ing tip Mach number, however, remembering that MAT =
+Fig. 9. a) Acoustic time history and b) frequency spectrum             (1 + µ)Mtip . An advance ratio sweep was performed for αs
+of TTR background noise (60 knots, αs = 0◦ , blades off)               = -15◦ at CT /σ = 0.100, see Fig. 17 a), where BVISPL gener-
+and TTR at a flight conditions of µ = 0.125, Mtip = 0.684,             ally increases for increasing advancing tip Mach number. An
+CT /σ = 0.075 and αs = 0◦ in the NFAC 40- by 80-Foot Wind              increasing BVISPL with advancing tip Mach number is also
+Tunnel.                                                                seen for the same shaft angle, but at CT /σ = 0.050, in Fig. 17
+                                                                       b).
+7◦ (Fig. 14 b)). The BVI pulse is seen in the acoustic time
+history at an azimuth of 70, 190, and 310 degrees. OASPL               Comparison of TTR 699 and XV-15 rotor acoustic data
+is higher for a shaft angle of 7◦ due to a higher loading noise
+(low-frequency) component, seen in the acoustic time history           Acoustic time history data from the 1996 and 1999 NFAC 80-
+at an azimuth of 105, 225, and 354 degrees. The first BVI and          by 120-Foot Wind Tunnel XV-15 test were compared to the
+loading noise pulse component in the time history is identified        2018 NFAC 40- by 80-Foot Wind Tunnel TTR test. While
+in Fig. 14 a) with a blue dotted box at 70 and 105 degrees,            approximately of the same size and tested in similar operat-
+respectively. Because BVI noise is investigated for this paper,        ing conditions, there are differences in the geometry of the
+the BVISPL will be used to compare data from this point on.            rotor and test condition that, although small, can potentially
+                                                                       have an effect on the acoustic characteristics. The TTR rotor
+A thrust sweep was then performed at 0◦ shaft angle for a              has a slightly longer chord and greater solidity. More impor-
+thrust of CT /σ = 0.02 to 0.075 (see Fig. 15). For all mi-             tantly, rotors have different twist distributions, planform and
+crophones an overall positive slope in BVISPL for increasing           airfoils, which can affect the loading distribution and geom-
+thrust is shown, which indicates that BVI noise levels are sen-        etry of the blade-vortex interaction. Different precone val-
+sitive to thrust for this specific flight condition.                   ues could conceivably play a role influencing the blade-vortex
+Figure 16 shows BVISPL versus CT /σ for αs = -10, -5, 0, 5,            separation. Although the non-dimensional parameters were
+and 10◦ for a flight condition of µ = 0.125 (MAT = 0.77) for           approximately matched (CT /σ ≈ 0.075, µ ≈ 0.12 − 0.13, and
+microphones a) 1 and b) 3. Figure 16 reveals that BVISPL is            Mtip ≈ 0.69), it is therefore unrealistic to expect the rotors to
+not directly proportional thrust or shaft angle for these condi-       exhibit identical peak BVI noise directivity characteristics.
+tions. In Fig. 15 for αs = 0◦ , a global increase in BVISPL with       Measurements from microphone 5 from 1996, and micro-
+increasing thrust was observed for all microphones, where              phone 9 from 1999 in the NFAC 80- by 120-Foot Wind Tunnel
+                                                                   7
+                                                                      Fig. 12. TTR in the NFAC 40- by 80-Foot Wind Tunnel
+                                                                      eight acoustic time histories from microphone 1 for a flight
+                                                                      condition of µ = 0.125, Mtip = 0.684, CT /σ = 0.050 and αs
+                                                                      = 0◦ . Time histories are from different runs on different
+                                                                      days.
+
+Fig. 11. Blade-to-blade comparison for TTR averaged
+acoustic time history data for microphone 1 in the NFAC
+40- by 80-Foot Wind Tunnel, for a flight condition of CT /σ
+= 0.075, µ = 0.125, Mtip = 0.684, and αs = 0◦ .
+
+are compared to microphone 3 from the NFAC 40- by 80-Foot
+Wind Tunnel in Figs. 18–20. The 2018 TTR acoustic data is
+corrected for distance accordingly by using the inverse-square
+law (Ref. 10).
+For all three tests, similar flight conditions were chosen to
+perform an αs sweep for CT /σ ≈ 0.075, µ ≈ 0.12 − 0.13, and
+Mtip ≈ 0.69. Figure 18 shows BVISPL versus αs for the three
+tests. The peak BVISPL for the 2018 TTR test occurred at αs
+= 0◦ , while the nearest BVISPL peak for the 1996 and 1999
+XV-15 occurred at αs = 4◦ .
+The filtered time history for each test is analyzed to further
+investigate the difference. First, the peak BVISPL shaft angle
+(αs = 0◦ ) from the 2018 TTR test is compared to the same
+shaft angle from the 1996 and 1999 XV-15 test. Figure 19
+shows a time history of a BVI pulse for the three microphones
+from the three different tests. The time history for the 2018
+TTR test has a greater peak-to-peak value and pulse width
+compared to the 1996 and 1999 XV-15 data. The large differ-
+ence between the three tests motivated the further analysis of
+this data set.
+The peak BVISPL shaft angle from each test is then chosen
+and compared. Figure 20 shows microphone 3 from 2018 has
+a shaft angle of 0◦ and microphones 5 and 9 at a shaft angle
+of 4◦ . Compared to Fig. 19, Fig. 20 reveals an overall closer
+comparison between the three tests in terms of BVISPL, peak-
+to-peak, pulse width, and slope.                                      Fig. 13. TTR in the NFAC 40- by 80-Foot Wind Tunnel
+                                                                      a) OASPL and b) BVISPL versus αs for microphones 1
+For the 2018 TTR test, initial estimates of angle of attack ef-       through 4 for a flight condition of CT /σ = 0.075, µ = 0.125,
+fects due to the presence of the wind tunnel walls (Glauert           and Mtip = 0.684.
+correction) suggests an additional positive angle of attack to
+be applied to the shaft angle (Refs. 11, 12). This may provide
+                                                                  8
+                                                                   Fig. 16. TTR in the NFAC 40- by 80-Foot Wind Tunnel
+                                                                   BVISPL versus CT /σ for αs = -10, -5, 0, 5, and 10◦ for a
+Fig. 14. TTR in the NFAC 40- by 80-Foot Wind Tunnel un-            flight condition of µ = 0.125 (MAT = 0.77) for microphone
+filtered and filtered acoustic time history for microphone         a) 1 and b) 3.
+1 for a flight condition of CT /σ = 0.075, µ = 0.125, Mtip =
+0.684, at a) αs = 0◦ and b) 7◦ .
+                                                                   a partial explanation of the peak BVI shaft angle differences
+                                                                   shown. At this time, however, differences in shaft angle due
+                                                                   to wind tunnel wall effects have not been finalized.
+
+                                                                                      CONCLUSIONS
+                                                                   The TTR check out was completed in the fall of 2018. Acous-
+                                                                   tic measurements were taken as part of the checkout. Four
+                                                                   microphones were placed around the TTR to capture BVI and
+                                                                   to match locations from previous tests in the NFAC 80- by
+                                                                   120-Foot Wind Tunnel for the XV-15 rotor. The following
+                                                                   conclusions can be drawn from the acoustic data presented.
+                                                                   Existing concerns about the biases that may exist in the
+                                                                   acquired acoustic measurements caused by reflections and
+                                                                   standing waves at low frequencies and rotor proximity to the
+                                                                   wind tunnel wall remain unaddressed. Further investigation
+                                                                   and analysis is suggested.
+                                                                   A BVISPL metric was selected to match the previous tests
+Fig. 15. TTR in the NFAC 40- by 80-Foot Wind Tunnel                in the NFAC 80- by 120-Foot Wind Tunnel for the XV-15
+BVISPL versus CT /σ for microphones 1 through 4 for a              rotor and a quality assessment of the pulses confirmed that
+flight condition of µ = 0.125, Mtip = 0.684, and αs = 0◦ .         the bandpass filtering between the 10th and 50th accurately
+                                                                   characterized the BVI noise.
+                                                               9
+                                                                        Fig. 18. BVISPL versus αs for microphones 5 and 9 from
+                                                                        1996 and 1999 in NFAC 80- by 120-Foot Wind Tunnel of
+                                                                        the XV-15 test and microphone 3 from the 2018 NFAC 40-
+                                                                        by 80-Foot Wind Tunnel TTR test at CT /σ ≈ 0.075, µ ≈
+                                                                        0.12 − 0.13, and Mtip ≈ 0.69.
+
+
+Fig. 17. TTR in the NFAC 40- by 80-Foot Wind Tunnel
+BVISPL versus MAT for microphones 1 through 4 for a
+flight condition of αs = -15◦ and at a) CT /σ = 0.100, and b)
+CT /σ = 0.050.
+
+Aerotares were performed and revealed an adequate acous-
+tic signal-to-noise ratio. In terms of background noise, min-
+imal variance due to TTR shaft angle was shown in terms of
+OASPL and BVISPL.
+Data repeatability was evaluated by comparing the rev-to-rev
+variability for a single data point, comparing the blade-to-
+blade variability for an averaged time history, and comparing
+average time histories for multiple data points. All three eval-
+uations resulted in minimal variation, which suggests that the
+TTR setup in the NFAC 40- by 80-Foot Wind Tunnel is an
+adequate facility for acquiring acoustic data in terms of re-
+peatability.
+BVI trends were shown including a thrust, shaft angle and ad-
+vance ratio sweep. The shaft angle sweep at CT /σ = 0.075, µ
+= 0.125 and Mtip = 0.684 was shown and compared to data                 Fig. 19. Acoustic time history of microphones 5 and 9
+from the XV-15 tests from 1996 and 1999. For the 2018                   from 1996 and 1999 in NFAC 80- by 120-Foot Wind Tun-
+TTR test, a peak BVI shaft angle was identified at 0◦ , which           nel of the XV-15 test and microphone 3 from the 2018
+differed from the previous XV-15 rotor tests. Differences in            NFAC 40- by 80-Foot Wind Tunnel TTR test at αs = 0◦ ,
+acoustic characteristics between the tests are likely due to the        CT /σ ≈ 0.075, µ ≈ 0.12 − 0.13, and Mtip ≈ 0.69
+variation in blade geometry and the proximity of the rotor to
+the wind tunnel wall.
+                                                                   10
+                                                                         6 Kitaplioglu, C and Betzina, M and Johnson, W., “Blade-
+
+                                                                        Vortex Interaction Noise of an Isolated Full-Scale XV-15 Tilt-
+                                                                        Rotor,” American Helicopter Society 56th Annual Forum,
+                                                                        Virginia Beach, VA, May 2-4, 2000.
+                                                                         7 Barbely, N., Kitaplioglu, C., and Sim, W., “Acoustics Re-
+
+                                                                        flections of Full-Scale Rotor Noise Measurements in NFAC
+                                                                        40-by 80-Foot Wind Tunnel,” American Helicopter Society
+                                                                        Specialists’ Conference, San Francisco, CA, January 20-21,
+                                                                        2012.
+                                                                         8 Narramore, J.C., “Airfoil Design, Test, and Evaluation for
+
+                                                                        the V-22 Tilt Rotor Vehicle,” American Helicopter Society
+                                                                        43rd Annual Forum, St. Louis, MO, May 18-24, 1987.
+                                                                         9 Narramore, J. C., Platz, D. A., and Brand, A. G., “Appli-
+
+                                                                        cation of Computational Fluid Dynamics to the Design of
+                                                                        the BA 609,” 25th European Rotorcraft Forum, Rome, Italy,
+                                                                        September 1999.
+Fig. 20. Acoustic time history of microphones 5 and 9 from               10 Kinsler,
+1996 and 1999 in NFAC 80- by 120-Foot Wind Tunnel of                                L.E., Frey, A.R., Coppens, A.B. and Sanders,
+the XV-15 test at αs = 4◦ and microphone 3 from the 2018                J.V., “ Fundamentals of Acoustics,” 4th Edition. ISBN 0-471-
+NFAC 40- by 80-Foot Wind Tunnel TTR test at αs = 0◦                     84789-5. Wiley-VCH, December 1999.
+(CT /σ ≈ 0.075, µ ≈ 0.12 − 0.13, and Mtip ≈ 0.69).                       11 Langer, H., Peterson, L., and Maier,T., “An experimental
+
+                                                                        evaluation of wind tunnel wall correction methods for heli-
+              ACKNOWLEDGMENTS                                           copter performance,” American Helicopter Society 52nd An-
+                                                                        nual Forum, Washington, D.C., June 4-6, 1996.
+This paper is dedicated to Dr. Ben Wel-C. Sim.                           12 Glauert, H., "The Interference on the Characteristics of an
+
+Dr. Sim participated in the acoustic set up and recording of the        Airfoil in a Wind Tunnel of Rectangular Section," R & M
+acoustic data in the NFAC 40- by 80-Foot Wind Tunnel. We                1459, 1932.
+thank him for his professional guidance and friendship. We               13 Koushik, S., and Schmitz, F.H., “Understanding In-Plane
+are honored to have had the opportunity to learn from him.
+                                                                        Helicopter Blade-Vortex Interaction (BVI) Noise,” American
+Thank you Ben.
+                                                                        Helicopter Society 68th Annual Forum, Fort Worth, TX, May
+                                                                        1-3, 2012.
+                     REFERENCES
+ 1 Acree, C. W., Jr., and Sheikman, A. L., “Development and
+
+Initial Testing of the Tiltrotor Test Rig,” American Helicopter
+Society 74th Annual Forum, Phoenix, AZ, May 14-17, 2018.
+ 2 Kottapalli, S. and Acree, C. W., “Correlation of Full-Scale
+
+Isolated Proprotor Performance and Loads,” Vertical Flight
+Society 75th Annual Forum, Philadelphia, PA, May 2019.
+ 3 Acree, C. W., Sheikman, A. L., and Norman, T. R., “High-
+
+Speed Wind Tunnel Tests of a Full-Scale Proprotor on the
+Tiltrotor Test Rig,” Vertical Flight Society 75th Annual Fo-
+rum, Philadelphia, PA, May 2019.
+ 4 Kitaplioglu, C., “Blade–Vortex Interaction Noise of a Full-
+
+Scale XV-15 Rotor Tested in the NASA Ames 80-by 120-Foot
+Wind Tunnel,” NASA TM 1999-208789, July 1999.
+ 5 Kitaplioglu, C., McCluer, M., and Acree, Jr., C. W., “Com-
+
+parison of XV-15 Full-Scale Wind Tunnel and In-Flight
+Blade-Vortex Interaction Noise,” American Helicopter Soci-
+ety 53rd Annual Forum, Virginia Beach, VA, April 1997.
+                                                                   11
+

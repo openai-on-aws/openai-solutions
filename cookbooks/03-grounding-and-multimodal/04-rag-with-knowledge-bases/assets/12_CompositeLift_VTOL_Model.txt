@@ -1,0 +1,2181 @@
+                                                                 \
+
+
+
+
+    NASA T E C H N I C A L NOTE                          N A S A TN- D-5232   .
+
+
+    N
+    m
+                     Ld
+    N
+    VI
+    n
+     I               2
+    z
+    c
+                     e?
+    e
+    rn
+                      LQI
+    e
+    z                  \ala
+                        mt)
+                          6
+
+    WIND-TUNNEL INVESTIGATION
+    OF STEADY-STATE AERODYNAMICS
+    OF A COMPOSITE-LIFT
+    VTOL AIRCRAFT MODEL
+
+    by Mutthew M . Winston und Robert J. Huston
+    Lungley Reseurch Center
+
+
+I
+
+
+
+                                #WRATION     IASHIMGTQR, b. C.
+                                                                                        NASA T N D-5232
+
+
+
+
+    WIND-TUNNEL INVESTIGATION O F STEADY-STATE AERODYNAMICS
+I
+
+
+
+I          O F A COMPOSITE-LIFT VTOL AIRCRAFT MODEL
+I
+                By Matthew M. Winston and Robert J. Huston
+
+                               Langley R e s e a r c h Center
+                           Langley Station, Hampton, Va.
+
+
+
+
+              NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+
+            For s o l e by the Cleoringhouse for Federal Scientific ond Technical Informotion
+                                                       -
+                              Springfield, Virginio 22151  CFSTl price $3.00
+            I
+
+
+
+
+                        WIND-TUNNEL       INVESTIGATION OF STEADY-STATE AERODYNAMICS.
+                                    O F A COMPOSITE-LIFT VTOL AIRCRAFT MODEL
+
+                                       By Matthew M. Winston and Robert J. Huston
+                                                Langley Research Center
+
+                                                         SUMMARY
+
+
+        I             An investigation of a composite-lift VTOL aircraft model with three different
+        1       rotor/wing configurations w a s conducted in the Langley full-scale tunnel. The aircraft
+                configuration w a s one which employed a three -bladed lifting rotor for helicopter flight
+        l       which could be stopped t o become a fixed wing for airplane cruise flight. The aerody-
+                namic and control characteristics were obtained for helicopter flight and the cruise
+                aerodynamics w e r e obtained f o r airplane flight.
+
+    I                 The results indicate only small differences between the three configurations for
+    ~
+                most of the helicopter-mode operating conditions. Need for improvements in blade design
+    l
+                is indicated, and a potential roll control problem at high tip-speed ratios is identified.
+    I
+                      The results of the airplane-mode cruise investigation indicate the importance of
+                careful design of composite lifting surfaces in order to achieve good efficiency in both
+                rotary-wing and fixed-wing flight.
+
+                                                      INTRODUCTION
+
+                       Efforts are underway to develop composite-lift aircraft which combine the high
+I               hovering efficiency of the helicopter with the high cruise efficiency of fixed-wing aircraft.
+~
+                Most of the composite-lift vehicles are based on independent lift systems where attempts
+                a r e made t o optimize the hover and cruise systems independently.
+I
+                        One concept, however, combines the hover and cruise systems into a single lifting
+                surface in an attempt to reduce the weight penalty associated with independent systems.
+                F o r the helicopter flight mode the lifting surface rotates, and for the airplane cruise flight
+                mode the lifting surface is stopped and becomes a fixed wing. Consequently, the lifting          .
+                surface is generally called the "rotor/wing."
+                      In order t o provide some general information on the characteristics of the
+                rotor/wing aircraft, an investigation w a s undertaken in the Langley full- scale tunnel
+                where a model of the aircraft was investigated in all of i t s flight modes. Rotor/wing
+. dynamic stability problems associated with the conversion maneuver a r e reported in
+  reference 1. The present report presents the steady -state aerodynamic characteristics
+ of the rotor/wing aircraft in the helicopter and airplane flight modes. Three different
+ configurations are compared throughout this investigation.
+
+                                              SYMBOLS
+
+       The physical quantities defined in this section are given in both U.S. Customary
+ Units and the International System of Units (SI). Factors relating the two systems are
+ given i n reference 2.
+
+
+ A1          coefficient of   -cos II/ in expression for          8, degrees
+
+
+ A2          coefficient of   -cos 21)   in expression for         8, degrees
+
+
+ B1          coefficient of   -sin II/ in expression for         8, degrees
+
+
+ B2          coefficient of   -sin 2II/ in expression for         8, degrees
+
+ b           wing span, feet (meters)
+
+             airplane drag coefficient, Drag
+ cD                                      (4s
+             helicopter drag coefficient,     Drag
+ CD
+                                            T R ~ ~ ( 2~ R )
+                                        Lift
+             airplane lift coefficient, -
+ CL
+                                        qs
+             helicopter lift coefficient,         Lift
+                                              TR~~(DR)
+                                                                Rolling moment
+             helicopter rolling-moment coefficient,
+                                                                 T R ~ ~ ( w R ) ~ R
+                                                            Pitching moment
+             airplane pitching-moment coefficient,
+                                                                   qSE
+             helicopter pitching-moment coefficient, Pitching moment
+                                                                   T R ~ ~ ( R R ) ~ R
+                                               Torque
+             rotor torque coefficient,
+ cQ                                         T ~ 2 (DR)
+                                                   p 2~
+
+ CT          rotor thrust coefficient,        Thrust
+                                            T R ~ ~ ( D R ) ~
+
+
+
+ 2
+                    wing average chord, S / b , feet (meters)
+
+                                             0.707C~~/2
+    I   M           rotor figure of merit,
+                                                  CQ
+                    free-stream dynamic pressure, pounds force per foot2 (newtons per meter2)
+
+        R           rotor radius, feet (meters)
+
+        S           wing planform a r e a (based on area of hub and two blades), feet'     (meters2)
+
+        v           velocity, feet per second (meters per second)
+
+    I   a           model angle of attack referenced to wing chord plane, degrees
+
+                    rotor blade collective pitch angle used as constant in expression f o r 8,
+                      degrees
+
+                    blade pitch angle a t particular azimuth position,
+                      Bo - A1 cos IC/ - B1 sin 11/ - A2 cos 2IC/ - B2 sin 2+ -   . . ., degrees
+                    m a s s density of air, slugs per foot3 (kilograms per meters)
+
+                    blade azimuth angle measured from downwind position in direction or rota-
+                      tion, degrees or radians
+
+        52          rotor rotational speed, radians per second
+
+I                                    MODEL AND INSTRUMENTATION
+
+
+                                                    Model
+              Drawings of the model a r e given in figure 1, a photograph of the model mounted in
+        the Langley full-scale tunnel is given as figure 2, and model details a r e listed in table I.
+              The fuselage w a s a wood-covered aluminum structural box which contained the
+        rotor/wing support members and the drive and control mechanisms. The aft fuselage
+        section was fitted with a vertical tail and included provisions for a variable-incidence
+        horizontal tail. Only the characteristics of the model with the horizontal tail off, how-
+        ever, are included herein.
+
+
+
+                                                                                                         3
+ .     Sketches of the three rotor/wings and details of the c r o s s sections are given in
+figures .3, 4, and 5. All r o t o r s were of equal diameter. The hub of configuration 1 had
+convex curvature between the three constant-chord blades, the hub of configuration 2 had
+straight sides connecting three tapered blades, and the hub of configuration 3 had concave
+curvature between t h r e e tapered blades. Consequently, the surface a r e a of each configu-
+ration was different. The blades were composed of biconvex airfoil sections with para-
+bolic leading and trailing edges. These sections were symmetrical about both the chord
+line and the midchord point. The blades were attached to the hub through feathering
+bearings; no flapping hinges were provided.
+         The r o t o r s were shaft driven in the helicopter mode by a hydraulic motor and pump
+arrangement through a roller chain transmission. Rotor speed w a s controlled by varying
+the hydraulic pressure at the pump. Rotor cyclic and collective pitch were accomplished
+through a swash-plate system, the upper part of which was connected to each blade by
+rigid links. Two different types of swash plate were investigated. The type used for
+most of the testing had a wave built into it s o that it provided 2.5' of second-harmonic
+cyclic pitch A2 during each revolution. The other swash plate was of the conventional
+helicopter type. All of the helicopter data included herein were obtained with the "second-
+harmonic" swash plate installed. The range of cyclic pitch angle available with either
+swash plate was from -16O to 16' and the range of collective pitch angle w a s from -11'
+t o 21.5'.
+      The model was mounted on a pedestal that was fixed to the ground plane so that the
+rotor/wing was located approximately 13 feet (3.96 meters) above the ground plane. A
+six-component strain-gage balance was attached between the top of the pedestal and the
+model, as shown in figure 6, so that it rotated with the model in the longitudinal plane.
+The angle of attack of the model was varied by an electric actuator through an available
+range from about -15' to 20'.
+
+                                      Instrumentation
+           The forces and moments on the model were sensed by the six-component strain-gage
+balance. The model angle of attack and rotor control positions w e r e sensed by potentiom-
+e t e r s , and the rotor speed was measured by a tachometer.
+       The output signals from the angle-of -attack, control-position, and rotor-speed sen-
+'sors were fed t o an operator's console which provided visual indication of the model
+ operating conditions and included provisions for varying these conditions. The signals
+ provided at the control console along with the outputs f r o m the balance and a magnetic
+ azimuth position pickup were recorded on an oscillograph. Also, the signals f r o m the
+ balance, the angle-of-attack sensor, and the tunnel static-pressure sensor were electri-
+ cally fed into a digital readout and tape-recording system. Other pertinent quantities
+
+4
+            I
+            I
+            I
+                such as rotor speed, control positions, air density, and hydraulic p r e s s u r e differential ,
+            I
+            ~
+                a c r o s s the balance were manually fed into the digital tape system.
+            ,
+                                                            TESTS
+                                                                                                         .
+                     All data presented for this investigation were obtained with the horizontal tail
+                removed and the second-harmonic swash plate installed.
+
+
+        I                                               Helicopter Mode
+                      The three rotor/wing configurations were investigated in the helicopter mode in
+                hover and i n forward flight at tip-speed ratios up to 0.35.
+                        Hovering data were obtained at a rotor speed of 600 revolutions per minute, an angle
+                 of attack of Oo, and a cyclic pitch angle of '0 through a range of collective pitch angle from
+                '0 to 20'. Also while in hover, the collective pitch angle was s e t at a selected value, and
+                 the longitudinal and lateral control power available from cyclic-pitch inputs were
+                 measured.
+        I              Forward flight data were obtained at a rotor speed of 600 revolutions per minute at
+        1       several free-stream velocities. At each tip-speed ratio, data were obtained for various
+                combinations of angles of attack and collective pitch with the rotor pitching and rolling
+                moments trimmed by cyclic control. Also, at each tip-speed ratio, a combination of
+        1
+                angles of attack and collective pitch was selected, and one component of cyclic pitch (A1
+    l           or B1) was set to t r i m either the pitching o r rolling moments and the other was varied
+    I
+                t o obtain control data. Then the procedure was reversed and control data for the other
+                axis were obtained.
+
+    I                                                    Airplane Mode
+
+I
+                      Data for the airplane mode were obtained for the three rotor/wing configurations
+I               where the lifting surface was stopped and faired into the fuselage. Configuration 2 was
+                also investigated in the airplane mode with the fairings removed. Forces and moments
+I
+                were measured for a range of angle of attack. The Reynolds number for these t e s t s was
+I
+
+                0.58 X lo6 p e r foot (1.9 X 106 p e r meter).
+
+                                                         CORRECTIONS
+
+                      The data have been corrected f o r deadweight tares. The forces and moments by
+                which the data were corrected a r e shown as functions of angle of attack in figure 7 since
+                they were large relative t o the overall measurements. The t a r e loads given i n figure 8
+                were produced by the p r e s s u r e differential between the supply and return legs of the
+
+                                                                                                                    5
+                                                                                                        I
+hydraulic drive circuit, which was sensed by the balance. The data have also been c o r -               ,
+                                                                                                        I
+
+                                                                                                        I
+rected for these loads. None of the classical wind-tunnel corrections have been applied
+t o the d a t i because they are believed t o be small.                                                     I
+
+
+
+                                PRESENTATION O F RESULTS
+                                                                                                        1
+
+      The results of this investigation a r e presented in two basic groups corresponding t o
+the steady-state flight modes of the rotor/wing - helicopter hovering and forward flight,
+                                                                                                                I
+and fixed-wing flight. The figures are presented as given in the following table:                               ,
+
+                                                                                           Figure
+Hovering characteristics of three rotor/wing configurations        ............                  9                  I
+
+
+
+Aerodynamic and control characteristics of rotor/wing configurations                                                I
+                                                                                                                    1
+  in helicopter-mode forward flight:                                                                                    I
+
+
+
+    Configuration 1   ..................................                                        10                      I
+    Configuration 2   ..................................                                        11
+    Configuration 3   ..................................                                        12                      ,   I
+
+
+
+Variation of cyclic control power with tip-speed ratio for three
+                                          ........................
+                                                                                                                            ~
+
+
+
+
+  configurations in helicopter mode.                                                            13
+Longitudinal aerodynamic characteristics of t h r e e Configurations                                                            I
+
+  in airplane mode.    .................................                                        14                          1
+
+
+
+
+                                  RESULTS AND DISCUSSION
+
+                                        Helicopter Mode
+           The hovering characteristics of the three rotor/wing configurations are given in
+figure 9. For 8, = Oo to 20° in figure 9(a), the thrust coefficients f o r configurations 2
+and 3 are in very close agreement, whereas those f o r configuration 1 are slightly less.
+The variation of CT with CQ was nearly the s a m e for a l l three configurations. These
+r e s u l t s can be attributed t o the smaller blade area of configuration 1. The variation of
+rotor figure of m e r i t with thrust coefficient (fig. 9(b)) indicates that at the normal hovering
+thrust coefficient (CT = 0.008 f o r the full-scale a i r c r a f t from the data of ref. 1) the dif-
+ferences in figure of merit f o r the rotor configurations are small. Since these r o t o r s
+would normally operate near their maximum efficiency, they would all benefit from design
+modifications which increase the maximum attainable figures of merit since the maximum
+obtained from the present r o t o r s was less than 0.5.
+
+
+
+6
+         The aerodynamic and control characteristics for helicopter -mode forward flight *
+given in figures 10, 11, and 12 indicate similar trends for each of the three configurations
+throughout the range of tip-speed ratios. The values of lift, drag, and cyclic control
+required for t r i m were in close agreement. At the lower tip-speed ratios, howeve:, the
+torque coefficients for configuration 1 at the highest collective-pitch-angle settings were
+appreciably lower than those for the other configurations. Nearly all available B1
+cyclic control was required t o t r i m the model rolling moments at combinations of high
+tip-speed ratio and high collective-pitch-angle settings. The A1 control required t o
+t r i m the pitching moments at the same conditions was generally less than one-half of that
+available. The variation of cyclic control power with tip-speed ratio (fig. 13) shows simi-
+lar control characteristics for the three configurations. The differences shown for posi-
+tive and negative control inputs are the result of the asymmetry of loading around the
+rotor disk. The curves shown in figure 13 suggest that at tip-speed ratios greater than
+those of this investigation (V/OR = 0.35), the control power differences resulting from
+positive and negative inputs may become even larger.
+       From the foregoing discussion of the hovering and forward-flight results, there
+appears to be little basis for a clear choice between the t h r e e rotor/wing configurations
+as a ttpureT1
+            helicopter lift-propulsion system. The hovering results, in particular,
+suggest that all three configurations would benefit from improved blade c r o s s sections.
+The provision of blades having lower thickness ratio with perhaps a moderate amount of
+camber could possibly result in better performance in both hovering and forward flight.
+Naturally, any modification must be made within the constraints imposed by the fixed-
+wing cruise requirements.
+
+                                        Airplane Mode
+      The longitudinal aerodynamic characteristics of the model with each of the
+rotor/wing configurations in the airplane cruise mode a r e given in figure 14. The differ-
+ences between the three configurations were generally small when operating in the heli-
+copter mode, but considerably different results a r e indicated for fixed-wing conditions.
+The variation of pitching-moment coefficient with angle of attack (horizontal tail off)
+shows that configuration 3 has considerably l e s s static instability and lower t r i m require-
+ments than the other two configurations. On this basis, the required horizontal tail for
+configuration 3 would incur the lowest trimmed drag and, thus, provide for an aircraft              .
+with higher cruise efficiency than one using either of the other two rotor/wing configura-
+tions. In the normal range of cruise lift coefficients, the addition of fairings t o the wing-
+fuselage juncture of configuration 2 reduced the out -of -trim pitching moment while
+leaving the static longitudinal stability relatively unchanged. It is believed that the
+presence of fairings on configurations 1 and 3 would produce similar results.
+
+
+                                                                                                7
+    .   The important result obtained from this discussion is that configuration 2, which had
+                                                                                                   I
+                                                                                                   I
+                                                                                                   ,
+the highest, efficiency as a hovering rotor, was l e s s favorable than configuration 3 when it    I
+
+
+w a s flown as a fixed wing. Consequently, extreme c a r e must be exercised in designing a
+composite lifting surface to obtain both an efficient rotor and an efficient wing. The
+extent to which design trade-offs between rotor and wing efficiencies can be made will
+naturally depend upon the aircraft mission,
+
+
+                                       CONCLUSIONS
+
+       A wind-tunnel investigation of the aerodynamic characteristics of a composite-
+lift aircraft model in the helicopter and airplane flight modes indicates the following
+conclusions:
+      1. There are no significant differences in rotor hovering efficiency between the
+three rotor/wing configurations at the normal hovering thrust coefficient. The maximum
+figure of merit attained w a s l e s s than 0.5.
+        2. The aerodynamic and control characteristics of the model operating in the heli-
+copter cruise mode exhibit only small differences between the three configurations.
+Data from all three configurations indicate that roll control may become a problem at
+combinations of high-speed and high collective pitch settings.
+       3. Both the hovering and forward flight r e s u l t s from the helicopter mode investiga-
+tion indicate the need for improvement of the rotor blades. It is believed that consider-
+able improvement could be made by modifying the relatively thick, biconvex blade c r o s s
+sections used on this model.
+        4. The results of the airplane cruise mode investigation indicate the need for
+extreme care in the design of composite lifting surfaces in order to obtain both an
+efficient rotor and an efficient fixed wing.
+
+Langley Research Center,
+     National Aeronautics and Space Administration,
+           Langley Station, Hampton, Va., March 20, 1969,
+                    721-01-00-36-23.
+
+
+
+
+8
+                                        REFERENCES
+
+I
+    1. Huston, Robert J.; and Shivers, James P.: A Wind-Tunnel and Analytical Study of the
+          Conversion From Wing Lift to Rotor Lift on a Composite-Lift VTOL Aircrafti
+          NASA TN D-5256, 1969.
+1
+    2. Mechtly, E. A.: The International System of Units - Physical Constants and Conver-
+i        sion Factors. NASA SP-7012, 1964.
+
+
+
+
+                                                                                             9
+                                                                                                1
+
+         -
+
+         m
+         c
+          0
+         0
+         .r(
+
+
+
+
+     8
+          EI
+          hl
+         w
+         .,-I
+          c
+          0
+         u                                                                               k
+                                                                  Q:                     a,
+                                                                  D                      a
+                                                                  v)                    m
+         -                                                    ~
+                                                                  d                     4
+
+                                                                  d                     H
+                                                                  cd                     cd
+                                                                  V                      V
+                                                                  .d                    .r(
+                                                                  c,                    c,
+         m                                                        SI
+                                                                  .d                    .
+                                                                                         a
+                                                                                         d
+         E:         h   n                                         d
+          0         a   m
+         c ,
+         .r(
+                    9 s                                           a,
+         cd         4 0
+                    w w                                           4
+         5
+         bD         c o o
+                                                        83
+         r;:        '1' 9                                         c,
+         e          moa                                           c
+         0                                                        a,
+         u                                                        V
+                                                                  k                     k
+                                                                  a,                    a,
+                                                                  Q                     a
+                                                                  m                     m
+         -                                                        rl                    4
+
+
+                                                                                        T;d
+                                                                                        V
+                                                                                        c ,
+                                                                                        .r(
+
+         rl                                                                             a
+                                                                                        .d
+         c
+         0
+
+
+         :
+         0
+         .r(
+
+
+
+
+         M
+         50
+         u
+                                                                  a,
+                                                                  a                     a
+                                                                  m                     m
+                                                                  rl
+
+                    .. ..
+                                                                                        4
+         -                         . .
+                                   . .        .. ..         ... ...       .. .. .. ..
+                     .. ..                     . .                      ... ... ... ...
+                                   . .
+                                   . .
+                    . .            . .
+                                                                         .. .. .. ..
+                                                       $
+                                                       a,              .. .. .. ..
+                                                       *
+                                                      .r(
+                                                                       .
+
+                                                                       . E
+                                                                           h
+
+                                                                                *
+                                                                                    .
+
+                                                                                        .
+                                                                                            .
+
+
+
+                             a,                        E
+                                                       k
+                                                                           W
+
+
+                             3                         0      c,
+                                                              .d
+                             l-l
+                             P
+                             rl
+                                                      3a m
+                                                      H
+                                                                  V
+                                                                  a,
+
+
+
+                             :
+                             v
+                                         a            c m
+                                         k              m
+                                                      .r(
+                                         0                        0
+                                                      rn
+                                         9                        k
+
+                                                      22
+                                                                  V
+                             a,          a,
+                             a                        d
+                i
+                2
+                             cd
+                             l-l
+                                         3            P       d
+
+
+                3            a           d
+                                         a                    a
+         - cr
+
+
+10
+        .-
+        )
+        c
+         1
+
+         >
+         e
+         m
+        c
+        a
+        L
+        0)
+
+        c
+        c
+        U
+        Q)
+
+
+        Q)
+        V
+        c
+        al
+
+
+
+
+        <
+        a
+        l
+        L
+        L
+
+
+
+
+I
+
+
+
+
+    L
+
+
+
+
+             11
+     m
+
+
+
+
+     N
+
+
+
+
+12
+1----
+
+
+
+
+        :J'
+
+
+
+
+         ,
+        V>
+        n
+        '"
+        r0-
+        C
+        =>
+        ::l
+        (1)
+
+
+
+
+L
+                                                                          Station location from center of            {
+
+                                                                          rotation,    radial or lateral distance,   1
+                                                                          q~ = 60°
+                                                                               Sta.    Inches    Centimeters
+                                                                                 1      0             0
+                                                                                 2      5. 18       13. 16
+Center of rotation
+                     *t-                                                         3     1282
+                                                                                       17.95
+                                                                                                    3 2 56
+                                                                                                    45.59
+                                                                                       22 20        56.39
+                                                                                       29.56        75.08
+                                                                                        9.83        24.97
+                                                                                       17.20        43.69
+                                                                                       24 57        6 2 41
+                      3
+                                                                                IO     30.00        76. 20
+
+
+
+
+                -
+     Sta. I
+
+     Sta. 2   2
+                                                                                  -
+     Sta. 3
+
+
+
+                 -
+                2Sta. in.-                                               --
+
+
+
+
+                                                          -
+     Sta. 4
+
+
+
+
+                -
+     Sta. 5                                                         Sta. 9 0
+
+
+     Sta. 6
+
+
+
+                                            Sta. 7
+
+                           Figure 3.- Section details of rotor/wing configuration 1.
+
+
+
+
+14
+                                                                                   Station location from center of
+                                                                                   rotation, radial o r lateral distance,
+                                                                                   \Ir = 60°
+
+                                                                                        Sta.    Inches    Centimeters
+
+                                                                                         1        0           0
+                                                                                         2        6. 21      15.77
+                                                                                         3      1100         27.96
+Center of rotation                                                                       4      15.50       39.37
+                                                                                         5      19.50       49.53
+                                                                                         6      2200        55.88
+                                                                                         7      2675        67.95
+                                                                                         8        870        22 10
+                                                                                         9      16.53       4L 99
+                                                                                        10      2436        6 1 87
+                                                                                        11      26.36       66.95
+                                                                                        12      4L95       106.54
+                                                                                               (I from    (2 54 from
+                                                                                                 tip)       tip)
+
+
+     Sta. I
+
+
+     sta. 2      a.t?s                                                                         12-
+
+
+
+
+              -
+     Sta. 3       3
+                   Sta. II 0
+     Sta. 4       1
+
+
+              -
+                                                                                  -
+    Sta. 5        -
+                  1
+    Sta. 6
+
+    Sta. 7
+
+
+
+
+                                                                      Sta. 8
+
+                         Figure 4.-   Section details of rotor/wing configuration 2.
+
+
+
+
+                                                                                                                        15
+                                                                            Station location from center of     i
+                                                                                                                i
+                                                                            rotation, radial o r lateral dis-
+                                                                            tance, \cI = 60°                    i
+                                                                               Sta.   Inches     Centimeters
+                                                                                1         0          0
+                                                                                2         5.43     13.79
+                                                                                3        1L 68     29.67
+                                                                                4        15.68     39.83
+                                                                                5        19.50     49.53
+                                                                                6        22 00     55.88
+                                                                                7        26.75     67.95
+                                                                                8         6.68     16.97
+                                                                                9        15.50     39.37
+                                                                               10        24 56     6 2 38
+                                                                               11        4L 95    106.54
+                                                                                      0 from      (254 from
+
+
+
+
+              -
+                                                                                        tip)        tip)
+
+
+
+
+              -
+     Sta. I
+
+     Sta. 2
+
+                -
+                1
+
+
+              -                                                                       -
+     sta. 3                                                                    Sta. II
+
+     Sta. 4
+
+
+
+
+              -
+     Sta. 5   0                                                             Sta. 10      0
+     Sta. 6
+
+     Sta. 7                                                             Sta. 9
+
+
+
+
+              Figure 5.-   Section details of rotor/wing configuration 3.
+
+
+
+
+16
+          c
+          c
+          a
+          5cn
+          c
+          m
+          L
+          m
+          L
+
+          L
+          0
+          c
+
+          E
+          a
+          .->
+          V
+          L
+
+          .-
+          -u
+          3
+          m
+          L
+          V
+          x
+          S
+
+          U
+          c
+          m
+
+
+          .-em-
+          0
+          c
+          -m
+          c
+          .-c
+          VI
+
+
+
+          a
+          c
+          U
+
+          -
+          m
+          m
+          n
+     '0
+k
+c
+m
+     s    d
+          c
+          VI
+3
+c          2
+m
+V          m
+Y
+          .-
+          c
+           c
+m
+V         c
+c         3
+          0
+m
+L         -E
+x
+-
+rn
+c         z
+m
+e         d
+          a
+          L
+           I
+
+
+
+
+          3
+          .-
+          U
+           cn
+
+
+
+
+                  17
+               150
+
+
+
+               10G
+                                                                                 400
+
+
+                50
+
+     Force,
+      Ih        0
+                            -LNomal
+                              - - - .
+                                                                                     O
+                                                                                          Force,
+                                                                                            N
+
+
+              - 50
+                                                                                 -400
+              - 1oc
+
+              - 150
+                                                                                 -800
+
+
+
+
+              loool
+               500
+                                                                                 100
+
+
+
+
+                                                                                     50
+
+
+
+
+                                                                                       Pitching
+                                                                                        moment,
+                                                                                     0    m-N
+
+
+
+
+                                                                                 -50
+
+
+
+
+              -1000    -
+                      -20     - 10                     0
+                                           Angle o f attack, a
+
+                                     Figure 7.-   Angle-of-attack tares.
+                                                                           10   20
+
+
+
+
+18
+                                             Torque pressure, N/m 2
+
+                0                     5                 10                   15                20 x 106
+                 I                    I                  I                    I                      I
+
+
+
+
+Force,                                                                                      Force,
+  lh                                                                                          N
+
+
+
+
+          20
+
+
+
+
+Moment,
+ in-lb  0
+
+
+
+
+         -20
+
+
+
+
+         - 40
+
+
+
+         -60
+
+
+                               ~~
+
+
+
+
+                 0            500          1000          1500         2000          2500
+                                          Torque pressure, psi
+
+
+
+               Figure 8.- Torque-pressure tares removed from measured forces and moments.
+
+
+
+
+                                                                                                          19
+I-
+V
+a
+
+    21
+                                   a
+
+                                   13
+
+
+                                        0
+                                        ‘D
+                                         al
+                                   0
+                                        d
+
+     oooa
+                                   4
+
+
+
+                                   aI
+            R   13   0
+                           4   R
+                      ol
+                     ‘D
+                      al
+
+                       A
+                     m
+
+
+                                              .-c
+                                              4
+
+
+
+                                   13
+
+
+                                        all
+                                        u
+                                   O ’ D
+                                        d
+
+
+                                   13
+
+                                              -
+                                              e
+                                              c
+
+                                   a          c
+                                              U
+                                              0
+
+            R   13   0
+                           s   a              u
+                                              c
+                                              lv
+
+
+
+
+                      -
+                     cn
+                      al
+                     ‘D
+
+
+
+
+                                   a
+
+
+                                   13
+
+                                        0
+
+                                   0
+                                        8
+                                        d
+
+
+
+                                   4
+
+
+
+                                   R
+
+
+
+
+22
+                              w
+
+                              E:
+
+
+                                   m
+                                   0)
+
+
+
+                              z
+                              0    -
+                                   ai'
+
+0004
+
+
+
+
+                              R
+                              ._
+       a   El   0
+                     El   0 '
+                          N
+                          I
+
+
+
+
+                              a
+
+                              El
+
+
+                                   m
+                                   U
+                                   al
+                              0
+                                   U'
+
+
+
+
+                              z
+
+                              a
+       a   E:   0
+                     El
+                      I
+                          a'
+                m
+                u
+                (Y
+
+
+                 h
+                4
+
+                              a
+
+                              0
+                              d
+
+
+
+
+                                   m
+                                   al
+                              o    u
+                                   U-
+
+
+
+
+                              El
+
+
+
+                              R
+
+
+
+
+                                         23
+                                                I
+
+
+
+
+     0
+     U
+     al
+
+     & “\Ei52:a                            0
+                                           U
+                                           al
+
+                                           d
+
+
+           0004
+
+
+
+
+                  a   Ei   0
+                                4
+                           m
+                           U
+                           al
+
+                            A
+                           m
+                                      a
+
+
+                                      4
+
+                                           cn
+                                           al
+                                      o    u
+                                           d
+
+
+                                      4
+
+
+                                      a
+                  a   4    0    Ei
+                                 I
+                                     a ‘
+                           m
+                           U
+                           al
+
+                            A
+                           a
+                                      a
+
+
+                                      Ei
+
+
+                                           cn
+                                           al
+                                       o   u
+                                           d
+
+
+
+                                       4
+
+
+                                       a
+
+            u
+          \ - J
+
+
+
+
+24
+                     a
+
+
+                     4
+
+
+                         m
+                         U
+                         al
+                     0
+                         d
+
+
+
+                     4
+
+
+
+                     ?
+
+
+                     a
+
+                     s
+
+                         m
+                         U
+                         al
+                     0
+                         d
+
+
+                     4
+
+
+
+                     a
+
+
+
+                     a
+
+
+                     s
+
+                         m
+                         -a
+                         al
+                     0
+                         CT
+
+
+
+                     4
+
+
+
+    N           d
+                     a
+8   0
+        d
+        0
+            0
+                0
+                1.
+
+
+
+
+                              25
+             oooa
+
+
+
+
+                             a   s   0        4   a '
+                                     0,
+                                     U
+                                     01
+
+                                      A
+                                     m
+                                                    R
+
+
+                                                    4
+
+
+                                                        m
+                                                        al
+                                                    0   -
+                                                        d
+
+
+                                                    4
+
+
+
+
+                                                    a
+
+
+                                                    4
+
+
+                                                        cn
+                                                        a
+                                                        l
+                                                    0   -
+                                                        d
+
+
+                                                    4
+
+
+
+
+     8   N
+         0
+                 -
+                 0
+                     0   4
+                         0
+                         I
+                             8   Q   N
+                                     8        s
+                                                    a
+                                                  0 '
+
+
+
+                                          U
+             u                       0
+
+
+
+
+26
+                                         m
+                                         0
+                                         al
+
+                                         d
+
+
+
+                                                0
+                                                    II
+                                                -_
+                                                V
+                                                    II
+                                                -E
+                                                V
+
+
+
+
+                                          m
+                                         -a
+                                          al
+
+                                         cf
+
+
+
+
+                                                U
+                                                    c
+                                                    m
+
+
+
+
+                                     a
+
+
+
+                                         m
+                                         al
+                                     0   0
+                                         d
+
+
+
+
+    rn
+S   0
+         N
+         0
+                     4
+                     0
+                         0   4
+                             0
+                             I
+
+
+             5 - J               0
+              u                  V
+
+
+
+
+                                               27
+                                  a
+
+                                  Ei
+     m
+     al
+     v
+     a5) - I ? 2 R                     m
+                                       al
+                                  0    -
+                                       d
+
+          ooou
+                                  ZI
+
+
+
+                                  R
+
+
+                             SI
+                             m
+
+
+                                  R
+
+
+                                  Ei
+
+
+                                       m
+                                       0)
+
+                                  0    -
+                                       d
+
+
+                                  I?
+
+
+
+                                  a
+
+                             SI
+                             a
+
+                                  R
+
+
+                                  4
+
+                                       m
+                                       al
+                                  o    u
+                                       d
+
+
+                                  s
+
+
+     0
+     N
+                H
+                0    0   -
+                         0
+                         I
+                                  ?
+           V
+
+
+
+
+28
+                                  a
+
+
+                                  s
+
+                                       m
+                                       0)
+
+                                  o    u
+                                       d
+
+OOOQ
+                                  zl
+
+
+                                  E
+                                  .-
+       a   4         0
+                         13   ?   I
+
+               cn
+               U
+               0)
+
+
+                &I
+               rn
+
+                                  a
+
+                                  s
+
+                                       al7
+                                       0
+                                  0    -
+                                       d
+
+
+                                  s
+
+
+                                  a
+
+
+
+                                  a
+
+
+                                  s
+
+                                       m
+                                       0)
+
+                                  o    u
+                                       d
+
+
+                                  zl
+
+
+                                  a
+
+
+
+                                             29
+                          a
+
+                          53
+
+
+                               m
+                          0 8
+                               d
+
+
+
+                          53
+                           I
+
+
+
+
+                          a
+a   53          0
+                    53
+         m
+         U
+         al
+
+           &l
+         M
+
+
+
+                          a
+
+
+                          El
+
+
+                               m
+                               0,
+                          0 ' 0
+                               d
+
+
+                          53
+
+
+
+                          R
+                          ._
+a   E:
+         CII
+                0
+                    El   F'
+         al
+         U
+
+
+
+
+                          a
+
+
+                          El
+
+
+                               m
+                               a
+                          o    u
+                               d
+
+
+                          53
+
+
+
+                          a
+        R
+
+
+        13
+
+             al7
+             0
+        o u
+          d
+
+0004
+        s
+
+
+       R
+
+
+
+
+             07
+             al
+             U
+
+             d
+
+
+
+
+       a
+
+
+       s
+
+             al
+             CI,
+       o     u
+             d
+
+
+       13I
+
+
+
+
+                   31
+                                                             m
+                                                             al
+                                                             U
+
+                                                             d
+
+              OOOQ
+                                                                       0.
+                                                                        II
+                                                                       -e
+                                                                       u
+                                                                       II
+                                                                       -E
+                                                                       u
+                                 a   4:   0    4:
+                                          0
+                                          al
+                                          U
+
+                                           2
+                                          m
+                                                        a              .-c
+                                                                       M
+
+
+                                                                       .-c
+                                                                        0
+
+                                                                       x
+                                                        4:
+
+
+                                                        0
+
+
+                                                                  -    L
+                                                                  m
+                                                                  -
+                                                                      a cl
+                                                                        U
+                                                                        m
+                                                                        m
+                                                                        L
+                                                        0,             c
+                                                                       U
+
+
+
+
+                                 a   13   0
+                                               4:   a
+                                                        7
+                                          m
+                                          al
+                                          0
+
+                                           2
+                                          4
+                                                        a
+
+                                                        4:
+
+
+                                                        0
+                                                             E
+                                                             d
+
+
+
+
+                        0
+S    M
+     0   cu
+         0          4
+                    0
+                            d
+                            0
+                            1.
+
+
+
+
+              -“A
+
+
+
+
+32
+                           a
+
+                           si
+
+                                m
+                                0
+                                al
+                           0
+                                d
+
+OOOQ
+                           s
+
+
+                           a
+       a   s:   0      5
+
+                m
+                U
+                0)
+
+
+                 %=I
+                m
+                           a
+
+
+                           5
+
+
+                                m
+                           0    -
+                                d
+
+
+                           E:
+
+
+
+                           a
+
+
+
+                           a
+
+                           E:
+
+                                m
+                                al
+                                U
+                           0
+                                d
+
+
+
+
+                                     33
+                                        a
+
+                                        z
+     Is)
+      aa
+     '0
+
+
+     & *=sa
+                                             m
+                                             a
+                                             0
+                                        0
+                                             d
+
+
+           OOOQ
+                                        s
+
+
+                                        a
+                                        I
+                  a   s   0     s   F
+                          Is)
+                          aa
+                          U
+
+                           ;
+                           I
+                          m
+
+
+
+
+                                             0 7
+                                             aa
+                                             U
+
+                                             d
+
+
+
+
+                                        a
+
+
+                                        s
+
+                                             Is)
+                                             aa
+                                        o    u
+                                             d
+
+
+                                        I3
+
+
+
+                                        a
+
+
+
+
+34
+                                                    a
+
+                                                    4
+        0-l
+        v
+        al
+        & *42R                                          m
+                                                        v
+                                                        0)
+
+                                                    0
+                                                        d
+
+
+
+                                                    4
+
+
+                                                    a
+                                a   E:   0
+                                                8
+                                         m
+                                         U
+                                         0)
+
+
+                                          =4,
+                                         m
+
+
+
+
+                                                    4
+
+
+
+
+                                                    s
+                                                    I
+
+
+
+
+                                                    R
+        cu                  d
+8   8   0
+                    d
+                    0
+                        0   0
+                            I
+              r-l
+              0
+
+
+
+
+                                                             35
+                                              R
+
+
+                                              s
+
+                                                  m
+                                              0
+                                                  s
+                                                  d
+
+
+         0004
+                                              s
+
+
+                                              a
+                         a   s   0
+                                     s:   ?
+
+
+                                              a
+
+                                              s
+
+
+
+
+                                              a
+
+
+
+                                              a
+
+
+                                              s
+
+                                                  01
+                                                  a
+                                                  I
+
+                                              o   u
+                                                  d
+
+
+
+
+     N              4
+ 8   0
+         4
+         0
+                0
+                    0
+                    I.
+
+
+
+
+36
+                                                                  Positive control input
+                                                   - - - - W t i v e control input
+
+
+
+
+                                                         (a) Configuration 1.
+
+
+
+
+I
+                                                          (b) Configuration 2.
+
+    .m
+
+    .m
+
+
+     0
+
+
+
+
+                                                            (c) Configuration 3.
+
+         Figure 13.- Variation of cyclic control power with tip-speed ratio for three rotor/wing configurations i n helicopter mode.
+                                            eo = 100; a = - 2 O (except a = 0' at V/RR = 0).
+                                                                                                                                        ,
+
+
+
+
+                                                                                                                                   37
+                                                                               Configuration Fairings
+                                                                             0      I          On
+                                                                             0     2           Off
+                                                                             e    2            On
+                                                                             0     3           On
+
+
+
+
+     -8    -4        0        4         8        /2       16       20             0         ./       .2         .3     4
+                                    deg                                                             CD
+
+
+          Figure 14.- Longitudinal aerodynamic characteristics of rotor/wing configurations in airplane mode.
+
+
+
+38                                                                               NASA-Lansley, 1969 - 2              L-6392
+

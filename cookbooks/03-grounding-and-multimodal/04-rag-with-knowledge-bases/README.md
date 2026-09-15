@@ -43,8 +43,7 @@ reranking or business logic between the two steps.
 
 > **What it does.** Retrieves the top-k chunks from a Knowledge Base, numbers them, passes
 > them as context to GPT-5.6 with instructions to cite sources inline, and prints the
-> grounded answer with a reference list. **What it creates.** Nothing — retrieval is
-> read-only and generation uses `store=False`, so there is nothing to clean up.
+> grounded answer with a reference list.
 
 ## The pattern
 
@@ -74,18 +73,6 @@ The two-step separation means you can independently tune retrieval (number of re
 hybrid search, metadata filters) and generation (model choice, system prompt, reasoning
 effort) without either side affecting the other.
 
-## Why two steps instead of `RetrieveAndGenerate`
-
-Bedrock's `RetrieveAndGenerate` couples both halves into one API call, which is
-convenient but limits you:
-
-- You cannot choose the generation model independently — it uses a Bedrock-managed model.
-- You cannot inspect or filter chunks between retrieval and generation.
-- You cannot format citations your way, inject business logic, or add a reranking step.
-- You cannot use the OpenAI Responses API features (structured output, reasoning effort).
-
-The two-step pattern gives you the managed vector search of Knowledge Bases with the full power of GPT-5.6 on generation, authenticated through the same AWS credential chain.
-
 ## Prerequisites
 
 - The [prerequisites in the cookbooks README](../../README.md).
@@ -111,7 +98,7 @@ Pass a custom query as a positional argument:
 ```bash
 uv run python \
   03-grounding-and-multimodal/04-rag-with-knowledge-bases/python/rag_with_knowledge_bases.py \
-  "What are the effects of vessel noise on marine communication?"
+  "How was the Tiltrotor Test Rig tested in the NFAC 40- by 80-Foot Wind Tunnel?"
 ```
 
 ## How it works
@@ -119,9 +106,10 @@ uv run python \
 ### Step 1: Retrieve
 
 The script calls the Bedrock Knowledge Bases `Retrieve` API directly with the user's
-query. This returns ranked chunks with relevance scores and source locations (S3 URIs or
-web URLs). You control `k` (number of results) and can enable hybrid search or metadata
-filters.
+query. This returns ranked chunks with relevance scores, source locations (S3 URIs or
+web URLs), and any document metadata. When a chunk carries a `source_url` metadata
+attribute, the script uses it as the citation source in preference to the S3 URI. You
+control `k` (number of results) and can enable hybrid search or metadata filters.
 
 ### Step 2: Build numbered context
 
@@ -143,41 +131,48 @@ The answer and a mapping from citation numbers to source URIs are returned toget
 
 ## Example output
 
+The example corpus is a set of public-domain NASA wind-tunnel and aerodynamics
+reports (see [Appendix A](#appendix-a---creating-a-knowledge-base) and
+`utils/create_knowledge_base.py`). Citations resolve to each report's NTRS record
+URL because the documents were ingested with a `source_url` metadata attribute.
+
 ```
 → request
    model             openai.gpt-5.6-terra
    region            us-east-1
-   knowledge_base    78NVB3ZXQV
-   query             What are the effects of vessel noise on oyster toadfish?
-   retrieval_k       6
+   knowledge_base    XXXXXXXXXX
+   query             How much did the acoustic improvement program reduce background noise in the wind tunnel test?
+   retrieval_k       12
    max_output_tokens 1024
    store             False
 
 ← retrieval
-   chunks returned   6
-   top score         0.73
+   chunks returned   12
+   top score         0.71
 
 ← generation
-   Vessel noise has been shown to significantly impact oyster toadfish
-   acoustic communication. Studies demonstrate that toadfish modify their
-   calling behavior in the presence of boat noise [1], reducing call rates
-   and shifting dominant frequencies [3].
+   The acoustic improvement program for the 9- by 15-Foot Low Speed Wind
+   Tunnel reduced background noise in the test section by about 10 dBA over a
+   wide range of flow speeds and frequencies [1]. A companion refurbishment
+   lowered one-third octave sound levels by 8 to 18 dB in the frequency range
+   of interest and substantially improved the anechoic quality of the test
+   section [3].
 
 REFERENCES
-   [1] s3://my-bucket/papers/luczkovich-2016.pdf
-   [3] s3://my-bucket/papers/stanley-2017.pdf
+   [1] https://ntrs.nasa.gov/citations/20210016839
+   [3] https://ntrs.nasa.gov/citations/20210017002
 
 ← usage
-   Input tokens:     4,217
-   Output tokens:    89
+   Input tokens:     6,842
+   Output tokens:    118
      of which reasoning: 0
-   Total tokens:     4,306
+   Total tokens:     6,960
 ```
 
 ## Production considerations
 
 - **Cap output tokens.** The generation call should always set `max_output_tokens`. Without
-  it, a verbose answer on a large context can bill far more than you expect.
+  it, a verbose answer on a large context can bill more than you expect.
 - **Tune `k` deliberately.** More chunks means more grounding material but also more input
   tokens — and on a large corpus, lower-ranked chunks add noise without adding signal.
   Start with 5–6 and measure citation coverage.
@@ -211,8 +206,11 @@ REFERENCES
 
 ## Limitations and non-goals
 
-- **It does not create a Knowledge Base.** You bring one that already has documents
-  ingested. The [Bedrock Knowledge Bases documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html) covers creation and ingestion.
+- **The retrieval recipe does not create a Knowledge Base.** It expects one that already
+  has documents ingested; [Appendix A](#appendix-a---creating-a-knowledge-base) covers
+  creating one (including the `utils/create_knowledge_base.py` helper), and the
+  [Bedrock Knowledge Bases documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html)
+  covers creation and ingestion in general.
 - **It does not stream.** The answer arrives in one piece. Add `stream=True` to the
   `responses.create` call for token-by-token delivery — the [streaming recipe](../../01-foundations/05-streaming/) covers the event types.
 - **It does not maintain conversation history.** Each call is stateless. Appending prior
@@ -223,8 +221,11 @@ REFERENCES
 
 ## Clean up
 
-There is nothing to tear down. Retrieval is read-only, generation uses `store=False`, and
-no resources are created. Your Knowledge Base and its documents are unaffected.
+The recipe itself has nothing to tear down: retrieval is read-only, generation uses
+`store=False`, and it creates no resources — your Knowledge Base and its documents are
+unaffected. If you provisioned a Knowledge Base with the helper in
+[Appendix A](#appendix-a---creating-a-knowledge-base), delete those resources with its
+`--teardown` flag.
 
 ## Next steps
 
@@ -239,11 +240,92 @@ no resources are created. Your Knowledge Base and its documents are unaffected.
 ## Appendix A - Creating a Knowledge Base
 
 Start with a set of documents, either in a zip file or in an S3 bucket. You then have
-three options: console, API, or Codex. The [Bedrock Knowledge Bases creation documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html) describes how to manually configure a knowledge base using both the console and the API.
+several options: the included helper script, the console, the API, or Codex. The [Bedrock Knowledge Bases creation documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html) describes how to manually configure a knowledge base using both the console and the API.
 
-However, given that we have configured the AWS MCP server, it's also possible to prompt Codex to create the knowledge base on its own. Here is a sample prompt:
+### Option 1: The `create_knowledge_base.py` helper (recommended)
 
-> Using documentation linked here as necessary
-> ([docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html)), use AWS MCP tools to create a knowledge base from the attached set of documents. Get input for any ambiguous choices, for example vector store.
+This recipe ships a boto3 script, [`utils/create_knowledge_base.py`](utils/create_knowledge_base.py),
+that provisions a complete knowledge base from a directory of documents, end to end,
+using **Amazon S3 Vectors** as the vector store (the lowest-cost option, with no cluster
+to manage). In one command it:
 
-Attach the documents, or a link to the S3 bucket where the documents are stored.
+1. Scans the source directory for documents (`.txt`; HTML and other
+   non-document files are skipped).
+2. Uploads them to an S3 bucket, each with a `.metadata.json` sidecar carrying its public
+   `source_url` so retrieval can cite the real link rather than the S3 URI.
+3. Creates the S3 Vectors bucket and index.
+4. Creates a least-privilege IAM service role for the knowledge base.
+5. Creates the knowledge base (Titan embed text v2) and an S3 data source, then runs
+   ingestion.
+
+The example corpus is a set of public-domain NASA wind-tunnel and aerodynamics reports.
+The documents live in this recipe's `assets/` folder (plain-text extractions), and
+[`assets/NASA_Wind_Tunnel_Reports_index.html`](assets/NASA_Wind_Tunnel_Reports_index.html)
+lists each report with a link to its NTRS record.
+
+```bash
+# Create everything and ingest. Prints KNOWLEDGE_BASE_ID at the end.
+uv run --env-file .env python \
+  03-grounding-and-multimodal/04-rag-with-knowledge-bases/utils/create_knowledge_base.py
+```
+
+Set the printed `KNOWLEDGE_BASE_ID` in your `.env`, then run the retrieval script above.
+
+Every step is idempotent — re-running reuses resources that already exist by name, so a
+run interrupted partway (for example a creation that takes longer than the wait timeout)
+simply resumes. Configuration is env-driven; the useful knobs are:
+
+| Variable               | Purpose                                                               | Default                          |
+| :--------------------- | :-------------------------------------------------------------------- | :------------------------------- |
+| `KB_NAME`            | Knowledge base name (also the prefix for the bucket, index, and role) | `nasa-windtunnel-kb`           |
+| `KB_SOURCE_DIR`      | Directory of documents to ingest                                      | the recipe's`assets/`          |
+| `KB_EMBED_MODEL`     | Embedding model id                                                    | `amazon.titan-embed-text-v2:0` |
+| `KB_EMBED_DIMENSION` | Embedding dimension (must match the index)                            | `1024`                         |
+| `KB_ACTIVE_TIMEOUT`  | Seconds to wait for the KB to become`ACTIVE`                        | `600`                          |
+
+When you are finished, tear down everything the script created — the knowledge base, S3
+Vectors store, IAM role, and documents bucket — with the `--teardown` flag:
+
+```bash
+uv run --env-file .env python \
+  03-grounding-and-multimodal/04-rag-with-knowledge-bases/utils/create_knowledge_base.py --teardown
+```
+
+Teardown is scoped to the resources named after `KB_NAME`, is safe to run repeatedly, and
+ignores anything that is already gone. Because S3 Vectors bills for stored vectors and the
+documents bucket for stored objects, run teardown when you no longer need the knowledge
+base to avoid ongoing charges. Running the script requires broader permissions than
+retrieval alone: Bedrock, S3, S3 Vectors, and IAM role creation.
+
+### Option 2: Console or API
+
+The [Bedrock Knowledge Bases creation documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html)
+walks through the console's guided flow (including "Quick create" for an S3 Vectors store)
+and the equivalent API calls.
+
+### Option 3: Codex
+
+It's also possible to prompt Codex to create the knowledge base on its own, if we have the AWS MCP server configured. The more specific the prompt, the less it has to guess. Here is a sample prompt that spells out the same choices the helper script makes:
+
+> Using the documentation as necessary
+> ([docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html)),
+> use the AWS MCP tools to create an Amazon Bedrock knowledge base from the attached set of
+> documents, in region `us-east-1`, with these settings:
+>
+> - **Name:** `nasa-windtunnel-kb`
+> - **Vector store:** Amazon S3 Vectors (quick-create a new S3 vector bucket and index).
+>   Mark `AMAZON_BEDROCK_TEXT` as a non-filterable metadata key so chunk text does not hit
+>   the 2 KB filterable-metadata limit.
+> - **Embedding model:** `amazon.titan-embed-text-v2:0` with an embedding dimension of
+>   `1024` (the index dimension must match).
+> - **Data source:** the attached documents in S3. For each document, add a
+>   `<name>.metadata.json` sidecar with a `source_url` attribute (set `includeForEmbedding`
+>   to false) holding the document's public URL, so retrieval can cite the real source
+>   instead of the S3 URI.
+> - **IAM:** create a least-privilege service role the knowledge base can assume (invoke the
+>   embedding model, read the documents bucket, and write to the S3 vector store).
+>
+> After creating it, start an ingestion job, wait for it to complete, and print the
+> knowledge base ID. Ask me before making any choice not specified above.
+
+Attach the documents, or a link to the S3 bucket where the documents are stored. Refer to [this article](https://builder.aws.com/content/3FY7OE1GSTqbER63FvrJZbNrxA5/deploying-openai-agents-to-bedrock-agentcore-runtime-with-codex-cli) for help configuring the AWS MCP server in Codex.

@@ -13,7 +13,7 @@ Pass a custom query as a positional argument:
 
     uv run python \
       03-grounding-and-multimodal/04-rag-with-knowledge-bases/python/rag_with_knowledge_bases.py \
-      "How does underwater noise affect marine species?"
+      "How was the Tiltrotor Test Rig tested in the Wind Tunnel?"
 
 See README.md for prerequisites and the permissions this needs.
 """
@@ -31,13 +31,50 @@ from openai.providers import bedrock
 # KNOWLEDGE_BASE_ID has no default — you must set it.
 
 REGION = os.environ.get("AWS_REGION", "us-east-1")
-KNOWLEDGE_BASE_ID = os.environ["KNOWLEDGE_BASE_ID"]  # no default: must be set
+
+
+def _require_knowledge_base_id() -> str:
+    """Return KNOWLEDGE_BASE_ID, or exit listing the account's knowledge bases.
+
+    When the variable is unset we can't retrieve anything, so instead of a bare
+    KeyError we list the knowledge bases in this Region (via the bedrock-agent
+    control plane) to help the user pick one and set it.
+    """
+    kb_id = os.environ.get("KNOWLEDGE_BASE_ID")
+    if kb_id:
+        return kb_id
+
+    lines = ["KNOWLEDGE_BASE_ID is not set. Set it to one of the knowledge bases"]
+    lines.append(f"available in {REGION}:")
+    try:
+        control = boto3.client("bedrock-agent", region_name=REGION)
+        found = False
+        for page in control.get_paginator("list_knowledge_bases").paginate():
+            for kb in page["knowledgeBaseSummaries"]:
+                found = True
+                lines.append(
+                    f"  {kb['knowledgeBaseId']}  {kb['name']}  ({kb['status']})"
+                )
+        if not found:
+            lines.append(
+                "  (none found — create one with utils/create_knowledge_base.py)"
+            )
+    except Exception as err:  # noqa: BLE001 - best-effort hint, never mask the real cause
+        lines.append(f"  (could not list knowledge bases: {err})")
+
+    lines.append("")
+    lines.append("Then re-run with, e.g.:  KNOWLEDGE_BASE_ID=XXXXXXXXXX uv run ...")
+    sys.exit("\n".join(lines))
+
+
+KNOWLEDGE_BASE_ID = _require_knowledge_base_id()
 MODEL_ID = os.environ.get("MODEL_ID", "openai.gpt-5.6-terra")
-RETRIEVAL_K = int(os.environ.get("RETRIEVAL_K", "6"))
+RETRIEVAL_K = int(os.environ.get("RETRIEVAL_K", "12"))
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "1024"))
 
 DEFAULT_QUERY = (
-    "What are the effects of vessel noise on oyster toadfish calling behavior?"
+    "How much did the acoustic improvement program reduce background noise "
+    "in the wind tunnel test?"
 )
 
 # --- Clients ----------------------------------------------------------------
@@ -67,10 +104,15 @@ def retrieve(query: str, k: int = RETRIEVAL_K) -> list[dict]:
 
     hits = []
     for result in resp["retrievalResults"]:
-        # Source location varies by type (S3, web, Confluence, etc.)
+        # Prefer the source_url metadata attribute (attached at ingestion via a
+        # .metadata.json sidecar — see utils/create_knowledge_base.py) so
+        # citations point at the real document URL. Fall back to the physical
+        # location (S3, web, Confluence, ...) when no source_url is present.
+        source_url = result.get("metadata", {}).get("source_url")
         location = result.get("location", {})
         source = (
-            location.get("s3Location", {}).get("uri")
+            source_url
+            or location.get("s3Location", {}).get("uri")
             or location.get("webLocation", {}).get("url")
             or "unknown"
         )
@@ -134,7 +176,7 @@ def rag(query: str) -> dict:
     print(f"   query             {query}")
     print(f"   retrieval_k       {RETRIEVAL_K}")
     print(f"   max_output_tokens {MAX_OUTPUT_TOKENS}")
-    print(f"   store             False")
+    print("   store             False")
     print()
 
     # Retrieve

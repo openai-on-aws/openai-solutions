@@ -1,17 +1,23 @@
-"""Provision a Bedrock Knowledge Base from a zip of documents, end to end.
+"""Provision a Bedrock Knowledge Base from a directory of documents, end to end.
 
 This is the automation companion to Appendix A of the recipe README. It takes a
-zip of source documents (default: the NASA wind-tunnel corpus in
-``assets/nasa.zip``) and stands up everything a Bedrock Knowledge Base needs,
-using **Amazon S3 Vectors** as the vector store — the lowest-friction, lowest-cost
-option, with no cluster or index policies to manage:
+directory of source documents (default: the NASA wind-tunnel corpus in the
+recipe's ``assets/`` folder) and stands up everything a Bedrock Knowledge Base
+needs, using **Amazon S3 Vectors** as the vector store — the lowest-friction,
+lowest-cost option, with no cluster or index policies to manage:
 
-    1. Unzip the documents locally (macOS ``__MACOSX`` junk is already stripped).
-    2. Create an S3 bucket and upload the documents (the KB data source).
+    1. Scan the source directory for documents (``.txt``; the HTML index and
+       other non-document files are skipped).
+    2. Create an S3 bucket and upload the documents (the KB data source), each
+       with a ``.metadata.json`` sidecar carrying its public source URL so
+       retrieval can cite the real link, not just the S3 URI.
     3. Create an S3 Vectors vector bucket + index (the vector store).
     4. Create an IAM service role the KB assumes (embed model + S3 + S3 Vectors).
     5. CreateKnowledgeBase (VECTOR / S3_VECTORS, Titan embed text v2).
     6. CreateDataSource (S3) and StartIngestionJob.
+
+The retrieval recipe reads the ``source_url`` metadata attribute back from each
+retrieved chunk (``retrievalResults[].metadata``) to render proper citations.
 
 Every step is idempotent: re-running reuses resources that already exist by name,
 so a partial run can be resumed. Configuration comes from the environment; nothing
@@ -22,19 +28,19 @@ secrets in this file.
 Run it from the cookbooks/ directory:
 
     uv run --env-file .env python \
-      03-grounding-and-multimodal/04-rag-with-knowledge-bases/utilities/create_knowledge_base.py
+      03-grounding-and-multimodal/04-rag-with-knowledge-bases/utils/create_knowledge_base.py
 
 Tear everything down again (KB, data source, role, buckets, vector store) by
 passing ``--teardown`` to the same script:
 
-    uv run --env-file .env python .../utilities/create_knowledge_base.py --teardown
+    uv run --env-file .env python .../utils/create_knowledge_base.py --teardown
 
 Environment variables (all optional except where noted):
 
     AWS_REGION            Region for every resource   (default us-east-1)
     KB_NAME               Knowledge Base name         (default nasa-windtunnel-kb)
-    KB_SOURCE_ZIP         Path to the documents zip   (default assets/nasa.zip,
-                          resolved relative to the repo root)
+    KB_SOURCE_DIR         Directory of documents      (default the recipe's
+                          assets/ folder)
     KB_DOC_BUCKET         S3 bucket for source docs   (default derived from
                           KB_NAME + account id)
     KB_VECTOR_BUCKET      S3 Vectors bucket name      (default KB_NAME + "-vectors")
@@ -56,7 +62,6 @@ import json
 import os
 import sys
 import time
-import zipfile
 from pathlib import Path
 
 import boto3
@@ -71,34 +76,54 @@ KB_NAME = os.environ.get("KB_NAME", "nasa-windtunnel-kb")
 EMBED_MODEL = os.environ.get("KB_EMBED_MODEL", "amazon.titan-embed-text-v2:0")
 EMBED_DIMENSION = int(os.environ.get("KB_EMBED_DIMENSION", "1024"))
 
+# How long to wait (seconds) for the KB to become ACTIVE after creation.
+# KB provisioning can take a few minutes; the wait is generous and resumable.
+KB_ACTIVE_TIMEOUT = int(os.environ.get("KB_ACTIVE_TIMEOUT", "600"))
+
 VECTOR_BUCKET = os.environ.get("KB_VECTOR_BUCKET", f"{KB_NAME}-vectors")
 VECTOR_INDEX = os.environ.get("KB_VECTOR_INDEX", f"{KB_NAME}-index")
 ROLE_NAME = os.environ.get("KB_ROLE_NAME", f"{KB_NAME}-role")
 
-# The source zip is resolved relative to the repo root so the script runs the
-# same whether invoked from cookbooks/ or elsewhere. Walk up to find the repo
-# root (the directory that contains the assets/ folder).
-_DEFAULT_ZIP_REL = "assets/nasa.zip"
+# The documents live in the recipe's assets/ folder, which sits alongside this
+# utils/ directory (i.e. one level up). Default to that so the script runs the
+# same regardless of the current working directory; override with KB_SOURCE_DIR.
+_DEFAULT_SOURCE_DIR = Path(__file__).resolve().parent.parent / "assets"
 
-
-def _repo_root() -> Path:
-    """Find the repo root by walking up until we see an assets/ directory."""
-    here = Path(__file__).resolve()
-    for parent in [here, *here.parents]:
-        if (parent / "assets").is_dir():
-            return parent
-    # Fall back to the current working directory.
-    return Path.cwd()
-
-
-SOURCE_ZIP = Path(
-    os.environ.get("KB_SOURCE_ZIP", str(_repo_root() / _DEFAULT_ZIP_REL))
+SOURCE_DIR = Path(
+    os.environ.get("KB_SOURCE_DIR", str(_DEFAULT_SOURCE_DIR))
 ).expanduser()
 
-EMBED_MODEL_ARN = f"arn:aws:bedrock:{REGION}::foundation-model/{EMBED_MODEL}"
+# Document extensions to ingest. Everything else in the source directory (the
+# HTML index, stray metadata sidecars, etc.) is skipped.
+DOCUMENT_EXTENSIONS = {".txt"}
 
-# Where documents are extracted before upload.
-_EXTRACT_DIR = Path(__file__).resolve().parent / ".kb_documents"
+# Public source URL for each document, keyed by the file stem (name without
+# extension). Uploaded to S3 as a per-document metadata sidecar so retrieval
+# returns the real citation link (NTRS record) instead of only the S3 URI.
+# These are the NASA Technical Reports Server records for the corpus; see the
+# NASA_Wind_Tunnel_Reports_index.html in this folder.
+SOURCE_URLS = {
+    "01_Acoustic_Testing_Tiltrotor_TestRig_40x80": "https://ntrs.nasa.gov/citations/20190025111",
+    "03_Cryogenic_Force_Balance_Calibration": "https://ntrs.nasa.gov/citations/20190027135",
+    "04_9x15_AeroThermal_Characterization": "https://ntrs.nasa.gov/citations/20210016041",
+    "05_Capabilities_Unitary_Plan_Wind_Tunnel": "https://ntrs.nasa.gov/citations/20170011246",
+    "06_9x15_Acoustic_Improvement_Program": "https://ntrs.nasa.gov/citations/20210016839",
+    "07_Acoustic_Testing_Tiltrotor_TestRig_companion": "https://ntrs.nasa.gov/citations/20190025116",
+    "08_FlowVisualization_HighSpeed": "https://ntrs.nasa.gov/citations/20010046863",
+    "09_DMD_PressureSensitivePaint": "https://ntrs.nasa.gov/citations/20230006831",
+    "12_CompositeLift_VTOL_Model": "https://ntrs.nasa.gov/citations/19690018719",
+    "13_FullScale_Proprotor_Performance_Tests": "https://ntrs.nasa.gov/citations/20210021871",
+    "14_9x15_Acoustic_Improvements": "https://ntrs.nasa.gov/citations/20210017002",
+    "15_Tiltrotor_TestRig_Data_Catalog": "https://ntrs.nasa.gov/citations/20240008170",
+    "16_CFD_based_Wind_Tunnel_Calibrations": "https://ntrs.nasa.gov/citations/20230015022",
+    "17_ERA_Integrated_CFD_HybridWingBody": "https://ntrs.nasa.gov/citations/20170006533",
+    "19_FullScale_Proprotor_Addendum": "https://ntrs.nasa.gov/citations/20260001349",
+    "22_Mars_Retropropulsion_Langley_UPWT": "https://ntrs.nasa.gov/citations/20210024629",
+    "23_CRM_ETW_vs_NASA_Comparison": "https://ntrs.nasa.gov/citations/20150006851",
+    "24_VTOL_Propellers_in_Descent": "https://ntrs.nasa.gov/citations/19630003345",
+}
+
+EMBED_MODEL_ARN = f"arn:aws:bedrock:{REGION}::foundation-model/{EMBED_MODEL}"
 
 # --- Clients ----------------------------------------------------------------
 # Built lazily inside main() so importing the module (e.g. for --help or a lint
@@ -121,32 +146,31 @@ def _doc_bucket(account_id: str) -> str:
     return os.environ.get("KB_DOC_BUCKET", f"{KB_NAME}-docs-{account_id}")
 
 
-# --- Step 1: Unzip ----------------------------------------------------------
+# --- Step 1: Collect documents ----------------------------------------------
 
-def unzip_documents() -> list[Path]:
-    """Extract the source zip locally, returning the list of document paths.
+def collect_documents() -> list[Path]:
+    """List the documents in the source directory (recursively).
 
-    The zip has already had macOS ``__MACOSX`` entries stripped, but we guard
-    against them anyway so the function is safe on any zip.
+    Skips hidden files and macOS resource-fork junk (``._*``) so a directory
+    populated by unzipping a macOS archive is safe to use as-is.
     """
-    if not SOURCE_ZIP.is_file():
-        sys.exit(f"Source zip not found: {SOURCE_ZIP}")
+    if not SOURCE_DIR.is_dir():
+        sys.exit(f"Source directory not found: {SOURCE_DIR}")
 
-    _EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
-    docs: list[Path] = []
-    with zipfile.ZipFile(SOURCE_ZIP) as zf:
-        for info in zf.infolist():
-            name = info.filename
-            if info.is_dir():
-                continue
-            # Skip macOS resource-fork junk defensively.
-            base = os.path.basename(name)
-            if name.startswith("__MACOSX/") or base.startswith("._"):
-                continue
-            target = _EXTRACT_DIR / base
-            with zf.open(info) as src, open(target, "wb") as dst:
-                dst.write(src.read())
-            docs.append(target)
+    docs = [
+        p
+        for p in sorted(SOURCE_DIR.rglob("*"))
+        if p.is_file()
+        and not p.name.startswith(".")
+        and not p.name.startswith("._")
+        and p.suffix.lower() in DOCUMENT_EXTENSIONS
+        and not p.name.endswith(".metadata.json")
+    ]
+    if not docs:
+        sys.exit(
+            f"No documents ({', '.join(sorted(DOCUMENT_EXTENSIONS))}) found "
+            f"in {SOURCE_DIR}"
+        )
     return docs
 
 
@@ -168,10 +192,47 @@ def ensure_bucket(c: dict, bucket: str) -> None:
     c["s3"].get_waiter("bucket_exists").wait(Bucket=bucket)
 
 
-def upload_documents(c: dict, bucket: str, docs: list[Path]) -> None:
-    """Upload each document to the bucket under a documents/ prefix."""
+def _metadata_sidecar(source_url: str) -> bytes:
+    """Build a Bedrock KB metadata sidecar carrying the document's source URL.
+
+    ``includeForEmbedding`` is False so the URL is retrievable citation data
+    without polluting the embedded text. The attribute comes back on every
+    retrieved chunk in ``retrievalResults[].metadata`` so the generation step
+    can cite the real link instead of the S3 URI.
+    """
+    doc = {
+        "metadataAttributes": {
+            "source_url": {
+                "value": {"type": "STRING", "stringValue": source_url},
+                "includeForEmbedding": False,
+            }
+        }
+    }
+    return json.dumps(doc).encode("utf-8")
+
+
+def upload_documents(c: dict, bucket: str, docs: list[Path]) -> int:
+    """Upload each document under a documents/ prefix, with metadata sidecars.
+
+    For every document whose stem has a known source URL, also uploads a
+    ``<name>.metadata.json`` sidecar next to it so retrieval returns the URL.
+    Returns the number of sidecars written.
+    """
+    sidecars = 0
     for doc in docs:
-        c["s3"].upload_file(str(doc), bucket, f"documents/{doc.name}")
+        key = f"documents/{doc.name}"
+        c["s3"].upload_file(str(doc), bucket, key)
+
+        source_url = SOURCE_URLS.get(doc.stem)
+        if source_url:
+            c["s3"].put_object(
+                Bucket=bucket,
+                Key=f"{key}.metadata.json",
+                Body=_metadata_sidecar(source_url),
+                ContentType="application/json",
+            )
+            sidecars += 1
+    return sidecars
 
 
 # --- Step 3: S3 Vectors store -----------------------------------------------
@@ -197,6 +258,15 @@ def ensure_vector_store(c: dict) -> str:
             dimension=EMBED_DIMENSION,
             dataType="float32",
             distanceMetric="cosine",
+            # S3 Vectors caps *filterable* metadata at 2 KB per vector. Bedrock
+            # stores the chunk text under AMAZON_BEDROCK_TEXT, which easily
+            # exceeds that, so mark it non-filterable to keep it out of the
+            # filterable budget (it stays retrievable). source_url and other
+            # small attributes remain filterable. This cannot be changed after
+            # the index is created.
+            metadataConfiguration={
+                "nonFilterableMetadataKeys": ["AMAZON_BEDROCK_TEXT"]
+            },
         )
 
     idx = sv.get_index(vectorBucketName=VECTOR_BUCKET, indexName=VECTOR_INDEX)
@@ -333,8 +403,14 @@ def ensure_knowledge_base(c: dict, role_arn: str, index_arn: str) -> str:
     return resp["knowledgeBase"]["knowledgeBaseId"]
 
 
-def _wait_kb_active(c: dict, kb_id: str, timeout: int = 120) -> None:
-    """Poll until the KB leaves CREATING; raise if it fails or times out."""
+def _wait_kb_active(c: dict, kb_id: str, timeout: int = KB_ACTIVE_TIMEOUT) -> None:
+    """Poll until the KB leaves CREATING; raise if it fails or times out.
+
+    Creating a knowledge base (provisioning the vector store binding) can take
+    several minutes, so the default timeout is generous and overridable via
+    KB_ACTIVE_TIMEOUT. Because create is idempotent (it reuses a KB with the
+    same name), re-running the script after a timeout simply resumes the wait.
+    """
     deadline = time.time() + timeout
     while time.time() < deadline:
         kb = c["bedrock_agent"].get_knowledge_base(knowledgeBaseId=kb_id)
@@ -345,7 +421,12 @@ def _wait_kb_active(c: dict, kb_id: str, timeout: int = 120) -> None:
             reasons = kb["knowledgeBase"].get("failureReasons", [])
             sys.exit(f"Knowledge base creation failed: {reasons}")
         time.sleep(5)
-    sys.exit(f"Timed out waiting for knowledge base {kb_id} to become ACTIVE")
+    sys.exit(
+        f"Timed out after {timeout}s waiting for knowledge base {kb_id} to "
+        f"become ACTIVE (it is still CREATING). Re-run the script to resume — "
+        f"create is idempotent and will pick up the same knowledge base. To "
+        f"wait longer, set KB_ACTIVE_TIMEOUT to a larger value."
+    )
 
 
 # --- Step 6: Data source + ingestion ----------------------------------------
@@ -409,7 +490,7 @@ def create() -> None:
     print("→ create")
     print(f"   region            {REGION}")
     print(f"   knowledge_base    {KB_NAME}")
-    print(f"   source_zip        {SOURCE_ZIP}")
+    print(f"   source_dir        {SOURCE_DIR}")
     print(f"   doc_bucket        {doc_bucket}")
     print(f"   vector_bucket     {VECTOR_BUCKET}")
     print(f"   vector_index      {VECTOR_INDEX}")
@@ -417,12 +498,13 @@ def create() -> None:
     print(f"   embed_dimension   {EMBED_DIMENSION}")
     print()
 
-    docs = unzip_documents()
-    print(f"← unzip            {len(docs)} documents")
+    docs = collect_documents()
+    print(f"← documents        {len(docs)} files from {SOURCE_DIR.name}/")
 
     ensure_bucket(c, doc_bucket)
-    upload_documents(c, doc_bucket, docs)
-    print(f"← upload           s3://{doc_bucket}/documents/ ({len(docs)} objects)")
+    sidecars = upload_documents(c, doc_bucket, docs)
+    print(f"← upload           s3://{doc_bucket}/documents/ ({len(docs)} docs)")
+    print(f"   metadata sidecars {sidecars} (source_url for citations)")
 
     index_arn = ensure_vector_store(c)
     print(f"← vector store     {index_arn}")
@@ -528,8 +610,8 @@ def teardown() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Create (or tear down) a Bedrock Knowledge Base from a zip "
-        "of documents, using Amazon S3 Vectors as the vector store."
+        description="Create (or tear down) a Bedrock Knowledge Base from a "
+        "directory of documents, using Amazon S3 Vectors as the vector store."
     )
     parser.add_argument(
         "--teardown",

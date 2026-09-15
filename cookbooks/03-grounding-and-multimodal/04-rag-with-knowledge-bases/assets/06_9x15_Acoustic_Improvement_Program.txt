@@ -1,0 +1,471 @@
+        Overview of the Acoustic Improvement
+       Program for the 9- by 15-Foot Low Speed
+                    Wind Tunnel
+             David B Stephens1, Dale E. Van Zante2 and David E. Stark
+                       NASA Glenn Research Center, Cleveland, Ohio, 44135, USA
+
+
+               This report gives an overview of a recent improvement project to reduce the background
+           noise in the NASA Glenn Research Center 9- by 15-Foot Low Speed Wind Tunnel. Noise
+           surveys of the original tunnel configuration indicated that flow surface noise in the test section
+           and noise propagating from other tunnel regions were the primary background noise
+           contributors. Several novel features were incorporated in the design of the upgraded tunnel,
+           including a low noise flow surface and serpentine baffles for noise reduction, along with
+           acoustically treated turning vanes and a new diffuser. Three companion papers present
+           implementation details including the acoustic design and the aerodynamic quality/design
+           CFD. The upgrades reduced background noise in the test section by about 10 dBA over a wide
+           range of flow speeds and frequencies. It is hoped this will be a useful summary to aid future
+           users of the facility and wind tunnel engineers everywhere.
+
+
+                                                 I. Introduction
+This report describes an acoustic improvement project carried out in the NASA Glenn Research Center (GRC) 9- by
+15-Foot Low Speed Wind Tunnel (9x15 LSWT) and the effect on the acoustic measurement capabilities of the facility.
+The demolition portion of the project began in June 2017 and construction was completed in March 2019. The 9x15
+LSWT is one of two test sections in the wind tunnel loop, the other being the original supersonic test section. The 8-
+by 6-Foot Supersonic Wind Tunnel (8x6 SWT) at NASA Glenn Research Center was completed in 1949 as an open
+loop propulsion tunnel for testing ramjets and other high-speed air breathing engines. The operation of the tunnel and
+test engines was found to produce objectionable noise for miles around the facility, so an immediate and
+comprehensive acoustic mitigation upgrade was conducted during the first half of the year 1950 [1]. This upgrade
+included the addition of a series of Helmholtz resonators tuned to reduce frequencies as low as 5 Hz, building a large
+muffler downstream of the 8x6 SWT diffuser and the addition of acoustic panels. The 8x6 SWT was converted into a
+closed loop tunnel with the addition of a return leg in 1956. The 9x15 LSWT was built in the return leg of the 8x6
+SWT in 1969 [2] The 9x15 LSWT test section is well isolated from the noise of the drive system for the facility due
+to the closed loop design.
+    The 9x15 LSWT was designed for performance testing of vertical and short takeoff (V/STOL) aircraft models, but
+interest was growing in aircraft engine noise and a first-generation acoustic treatment was added in 1975 to facilitate
+microphone measurements. An updated acoustic treatment was installed in 1986 to support testing of high-speed
+turboprops for noise research. Since then, the tunnel has been used principally for acoustic and performance testing
+of aircraft propulsions systems. This report describes a major refurbishment of the 9x15 LSWT to improve it as an
+acoustic and aerodynamic propulsion test facility, with the objective of supporting research for future low-noise
+propulsion systems. A schematic of the 8x6/9x15 Wind Tunnel Complex is shown in Figure 1. The companion papers
+
+
+
+
+1
+    Aerospace Engineer, Acoustics Branch, AIAA Lifetime Member
+2
+    Aerospace Engineer, Acoustics Branch, AIAA Senior Member
+
+
+                                                           1
+to this report discuss the aerodynamics [3] of the facility, the acoustics [4], and the computational simulations used to
+develop the design [5].
+
+
+
+
+                             Figure 1: Line Drawing of 8x6/9x15 Wind Tunnel Complex
+
+                                         II. Motivation for Upgrade
+    The nacelle configuration and acoustic characteristics of contemporary and proposed future ultra-high bypass ratio
+(UHBR) propulsor systems were the impetus for the wind tunnel upgrades. Figure 2 illustrates the substantial changes
+in propulsor noise sources and directivity as engines have evolved from turbojets to UHBR systems. UHBR systems
+are now fan noise dominated in the aft quadrant. Noise measurements at forward and adequate aft directivity angles
+must be achievable so that the ‘10dB down’ points can be determined for the Effective Perceived Noise Level (EPNL)
+calculation. This necessitated additional treated test section length downstream of the fan model location.
+
+
+
+
+                                                           2
+  Figure 2: Evolution of noise from Epstein [6] showing the change in acoustic sources as the engine bypass ratio
+                                                 (BPR) increases.
+
+    Nacelles for UHBR fan systems are also becoming shorter to reduce their weight and drag penalties. For legacy
+fan configurations with conventional length inlets (L/D ~0.5) there was little influence of the tunnel freestream Mach
+on the fan/nacelle aerodynamics or acoustics. In other words, if there was adequate ‘cleanup’ flow, acoustic
+measurements could be acquired at a lower test section flow speed, typically Mach = 0.1. For short inlet, UHBR fan
+systems, the tunnel Mach does influence the fan/nacelle system aerodynamics and acoustics. This requires acoustics
+testing at Mach = 0.2 so that the fan system is as close as possible to the conditions it would experience during a
+typical landing and take-off cycle. This greatly increased the background noise in the test section which could lead to
+signal-to-noise issues, especially at the fan approach power setting, for the original test section configuration.
+
+    In early spring 2012, a test was conducted to study noise sources in the wind tunnel. The objective was to acquire
+a comprehensive database of the noise levels around the tunnel loop that could be used to support a background noise
+reduction task [7] The NASA Environmentally Responsible Aviation Program supported the testing and a study by
+Jacobs Engineering to identify improvements for lower background noise. Discussions with engine manufacturers
+during 2014 convinced NASA management to support the upgrade activity.
+
+                                      III. Design and Decision Process
+
+    The full data set from this pre-construction testing was delivered to Jacobs Engineering for analysis and preparation
+of an improvement proposal. Part of their work included modeling the noise through the wind tunnel loop as a number
+of individual sources that were calibrated to match the measurements. The measurements and resulting model for
+noise in the test section are shown in Figure 3. This model allowed for noise reduction concepts to be evaluated and
+their overall effectiveness determined. The main finding was that the dominant noise in the test section above 2 kHz
+was due to roughness noise, caused by air flow over the perforated sheet metal surfaces of the test section. Other
+sources included the noise from the upstream flow control Doors 1 & 2 area, seen in Figure 1. The diffuser was
+identified as having a divergence angle too wide for attached flow, causing unsteadiness and potentially noise. Doors
+1 & 2 and 4 & 5 were all noted as potential sound leakage paths, for nearby sources like cars on the lab and the
+neighboring Aero-Acoustic Propulsion Laboratory, as well as more distant outdoor sources like aircraft operating out
+of Cleveland Hopkins International Airport.
+    A desired background noise goal was developed by NASA and provided to Jacobs Engineering, also shown in
+Figure 3. This noise goal was generated by compiling data on the quietest aircraft engine fan models tested in the 9x15
+LSWT and generating a composite spectrum that represented the minimum amplitude of all models. Then a 10 dB
+reduction was applied to generate a desired background noise level that would provide an excellent signal-to-noise
+ratio for any fan model anticipated in the foreseeable future. It was recognized that this goal was very aggressive.
+Multiple options were requested as an outcome of the feasibility study conducted by Jacobs Engineering.
+
+
+
+                                                           3
+                                         90
+      1/3rd Octave Band Sound Pressure
+                                         80
+
+                                         70
+                 Levels (dB)
+
+
+
+
+                                         60
+
+                                         50            Pre-Construction Noise Measurements
+                                                       Pre-Construction Noise Goal
+                                         40            Model Fit to Pre-Construction Measurements
+                                                       Prediction of Improved Closed-Wall Tunnel, Roughness Height 0.1 mm
+                                                       Prediction of Improved Open Jet Wind Tunnel
+                                         30
+                                              100                     1000                       10000                         100000
+                                                                             Frequency (Hz)
+                                         Figure 3: Measured and predicted inflow noise for 9x15 LSWT at Mach 0.20 flow speed
+    With the identification of roughness noise from the test section walls as a dominate noise source over most of the
+frequency range of interest, one proposal was to convert the facility into an open jet wind tunnel, where models are
+held on struts and microphones are typically placed outside of the flow. While this design was potentially quieter,
+several major drawbacks were evident. First, models would be mounted on struts and this would be an inconvenience.
+A second drawback is the smaller test volume that would be available. Any jet facility results in shear layers where
+the high-speed flow mixes with the surrounding air, so tests are conducted by necessity in the potential core of the jet
+flow. This would result in a much smaller usable test volume. Combining model support struts with a shear layer
+creates a new potential noise source that would have to be considered and might be unique for each strut configuration.
+Finally, the model engines tested in the 9x15 LSWT are often pitched to an angle of attack. This would potentially
+complicate any jet collector design, which would also be a new noise source. In addition, this option was expensive.
+The open jet design was not pursued.
+    The final design chosen was a 5-part upgrade to the closed wall wind tunnel design, with special care taken to
+improve the test section flow surface, discussed in the next section of this report.
+
+                                                                   IV. Upgrade Program
+   Figure 4 shows the entire 8x6/9x15 Wind Tunnel Complex. The upper (return) leg of the facility houses the 9x15
+LSWT. From upstream to downstream, the improvements are numbered in order from 1 to 5.
+    1) Acoustic turning vanes in turn 2
+    2) Serpentine baffles
+    3) Upgraded test section
+    4) Acoustically treated diffuser
+    5) Acoustic turning vanes in turn 3
+The five modifications to the wind tunnel complex are detailed in the next five subsections.
+
+
+
+
+                                                                                 4
+                    Figure 4: Render of the 8x6/9x15 Wind Tunnel Complex showing 5 upgrades
+
+
+
+1. Turning Vanes in Turn 2
+    The modification furthest upstream of the test section was made to Turn 2, upstream of flow control Doors 1 & 2.
+Acoustically treated turning vanes were added. This turn was previously empty, except for acoustic treatment on the
+wall opposite the muffler exit and a set of parallel acoustic baffles that formed the outlet of the 8x6 SWT before the
+return leg was built. The new turning vanes are identical to one another, 12 m (40 ft) tall with structural splitters at 3
+m (10 ft) vertical increments. A screen was installed on the upstream side of the turning vanes, covering the entire
+flow area of the tunnel. The screen provides a small pressure-drop, adding flow resistance to even out the mass flow
+out of the acoustic muffler before entering the turning vanes. The acoustic treatment on the south wall (left in the
+picture) was retained from the 1950 acoustic modification. The before and after condition of Turn 2 is shown in Figure
+5, looking upstream.
+
+
+
+
+                  a) Before Construction                                        b) After Construction
+                                                    Figure 5: Turn 2
+
+2. Serpentine Baffles
+    The region between the cooler and the honeycomb, seen in Figure 1, was a large straight and empty section of the
+rectangular ducting of the wind tunnel shell. This area was identified as a good location to add acoustic treatment. A
+series of concepts utilizing long straight baffles or shorter staggered baffles were explored before a final design was
+selected. The best acoustic performance was expected if line-of-sight could be eliminated, and a serpentine baffle
+pattern was developed to meet this criterion. The ceiling also slopes downward in this section, as the height of the
+
+
+                                                            5
+cooler is greater than that of the honeycomb. Accurate measurement and fabrication were required for a successful
+installation. The new serpentine baffles are shown in Figure 6.
+
+
+
+
+                  a) Before Construction                                      b) After Construction
+                     Figure 6: Serpentine Baffles Inserted Between the Cooler and Honeycomb
+
+3. Test Section
+    The test section flow surface was identified as a major source of noise, so a low-noise solution was pursued. NASA
+contracted with Virginia Tech to utilize their wall jet roughness noise facility to study candidate surfaces. After
+studying a variety of fiberglass and metal woven materials, a final design was chosen to be a micronic wire cloth
+diffusion bonded to a perforated plate. The flow surface is detailed in the companion paper describing the facility
+acoustics [4]. The old and new flow surfaces are shown in Figure 7. Vendors of the diffusion bonded material worked
+to ensure the materials were undamaged, clean and flat. A non-trivial rejection rate was experienced but consistent
+results were eventually achieved. It was recognized that even wiping them flow surface with solvent could be a source
+of contamination and degrade the acoustic performance.
+
+
+
+
+                  a) Before Construction                                      b) After Construction
+                                 Figure 7: Old and New Test Section Flow Surfaces
+
+    The biggest change to the facility was the complete replacement of the test section. The original steel frame was
+sized for a 9- by 15-foot cross section when the walls were composed of 1/2" thick aluminum plate. When the wind
+tunnel was modified with 13” deep acoustic treatment in 1986 [8], the deep sections were fit between the beams and
+shallow 2” treatment was used over the beams. This resulted in a patchwork of acoustic impedance throughout the test
+section. The upgrade provided the opportunity to replace the structure with a frame that was 13” larger in all interior
+dimensions so that acoustic boxes could be uniform depth. Other design features of the new acoustic boxes include
+rear fasteners to keep the flow surface smooth and a felt seal between boxes. The test section was lengthened by nearly
+1.5 m (5 feet), giving more room for measurements of aft-radiated fan noise. A view from inside the test section is
+shown in Figure 8.
+
+
+                                                          6
+                  a) Before Construction                                       b) After Construction
+                                      Figure 8: Test Section, Looking Upstream
+
+4. Diffuser
+    The original diffuser was constructed of steel and concrete with no acoustic treatment. The diffusion angle was
+large and introduced the risk of separated flow. The new diffuser has acoustic treatment on all surfaces, except for a
+loading ramp in the center. The diffuser was also lengthened as much as possible, resulting in a lower diffusion angle.
+The diffuser during and after the construction project is shown in Figure 9.
+
+
+
+
+                  a) Before Construction                                       b) After Construction
+                                       Figure 9: Diffuser Looking Downstream
+
+5. Turning Vanes in Turn 3
+    The 8x6/9x15 Wind Tunnel Complex was built without any turning vanes in the corners. The flow exited the
+diffuser into Turn 3 where a large volume was available for the flow to decelerate before the flow entered the air dryer.
+Since the new diffuser is narrower, turning vanes were added with trailing edges designed to aggressively diffuse the
+flow. These vanes are also acoustically treated to reduce noise propagating towards the 9x15 LSWT test section. The
+before and after condition of Turn 3 is shown in Figure 10.
+
+
+
+
+                  a) Before Construction                                       b) After Construction
+                                      Figure 10: Turning Vanes Before and After
+
+
+
+
+                                                           7
+                                             V. Construction Phase
+Prior to the start of the construction phase, soil condition tests and tunnel dimensional checks were performed to
+compare with historical documentation to ensure successful acoustic component installation. The construction phase
+was managed by prime contractor Jacobs Engineering under a Design/Build contract and was supported by three main
+subcontractors who provided the test section/diffuser steel support structure, the test section acoustic treatment, and
+the acoustic components for the other four modifications. Funding of the construction phase was made with three
+incremental payments and the conversion from NASA programmatic to Construction of Facility (CoF) funding also
+caused delays in the completion date since funding conversions only occurred at specific times in the fiscal year. The
+total cost of the task was approximately $19M. Primary vendors contributing to the effort are listed in Table 1.
+                                            Table 1 Primary Vendors List
+              Vendor                                                Contribution
+              Jacobs Engineering, Tullahoma, TN                     Prime Contractor
+              Metal Products Company, McMinnville, TN               Fabricated Acoustic Boxes
+              Purolator Products Company, Tulsa, OK                 Diffusion Bonded Panels
+              Porous Metal Filters Inc., Spring, TX                 Diffusion Bonded Panels
+              TAB Ingenieure GmbH, Fellbach, Germany                Acoustic Turning Vanes and Baffles
+              North Bay Construction, Westlake, OH                  On-site Construction
+
+The construction phase started with the demolition phase from June to August 2017 to remove the existing Corner 2,
+test section, and diffuser structures. Additionally, new access door openings were cut into the tunnel shell in Corner 2
+and the Serpentine Baffle sections to accommodate installation activities, but also to support inspection and
+maintenance activities over the life of the tunnel.
+
+Following the demolition phase, construction activities in all five areas occurred from September 2017 to March 2019.
+Construction activities were performed from the upstream to downstream end of the tunnel to align with the component
+fabrication schedule. Some changes to the phasing of the original construction schedule activities occurred to account
+for shipping and customs delays in the delivery of overseas vendor acoustic components. In addition, test section
+acoustic face sheet fabrication experienced a high scrap rate due to stringent quality specifications, resulting in a four
+month slip in the completion date to March 2019. Throughout the duration of the phase, photographic documentation
+of the construction was captured from the same physical positions/perspectives and on a regular time interval to
+provide a historical record of the task.
+
+The Corner 2 acoustic turning vanes, serpentine acoustic baffles, diffuser acoustic treatment, and corner 3 acoustic
+turning vanes were installed by the same subcontractor workforce to ensure consistency in the installation and finish
+quality of these modifications. In addition to the installation work, reviews of these areas noted opportunities to
+eliminate potential noise sources by relocating utilities and removing other features no longer in use.
+
+The test section replacement was the most challenging modification, due to the amount and quality of work necessary
+to minimize the noise, and the nature of the design/build contract. The original plan was to maintain the structure and
+only replace the flow surface acoustic treatment. The variation in acoustic impedance of the original treatment was a
+limiting factor in achieving the maximum noise reduction, so a complete replacement was performed. Under the
+design/build contract, both the final detailed acoustic design and initial construction of the test section were
+concurrently supported. In addition to the required noise reduction, safety, operability, and capabilities also had to be
+retained. This required some acoustic boxes to be constructed with attachment hard points and wiring pass-throughs
+that would allow for the installation of existing wind tunnel instrumentation, model assembly devices, lifting devices
+and allow for future test section requirements.
+
+   Following the completion of construction, a detailed inspection and verification of all the modifications was
+performed. A punch list of items was identified that warranted further work to ensure the overall quality of the task
+and to document the noise reductions achieved during the subsequent validation phase of the task.
+
+
+
+
+                                                            8
+                                      VI. Noise Reduction Summary
+
+Many of the recent improvements in acoustic wind tunnels have been in support of the automotive industry [9]. These
+wind tunnels are typically designed as a “3/4 open jet,” where the floor of the test section is smooth and solid,
+mimicking a road surface, and the walls and ceiling are open to a large surrounding chamber. This has some trade-
+offs with closed wall tunnels like the 9x15 LSWT, but generally the 3/4 open jet design is expected to be quieter.
+There is also the option for placing microphones inside or outside of the air stream, while a closed wall wind tunnel
+only offers the first option. Figure 11 shows A-weighted overall sound pressure level (OASPL) measurement of the
+9x15 LSWT test section compared with the DaimlerChrysler AAWT, which is a very quiet facility that opened in
+2002 [10]. Prior to renovation, the 9x15 LSWT was approximately 10 dB louder than the AAWT, while the updated
+design is shown to be quite competitive, with equal noise levels at around 180 KPH (Mach 0.15). The OASPL metric
+integrates the noise across frequencies (in the case of the 9x15 LSWT data, 400 Hz to 10 kHz), and the A-weighting
+puts emphasis on noises in the range of human hearing. Aerospace facilities often test sub-scale models of components,
+with the frequency range of interest scaling linearly with model size.
+                  100
+                   95
+                   90
+                   85
+   OASPL, dB(A)
+
+
+
+
+                   80
+                   75
+                   70
+                   65                                                              DaimlerChrysler AAWT
+                   60                                                              9x15 LSWT 2012
+                   55                                                              9x15 LSWT 2019
+                   50
+                        50    100                 150             200                     250                 300
+                                                    Flow Speed, KPH
+
+
+                                    Figure 11 - Comparison of inflow noise level
+Figure 12 shows the frequency dependent noise from the 9x15 LSWT and how it compares with other closed wall
+acoustic wind tunnels for flow speeds around Mach 0.1. The noise at 500 Hz in the 9x15 LSWT is believed to be due
+to the temporary microphone strut used to collect this data, before a new microphone holder was available. The NASA
+Ames 40x80 wind tunnel was a major inspiration for the 9x15 LSWT improvement project and their reports [11] [12]
+were extremely valuable. Similarly, Jacobs Engineering used their experience with the 9x15 LSWT to improve the
+Lockheed Martin Low-Speed Wind Tunnel [13]. Aside from being large closed-wall aeroacoustic wind tunnels with
+micronic wire cloth flow surfaces, the three facilities are otherwise quite different. Despite that, the noise amplitude
+and spectral shape is quite similar above about 5 kHz. This is possibly due to the flow surface shared by the three test
+sections. An in-depth comparison of the facilities is beyond the scope of the present report.
+
+
+
+
+                                                           9
+                        70
+
+                        65
+
+                        60
+   1/3 Octave SPL, dB
+
+
+
+
+                        55
+
+                        50
+
+                        45
+                                          Lockheed Martin LSWT @ 70 mph (Mach 0.091)
+                        40                Ames 40x80, Mach 0.1 (NASA TP 2003-212259, Table 7)
+                                          NASA 9x15 Validation (Mach 0.1)
+                        35
+                             100                                   1000                                    10000
+                                                                     Frequency, Hz
+
+                                   Figure 12 - Sound level vs frequency for three closed wall acoustic wind tunnels
+
+A new microphone traverse was developed, with the intent of reducing self-noise of the microphone instrumentation
+and to measure along the full length of the test section. The new traversing microphone is shown in Figure 13. The
+traversing microphone is used to measure noise along a sideline next to a model being tested. This provides data for a
+“simulated flyover” for aircraft and propulsion system models. Instead of the model flying overhead of an observer,
+the observer (microphone) travels past a fixed model. The measured sound is readily used to compute aircraft noise
+metrics. The new traverse includes 5 microphones to assess the circumferential directivity of noise around the model.
+The support arm is mounted through brush seals at the upper and lower corners with the traverse mechanical system
+located outside of the test section. The previous traversing microphone was mounted inside the test section with
+surfaces that could produce, reflect and radiate noise.
+
+
+
+
+                                                                         10
+                                        Figure 13 - New microphone traverse
+
+                                         VII. Other Modifications
+    Additional upgrades were made during the facility renovation. The facility data system called ESCORT was
+replaced by a next-generation in-house designed system called COBRA. The wind tunnel control system was updated,
+and the software and interfaces were overhauled. Repairs were made throughout the entire facility including the
+flexible nozzle used to create supersonic flow in the 8x6 test section. Temperature and pressure measurement systems
+were also upgraded for increased accuracy and better usability. The control room was remodeled with an improved
+layout, better ergonomics and a new HVAC system.
+
+                                             VIII. Conclusions
+    The acoustic improvement project carried out in the NASA Glenn Research Center (GRC) 9- by 15-Foot Low
+Speed Wind Tunnel (9x15 LSWT) was completed in March 2019. The primary acoustic improvements included
+adding acoustically treated turning vanes, serpentine baffles, a new test section with low-noise wall treatment, and an
+acoustically treated diffuser. Acoustic tests to date have demonstrated an inflow noise reduction of ~10 dB over a wide
+frequency range at test section flow speeds up to Mach = 0.2. The improvements provide lower background noise
+levels that meet requirements for evaluating future low-noise propulsion systems.
+
+                                                 Acknowledgments
+   Thanks to former NASA Glenn Research Center Director Jim Free for supporting this project with discretionary
+seed funding. Thanks to the Aeronautics Evaluation and Test Capabilities project for funding the bulk of the
+improvement task. Support from the Acoustics Branch was funded by the Advanced Air Transport Technology
+project.
+
+                                                 IX.References
+
+
+[1] L. L. Beranek, S. Labate and U. Ingard, "Acoustical Treatment of the NACA 8- by 6-Foot Supersonic Propulsion
+    Wind Tunnel," NACA TN-3378, June 1955.
+[2] J. A. Yuska, J. H. Diedrich and N. Clough, "Lewis 9- by 15-Foot V/STOL Wind Tunnel," NASA/TM-X-2305,
+    July 1971.
+
+
+
+                                                          11
+[3] D. A. Rinehart and A. M. Johnson, "Full Aero-Thermal Characterization of Acoustic Improvements to the 9-
+     by- 15 Foot Low Speed Wind Tunnel," AIAA Aviation Forum, Washington DC, USA, 2021.
+[4] D. B. Stephens, "Acoustic Improvements to the 9- by 15-Foot Low Speed Wind Tunnel," AIAA Aviation
+     Forum, Washington DC, USA, 2021.
+[5] P. Agarwal, J. C. Yen, M. Karanikolov, S. N. Best, E. G. Duell and P. A. Nagle, "Computational Verification
+     Analysis of 9- by 15- Foot Low Speed Wind Tunnel Acoustic Upgrade Design," AIAA Aviation Forum,
+     Washington DC, USA, 2021.
+[6] A. Epstein, "The Lessons of P&W’s Geared Turbofan(TM) Engine and the Implications for the Future," in
+     Keynote Address, International Symposium on Air Breathing Engines (ISABE), Phoenix, AZ, USA, October
+     2015.
+[7] D. B. Stephens, "The Acoustic Environment of the NASA Glenn 9- by 15-foot Low-Speed Wind Tunnel. AIAA-
+     2015-2684," in 21st AIAA/CEAS Aeroacoustics Conference, Dallas, Texas, USA, June 2015.
+[8] M. D. Dahl and R. P. Woodward, "Comparison between design and installed acoustic characteristics of NASA
+     Lewis 9- by 15-foot low-speed wind tunnel acoustic treatment," NASA TP-2966, 1990.
+[9] E. Duell, J. Walter, S. Arnette and J. Yen, "Recent Advances in Large-Scale Aeroacoustic Wind Tunnels (AIAA
+     2002-2503)," 2002.
+[10] J. Walter, E. Duell, B. Martindale, S. Arnette, R. Geierman, M. Gleason and G. Romberg, "The DaimlerChrysler
+     Full-Scale Aeroacoustic Wind Tunnel," SAE TECHNICAL PAPER SERIES 2003-01-0426, 2003.
+[11] P. T. Soderman, F. H. Schmitz, C. S. Allen, S. M. Jaeger, J. N. Sacco, M. Mosher and J. A. Hayes, "Design and
+     Development of a Deep Acoustic Lining for the 40- by 80-Foot Wind Tunnel Test Section NASA/TP-2002-
+     211850," 2002.
+[12] C. S. Allen, S. M. Jaeger and P. T. Soderman, "Background Noise Sources and Levels in the NASA Ames 40-
+     by 80-Foot Wind Tunnel at the Turn of the Century: A Status Report NASA/TP-2003-212259".
+[13] S. Best and J. Zunich, "Lockheed Martin Low-Speed Wind Tunnel Acoustic Upgrade," SAE International
+     Journal of Passenger Cars - Mechanical Systems-V127-6EJ, vol. 5, no. 11, pp. 493-506, 2018.
+[14] R. M. Allen and D. H. Reed, "Development of the Boeing Low Speed Aeroacoustic Facility (LSAF)," in
+     DGLR/AIAA-92-02-030, May 1992.
+
+
+
+
+                                                       12
+
