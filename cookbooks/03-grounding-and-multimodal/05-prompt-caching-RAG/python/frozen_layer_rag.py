@@ -89,11 +89,19 @@ CACHE_KEY_PREFIX = os.environ.get("PROMPT_CACHE_KEY", "kb-frozen-layer-v1")
 WORKING_SET_SCOPE = os.environ.get("WORKING_SET_SCOPE", "local-demo")
 CORPUS_VERSION = os.environ.get("CORPUS_VERSION", "v1")
 
+# A tightly-related sequence: every question targets the same narrow topic (the
+# 9x15 Low Speed Wind Tunnel acoustic improvement program), so retrieval keeps
+# surfacing the same chunks. That overlap is what the frozen layer caches across
+# turns — the point this recipe demonstrates.
 DEFAULT_QUERIES = [
-    "What are the effects of vessel noise on oyster toadfish calling behavior?",
-    "How do oyster toadfish change call frequency when exposed to boat noise?",
-    "What evidence links vessel noise to reduced toadfish call rates?",
-    "How does vessel noise affect toadfish spawning success?",
+    "Why was the 9- by 15-Foot Low Speed Wind Tunnel refurbished to reduce "
+    "background noise?",
+    "How much did the acoustic improvement program lower background noise in "
+    "the 9x15 test section, in dB?",
+    "What design features reduced noise in the 9x15 tunnel: the low-noise flow "
+    "surface, serpentine baffles, and acoustically treated turning vanes?",
+    "How did improving the anechoic quality of the 9x15 test section reduce "
+    "measurement uncertainty for quiet propulsors?",
 ]
 
 SDK_CONFIG = Config(
