@@ -85,24 +85,25 @@ changes the frozen bytes, so it is the only event that forces a cold write of la
 
 ## What the measurement shows
 
-Four queries against a Knowledge Base of NASA wind-tunnel reports, `FREEZE_BATCH=6`, with
-the fourth query repeating the first to force a turn that appends nothing:
+Four related questions about the 9- by 15-Foot Low Speed Wind Tunnel acoustic
+improvement program, against a Knowledge Base of NASA wind-tunnel reports, with
+`FREEZE_BATCH=6`:
 
-| Turn | appended          | frozen layer | read from cache | written to cache | what happened                                   |
-| :--- | :---------------- | :----------- | :-------------- | :--------------- | :---------------------------------------------- |
-| 1    | 6 → frozen       | new (cold)   | 0               | 1,604            | first write of the frozen layer                 |
-| 2    | 5 → pending      | unchanged    | **1,591** | 1,695            | frozen layer read; pending layer wrote          |
-| 3    | 4, batch promoted | changed      | 0               | 4,508            | promotion enlarged the frozen layer, cold write |
-| 4    | 0                 | unchanged    | **4,508** | 0                | nothing new, entire prefix read                 |
+| Turn | appended           | frozen layer | read from cache | written to cache | what happened                                   |
+| :--- | :----------------- | :----------- | :-------------- | :--------------- | :---------------------------------------------- |
+| 1    | 6 → frozen        | new (cold)   | 0               | 2,124            | first write of the frozen layer                 |
+| 2    | 4 → pending       | unchanged    | **2,111** | 1,385            | frozen layer read; pending layer wrote          |
+| 3    | 4, batch promoted  | changed      | 0               | 4,873            | promotion enlarged the frozen layer, cold write |
+| 4    | 3 → pending       | unchanged    | **4,179** | 1,734            | larger frozen layer read; pending layer wrote   |
 
-Session total: **41% of input served from cache**, against **0%** for the single-tail-
-breakpoint shape on the same workload.
+Session total: **36% of input served from cache** (6,290 of 17,233 input tokens),
+against **0%** for the single-tail-breakpoint shape on the same workload.
 
 Read the pattern, not the exact digits. Two facts generalize:
 
-- **A frozen layer reads on every turn its bytes do not change.** Turn 2 appended five
-  chunks and still read the frozen layer, because those chunks went into the pending layer
-  *after* breakpoint 1.
+- **A frozen layer reads on every turn its bytes do not change.** Turns 2 and 4 appended
+  new chunks and still read the frozen layer, because those chunks went into the pending
+  layer *after* breakpoint 1.
 - **Each batch promotion costs one cold write of the (now larger) frozen layer,** repaid by
   reads on the turns until the next promotion. `FREEZE_BATCH` tunes how often you pay that
   write against how much uncached pending text each turn carries.
@@ -262,35 +263,43 @@ Knowledge Base:
 
 ## Example output shape
 
-Counts and IDs depend on your Knowledge Base; this is the structure to inspect, not a
-promised measurement:
+Counts and IDs depend on your Knowledge Base; this is the structure to inspect. The turn
+below is the second in the session above — the frozen layer is unchanged from turn 1, so it
+reads from cache while only the newly retrieved pending chunks and the query are fresh:
 
 ```text
 TURN 2
 → request
-   query               How much did the acoustic improvement program lower background noise, in dB?
+   query               How much did the acoustic improvement program lower background noise in the 9x15 test section, in dB?
    freeze_batch        6
 
 ← retrieval and working set
    chunks returned     6
-   chunks appended     5
+   chunks appended     4
    promoted to frozen  0
    frozen chunks       6
-   pending chunks      5
-   frozen cache key    kb-frozen-layer-v1-254fd49f7815-f2
+   pending chunks      4
+   frozen cache key    kb-frozen-layer-v1-e84a1ec6e007-f2
+   top score           0.860
 
 ← generation
-   The 9x15 acoustic improvement program lowered test-section background
-   noise by about 10 dBA ... [chunk:d1b9bbb41e1f63f7]
+   The program lowered one-third-octave background-noise levels by 8 to 18 dB
+   over the frequency range of interest ... [chunk:55acc604de00b559] The broader
+   program summary characterizes the reduction as about 10 dBA across a wide
+   range of flow speeds and frequencies. [chunk:913b25dca173ab96]
 
 REFERENCES
-   [chunk:d1b9bbb41e1f63f7] https://ntrs.nasa.gov/citations/20210016839
+   [chunk:55acc604de00b559] https://ntrs.nasa.gov/citations/20210017002
+   [chunk:913b25dca173ab96] https://ntrs.nasa.gov/citations/20210016839
 
 ← usage
-   Input tokens:       <measured>
-   Read from cache:    <measured, ~= turn 1 frozen write>
-   Written to cache:   <measured, pending layer>
-   New input:          <measured, the suffix>
+   Input tokens:       3,702
+   Read from cache:    2,111
+   Written to cache:   1,385
+   New input:          206
+   Output tokens:      99
+     of which reasoning: 0
+   Total tokens:       3,801
 ```
 
 ## Production considerations
@@ -342,7 +351,7 @@ REFERENCES
   control.
 - **The frozen/pending split is size-agnostic.** Promotion is by chunk count, not tokens;
   production code should budget real tokens per layer.
-- **Savings are workload-dependent.** The 41% figure above is one query stream on one
+- **Savings are workload-dependent.** The 36% figure above is one query stream on one
   corpus. A stream with little chunk overlap will promote batches continuously and save
   little.
 - **Only text chunks are loaded.** Non-text Knowledge Base results are skipped.
