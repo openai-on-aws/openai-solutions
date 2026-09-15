@@ -85,8 +85,8 @@ changes the frozen bytes, so it is the only event that forces a cold write of la
 
 ## What the measurement shows
 
-Four queries against a Knowledge Base of oyster-toadfish papers, `FREEZE_BATCH=6`, with the
-fourth query repeating the first to force a turn that appends nothing:
+Four queries against a Knowledge Base of NASA wind-tunnel reports, `FREEZE_BATCH=6`, with
+the fourth query repeating the first to force a turn that appends nothing:
 
 | Turn | appended          | frozen layer | read from cache | written to cache | what happened                                   |
 | :--- | :---------------- | :----------- | :-------------- | :--------------- | :---------------------------------------------- |
@@ -268,7 +268,7 @@ promised measurement:
 ```text
 TURN 2
 → request
-   query               How do calling frequencies change near boat noise?
+   query               How much did the acoustic improvement program lower background noise, in dB?
    freeze_batch        6
 
 ← retrieval and working set
@@ -280,11 +280,11 @@ TURN 2
    frozen cache key    kb-frozen-layer-v1-254fd49f7815-f2
 
 ← generation
-   Oyster toadfish generally reduce how often they call ...
-   [chunk:d1b9bbb41e1f63f7]
+   The 9x15 acoustic improvement program lowered test-section background
+   noise by about 10 dBA ... [chunk:d1b9bbb41e1f63f7]
 
 REFERENCES
-   [chunk:d1b9bbb41e1f63f7] s3://example-bucket/papers/study.pdf
+   [chunk:d1b9bbb41e1f63f7] https://ntrs.nasa.gov/citations/20210016839
 
 ← usage
    Input tokens:       <measured>
