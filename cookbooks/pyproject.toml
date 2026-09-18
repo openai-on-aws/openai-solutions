@@ -59,6 +59,13 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 
+[tool.ruff.lint.per-file-ignores]
+# The usage example in this module's docstring names the script by its path from
+# cookbooks/, and that path is 89 characters on its own — one over the limit before
+# any indentation. Shortening it would mean printing a command the reader cannot
+# paste, so the line stays and E501 is waived for this file only.
+"03-grounding-and-multimodal/04-rag-with-knowledge-bases/python/rag_with_knowledge_bases.py" = ["E501"]
+
 [tool.pytest.ini_options]
 testpaths = ["cookbook_utils"]
 

@@ -134,7 +134,7 @@ def rag(query: str) -> dict:
     print(f"   query             {query}")
     print(f"   retrieval_k       {RETRIEVAL_K}")
     print(f"   max_output_tokens {MAX_OUTPUT_TOKENS}")
-    print(f"   store             False")
+    print("   store             False")
     print()
 
     # Retrieve
