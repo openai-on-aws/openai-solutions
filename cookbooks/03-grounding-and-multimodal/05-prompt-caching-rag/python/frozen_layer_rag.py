@@ -48,12 +48,12 @@ Why not set a breakpoint every turn?
 Run it from the cookbooks/ directory:
 
     uv run --env-file .env python \
-      03-grounding-and-multimodal/05-prompt-caching-RAG/python/frozen_layer_rag.py
+      03-grounding-and-multimodal/05-prompt-caching-rag/python/frozen_layer_rag.py
 
 Pass several related queries as positional arguments to exercise one working set:
 
     uv run --env-file .env python \
-      03-grounding-and-multimodal/05-prompt-caching-RAG/python/frozen_layer_rag.py \
+      03-grounding-and-multimodal/05-prompt-caching-rag/python/frozen_layer_rag.py \
       "First question" "Second question" "Third question"
 
 See README.md for prerequisites, permissions, and the limitations of this pattern.
