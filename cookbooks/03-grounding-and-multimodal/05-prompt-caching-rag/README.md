@@ -162,7 +162,7 @@ uv sync
 cp .env.example .env   # set KNOWLEDGE_BASE_ID and AWS_REGION
 
 uv run --env-file .env python \
-  03-grounding-and-multimodal/05-prompt-caching-RAG/python/frozen_layer_rag.py
+  03-grounding-and-multimodal/05-prompt-caching-rag/python/frozen_layer_rag.py
 ```
 
 The default questions match the marine-research example used by the adjacent Knowledge
@@ -170,7 +170,7 @@ Bases recipe. For another corpus, pass related questions as separate quoted argu
 
 ```bash
 uv run --env-file .env python \
-  03-grounding-and-multimodal/05-prompt-caching-RAG/python/frozen_layer_rag.py \
+  03-grounding-and-multimodal/05-prompt-caching-rag/python/frozen_layer_rag.py \
   "How much charging current can the outboard produce?" \
   "What are the rectifier and regulator specifications?" \
   "Which components affect battery charging?"
