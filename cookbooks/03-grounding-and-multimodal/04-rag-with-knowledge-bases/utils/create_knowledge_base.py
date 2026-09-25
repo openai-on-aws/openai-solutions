@@ -79,6 +79,9 @@ EMBED_DIMENSION = int(os.environ.get("KB_EMBED_DIMENSION", "1024"))
 # How long to wait (seconds) for the KB to become ACTIVE after creation.
 # KB provisioning can take a few minutes; the wait is generous and resumable.
 KB_ACTIVE_TIMEOUT = int(os.environ.get("KB_ACTIVE_TIMEOUT", "600"))
+# Deleting is usually quicker than creating, but it has to finish before the vector
+# store and the role can go — see _wait_kb_deleted.
+KB_DELETE_TIMEOUT = int(os.environ.get("KB_DELETE_TIMEOUT", "600"))
 
 VECTOR_BUCKET = os.environ.get("KB_VECTOR_BUCKET", f"{KB_NAME}-vectors")
 VECTOR_INDEX = os.environ.get("KB_VECTOR_INDEX", f"{KB_NAME}-index")
@@ -105,19 +108,15 @@ DOCUMENT_EXTENSIONS = {".txt"}
 SOURCE_URLS = {
     "01_Acoustic_Testing_Tiltrotor_TestRig_40x80": "https://ntrs.nasa.gov/citations/20190025111",
     "03_Cryogenic_Force_Balance_Calibration": "https://ntrs.nasa.gov/citations/20190027135",
-    "04_9x15_AeroThermal_Characterization": "https://ntrs.nasa.gov/citations/20210016041",
     "05_Capabilities_Unitary_Plan_Wind_Tunnel": "https://ntrs.nasa.gov/citations/20170011246",
-    "06_9x15_Acoustic_Improvement_Program": "https://ntrs.nasa.gov/citations/20210016839",
     "07_Acoustic_Testing_Tiltrotor_TestRig_companion": "https://ntrs.nasa.gov/citations/20190025116",
     "08_FlowVisualization_HighSpeed": "https://ntrs.nasa.gov/citations/20010046863",
     "09_DMD_PressureSensitivePaint": "https://ntrs.nasa.gov/citations/20230006831",
     "12_CompositeLift_VTOL_Model": "https://ntrs.nasa.gov/citations/19690018719",
-    "13_FullScale_Proprotor_Performance_Tests": "https://ntrs.nasa.gov/citations/20210021871",
     "14_9x15_Acoustic_Improvements": "https://ntrs.nasa.gov/citations/20210017002",
     "15_Tiltrotor_TestRig_Data_Catalog": "https://ntrs.nasa.gov/citations/20240008170",
     "16_CFD_based_Wind_Tunnel_Calibrations": "https://ntrs.nasa.gov/citations/20230015022",
     "17_ERA_Integrated_CFD_HybridWingBody": "https://ntrs.nasa.gov/citations/20170006533",
-    "19_FullScale_Proprotor_Addendum": "https://ntrs.nasa.gov/citations/20260001349",
     "22_Mars_Retropropulsion_Langley_UPWT": "https://ntrs.nasa.gov/citations/20210024629",
     "23_CRM_ETW_vs_NASA_Comparison": "https://ntrs.nasa.gov/citations/20150006851",
     "24_VTOL_Propellers_in_Descent": "https://ntrs.nasa.gov/citations/19630003345",
@@ -429,6 +428,40 @@ def _wait_kb_active(c: dict, kb_id: str, timeout: int = KB_ACTIVE_TIMEOUT) -> No
     )
 
 
+def _wait_kb_deleted(c: dict, kb_id: str, timeout: int = KB_DELETE_TIMEOUT) -> None:
+    """Poll until the knowledge base is actually gone.
+
+    `delete_knowledge_base` returns as soon as the request is accepted and the
+    base moves to DELETING, but it needs the vector index and the service role to
+    finish the job. Removing either one first leaves the base in
+    DELETE_UNSUCCESSFUL, and re-running the teardown cannot recover it because by
+    then the index it needs is gone. So the teardown waits here before touching
+    anything the base depends on.
+    """
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        try:
+            kb = c["bedrock_agent"].get_knowledge_base(knowledgeBaseId=kb_id)
+        except c["bedrock_agent"].exceptions.ResourceNotFoundException:
+            return
+        status = kb["knowledgeBase"]["status"]
+        if status == "DELETE_UNSUCCESSFUL":
+            reasons = kb["knowledgeBase"].get("failureReasons", [])
+            sys.exit(
+                f"Knowledge base {kb_id} is in DELETE_UNSUCCESSFUL: {reasons}. Its "
+                f"vector index and service role must still exist for the deletion "
+                f"to complete — recreate them with a normal run, then tear down "
+                f"again."
+            )
+        time.sleep(5)
+    sys.exit(
+        f"Timed out after {timeout}s waiting for knowledge base {kb_id} to "
+        f"delete. Do not delete the vector store or the role yet: the base needs "
+        f"both to finish. Re-run --teardown to resume, or set KB_DELETE_TIMEOUT "
+        f"to a larger value."
+    )
+
+
 # --- Step 6: Data source + ingestion ----------------------------------------
 
 def _find_data_source(c: dict, kb_id: str, name: str) -> str | None:
@@ -540,9 +573,11 @@ def create() -> None:
 def teardown() -> None:
     """Delete everything create() made. Safe to run repeatedly.
 
-    Order matters: KB (with its data sources) first, then the vector store,
-    then the role, then the documents bucket. Missing resources are ignored so a
-    partial teardown can be completed by re-running.
+    Order matters, and so does waiting. The KB goes first, but `delete_knowledge_base`
+    is asynchronous and the base needs its vector index and service role to finish
+    deleting — so this waits until it is actually gone before removing either. Then
+    the vector store, the role, and the documents bucket. Missing resources are
+    ignored so a partial teardown can be completed by re-running.
     """
     c = _clients()
     account_id = c["sts"].get_caller_identity()["Account"]
@@ -554,9 +589,12 @@ def teardown() -> None:
     print()
 
     # 1. Knowledge base (deleting the KB deletes its data sources too).
+    #    Wait for it to be gone before removing anything it needs to finish.
     kb_id = _find_kb_by_name(c, KB_NAME)
     if kb_id:
         c["bedrock_agent"].delete_knowledge_base(knowledgeBaseId=kb_id)
+        print(f"   deleting KB      {kb_id}")
+        _wait_kb_deleted(c, kb_id)
         print(f"← deleted KB       {kb_id}")
     else:
         print("← KB               (none)")

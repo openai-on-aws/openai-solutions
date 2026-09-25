@@ -6,13 +6,12 @@ The model answers only from retrieved context and cites sources inline as [n].
 
 Run it from the cookbooks/ directory:
 
-    uv run python \
-      03-grounding-and-multimodal/04-rag-with-knowledge-bases/python/rag_with_knowledge_bases.py
+    cd cookbooks/03-grounding-and-multimodal/04-rag-with-knowledge-bases
+    uv run python python/rag_with_knowledge_bases.py
 
 Pass a custom query as a positional argument:
 
-    uv run python \
-      03-grounding-and-multimodal/04-rag-with-knowledge-bases/python/rag_with_knowledge_bases.py \
+    uv run python python/rag_with_knowledge_bases.py \
       "How was the Tiltrotor Test Rig tested in the Wind Tunnel?"
 
 See README.md for prerequisites and the permissions this needs.
@@ -59,7 +58,8 @@ def _require_knowledge_base_id() -> str:
             lines.append(
                 "  (none found — create one with utils/create_knowledge_base.py)"
             )
-    except Exception as err:  # noqa: BLE001 - best-effort hint, never mask the real cause
+    # noqa: BLE001 — a best-effort hint; never mask the real cause.
+    except Exception as err:  # noqa: BLE001
         lines.append(f"  (could not list knowledge bases: {err})")
 
     lines.append("")

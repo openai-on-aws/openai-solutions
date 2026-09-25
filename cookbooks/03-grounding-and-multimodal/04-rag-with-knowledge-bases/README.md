@@ -136,6 +136,14 @@ reports (see [Appendix A](#appendix-a---creating-a-knowledge-base) and
 `utils/create_knowledge_base.py`). Citations resolve to each report's NTRS record
 URL because the documents were ingested with a `source_url` metadata attribute.
 
+**If you swap in your own corpus, check what you are allowed to redistribute.** A
+document being publicly downloadable is not the same as being free to commit to a
+repository. NASA's own catalogue makes this checkable per document:
+`https://ntrs.nasa.gov/api/citations/<id>` returns a `copyright` object whose
+`determinationType` is the field that matters, alongside `belongsToContractor` and
+`containsIndication`. Reports written by contractors rather than civil servants are
+routinely copyrighted even when NASA hosts them.
+
 ```
 → request
    model             openai.gpt-5.6-terra
@@ -148,25 +156,23 @@ URL because the documents were ingested with a `source_url` metadata attribute.
 
 ← retrieval
    chunks returned   12
-   top score         0.71
+   top score         0.85
 
 ← generation
-   The acoustic improvement program for the 9- by 15-Foot Low Speed Wind
-   Tunnel reduced background noise in the test section by about 10 dBA over a
-   wide range of flow speeds and frequencies [1]. A companion refurbishment
-   lowered one-third octave sound levels by 8 to 18 dB in the frequency range
-   of interest and substantially improved the anechoic quality of the test
-   section [3].
+   The program reduced one-third-octave background-noise levels by 8 to 18 dB
+   over the frequency range of interest. [5] For the 630 Hz-50 kHz bands
+   specifically, the reported average reduction was 13 dB, with a minimum
+   reduction of 7 dB at 2 kHz. [1]
 
 REFERENCES
-   [1] https://ntrs.nasa.gov/citations/20210016839
-   [3] https://ntrs.nasa.gov/citations/20210017002
+   [1] https://ntrs.nasa.gov/citations/20210017002
+   [5] https://ntrs.nasa.gov/citations/20210017002
 
 ← usage
-   Input tokens:     6,842
-   Output tokens:    118
+   Input tokens:     3,560
+   Output tokens:    77
      of which reasoning: 0
-   Total tokens:     6,960
+   Total tokens:     3,637
 ```
 
 ## Production considerations
