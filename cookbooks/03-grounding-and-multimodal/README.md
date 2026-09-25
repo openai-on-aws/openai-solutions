@@ -2,9 +2,10 @@
 
 > **How do I get answers about things the model was not trained on, and trust them?**
 
-Four recipes, on the two ways a model gets information it was not trained on. Two of them
-retrieve through Bedrock's own web index and check what comes back; one retrieves from your
-own corpus through a Bedrock Knowledge Base; and the last reads what you
+Five recipes, on the two ways a model gets information it was not trained on. Two of them
+retrieve through Bedrock's own web index and check what comes back; two retrieve from your
+own corpus through a Bedrock Knowledge Base — the second of those keeping the retrieved
+working set in a cache-friendly frozen layer; and the last reads what you
 already hold —
 a photograph, a scanned document — because plenty of the information a business needs was never
 typed.
@@ -50,6 +51,7 @@ supports.
 | [`02-scoring-a-grounded-answer/`](02-scoring-a-grounded-answer/) | Trusting a grounded answer: scoring it against its sources | intermediate | medium |
 | [`03-reading-a-scanned-manual/`](03-reading-a-scanned-manual/) | Reading a scanned manual: photos, tables and figures | intermediate | medium |
 | [`04-rag-with-knowledge-bases/`](04-rag-with-knowledge-bases/) | RAG with Bedrock Knowledge Bases: retrieve then generate with citations | intermediate | low |
+| [`05-prompt-caching-rag/`](05-prompt-caching-rag/) | Cache-friendly RAG: a frozen-layer working set that keeps the prefix readable | advanced | medium |
 <!-- END GENERATED: group-index -->
 
 ## Running these

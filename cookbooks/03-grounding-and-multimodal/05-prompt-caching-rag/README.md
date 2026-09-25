@@ -1,8 +1,8 @@
 ---
 title: "Cache-friendly RAG with a frozen-layer working set"
-capabilities: [GRD-03, GRD-04, EFF-02, EFF-01]
-primary_capability: GRD-03
-industry: research
+capabilities: [EFF-02, GRD-04, EFF-01, GRD-03]
+primary_capability: EFF-02
+industry: —
 industry_scenario: >
   A research team asks a sequence of related questions against a Bedrock Knowledge Base.
   Many retrieved chunks recur, but ordinary top-k prompt construction changes their order
@@ -20,7 +20,7 @@ iam_actions:
 level: advanced
 estimated_cost: medium
 status: validated
-last_validated: 2026-09-09
+last_validated: 2026-09-25
 validated_with:
   python: "3.12"
   openai: "2.53.0"
@@ -89,24 +89,29 @@ Four related questions about the 9- by 15-Foot Low Speed Wind Tunnel acoustic
 improvement program, against a Knowledge Base of NASA wind-tunnel reports, with
 `FREEZE_BATCH=6`:
 
-| Turn | appended           | frozen layer | read from cache | written to cache | what happened                                   |
-| :--- | :----------------- | :----------- | :-------------- | :--------------- | :---------------------------------------------- |
-| 1    | 6 → frozen        | new (cold)   | 0               | 2,124            | first write of the frozen layer                 |
-| 2    | 4 → pending       | unchanged    | **2,111** | 1,385            | frozen layer read; pending layer wrote          |
-| 3    | 4, batch promoted  | changed      | 0               | 4,873            | promotion enlarged the frozen layer, cold write |
-| 4    | 3 → pending       | unchanged    | **4,179** | 1,734            | larger frozen layer read; pending layer wrote   |
+| Turn | appended          | frozen layer | read from cache | written to cache | what happened                                   |
+| :--- | :---------------- | :----------- | :-------------- | :--------------- | :---------------------------------------------- |
+| 1    | 6, batch promoted | new (cold)   | 0               | 2,133            | first write of the frozen layer                 |
+| 2    | 4 → pending      | unchanged    | **2,120** | 1,361            | frozen layer read; pending layer wrote          |
+| 3    | 0, nothing new    | unchanged    | **3,481** | 0                | both layers read; nothing written at all        |
+| 4    | 3, batch promoted | changed      | 0               | 4,525            | promotion enlarged the frozen layer, cold write |
 
-Session total: **36% of input served from cache** (6,290 of 17,233 input tokens),
+Session total: **39% of input served from cache** (5,601 of 14,464 input tokens),
 against **0%** for the single-tail-breakpoint shape on the same workload.
 
 Read the pattern, not the exact digits. Two facts generalize:
 
-- **A frozen layer reads on every turn its bytes do not change.** Turns 2 and 4 appended
-  new chunks and still read the frozen layer, because those chunks went into the pending
-  layer *after* breakpoint 1.
+- **A frozen layer reads on every turn its bytes do not change.** Turn 2 appended new
+  chunks and still read the frozen layer, because those chunks went into the pending layer
+  *after* breakpoint 1.
+- **The best turn is the one that retrieves nothing new.** On turn 3 every chunk the query
+  needed was already in the working set, so both layers read and nothing was written —
+  3,481 of 3,699 input tokens, with only the question itself fresh. A tightly related
+  question stream is what produces those turns.
 - **Each batch promotion costs one cold write of the (now larger) frozen layer,** repaid by
-  reads on the turns until the next promotion. `FREEZE_BATCH` tunes how often you pay that
-  write against how much uncached pending text each turn carries.
+  reads on the turns until the next promotion. Turns 1 and 4 are the promotions here.
+  `FREEZE_BATCH` tunes how often you pay that write against how much uncached pending text
+  each turn carries.
 
 Do not infer a hit from a successful request or the presence of a breakpoint. A hit is
 `cached_tokens > 0`. Current behavior and constraints are documented in
@@ -279,27 +284,28 @@ TURN 2
    promoted to frozen  0
    frozen chunks       6
    pending chunks      4
-   frozen cache key    kb-frozen-layer-v1-e84a1ec6e007-f2
+   frozen cache key    kb-frozen-layer-v1-5dd3220ad7dd-f2
    top score           0.860
 
 ← generation
    The program lowered one-third-octave background-noise levels by 8 to 18 dB
-   over the frequency range of interest ... [chunk:55acc604de00b559] The broader
-   program summary characterizes the reduction as about 10 dBA across a wide
-   range of flow speeds and frequencies. [chunk:913b25dca173ab96]
+   across the frequency range of interest. [chunk:3cd8333386d826ef]
+
+   For the 630 Hz-50 kHz bands specifically, the reported average reduction was
+   13 dB, with the smallest reduction being 7 dB at 2 kHz.
+   [chunk:3cd8333386d826ef]
 
 REFERENCES
-   [chunk:55acc604de00b559] https://ntrs.nasa.gov/citations/20210017002
-   [chunk:913b25dca173ab96] https://ntrs.nasa.gov/citations/20210016839
+   [chunk:3cd8333386d826ef] https://ntrs.nasa.gov/citations/20210017002
 
 ← usage
-   Input tokens:       3,702
-   Read from cache:    2,111
-   Written to cache:   1,385
-   New input:          206
-   Output tokens:      99
+   Input tokens:       3,689
+   Read from cache:    2,120
+   Written to cache:   1,361
+   New input:          208
+   Output tokens:      96
      of which reasoning: 0
-   Total tokens:       3,801
+   Total tokens:       3,785
 ```
 
 ## Production considerations
@@ -351,7 +357,7 @@ REFERENCES
   control.
 - **The frozen/pending split is size-agnostic.** Promotion is by chunk count, not tokens;
   production code should budget real tokens per layer.
-- **Savings are workload-dependent.** The 36% figure above is one query stream on one
+- **Savings are workload-dependent.** The 39% figure above is one query stream on one
   corpus. A stream with little chunk overlap will promote batches continuously and save
   little.
 - **Only text chunks are loaded.** Non-text Knowledge Base results are skipped.
