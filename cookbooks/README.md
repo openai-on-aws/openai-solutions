@@ -148,6 +148,7 @@ today still resolves after the port lands.
 | [`03-grounding-and-multimodal/02-scoring-a-grounded-answer/`](03-grounding-and-multimodal/02-scoring-a-grounded-answer/) | Trusting a grounded answer: scoring it against its sources | intermediate | medium |
 | [`03-grounding-and-multimodal/03-reading-a-scanned-manual/`](03-grounding-and-multimodal/03-reading-a-scanned-manual/) | Reading a scanned manual: photos, tables and figures | intermediate | medium |
 | [`03-grounding-and-multimodal/04-rag-with-knowledge-bases/`](03-grounding-and-multimodal/04-rag-with-knowledge-bases/) | RAG with Bedrock Knowledge Bases: retrieve then generate with citations | intermediate | low |
+| [`03-grounding-and-multimodal/05-prompt-caching-rag/`](03-grounding-and-multimodal/05-prompt-caching-rag/) | Cache-friendly RAG: a frozen-layer working set that keeps the prefix readable | advanced | medium |
 | [`04-agents/01-the-agent-loop/`](04-agents/01-the-agent-loop/) | The agent loop: a goal, some tools, and a round ceiling | advanced | medium |
 | [`04-agents/02-openai-agents-sdk/`](04-agents/02-openai-agents-sdk/) | Running an agent on Bedrock with the OpenAI Agents SDK | intermediate | medium |
 | [`04-agents/03-strands-agents-sdk/`](04-agents/03-strands-agents-sdk/) | Running an agent on Bedrock with Strands | intermediate | medium |
@@ -156,7 +157,7 @@ today still resolves after the port lands.
 | [`05-production/02-pii-masking/`](05-production/02-pii-masking/) | Masking patient identifiers before and after the model | intermediate | low |
 <!-- END GENERATED: recipe-index -->
 
-**All twenty-one recipes are here.** They are meant to be read in the order above:
+**All twenty-two recipes are here.** They are meant to be read in the order above:
 `01-foundations` because everything else assumes it, then shaping what comes back, grounding it in
 information the model was not trained on, turning a tool loop into an agent, and finally what those
 choices cost in production. Each group has its own landing page, and every path named in this
