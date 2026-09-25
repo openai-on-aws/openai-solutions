@@ -1,8 +1,8 @@
 ---
 title: "RAG with Bedrock Knowledge Bases: retrieve then generate with citations"
-capabilities: [GRD-03, GRD-04]
-primary_capability: GRD-03
-industry: research
+capabilities: [GRD-04, GRD-03]
+primary_capability: GRD-04
+industry: —
 industry_scenario: >
   A research team maintains a corpus of scientific papers in a Bedrock Knowledge Base
   and needs a question-answering interface that grounds every claim in a source document.
@@ -14,12 +14,40 @@ apis: [responses]
 languages: [python]
 dependency_groups: []
 iam_actions:
+  # The recipe itself
   - bedrock-mantle:CreateInference
   - bedrock:Retrieve
+  # utils/create_knowledge_base.py, only if you use it to build the fixture
+  - bedrock:CreateKnowledgeBase
+  - bedrock:GetKnowledgeBase
+  - bedrock:DeleteKnowledgeBase
+  - bedrock:ListKnowledgeBases
+  - bedrock:CreateDataSource
+  - bedrock:ListDataSources
+  - bedrock:StartIngestionJob
+  - bedrock:GetIngestionJob
+  - s3vectors:CreateVectorBucket
+  - s3vectors:GetVectorBucket
+  - s3vectors:DeleteVectorBucket
+  - s3vectors:CreateIndex
+  - s3vectors:GetIndex
+  - s3vectors:DeleteIndex
+  - s3:CreateBucket
+  - s3:PutObject
+  - s3:ListBucket
+  - s3:DeleteObject
+  - s3:DeleteBucket
+  - iam:CreateRole
+  - iam:GetRole
+  - iam:PutRolePolicy
+  - iam:ListRolePolicies
+  - iam:DeleteRolePolicy
+  - iam:DeleteRole
+  - iam:PassRole
 level: intermediate
 estimated_cost: low
 status: validated
-last_validated: 2026-08-14
+last_validated: 2026-09-25
 validated_with:
   python: "3.12"
   openai: "2.53.0"
@@ -39,7 +67,7 @@ reranking or business logic between the two steps.
 | **Region**              | `us-east-1`                                                                                                                        |
 | **Level**               | Intermediate                                                                                                                         |
 | **Cost**                | Low — one retrieval call plus one generation call, capped at 1024 output tokens                                                     |
-| **You will need**       | Inference permission, an existing Bedrock Knowledge Base with ingested documents, and`bedrock:Retrieve` permission                 |
+| **You will need**       | Inference and`bedrock:Retrieve` permission, plus a Knowledge Base — build one with the included helper, or point at your own       |
 
 > **What it does.** Retrieves the top-k chunks from a Knowledge Base, numbers them, passes
 > them as context to GPT-5.6 with instructions to cite sources inline, and prints the
@@ -76,8 +104,13 @@ effort) without either side affecting the other.
 ## Prerequisites
 
 - The [prerequisites in the cookbooks README](../../README.md).
-- **An existing Bedrock Knowledge Base** with documents already ingested. You need its
-  Knowledge Base ID (looks like `XXXXXXXXXX`). See [Appendix A](#appendix-a---creating-a-knowledge-base) for help creating a knowledge base.
+- **A Bedrock Knowledge Base**, and its ID (which looks like `XXXXXXXXXX`). If you do not
+  have one, [`utils/create_knowledge_base.py`](utils/create_knowledge_base.py) builds one
+  from the documents in `assets/` and prints the ID — see
+  [Appendix A](#appendix-a---creating-a-knowledge-base). Creating one needs considerably
+  more permission than querying it, which is why the two sets are listed separately in the
+  front matter above; if your role only allows inference and `bedrock:Retrieve`, point the
+  recipe at a Knowledge Base someone else provisioned.
 - **`bedrock:Retrieve` permission** on the Knowledge Base ARN. This is separate from the
   inference permission.
 - **`boto3`** for the Retrieve API call. It is already in the base cookbook dependencies —
