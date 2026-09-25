@@ -120,8 +120,11 @@ Do not infer a hit from a successful request or the presence of a breakpoint. A 
 ## Prerequisites
 
 - The [prerequisites in the cookbooks README](../../README.md).
-- **An existing Bedrock Knowledge Base** with documents already ingested. You need its
-  Knowledge Base ID, which looks like `XXXXXXXXXX`.
+- **A Bedrock Knowledge Base**, and its ID, which looks like `XXXXXXXXXX`. If you do not
+  have one, the sibling recipe's
+  [`create_knowledge_base.py`](../04-rag-with-knowledge-bases/utils/create_knowledge_base.py)
+  builds one from a committed corpus and prints the ID. Provisioning needs considerably more
+  permission than querying — that recipe's front matter lists both sets.
 - **`bedrock:Retrieve` permission** on that Knowledge Base, in addition to the inference
   permissions used by the other recipes.
 - **Several related questions.** Overlapping retrieval results are what let the frozen layer
