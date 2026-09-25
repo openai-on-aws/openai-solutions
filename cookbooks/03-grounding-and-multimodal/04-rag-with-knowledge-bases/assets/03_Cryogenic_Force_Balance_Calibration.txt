@@ -1,0 +1,784 @@
+The Evaluation of Cryogenic Force Balance Calibration
+ Methodologies with Respect to Wind Tunnel Results
+
+       Devin E. Burns ∗, Kenneth G. Toro †, Peter A. Parker ‡, and S. Melissa Rivers §
+                     NASA Langley Research Center, Hampton, Virginia, 23681, USA
+                                   Harald Quix ¶, and Martin Wright k
+                          European Transonic Windtunnel, Köln, 51147, Germany
+
+
+        Independent tests of the NASA Common Research Model (CRM) at NASA’s National
+     Transonic Facility (NTF) and the European Transonic Windtunnel (ETW) revealed discrep-
+     ancies at low operating temperatures and high Reynolds numbers that warranted further
+     investigation. Since each facility used their own force balance for their tunnel entry, one
+     suggestion for the discrepancy was the temperature compensation methodology developed
+     and applied for each balance. This hypothesis is explored through simulation and experi-
+     mentally. Independent calibrations of NASA’s NTF-118A balance at NASA Langley and
+     ETW reveal discrepancies in the thermal compensation of the normal force and pitching
+     moment primary sensitivities with temperature, while the axial force primary sensitivities
+     are in good agreement. The application of the force balance calibrations performed at
+     NASA and ETW to the prior wind tunnel data suggests that the thermal compensation
+     discrepancies are an order of magnitude less than the discrepancies observed between the
+     wind tunnel aerodynamic coefficients.
+
+
+                                               Nomenclature
+
+BCM Balance Calibration Machine
+CRM Common Research Model
+ETW European Transonic Windtunnel
+NASA National Aeronautics and Space Administration
+NTF National Transonic Facility
+RTD Resistance Temperature Detector
+SC   Temperature Sensitivity Constant
+
+
+                                             I.    Introduction
+    The NASA Common Research Model (CRM)1 is a transport style aircraft wind tunnel model developed to
+provide a publicly available experimental database that can be used to validate computational fluid dynamics
+simulations. The CRM has also been tested at wind tunnel facilities around the world allowing facilities to
+benchmark their results to a common wind tunnel model. Among these tests, the CRM was tested at both
+of the cryogenic wind tunnels in the world — NASA’s National Transonic Facility (NTF) and the European
+Transonic Windtunnel (ETW).
+    Entries of the CRM at NTF and ETW relied on each tunnel to provide their own model support hardware
+and instrumentation including wind tunnel force balances and angle measurement systems. The NTF used
+  ∗ Balance Engineer, Advanced Measurement and Data Systems, NASA Langley Research Center
+  † Research Engineer, System Engineering and Engineering Methods, NASA Langley Research Center
+  ‡ Team Lead, Advanced Measurement and Data Systems, NASA Langley Research Center
+  § Research Engineer, Configuration Aerodynamics Branch, NASA Langley Research Center
+  ¶ Group Leader Test and Data Systems Group, European Transonic Windtunnel
+  k Manager Aerodynamics and Testing, European Transonic Windtunnel
+
+
+
+
+                                                      1 of 13
+
+                              11th International Symposium on Strain-Gauge Balances
+NASA Langley’s NTF-118A wind tunnel force balance for the CRM entry, while ETW used its’ B004 wind
+tunnel force balance. Each of these wind tunnel force balances was independently calibrated at NASA and
+ETW, respectively.
+    Wind tunnel results at near ambient temperature (301 K) and Reynolds number of 5 × 106 showed good
+agreement between the facilities. However, at low temperatures (116 K) and high Reynolds numbers in excess
+of 19.8 × 106 an offset between the coefficient of lift and the pitching moment coefficient curves was observed
+outside of tolerance limits.2 One potential hypothesis for the discrepancy was the thermal compensation
+algorithms derived from the balance calibrations.
+    This work explores several aspects of this claim. First, the methodologies and processes for cryogenic
+calibration of force balances are explained for both NASA and ETW. Second, a simulation is performed to
+assess the extent of error due to the balance temperature effects that would be required to reconcile the
+ETW and NTF data. Next, independent calibrations of NASA’s NTF-118A force balance are performed at
+NASA and ETW. The calibration data are used to determine the extent of temperature related differences
+in the calibration and their effect on the wind tunnel data.
+
+                              II.    Room Temperature Calibration
+    Room temperature calibration procedure and hardware forms the basis for cryogenic calibration. This
+section outlines the calibration and data reduction methods used at ETW and NASA.
+
+II.A.   ETW’s Approach
+At ETW, there are only minor differences between the room temperature and cryogenic calibration proce-
+dure. All calibrations are performed using ETW’s fully automated Balance Calibration Machine (BCM).3, 4
+The BCM was designed and built to calibrate ETW’s cryogenic balances over the complete temperature
+range of ETW and it is presently the only, automated cryogenic force balance calibration system in the
+world. At all temperatures the BCM can achieve the following maximum loads:
+
+
+                                    Load Component       BCM Load Limits
+                                          Fx                ± 2300 N
+                                          Fy                ± 3000 N
+                                          Fz               ± 25000 N
+                                          Mx               ± 850 Nm
+                                          My               ± 1300 Nm
+                                          Mz               ± 500 Nm
+                                            Table 1. BCM load limits.
+
+
+    The concept of the BCM is based on loading by pneumatic force generators. The applied loads are
+measured simultaneously by six master load cells (forming the external reference balance) and by the wind
+tunnel balance, hereafter called the internal balance. The master loads cells are mounted on the measure-
+ment frame, colored orange in Figure 1, while the force generators are connected to the loading frame,
+colored light gray in Figure 1. The measurement frame and the loading frame are connected by the internal
+balance which is mounted with its live (metric) side to the measurement frame to keep the external and
+internal balance coordinate systems load independent. The internal balance earth (non-metric, ground) side
+is connected to the loading frame via a flange, so that deflections on this side due to loadings can be neglected.
+
+    The area around the internal balance, between the measurement frame flange and the loading tree flange,
+is covered by a temperature controlled housing. This cryogenic calibration chamber allows temperature
+changes of the internal balance over the full operating envelope of ETW, while the external balance is well
+insulated and kept at ambient temperature.
+
+    For standard room temperature calibrations the calibration chamber is left open, so that the temperatures
+of the internal balance as well as the external balance are controlled by the calibration room air conditioning
+system. The calibration runs fully automated applying the loads of a predefined load schedule. These
+
+
+                                                     2 of 13
+
+                              11th International Symposium on Strain-Gauge Balances
+                                     Internal balance
+
+
+
+
+                                                                          Loading frame
+
+
+
+
+                                                            Cryogenic calibration
+                                                                 chamber
+                                  Measurement frame
+                                  „External balance“
+
+                                      Figure 1. Schematic view of BCM.
+
+
+
+
+predefined loads are input parameters to the BCM control software, which will convert the required loads
+into pressures supplied by the pneumatic force generators. Because the applied loads are accurately measured
+by the external balance, no closed loop control is implemented to achieve the exact predefined loads.
+    The ETW standard load schedule starts with single loads for all six balance components over the complete
+balance load range. The following numbers describe a standard calibration which can be adapted to special
+requirements if necessary. For each component, eight different loads are applied once during loading and
+repeated during unloading to check hysteresis effects. Including zero cases, this results in 17 measurement
+points. After the single factor loadings, loadings are conducted with two factors at a time. This combination
+results in an additional 70 measurement points per load combination resulting in a total number of 1152
+calibration measurement points representing 528 different load cases of single and two-component loads.
+Figure 2 shows a schematic for a single load case and a combined load case.
+
+
+
+
+                         Figure 2. Default single and combined schedule used at ETW.
+
+
+   After the measurement of all calibration points, a regression technique is used to create a balance cali-
+bration matrix from the component bridge outputs and the loads applied and also the matrix from applied
+
+
+                                                        3 of 13
+
+                             11th International Symposium on Strain-Gauge Balances
+loads to bridge outputs which is also required for data reduction purposes.
+
+II.B.   NASA’s Approach
+Figure 3 shows an example of a dead weight, long arm calibration method5, 6 used for the room temperature
+calibration of cryogenic forces balances that are over 3,000 pounds of normal force in load carrying capacity.
+While the key hardware pieces are shown, readers are encouraged to consult the references for a more
+thorough explanation of the process.
+    As shown, the basis of the long arm process is the direct application of free weights. The three ways of
+applying free weight using the long arm process are highlighted in figure 3. Forces can be applied directly
+over moment center via hangers precisely positioned using knife edges. Moments are applied using a small
+fraction of the force transferred at a long distance via moment arms attached to the balance calibration
+fixture. To apply multiple forces simultaneously, a hanger assembly attached to a strap that is run over a
+bell crank is used.
+    To maintain known alignment of the forces generated by the weights, the balance is repositioned relative
+to gravity after each load application to compensate for deflection.
+    The calibration consists of 82 combinations of one and two component loads and several three and four-
+component loads to derive the calibration matrix. Several three component confirmation loads are performed
+and used as check loads to validate the effectiveness of the calibration matrix. The single component loads
+make up what is referred to as a primary calibration.
+    A regression technique is then used to estimate a balance calibration matrix from the component bridge
+outputs and the loads applied.
+
+                    Balance Fixture
+
+
+
+
+                                                                             Roll/Yaw
+                                 AF                                          Arm
+                                 Strap
+                                 NF/SF
+                                 Hanger
+
+
+
+
+                Figure 3. Example of hardware used for room temperature calibration at NASA.
+
+
+
+
+                             III.    Cryogenic Calibration Methods
+    Cryogenic calibration is necessary because the elastic modulus of the force balances changes with tem-
+perature and the gage factors of the strain gages installed on the force balances change with temperature.
+    The hardware and methodologies used to perform cryogenic calibration of force balances at NASA and
+ETW are different. In addition, the philosophies used to apply the corrections are different. For instance,
+ETW performs full calibrations at multiple temperatures and then uses the derived matrix corresponding
+to the temperature closest to the tunnel operating temperature. The NASA process uses a limited set of
+cryogenic loads to update the primary sensitivities of the calibration matrix. The following sections outline
+each of these approaches in more detail.
+
+
+                                                    4 of 13
+
+                             11th International Symposium on Strain-Gauge Balances
+III.A.                                          ETW’s Approach
+ETW’s approach for cryogenic calibration is similar to the room temperature calibration. Using the cryo-
+genic calibration chamber, the internal balance is conditioned to discrete temperatures and then calibrated
+following the procedure described in section II.A. Also, the loads and the number of calibration points are
+identical to the room temperature calibration. For a standard full calibration, the calibration temperature
+varies in steps of 25K in the range between 325K down to 200K and is then reduced for temperatures below
+200K to a 10K calibration temperature interval. Including room temperature, this calibration approach
+contains full calibrations at 16 different temperature levels. A repeat calibration at ambient temperature is
+added.
+
+    For each temperature, a calibration matrix is calculated using a regression method. During testing in
+ETW at cryogenic temperatures, the calibrations matrix of the temperature closest to the actual mean bal-
+ance temperature is selected and applied for data evaluation. No interpolation between matrices is performed
+for intermediate temperatures.
+
+    As an example, Figure 4 shows the change of the matrix sensitivities compared to ambient temperature
+of the main bridges influencing normal force and pitching moment for two different ETW balances. The
+B003 and B004 balances are N1, N2 type balances where two bridges are combined to form the normal and
+pitch components. Here, the N1 and N2 bridges are presented in matrix form such that Z3,3 is the sensitivity
+change of the N1 bridge due to the application of normal force and Z5,3 is the sensitivity change of the N2
+bridge due to the application of normal force. M3,5 and M5,5 are the sensitivity changes of the N1 and N2
+bridges with respect to pitching moment. The figure indicates that the change of sensitivities is strongly
+dependent on the balance itself, the temperature compensation of its bridges, and its temperature stability
+in general. Comparing the two balances shown, it is visible, that balance B003 (Figure 4 left) has a higher
+change in sensitivities than B004 (Figure 4 right), but shows a smoother characteristic with temperature
+than B004. Both sensitivity changes show a highly non-linear trend over temperature, so that for high
+accuracy demands these non-linear effects have to be taken into account.
+
+                                                                                      B003 - Z 3,3                                                                                     B004 - Z 3,3
+Sensitivity Change Relative to RT [%]
+
+
+
+
+                                                                                                             Sensitivity Change Relative to RT [%]
+
+
+
+
+                                                                                      B003 - Z                                                                                         B004 - Z
+                                        0.5                                                      5,3                                                 0.5                                          5,3
+                                                                                      B003 - M3,5                                                                                      B004 - M3,5
+                                                                                      B003 - M                                                                                         B004 - M
+                                                                                                 5,5                                                                                              5,5
+
+
+
+                                          0                                                                                                            0
+
+
+
+
+                                        -0.5                                                                                                         -0.5
+
+
+
+
+                                         -1                                                                                                           -1
+
+
+                                          100         150        200         250       300                                                             100   150     200         250    300
+                                                               Temperature [K]                                                                                     Temperature [K]
+                                                Figure 4. Change in ETW’s B003 and B004 force balance sensitivities due to temperature changes.
+
+
+
+
+III.B.                                          NASA’s Approach
+III.B.1.                                         Experimental Approach
+Rather than a full cyrogenic calibration, Langley augments the full room temperature calibration with
+primary cryogenic loads.7 The cryogenic loads are performed in a dedicated calibration fixture shown in
+Figure 5 that incorporates channels for liquid nitrogen to circulate through the fixture on the metric end
+and non-metric end.
+   A yoke attaches to the balance fixture (Figure 5) that is thermally isolated from the balance fixture to
+maintain ambient temperature of the calibration hardware beyond the fixture. It incorporates knife edge
+
+
+                                                                                                       5 of 13
+
+                                                                       11th International Symposium on Strain-Gauge Balances
+grooves for the application of normal, side, and axial force via free hanging dead weight on hangers accurately
+placed using knife edges. Rolling, yawing, and pitching moments are applied by attaching long arms to the
+yoke and applying dead weights at the ends of the arms.
+
+                 Normal/Side Force Hanger
+                 Electrolytic
+                 Bubble Level                                                          Roll Arm
+                 Cryogenic
+                 Balance
+                 Fixture
+                 Yoke
+
+
+
+
+                                                                               LN2 Supply
+                                                                               and Return
+
+
+
+                                                Pitch/Yaw Arms
+                          Figure 5. Hardware used for cryogenic calibration at NASA.
+
+
+    For a direct relative comparison using the cryogenic calibration hardware, calibration loads with the cryo-
+genic hardware installed are performed at room temperature and approximately 88K. The relative difference
+between the bridges’ output at 295K and 88 K is used for the thermal corrections. To infer behavior between
+88K and 295K, linear interpolation is used.
+    As in the room temperature calibration, the balance fixture is re-leveled to accommodate for deflection
+using a heated electrolytic bubble level package.
+    A different set of hardware is used to determine the zero shift of the bridges’ output as a function
+of temperature. This process does not involve the application of load, rather the temperature is lowered
+from 295K while recording the output of the bridges at 5 minute intervals. This temperature excursion is
+performed with the balance model block and the wind tunnel model installed on the balance.
+
+III.B.2.   Modeling Approach
+The NASA modeling approach adjusts bridges’ output at a given temperature back to the readings that
+would have been obtained at room temperature (295 K). Thus, in the NASA approach temperature effects
+are accounted for in the bridges’ output. By adjusting the bridges’ output at a given temperature back to
+room temperature, the full room temperature calibration matrix can then be used to predict applied loads.8
+The following equations form the basis of this approach.
+   The factors contributing to the bridge output (VT ) under the application of load and at cryogenic tem-
+peratures can be represented as:
+
+                                         VT = VEZ,295 + ∆VEZ + Vload                                       (1)
+    where VEZ,295 is the bridge electrical zero at 295K, ∆VEZ is the zero shift of the bridge output at a given
+temperature under constant load, and Vload is the bridge voltage due to model weight and applied aero loads
+at a given temperature.
+    Adjusting the zero shift of the bridge output as a function of temperature is done by performing a second
+order curve fit to the recorded data described in section III.B.1 producing an equation of the form:
+
+                                           ∆VEZ = C0 + C1 T + C2 T 2                                       (2)
+   where C0 , C1 , and C2 are the temperature compensation coefficients derived from the curve fit and T is
+the temperature from the resistance temperature detector (RTD) closest to that bridge.8
+
+
+                                                      6 of 13
+
+                               11th International Symposium on Strain-Gauge Balances
+   Vload can further be represented as:
+
+                                             Vload = Vload,295 ∗ SC                                        (3)
+    where Vload,295 is the estimated bridge output at 295K based on the applied weight and aero loads, and
+SC is the temperature sensitivity constant determined from the applied cryogenic loadings described in
+section III.B.1. SC is itself a function of temperature and is defined as:
+
+                                            SC = 1 + SS(T − 295)                                           (4)
+    where T is the temperature in K and SS is the sensitivity change per degree change in temperature
+defined as:
+
+                                    SS = (BT − B295 )/(B295 ∗ (T − 295))                                   (5)
+   where BT is the full scale bridge output at cryogenic temperature T under applied load and B295 is the
+bridge output at T = 295 K under the same applied load.
+   Since the individual bridges are excited multiple times during the cryogenic primary loading sequence,
+an average of the SS coefficient from each of the loading sequences targeting that bridge is used in the
+determination of the SS coefficient.
+   Combining equations 1 and 3 above and solving for Vload,295 :
+
+                                   Vload,295 = (VT − VEZ,295 − ∆VEZ )/SC                                   (6)
+    This equation is used to estimate the absolute bridge output due to applied model weight and aero loads
+at 295K based on the bridge output at the test temperature. These bridge outputs are then combined to form
+component outputs which can be used with the full room temperature calibration to estimate the applied
+loads on the balance.
+
+               IV.     Simulation of Calibration Effects on Tunnel Results
+   An analysis, performed by NASA Langley force measurement engineers, was conducted to access the
+plausibility of balance thermal correction errors being responsible for the discrepancy in wind tunnel results.
+This analysis shows how the calibrations and methodologies described in section III are applied to the raw
+bridge signals recorded during the wind tunnel test. Hypothetical changes to the thermal corrections are
+made to evaluate their effects on the wind tunnel results.
+
+IV.A.    Analysis
+The analysis sought to go from the raw bridge outputs from NTF Test 197, Run 220 and walk through
+the steps required to generate aerodynamic data. First, the electrical zero shift was calculated for each
+bridge, according to equation 2, based on the temperature reading from the closest RTD to the bridge.
+The temperature sensitivity constant, SC, was then calculated for each bridge using equation 4 and the
+temperature reading from the closest RTD to the bridge. The bridge outputs were then adjusted back to
+295 K, using equation 6. At this point, the bridge outputs (i.e. N1, N2) were combined to form components
+(i.e. NF) according to the force balance wiring specifications. The calibration matrix determined from the
+full room temperature calibration was then used to calculate the applied load for each component.
+    Discrepancies between normal force and pitching moment polars for NTF test 197, run 220 and ETW
+test 0001, run 232 appeared to be at constant offsets relative to angle of attack.2 Utilizing information
+available for the fluid dynamic pressure, surface area of the model, and reference chord length, these curve
+offsets correspond to normal force and pitching moments offsets of 120 lbs and 156 in-lbs respectively. For
+perspective, these offsets are approximately 1.8% of the NTF-118A’s full scale normal force load range and
+1.2% of the full scale pitch load range. In the subsequent plots, unaltered NTF data is used as a baseline
+and ETW reference data is simulated by applying the observed normal force and pitching moment offsets to
+the NTF baseline.
+
+
+
+
+                                                     7 of 13
+
+                              11th International Symposium on Strain-Gauge Balances
+                                 NTF T197 R220 with NTF-118A and NASA Coefficients
+                             NTF T197 R220 with NTF-118A and NASA Coefficients N1SC×10
+                             NTF T197 R220 with NTF-118A and NASA Coefficients N2SC×10
+                             ETW ET0001 R232 with B004 and ETW Coefficients (Simulated)
+
+                    4,000                                                                           2,350
+
+                                                                                                    2,300
+                    3,000                                                                           2,250
+
+                                                                                                    2,200
+Normal Force, lbs
+
+
+
+
+                    2,000
+                                                                                                    2,150
+                                                                                                        2.9 2.95   3   3.05 3.1
+                    1,000
+                                                                                                    −500
+
+                       0                                                                            −550
+
+                                                                                                    −600
+          −1,000                                                                                    −650
+
+                                                                                                    −700
+                            −3   −2    −1      0      1      2      3        4    5      6             −2.1−2.05 −2 −1.95−1.9
+                                              Angle of Attack, deg
+
+                                             Figure 6. Effects of SCs on measured normal force.
+
+
+    The effects of varying the cryogenic sensitivity constants (SCs) are illustrated in Figure 6. Here, the
+N1 and N2 cryogenic SCs have been independently multiplied by 10 before being combined to form normal
+force and pitching moment. By comparing these curves to the baseline curve, it is clear that changes to the
+cryogenic SCs have an influence on the slope of the curve. This is consistent with what is expected given
+that based on Equation 6 the effective room temperature output is directly proportional to the cryogenic
+SCs. This change in slope will not reconcile the fixed offset behavior seen in the NTF and ETW lift and
+pitch coefficient curves. Moreover, the large SC multiplier of 10 (suggesting SC measurements are off by an
+order of magnitude) required to generate observable differences in the normal force polar suggests that this
+is an impractical explanation for the NTF and ETW tunnel discrepancies.
+
+                                      V.    Room Temperature Calibration Results
+    Room temperature calibrations of the NTF-118A were performed at NASA and ETW as outlined in
+section III.B.1. A second order matrix (6x27) was generated from the NASA and ETW calibrations and the
+percent difference of the full scale effect of each interaction in the matrix was computed. The differences are
+shown in a bar chart (Figure 7), where the magnitude of the ETW coefficients has been subtracted from the
+NASA coefficients.
+    From this figure, it is clear that there is generally good agreement between the vast majority of the terms
+in the two matrices. The most significant exception to this is the term associated with applying normal force
+while measuring axial force. Here, the difference in the magnitude of the two coefficients is 0.55%, which
+corresponds to a difference in predicted axial force of 3.9 lbf with the full application of 6520 lbf of normal
+force.
+
+
+
+
+                                                                   8 of 13
+
+                                            11th International Symposium on Strain-Gauge Balances
+            NF
+            AF
+           PM
+           RM
+           YM
+            SF
+        NF*NF
+        NF*AF
+       NF*PM
+       NF*RM
+       NF*YM
+        NF*SF
+        AF*AF
+       AF*PM
+       AF*RM
+       AF*YM
+        AF*SF
+       PM*PM
+       PM*RM
+       PM*YM
+        PM*SF
+       RM*RM
+       RM*YM
+        RM*SF
+       YM*YM
+        YM*SF
+         SF*SF
+
+
+               −0.2   0    0.2   0.4   0.6 −0.2   0      0.2    0.4   0.6 −0.2   0   0.2   0.4   0.6
+                           NF                            AF                          PM
+                                  (Percent Difference of Full Scale Effect)
+                 Figure 7. Room temperature differences between NASA and ETW calibrations.
+
+
+
+
+                             VI.       Cryogenic Calibration Results
+    Comparison of the cryogenic calibration results must consider differences in the calibration processes.
+The only complete calibration performed at NASA is at room temperature preventing the direct comparison
+of full calibration matrices at other temperatures. Moreover, ETWs automatic calibration machine does
+not routinely apply pure single component loads, rather a primary component is applied and residual loads
+remain on the other five components. This prevents the direct use of the ETW data via the NASA approach,
+which relies on pure single component loads to estimate the sensitivity change with temperature (Equation
+5).
+    Therefore, a comparison using the NASA approach was performed where the thermal sensitivity correc-
+tions were estimated by using regression to calculate the effective coefficients from the ETW dataset. In
+this method, a full 6x27 calibration matrix was estimated for each of the discrete temperatures that ETW
+conducted a calibration of the NTF-118A. Whereas, the NASA approach utilized equation 5, but exchanged
+the bridge outputs with component outputs to be consistent with the ETW regression results.
+    Figure 8 shows how the normal force primary sensitivity varies with temperature for the NTF-118A
+as a percent of the NASA room temperature sensitivity. The measured sensitivity changes are shown for
+the NASA and ETW calibrations. In the figure, a line was fit to the two NASA datapoints (at 295K and
+88K) as a the linear interpolation between these two points to determine the sensitivity constant at a given
+temperature. A quadratic fit the ETW datapoints was used. Note that an additional NASA data point was
+taken at an intermediate temperature of 144K. It appears to be in relative agreement with the ETW data
+but was not included in the line fit, since the typical procedure only uses data points at 295K and 88K.
+
+
+
+                                                      9 of 13
+
+                             11th International Symposium on Strain-Gauge Balances
+                   NF Sensitivity Change Relative to RT, %
+                                                                                                NTF-118A NASA Calibration
+                                                              0.5
+                                                                                                NTF-118A ETW Calibration
+
+                                                              0.4
+
+                                                              0.3        0.28%
+
+                                                              0.2
+
+                                                              0.1
+
+                                                                0
+
+                                                             −0.1
+                                                                    80    100 120 140 160 180 200 220 240 260 280 300
+                                                                                          Temperature, K
+
+           Figure 8. NTF-118A normal force sensitivity change relative to room temperature sensitivity.
+
+
+     From Figure 8, a 0.28% difference exists between the normal force sensitivity change measured by NASA
+and ETW at 116K where the wind tunnel discrepancy was observed. This difference is significant relative
+to the stated balance accuracy and suggests that the NASA approach may need to reconsider the linear
+interpolation assumption for this combination of balance material and strain gages.
+     Figure 9 shows how the axial force primary sensitivity varies with temperature for the NTF-118A as
+a percent of the NASA room temperature sensitivity. The measured sensitivity changes are shown for the
+NASA and ETW calibrations. The sensitivity changes measured by NASA and ETW are in good agreement.
+It is also clear that a quadratic fit to the data may be more appropriate than a linear fit. The axial sensitivity
+change relative to room temperature is observed to be larger than the normal sensitivity change. A different
+gaging strategy used on the axial force bridge likely explains this observation.
+                   AF Sensitivity Change Relative to RT, %
+
+
+
+
+                                                                                                NTF-118A NASA Calibration
+                                                              1.2                               NTF-118A ETW Calibration
+
+                                                                1        0.13%
+
+                                                              0.8
+
+                                                              0.6
+
+                                                              0.4
+
+                                                              0.2
+
+                                                                0
+
+                                                                    80    100 120 140 160 180 200 220 240 260 280 300
+                                                                                          Temperature, K
+
+            Figure 9. NTF-118A axial force sensitivity change relative to room temperature sensitivity.
+
+
+
+
+                                                                                           10 of 13
+
+                                                                    11th International Symposium on Strain-Gauge Balances
+                   PM Sensitivity Change Relative to RT, %
+                                                             0.6                               NTF-118A NASA Calibration
+                                                                                               NTF-118A ETW Calibration
+
+
+                                                             0.4
+                                                                        0.38%
+
+                                                             0.2
+
+
+
+                                                              0
+
+
+
+                                                                   80    100 120 140 160 180 200 220 240 260 280 300
+                                                                                         Temperature, K
+
+        Figure 10. NTF-118A pitching moment sensitivity change relative to room temperature sensitivity.
+
+
+    Figure 10 shows how the pitching moment primary sensitivity varies with temperature for the NTF-118A
+as a percent of NASA’s room temperature sensitivity. The measured sensitivity changes are shown for the
+NASA and ETW calibrations. From the figure, the ETW data suggests that a quadratic fit to the data is
+most appropriate. The lack of intermediate points and the linearity assumption for the NASA data leads to
+a 0.38% difference in the measured pitching moment sensitivity change at 116K.
+
+                VII.                                         Influence of Calibrations on Wind Tunnel Results
+    The main objective of this effort was to explore whether errors in the balance thermal corrections could
+account for discrepancies between the wind tunnel results. This section applies the NTF-118A balance
+calibrations performed at NASA and ETW using each facilities calibration approach to the raw bridge
+outputs from NTF test 197, run 220 to determine the influence of the calibrations on the NTF wind tunnel
+results.
+    Figure 11 shows three curves of the normal force exerted on the CRM model as a function of the angle of
+attack of the model. The solid blue line is the normal force exerted on the CRM using the NASA calibration
+of the NTF-118A and coefficients as outlined in sections II.B and III.B. The red dotted line is the normal
+force exerted on the CRM based on the calibration of the NTF-118A at ETW and the derived coefficients
+as outlined in sections II.A and III.A. Finally, the black dotted line is an estimate (assuming a 120 lb offset
+from the blue line as discussed in IV.A) of the ETW test 0001, run 232 normal force loads using the ETW
+B004 balance and ETW derived coefficients.
+    From this figure, the calibration performed at ETW of the NTF-118A does not reconcile the NTF test
+197, run 220 and ETW test 0001, run 232 differences. It is also clear that the differences between the two
+calibrations (and resultant matrices) are not generating the vertical offset behavior required to reconcile the
+two tunnel entries. Rather, the difference in calibrations is resulting in a slight rotation of the curves with
+respect to one another. However, this slight rotation of the blue and red curves with respect to one another
+is insignificant with respect to the NTF test 197, run 220 and ETW test 0001, run 232 differences.
+    Similar to the normal force observations, Figure 12 shows three curves of the pitching moment exerted
+on the CRM model as a function of the angle of attack of the model. Here, the solid blue line is the pitching
+moment exerted on the CRM using the NASA calibration of the NTF-118A and coefficients. The red dotted
+line is the pitching moment exerted on the CRM based on the calibration of the NTF-118A at ETW and
+the derived coefficients. Finally, the black dotted line is an estimate (assuming a -156 lbs offset from the
+blue line as discussed in IV.A) of the ETW test 0001, run 232 pitching moment loads using the ETW B004
+balance and ETW derived coefficients.
+    The results again show that the differences in the measured sensitivities from the NASA and ETW
+
+
+                                                                                          11 of 13
+
+                                                                   11th International Symposium on Strain-Gauge Balances
+                                            NTF T197 R220 with NTF-118A and NASA Coefficients
+                                          NTF T197 R220 with NTF-118A and ETW derived Coefficients
+                                         ETW ET0001 R232 with B004 and ETW Coefficients (Simulated)            2,350
+                          4,000
+                                                                                                               2,300
+
+                          3,000                                                                                2,250   6.2 lbs
+
+                                                                                                               2,200
+Normal Force, lbs
+
+
+
+
+                          2,000
+                                                                                                               2,150
+                                                                                                                   2.9 2.95      3     3.05 3.1
+                          1,000                                                                                −500
+
+                                                                                                               −550
+                               0
+                                                                                                               −600
+                                                                                                                       2.2 lbs
+             −1,000                                                                                            −650
+
+                                                                                                               −700
+                                    −3      −2    −1      0      1      2      3         4   5      6             −2.1−2.05 −2 −1.95−1.9
+                                                         Angle of Attack, deg
+
+                            Figure 11. Effects of calibrations on measured normal force with respect to NTF and ETW tunnel entries.
+
+
+
+
+calibrations result in a slight rotation of the predicted NTF test 197, Run 220 pitch polars. However, this
+slight rotation is insignificant with respect to the tunnel differences.
+
+                                            NTF T197 R220 with NTF-118A and NASA Coefficients
+                                          NTF T197 R220 with NTF-118A and ETW derived Coefficients
+                                         ETW ET0001 R232 with B004 and ETW Coefficients (Simulated)            8,400
+                     10,000
+
+                                                                                                               8,300                 41.0 in-lbs
+
+                          8,000
+Pitching Moment, in-lbs
+
+
+
+
+                                                                                                               8,200
+
+                                                                                                               8,100
+                          6,000                                                                                    −2.1−2.05 −2 −1.95−1.9
+                                                                                                               2,700
+
+
+                          4,000                                                                                2,600
+                                                                                                                         32.2 in-lbs
+
+
+                          2,000                                                                                2,500
+
+                                    −3      −2    −1      0      1      2      3         4   5      6              3.9 3.95      4     4.05 4.1
+                                                         Angle of Attack, deg
+
+                          Figure 12. Effects of calibrations on measured pitching moment with respect to NTF and ETW tunnel entries.
+
+
+
+
+                                                                              12 of 13
+
+                                                       11th International Symposium on Strain-Gauge Balances
+                                               VIII.      Conclusions
+    This work sought to determine whether differences in the ETW and NASA force balance thermal compen-
+sation of the sensitivity change as a function of temperature could be responsible for discrepancies observed
+during independent entries at ETW and NTF of the CRM at high Reynolds numbers and low temperatures.
+Simulation studies showed that balance thermal corrections were unlikely to explain the wind tunnel dis-
+crepancies observed. This was confirmed by comparing calibrations of the NTF-118A balance at NTF and
+ETW. While some differences between the calibrations were observed, these differences were insignificant
+with respect to the wind tunnel discrepancies.
+    This joint calibration exercise provided valuable intermediate temperature data to NASA personnel. It
+showed that historical assumptions regarding the linearity of the thermal sensitivity constants could be
+reconsidered, particularly when it comes to the NTF-118A balance material.
+    While NASA and ETW take two different strategies towards calibration and use two different cryogenic
+calibration systems, both approaches produce results that are within acceptable wind tunnel tolerance levels.
+This is encouraging given the extent of the differences between the approaches and should provide continued
+confidence in the use of these balances and methods at cryogenic temperatures.
+
+                                                     References
+     1 Rivers, M. and Dittberner, A., “Experimental Investigations of the NASA Common Research Model (Invited),” Fluid
+
+Dynamics and Co-located Conferences, American Institute of Aeronautics and Astronautics, June 2010.
+     2 Rivers, M. B., Rudnik, R., and Quest, J., “Comparison of the NASA Common Research Model European Transonic Wind
+
+Tunnel Test Data to NASA Test Data (Invited),” AIAA SciTech Forum, American Institute of Aeronautics and Astronautics,
+Jan. 2015.
+     3 POLANSKY, L., “A new and working automatic calibration machine for wind tunnel internal force balances,” Joint
+
+Propulsion Conferences, American Institute of Aeronautics and Astronautics, June 1993.
+     4 Mantik, J., Quix, H., Struddthoff, W., Jansen, U., and Ernst, F., “Modification of the Control & Measurement Software
+
+for the Balance Calibration Machine at ETW,” 9th International Force Balance Symposium, 2014.
+     5 Ferris, A. J., “Strain Gauge Balance Calibration and Data Reduction at NASA Langley Research Center,” First Interna-
+
+tional Symposium on Strain Gauge Balances, NASA / CP-1999-209101 / PT2, 1999, pp. 565–572.
+     6 Gaurino, J. F., “Calibration and Evaluation of Mulitcomponent Strain-Gage Balances,” NASA Interlaboratory Force
+
+Measurements Group Meeting, JPL, 1964.
+     7 Parker, P., “Cryogenic balance technology at the National Transonic Facility,” Aerospace Sciences Meetings, American
+
+Institute of Aeronautics and Astronautics, Jan. 2001.
+     8 Foster, J. M. and Adcock, J. B., “User’s Guide for the National Transonic Facility Research Data System,” Techical
+
+Memorandum 110242, National Aeronautics and Space Administration, Langley Research Center, Hampton, Virginia 23681-
+0001, April 1996.
+
+
+
+
+                                                          13 of 13
+
+                                 11th International Symposium on Strain-Gauge Balances
+

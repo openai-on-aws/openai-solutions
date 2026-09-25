@@ -1,0 +1,695 @@
+  Acoustic Improvements to the 9- by 15-Foot Low Speed Wind
+                            Tunnel
+
+                                                 David B. Stephens∗
+                                  NASA Glenn Research Center, Cleveland, Ohio, 44135.
+
+             A major refurbishment of the 9- by 15-Foot Low Speed Wind Tunnel at NASA Glenn
+         Research Center was undertaken between 2016 and 2019 to improve the acoustic measurement
+         capability of the facility. The principal objective was to lower the background noise in the
+         test section so quiet aircraft propulsors could be tested with good signal-to-noise ratio. The
+         secondary objective was to improve the anechoic quality of the facility so that the measurement
+         uncertainty would be reduced and the data collected would be more accurate. The results of
+         the project were a vastly improved anechoic wind tunnel, with one-third octave sound levels
+         reduced by 8 to 18 dB in the frequency range of interest. The anechoic quality of the test
+         section was improved substantially, reducing the effect of unwanted echoes contaminating the
+         noise measurements, with the error in an impulse response measurement reduced from 0.8 dB
+         to 0.2 dB. This report describes the main acoustic findings and is intended to provide guidance
+         for other facilities requiring a low noise environment.
+
+
+                                                      I. Introduction
+      ind tunnels come in all shapes, depending on their intended capabilities. The subset which contains large
+W     acoustic wind tunnels was reviewed by Sverdrup Technology (now Jacobs Engineering)[1], in a survey that
+included automotive and aerospace facilities around the world. At NASA, the large acoustic tunnels are the 14- by 22-
+Foot Subsonic Tunnel at Langley Research Center[2], the National Full-Scale Aerodynamics Complex 40- by 80-Foot
+Wind Tunnel (NFAC 40x80) at Ames Research Center[3] and the 9- by 15-Foot Low Speed Wind Tunnel (9x15 LSWT)
+at NASA Glenn Research Center (GRC), which is the subject of the present report. The improvement project described
+here was principally to reduce the background noise of the facility without negatively impacting the other qualities of
+the facility, with Jacobs Engineering as the prime contractor. The focus of the present report is the acoustics, both
+noise of the empty test section and the acoustic quality of the facility. The report contains a brief history of the facility,
+a description of the supporting studies conducted as part of the improvement project, and an overview of the net results
+on the facility. This paper is one of four being used to report various aspects of the task.[4–6].
+
+
+                                            II. History of the 9x15 LSWT
+    The 9x15 LSWT is located in the return leg of the 8- by 6-Foot Supersonic Wind Tunnel (8x6 SWT) and shares the
+same drive system. The 8x6 SWT was built in 1949 for testing supersonic propulsion systems while the 9x15 LSWT
+was built for testing vertical lift systems for aircraft in 1968. The design of the 9x15 LSWT includes a hard-wall test
+section where 12 mm (0.5 inch) thick aluminum plates would be attached to an I-beam structure to make a 2.7- by
+4.6 m (9- by 15-foot) cross section at the end of the contraction. Slots in the wall allowed for streamline expansion or
+exhaust of air from vertical lift systems being tested. Divergence of the side walls accounts for boundary layer growth.
+By the mid-1970’s, the acoustics of propulsion systems was becoming a topic of interest for community noise and
+so acoustic treatment in the form of a 2 inch thick fiberglass mat was added[7] to enable collection of microphone
+measurements in the flow. In 1986, this treatment was replaced with a 13 inch deep liner as low-frequency turboprop
+noise became of interest. The deep liner was an unwoven Kevlar bulk absorber in two different densities, with a 40%
+open perforated plate on the flow surface[8]. This treatment was fit around the structural beams of the facility with a 2
+inch liner on top of the beams. This created a patchwork of deep and shallow treatment. The tunnel operated in this
+condition for the next 30 years. The noise absorbing quality of the resulting test section modifications was discussed
+by Dahl and Woodward[9]. The background noise of the facility prior to the current improvement project has been
+reported by Woodward[10] and Stephens[11]. By 2010 it was realized that the wind tunnel background noise should
+be reduced to ensure good microphone measurements of future quiet aircraft engine propulsor models. In 2012 a set
+   ∗ Research Aerospace Engineer, Acoustics Branch, MS 54-3, 21000 Brookpark Road. AIAA Lifetime Member.
+
+
+
+
+                                                                 1
+of noise measurements made throughout the tunnel loop[11] was provided to Jacobs Engineering for analysis. A noise
+reduction goal was developed based on expected future quiet aircraft engine fans[4]. The final construction plan was
+for five major modifications to the facility: acoustic turning vanes upstream and downstream of the test section, a set
+of parallel baffles, a new carefully shaped diffuser and a rebuilt test section with a new low-noise flow surface.
+
+
+                                            III. Supporting Studies
+    Replacing the tunnel flow surfaces was considered the most critical part of the tunnel improvement task. This was
+because noise generated by airflow over the test section walls could propagate directly to inflow microphones. By
+contrast, noise sources elsewhere in the tunnel loop could be expected to diminish due to distance, or be absorbed by
+treatment or scattered away before affecting microphone measurements. In order to better understand the implications
+of a new flow surface over the acoustic treatment, a number of supporting studies were conducted. Two studies are
+discussed in this report: a set of roughness noise measurement and tests to determine the anechoic qualities of the
+proposed acoustic liners. Other testing was conducted, including noise absorption studies at Riverbank Acoustic
+Laboratories and normal incidence tube measurements at the NASA Langley Research Center Liner Technology
+Facility. A full report of the supporting studies is being documented as a NASA Technical Memorandum[12]. A
+similarly comprehensive report on the improvement to the 9x15 LSWT acoustics is also being prepared[13].
+
+
+A. Roughness Noise Testing
+    Analysis by Jacobs Engineering concluded that a major part of the background noise in the 9x15 LSWT was due
+to the airflow over the perforated plate that made up the walls, floor and ceiling of the test section[4]. This noise
+source is due to the turbulence in the air flow boundary layer causing unsteady forces on the rough surface of the
+wall, or “roughness noise” for short. Most studies of roughness noise consider something like sandpaper, but the
+noise mechanism is similar. Replacing the flow surface with something smoother was expected to reduce the noise
+source. In order to improve confidence in the magnitude of potential noise reduction modifications, NASA contracted
+with Virginia Polytechnic Institute and State University (Virginia Tech) to conduct a series of noise tests on various
+surfaces of interest. Most of the samples were a fabric or metal woven material attached to a perforated plate using
+spray adhesive. These tests took place over four years under several test campaigns. It had previously been established
+that the Virginia Tech roughness noise facility could measure the noise due to airflow over a single 3 mm cube[14], so
+there was little reason to doubt the capability to measure the noise due to airflow over a 30 by 60 cm (1- by 2-foot)
+sample of perforated plate. Measurements of flow over fabric surfaces were novel, however, and iteration in the test
+setup were expected. The team from Virginia Tech has prepared several papers based on these studies,[15, 16] so only
+the final results are presented here. A photograph of the test setup is shown in Figure 1.
+
+
+
+
+  Fig. 1   Experimental setup for background noise validation measurements in test section at Virginia Tech.
+
+
+
+                                                          2
+    The flow surface in the 9x15 LSWT from 1986 to 2016 was 16 gauge perforated plate 40% open with 3 mm (1/8
+in) holes. The new design for the flow surface was 63% open with 4 mm (5/16 in) holes. The floor was a built using
+16 gauge perforated plate while the walls and ceiling used 20 gauge. Most importantly, the new flow surface is covered
+with a 200 by 600 threads-per-inch micronic wire cloth with a flow resistance value of 8-10 MKS Rayls. This value
+of flow resistance was determined to give a smooth surface to the airflow passing over the panel and also be largely
+transparent to sound waves traveling toward the panel. The wire cloth is diffusion bonded to the perforated plate,
+creating a combined diffusion bonded panel. These panels were tested by Jacobs Engineering to document the flow
+resistance before acceptance. Testing at Virginia Tech determined the roughness noise was the same between the best
+panels made using diffusion bonding and those made using spray adhesive. A new manufacturing process ensured
+we did not have the same difficulty with fiber contamination of diffusion bonded panels that was experienced during
+the NFAC 40x80 renovation; roughness noise was not part of that design and the diffusion bonded panels were only
+intended to create a low-drag acoustic liner[3]. Since the NFAC 40x80 used a similar diffusion bonded panel flow
+surface, we were confident in the long term durability of this material in a wind tunnel. Additionally, the background
+noise[17] of the NFAC 40x80 was significantly lower than the 9x15 LSWT, suggesting the lower noise flow surface
+was possibly one reason.
+    The noise measured by flow over the bare perforate is compared with the new low-noise design in Figure 2. Gaps
+in the spectrum for the diffusion bonded panel indicate frequencies were the noise was indistinguishable from the noise
+of the facility with a smooth plate test sample. The measured roughness noise is reduced by more than 10 dB for
+frequencies above about 2 kHz when the flow is over the diffusion bonded panel. The wall jet length scales and flow
+velocities are substantially different in the Virginia Tech facility than the boundary layer flow in the 9x15 LSWT. Despite
+this, the spectral shape and peak noise frequency observed in both facilities was similar, which gave us confidence that
+the majority of the 9x15 LSWT background noise was due to flow over the perforated plate. Additionally, it was clear
+that this particular noise source would be considerably reduced by use of the new flow surface.
+
+                                         30
+
+
+                                         20
+        Pressure Spectral Density, dB
+
+
+
+
+                                         10
+
+
+                                          0
+
+
+                                        −10
+                                                  Bare Perforate
+                                                  Diffusion Bonded Panel
+                                        −20
+                                          102                       103                         104                  105
+                                                                             Frequency, Hz
+
+                                                Fig. 2 Example result from Virginia Tech roughness noise facility.
+
+
+
+B. Acoustic Box Testing
+    The acoustic wind tunnel should be sufficiently quiet such that microphone measurements have a good signal-to-
+noise ratio. The acoustic tunnel must also approximate an infinite space, with sound propagating outward only, and
+with minimal reverberation. Microphone measurements should be made far from the model being tested so that the
+source is acoustically compact. Relatively large models are tested in the 9x15 LSWT so we put the microphones
+relatively close to the walls. This means the direct and reflected sound paths between the source and the receiver are
+
+
+                                                                                3
+of the same magnitude. Thus it is very important to have walls that minimize sound reflections. A good understanding
+of the acoustic properties of the flow surface is required.
+    A convenient and useful test to measure the acoustic reflection from a panel was described in the NFAC 40x80
+improvement project publications (see Figure 18 of reference [3] and supporting text), which cites a series of reports
+by Wilby, White and Wilby, and by Wilby and Wilby. A speaker emits a short time signal, which then reflects off of
+a panel and is measured by a microphone. If the incident sound on the panel is known, the reflection can be related
+to the acoustic qualities of the panel. These tests were conducted in the NASA GRC Acoustical Testing Laboratory
+(ATL)[18].
+    The speaker was mounted on an overhead rail near the ceiling of the ATL, about 12 feet above the floor. A set
+of three microphones were suspended about 4 feet from the floor. Test samples were placed on the floor, which is a
+steel grating above the acoustic wedges. A JBL 2426H horn driver with a Selenium HL14-25 horn was used as the
+sound source. This combination was chosen as it handled a wide frequency range and substantial signal levels. Typical
+samples were 4’x3’, corresponding to the size of the individual boxes used in the 9x15 LSWT. The background noise
+of the ATL was excellent and is not believed to have had a negative influence on the results. The experimental setup is
+shown in Figure 3.
+
+
+                                                                    Compression
+                                                                    Driver and Horn
+
+
+
+
+                                                                      Microphones
+
+
+
+
+                                                        Sample
+
+
+        Fig. 3   Experimental setup for noise absorption test of 9x15 acoustic boxes in the ATL at GRC.
+
+    To conduct the test, the speaker emits a white noise burst approximately three milliseconds long (300 samples at
+100 kHz). This creates a pressure disturbance about 1 m (3 ft) long. The noise is measured by the microphone going
+downward, reflects off the panel being tested and is measured again by the same microphone going upward. It is
+necessary for the microphone to measure a quiet gap between the outward and reflected sound waves to easily separate
+the incident and reflected waves. The sound reflected from a solid steel panel is compared to the sound reflected from
+
+
+
+
+                                                          4
+an acoustically absorptive panel and used to calculate an absorption coefficient as,
+
+                                                                      𝑃2 ( 𝑓 ) 𝑆𝑎𝑚𝑝𝑙𝑒
+                                                         𝐶 (𝑓) = 1−                     .                           (1)
+                                                                       𝑃2 ( 𝑓 ) 𝑆𝑜𝑙𝑖𝑑
+
+In this expression, 𝑃2 ( 𝑓 ) is a frequency-dependent power spectrum of the reflected signal. More details of the method
+are given in the supporting studies report[12].
+    The overall acoustic absorption impact of the low roughness noise surface is shown in Figure 4. For frequencies
+below 4 kHz, there is a penalty to the acoustic performance due to the added resistance of the micronic wire cloth.
+This represents a potential negative impact to the facility due to the diffusion bonded panel. Lower flow resistance
+cloth would have higher roughness noise, and vice versa. This was confirmed in testing a Virginia Tech and the
+GRC ATL[12]. The selected panel was considered the best compromise of both aspects. Above 4 kHz, the acoustic
+performance is improved, due to the higher percent open area of the perforate plate. The absorption coefficient at 10
+kHz improved from 0.87 to 0.94. The better low-frequency properties of the 1986 design were likely appropriate for
+the advanced turboprop[19] testing that was expected at the time.
+
+                                     1
+
+
+
+                                   0.95
+          Absorption Coefficient
+
+
+
+
+                                    0.9
+
+
+
+                                   0.85
+
+                                          Old Design
+                                          New Design
+                                    0.8
+                                               103                                                   104
+                                                                    Frequency, Hz
+
+                                           Fig. 4 Example result from absorption coefficient test.
+
+
+
+                                                 IV. Background Noise Improvement
+    This section discusses the noise measured in the 9x15 LSWT before and after the renovation and the amount of
+noise reduction achieved. The experimental setup for the background noise reduction validation measurements was a
+single microphone mounted to the floor of the 9x15 LSWT, as shown in Figure 5.
+    The modifications to the 9x15 LSWT resulted in substantial reduction of the background noise. The focus of the
+improvement project were the one-third octave bands between 630 Hz and 50 kHz. Over these bands, the average
+noise reduction was 13 dB. The noise reduction at frequencies above 2 kHz is believed to come principally from the
+smoother flow surface enabled by the diffusion bonded panels. The care and attention to the manufacturing methods
+and assembly also contribute to the background noise reduction as the gaps and steps between panels seems to result
+in very little additional noise. Below 2 kHz, the noise reduction is due to the other components of the improvement
+project, especially the upstream baffles. The noise below 300 Hz is believed to be due to the microphone holder strut
+used in the tunnel. The smallest noise reduction was 7 dB, occuring at 2 kHz. This frequency was previously a local
+minimum and is now a local maximum.
+
+
+                                                                      5
+              Fig. 5 Experimental setup for background noise validation measurements in test section.
+
+                                 110
+
+
+                                 100
+          1/3 Octave Level, dB
+
+
+
+
+                                 90
+
+
+                                 80
+
+
+                                 70
+
+
+                                 60
+                                             2016
+                                             2019
+                                 50
+                                  102                            103                          104
+                                                                        Frequency, Hz
+
+                                        Fig. 6   Example result of background noise new vs old at Mach 0.20.
+
+
+    The usual method of collecting noise data in the facility utilizes a streamwise traversing microphone running the
+length of the test section. This gives data analogous to a model flying past an observer. A new traversing microphone
+probe support has been developed for operational testing, but was not available at the time of this validation testing and
+is not discussed in the present report.
+
+
+                                                                          6
+                                      V. Anechoic Quality Improvement
+    The original goal of the facility improvement project was to reduce the background noise in the test section while
+maintaining the existing sound-absorbing quality provided by the acoustic treatment. The test section needed a smooth
+flow surface, but it should also absorb a very high fraction of the sound energy incident on it. Solid walls for the test
+section would have low roughness noise but would have strong reflections that would make microphone measurements
+problematic. The usual solution for acoustic chambers is to use foam or fiberglass wedges, but this could not be used
+as a flow surface. After extensive testing and analysis, we determined that the two-layer bulk absorber designed for the
+1986 acoustic treatment[8, 20] was excellent and could not be meaningfully improved upon with the space constraint
+of 33 cm (13-inch) deep boxes. The very light upper layer of unwoven Kevlar was retained while the lower layer of
+compressed Kevlar was replaced with a readily available fiberglass batting of the appropriate flow resistivity that did
+not need to be compressed. Details of the updated acoustic treatment are provided in Section 6 of [12]. The anechoic
+quality of the test section was measured using an impulse response method, a reverberation time analysis, and also a
+tone-based draw-away method. The goal of these three tests was to quantify changes to the anechoic quality of the test
+section.
+
+A. Interrupted Noise
+    Measurements of the reverberation time in the 9x15 LSWT were made using a CESVA FP121 dodecahedron
+speaker system. The 12-sided speaker sends sound out in various directions to help ensure the entire space participates
+in the reverberation. The testing method was largely following the specifications for interrupted noise testing described
+in ISO 354.[21] The speaker was placed at the typical model location, as shown in Figure 7, and microphones on tripods
+were placed at the ends of the sideline path traced by the traversing microphone system typically used for acoustic
+measurements. The usual 9x15 acoustics data acquisition system was used[22], composed of B&K 4939 microphones,
+B&K Nexus signal conditioning amplifiers and an RC Electronics DataMAX recorder set to 90 kHz bandwith. The
+provided microphone gridcaps were used as there was no airflow in the test section during these tests. This test was
+conducted with a white noise signal generator. When the speaker was turned on, the test section was “ensonified,”
+or filled with sound. While the recording was active, the sound source was abruptly shut off and the sound field
+decayed. This was repeated 10 times in order to provide some statistical averaging to smooth the results and improve
+interpretation.
+
+
+
+
+Fig. 7 Dodecagon speaker in the 9x15 LSWT test section at the location of a typical fan model. Test conducted
+June 27-18, 2019. Looking upstream from diffuser ramp.
+
+
+
+
+                                                           7
+    The measured time history from the microphone was passed through a digital one-third octave band filter bank,
+which split the signal into 18 time history signals each representing a frequency band from 315 Hz to 20 kHz. The
+dodecahedron speaker does not make significant noise above or below these frequencies. The time histories at each
+frequency were then used to compute a short time sound pressure level with a moving standard deviation window
+of 50 ms length. The 10 filtered samples were then averaged to give a final decibel level time history. An example
+measurement result from the test is given in Figure 8 where the one-third octave band centered at 1 kHz was selected
+as representative of the frequency range. Starting amplitude was set to 0 dB for both measurements. In the data from
+2012, the sound termination results in a quick fall by 15 dB, as the reflections echoing within the test section decay
+away. The same initial decay is more than 30 dB in the 2019 data. Similarly, the secondary reflections occurring
+within the first 0.3 seconds are much steeper in the updated test section. At 0.5 seconds the level in the new test section
+has fallen by 54 dB compared 27 dB in the earlier measurement, although this is probably a combination of audio and
+electrical noise floors.
+
+                                                10
+                                                                                                                     2012
+                                                                                                                     2019
+          1000 Hz One-Third Octave Level, dB
+
+
+
+
+                                                 0
+
+                                               −10
+
+                                               −20
+
+                                               −30
+
+                                               −40
+
+                                               −50
+
+                                               −60
+                                                     −0.4 −0.2   0   0.2   0.4   0.6    0.8    1   1.2   1.4   1.6   1.8    2
+                                                                                 Time, Seconds
+
+       Fig. 8 Interrupted noise example measurement for 1/3 octave band center frequency of 1000 Hz.
+
+    As described in ISO 354, the resulting metric for reverberation time is typically given as RT60, the time required
+for the sound to decay 60 decibels. Directly measuring this would require a source that could produce more than 60
+dB of noise above the noise floor of the room and measurement system. Since this is not always possible, a smaller
+decay is measured and the RT60 is extrapolated from that. Using this method, RT60 was calculated at all frequencies
+measured and is shown in Figure 9. These numbers demonstrate that RT60 measured in the test section was previously
+as long as 2 seconds at frequencies up to 3 kHz. This was noticeable in the test section with a simple hand clap. After
+the acoustic improvement project, RT60 was reduced to less than 0.5 seconds at all frequencies and the facility is
+perceivably anechoic.
+
+B. Impulse Response
+     A relatively common technique for evaluating the acoustic properties of an interior volume is an impulse response
+test. The method is fast and easy with modest equipment requirements and can give useful qualitative information. The
+resulting measurements are not a substitute for a draw-away measurement using a tone source to give a quantifiable
+uncertainty for measurement accuracy, but it is a good complement to the other test methods described in this report.
+Reasonable effort was made to reproduce the test configuration before and after the improvement project, and the same
+measurement and signal processing methods were used. Under these conditions, some quantifiable conclusions can be
+drawn. The impulse response of the 9x15 LSWT was investigated some 20 years previously by Woodward et al.[10],
+with results similar to those presented here for the pre-construction facility.
+
+
+                                                                                   8
+                                         3
+                                                                                                      2012
+                                                                                                      2019
+                                        2.5
+          Reverberation Time, Seconds
+
+                                         2
+
+
+                                        1.5
+
+
+                                         1
+
+
+                                        0.5
+
+
+                                         0
+                                         102                       103                          104
+                                                         One-Third Octave Center Frequencies
+
+                                               Fig. 9 Reverberation time (RT60) measurements.
+
+
+    The impulse for the test was generated using a hand-held starter pistol operated in the usual manner. Three test
+configurations were used, each with two microphones on tripods, oriented vertically to be roughly omni-directional to
+sounds reverberating in the horizontal plane. The microphones and pistol were all positioned at the middle of the test
+section height. The configuration was quite similar to that used in the reverberation time test previously discussed. A
+typical test is shown in Figure 10.
+
+
+
+
+                                               Fig. 10 Impulse response measurement method.
+
+
+
+                                                                     9
+    The ideal measured impulse response would be a delta function. Inside a chamber, reverberations can be reduced
+by never really eliminated. A summary of the impulse response measurements, pre- and post-construction is given in
+Figure 11. A few quantifiable metrics can be pulled from this graph. With a peak signal level of about 120 dB for both
+cases, it is quickly evident that the acoustic improvement project reduced the level of the peak secondary reflection
+from 100 dB to 85 dB. The duration of the reverberation also appears to be reduced from more than 2 seconds to less
+than 0.5 seconds, which is consistent with the interrupted noise result mentioned previously. A more detailed study of
+the reverberations and examination of the geometry of the wind tunnel is given in [13].
+
+                       120
+                                                                                                    2012
+                       110                                                                          2019
+
+
+                       100
+           Level, dB
+
+
+
+
+                       90
+
+                       80
+
+                       70
+
+                       60
+
+                       50
+                        −0.2   0     0.2    0.4    0.6    0.8      1      1.2     1.4     1.6      1.8      2
+                                                            Time, s
+
+                                   Fig. 11 Example result from impulse response test.
+
+    The impulse response test was also used to calculate the sound exposure metric 𝐿 𝑒𝑞 , which is used to quantify
+levels of time-varying signals. This metric is given in Equation 2,
+                                                                           !
+                                                           1 𝑇 𝑝 2 (𝑡)
+                                                             ∫
+                                          𝐿 𝑒𝑞 = 10 log10                𝑑𝑡 ,                                   (2)
+                                                           𝑇 0      𝑝 20
+
+where 𝑇 is the measurement duration, 𝑝 (𝑡) is the sound pressure signal and 𝑝 0 is the reference pressure of 20 𝜇 Pa.
+The amplitude 𝐿 𝑒𝑞 was calculated twice for each curve, using an integration time of 14 ms and then 1 s. The duration
+𝑇 of 14 ms was chosen as representing about 20 dB down from the main peak, while the duration 1 s was chosen
+as capturing most of the large reverberations in the record. An error can then be calculated for each measurement as
+𝐿 𝑒𝑞,1000𝑚𝑠 − 𝐿 𝑒𝑞,14𝑚𝑠 . According to this metric, the error in 𝐿 𝑒𝑞 has been reduced from 0.8 dB to 0.2 dB.
+
+C. Draw Away Tone
+    The most elaborate and sensitive test of the anechoic quality of a space is the draw away test. An omnidirectional
+sound source is placed at a location of interest in the test section. While the speaker is continuously producing a tone,
+a microphone measures the sound level at different locations in the test section. This is typically along a ray passing
+through the center of the speaker, as described by ISO 26101[23], but it could be another path of interest such as the
+traverse sideline. The expected “decay with distance” of the noise is an inverse square law, 1/𝑟 2 , and deviations from
+this are assumed to be due to reflections from the tunnel walls which cause constructive and destructive interference.
+This test is extremely sensitive, but time consuming and requires specialized equipment. A photograph of the setup is
+shown in Figure 12.
+    The results from this measurement are deviations from the inverse square law, computed once the expected
+correction for distance is removed. Near the source, the relative amplitude of the reflections is small and so the error
+
+
+                                                          10
+                                                 Fig. 12 Draw away testing setup used by Vi Acoustics and ETS-Lindgren in 2019.
+
+
+is small. When measuring an acoustically compact source, the microphone measurements should be made as close
+as practical. As the microphone is moved closer to the walls, the reflections increasingly affect the measured tone
+amplitude. Since the test is conducted with a steady tone, a pattern of constructive and destructive interference is
+established in the space being tested. An example measurement is shown in Figure 13, for a draw-away line pointed
+towards the Northeast test section corner. It is readily apparent in this example that the deviations are significantly
+reduced after the tunnel improvement project. The other interpretation for this result is a distance from the source to the
+measurement location that is needed to give measurements with a certain accuracy. This graph shows one measurement
+direction and one frequency, while in total four directions and 20 frequencies were analyzed.
+
+                                                  4
+          Deviations to Inverse Square Law, dB
+
+
+
+
+                                                  2
+
+
+                                                  0
+
+
+                                                 −2
+
+
+                                                 −4
+
+
+                                                 −6
+                                                            2016
+                                                            2019
+                                                 −8
+                                                      600   800 1,000 1,200 1,400 1,600 1,800 2,000 2,200 2,400 2,600 2,800 3,000
+                                                                                    Radius, mm
+
+                   Fig. 13 Draw away deviation result for Northeast upper trihedral direction, 1000 Hz tone.
+
+    The complete results from both test campaigns is given in a pair of comprehensive reports[24, 25], so only a
+summary of the improvement will be reported here. As reported by Schmitt[25], the maximum deviation from the
+inverse square law along the sideline traverse path of the typical NASA survey was reduced at all frequencies above
+500 Hz by an average of 2.5 dB. This is graphically represented in Figure 14, showing the uncertainty levels as shaded
+
+
+                                                                                      11
+bands for different frequencies. In addition to the maximum uncertainty being reduced, the size of the band is much
+smaller, representing a more uniform acoustic field in the test section.
+
+                                     12
+                                                                                                                2016
+                                     10                                                                         2019
+         Estimated Uncertainty, dB
+
+
+
+
+                                      8
+
+                                      6
+
+                                      4
+
+                                      2
+
+                                      0
+
+                                     −2
+                                      102                      103                         104                         105
+                                                              One-Third Octave Center Frequencies
+
+                                            Fig. 14 Summary of new vs old draw away results, estimated error.
+
+     It should be emphasized that this study was conducted with compact sources producing steady tones without
+airflow. By contrast, an engine fan model producing strong tones will be slightly unsteady and turbulence in the
+airflow will further reduce the amplitude of interference patterns. This suggests the results presented here might be
+an overestimation of the tone uncertainty measured from a wind tunnel model. On the other hand, models tested in
+the wind tunnel are often relatively large, so it is not possible to place the microphones far enough away that they are
+acoustically compact, due to the limited size of the test section. Microphone placement thus becomes a compromise
+between trying to be far from both the model and walls. Additionally, the airflow wake of the model should not
+impact the microphones, or vice versa. Advanced signal processing methods for better far-field projection are being
+studied[26].
+
+
+                                                                   VI. Conclusions
+    The acoustic improvement to the 9x15 LSWT resulted in a much quieter background noise level and better overall
+acoustic quality. The use of a micronic wire cloth drastically reduced the roughness noise generated by the airflow
+through the test section. The flow resistance of the micronic cloth is key to the noise reduction, but it slightly decreased
+the acoustic absorption of the individual acoustic panels at frequencies below 3 kHz. This effect was overcome
+through other aspects of the construction, as a re-built test section structure, improved construction quality and acoustic
+improvements around the loop offset this risk and no meaningful negative impact was identified. The new test section
+will enable future quiet models to be tested with confidence for decades to come.
+
+
+                                                                  Acknowledgments
+    The NASA Environmentally Responsible Aviation Project funded the 9x15 LSWT background noise measurements
+conducted in 2012, along with the original study by Jacobs in 2012. The NASA Aeronautics Test Program and
+Aerosciences Evaluation Test Capabilities Portfolio funded the improvement project with support from NASA Glenn
+Research Center. The writing of this report was funded by the NASA Advanced Air Transport Technology project.
+Special thanks to Clif Horne from NASA Ames Research Center for providing a sample panel from the NFAC 40x80
+for us to study. Thanks also to Nathan Alexander at Virginia Tech for leading the roughness noise experimental effort
+there.
+
+
+                                                                           12
+                                                         References
+ [1] Duell, E., Walter, J., Arnette, S., and Yen, J., “Recent Advances in Large-Scale Aeroacoustic Wind Tunnels,” AIAA 2002-2503,
+     2002.
+
+ [2] Spalt, T. B., Brooks, T. F., Bahr, C. J., Plassman, G. E., Becker, L. E., and Stead, D. J., “Calibrations of the NASA Langley
+     14- by 22-Foot Subsonic Tunnel in Acoustic Configuration AIAA 2014-2344,” 20th AIAA/CEAS Aeroacoustics Conference,
+     Atlanta, Georgia, 16-20 June 2014.
+
+ [3] Soderman, P. T., Schmitz, F. H., Allen, C. S., Jaeger, S. M., Sacco, J. N., Mosher, M., and Hayes, J. A., “Design and
+     Development of a Deep Acoustic Lining for the 40-by 80-Foot Wind Tunnel Test Section,” NASA TP-2002-211850, 2002.
+
+ [4] Stephens, D. B., Zante, D. E. V., and Stark, D. E., “Overview of the Acoustic Improvement Program for the 9- by 15-Foot Low
+     Speed Wind Tunnel,” 2021 AIAA AVIATION Forum,, Virtual Event, 2-6 August 2021.
+
+ [5] Agarwal, P., Yen, J. C., Karanikolov, M., Best, S. N., Nagle, P. A., and Duell, E. G., “Computational Verification Analysis of
+     9- by 15- Foot Low Speed Wind Tunnel Acoustic Upgrade Design,” 2021 AIAA AVIATION Forum,, Virtual Event, 2-6 August
+     2021.
+
+ [6] Rinehart, D. A., and Johnson, A. M., “Full Aero-Thermal Characterization of Acoustic Improvements to the 9- by- 15 Foot
+     Low Speed Wind Tunnel,” 2021 AIAA AVIATION Forum,, Virtual Event, 2-6 August 2021.
+
+ [7] Rentz, P. E., “Softwall Acoustical Characteristics and Measurement Capabilities of the NASA Lewis 9 x 15 Foot Low Speed
+     Wind Tunnel,” NASA CR-135025, October 1976.
+
+ [8] Dahl, M. D., and Woodward, R. P., “Comparison between design and installed acoustic characteristics of NASA Lewis 9- by
+     15-foot low-speed wind tunnel acoustic treatment,” NASA TP-2966, 1990.
+
+ [9] Dahl, M. D., and Woodward, R. P., “Acoustical Evaluation of the NASA Lewis 9- by 15-Foot Low Speed Wind Tunnel,” NASA
+     TP-3274, 1992.
+
+[10] Woodward, R. P., Dittmar, J. H., Hall, D. G., and Kee-Bowling, B., “Background Noise Levels Measured in the NASA Glenn
+     9- by 15-Foot Low-Speed Wind Tunnel,” AIAA-95-0720 / NASA TM-106817, 1995.
+
+[11] Stephens, D. B., “The Acoustic Environment of the NASA Glenn 9- by 15-foot Low-Speed Wind Tunnel. AIAA-2015-2684,”
+     21st AIAA/CEAS Aeroacoustics Conference, Dallas, Texas, USA, 22-26 June 2015.
+
+[12] Stephens, D. B., Krupar, M. J., Sedensky, S. J., and Miller, C. J., “9x15 Acoustic Upgrade Part 1: Supporting Studies,”
+     NASA/TM, In Publication.
+
+[13] Stephens, D. B., Krupar, M. J., Sedensky, S. J., and Miller, C. J., “9x15 Acoustic Upgrade Part 2: Improvement Comparison,”
+     NASA/TM, In Publication.
+
+[14] Grissom, D. L., Smith, B., Devenport, W. J., and Glegg, S. A. L., “Rough-Wall Boundary Layer Noise: An Experimental
+     Investigation AIAA 2007-3418,” 13th AIAA/CEAS Aeroacoustics Conference,, Rome, Italy, 5-8 June 2011. doi:https://doi.org/
+     10.2514/6.2007-3418.
+
+[15] Alexander, W. N., and Devenport, W. J., “Noise from Boundary Layer Flow over Fabric Covered Perforate Panels (AIAA
+     2014-2908),” 20th AIAA/CEAS Aeroacoustics Conference, Atlanta, Georgia, 16-20 June 2014.
+
+[16] Alexander, W. N., and Devenport, W. J., “Noise Produced by Fabric and Wire Mesh Covered Panels in Low-Speed Anechoic
+     Wind Tunnels (AIAA-2015-3261),” 21st AIAA/CEAS Aeroacoustics Conference, Dallas, Texas, USA, 22-26 June 2015.
+
+[17] Allen, C. S., Jaeger, S. M., and Soderman, P. T., “Background Noise Sources and Levels in the NASA Ames 40- by 80-Foot
+     Wind Tunnel at the Turn of the Century: A Status Report,” NASA TP-2003-212259, 2003.
+
+[18] Cooper, B. A., “Design and construction of a convertible hemi/anechoic acoustical laboratory for test-
+     ing space flight hardware at the NASA Glenn Research Center,” The Journal of the Acoustical Soci-
+     ety of America, Vol. 108, No. 5, 2000, pp. 2473–2473.      doi:http://dx.doi.org/10.1121/1.4743117, URL
+     http://scitation.aip.org/content/asa/journal/jasa/108/5/10.1121/1.4743117.
+
+[19] Mack, P. E., From engineering science to big science: the NACA and NASA Collier Trophy research project winners, 1998.
+
+[20] Dahl, M. D., and Rice, E. J., “Measured acoustic properties of variable and low density bulk absorbers,” NASA TM-87065,
+     October 1976.
+
+
+                                                               13
+[21] ISO 354:2003(E), “Acoustics — Measurement of sound absorption in a reverberation room,” Standard, International Organi-
+     zation for Standardization, Geneva, CH, May 2003.
+
+[22] Brown, C. A., and Stephens, D. B., “Acoustic Methods Used in the NASA Glenn 9- by 15-Foot Low-Speed Wind Tunnel,”
+     NASA TM-2018-218874, 2018.
+
+[23] ISO 26101:2012(E), “Acoustics — Test methods for the qualification of free-field environments,” Standard, International
+     Organization for Standardization, Geneva, CH, March 2012.
+
+[24] Schmitt, J. G., and Stahnke, B., “9- by 15-Foot Low-Speed Wind Tunnel Acoustic Free Field Evaluation; Part 1: Qualification
+     Report Summary and Part 2: Anechoic Environment Characterization Field Test Report,” NASA CR-2017-219609, August
+     2017.
+
+[25] Schmitt, J. G., and Ramirez, Z., “9- by 15-Foot Low-Speed Wind Tunnel Acoustic Free Field Evaluation After Acoustic
+     Improvement; Part 1: Qualification Report Summary and Part 2: Anechoic Environment Characterization Field Test Report,”
+     NASA CR-2020-5003624, MM 2020.
+
+[26] Shah, P. N., Vold, H., Hensley, D., Envia, E., and Stephens, D., “A High-Resolution, Continuous-Scan Acoustic Measurement
+     Method For Turbofan Engine Applications,” ASME Turbo Expo 2014: Turbine Technical Conference and Exposition, June
+     2014.
+
+
+
+
+                                                              14
+

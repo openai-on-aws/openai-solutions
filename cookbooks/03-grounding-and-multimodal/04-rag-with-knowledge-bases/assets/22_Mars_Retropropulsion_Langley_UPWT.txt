@@ -1,0 +1,827 @@
+Status of Mars Retropropulsion Testing in the Langley
+             Unitary Plan Wind Tunnel
+
+                                               Karl T. Edquist∗
+                         NASA Langley Research Center, Hampton, Virginia 23681
+
+
+       Future Mars human landings will be enabled by a powered descent phase starting at
+    supersonic conditions, something which has never been done before on a Mars mission.
+    Significant aerosciences challenges exist due to jet interactions between the retrorocket en-
+    gine plumes, freestream flow, and vehicle that will affect the aerodynamic behavior during
+    powered descent. Historically, wind tunnel tests have been used to study the interactions
+    with inert gas exhaust simulants in place of rocket engines. On the computational side,
+    flowfield simulations have been completed at full-scale conditions, but the available ground
+    and flight data are not appropriate for calibrating computational uncertainties for aerody-
+    namic interference on proposed Mars descent vehicles, due to insufficient data, dissimilar
+    vehicle geometries, and disparate operating conditions. A wind tunnel test has been de-
+    signed to begin addressing powered descent aerodynamics risks for large-scale human Mars
+    entry concepts and to identify gaps in computational predictive capabilities. The test will
+    be conducted in the NASA Langley Unitary Plan Wind Tunnel and is designed with im-
+    provements in model design and data products over past tests. The test campaign will
+    be run using sub-scale model geometries derived from NASA powered descent reference
+    vehicles: a blunt low lift-to-drag vehicle and a more slender geometry that generates higher
+    unpowered lift. Both models have been fabricated and are ready for testing. The blunt
+    model is equipped with the flexibility to examine the effects of nozzle pointing direction,
+    number, location, size, and area ratio. The main measurements are heatshield aerody-
+    namic interference forces and moments with a custom flow-through balance, discrete and
+    distributed heatshield pressure, and high-speed flowfield visualization. This paper covers
+    the test objectives, facility, models and instrumentation, and planned test matrix.
+
+
+
+
+ ∗ Aerospace Technologist, Atmospheric Flight & Entry Systems Branch, AIAA Associate Fellow, karl.t.edquist@nasa.gov.
+
+
+
+
+                                                       1 of 22
+
+                                 American Institute of Aeronautics and Astronautics
+Nomenclature
+
+Symbols
+
+Ae         nozzle exit area                                                     in2
+Aref       aerodynamic reference area = projected heatshield frontal area       in2
+At         nozzle throat area                                                   in2
+CT         vacuum thrust coefficient = T /q̄Aref
+L/D        aerodynamic lift-to-drag ratio
+Me         nozzle exit Mach number
+M∞         freestream Mach number
+pc         nozzle total pressure                                                psia
+pe         nozzle exit static pressure                                          psia
+q̄         dynamic pressure, 12 ρ∞ V∞ 2
+                                                                                lbf /f t2
+Rn         nozzle exit radial location                                          in
+Rb         heatshield radius                                                    in
+Re∞        tunnel Reynolds number                                               1/f t
+T          thrust                                                               lbf
+                                                                                ◦
+Tc         nozzle total temperature                                               F
+                                                                                ◦
+T0         tunnel total temperature                                               F
+V∞         freestream velocity                                                  m/s
+α          angle of attack                                                      deg
+φ          roll angle                                                           deg
+ρ∞         freestream density                                                   kg/m3
+θcant      angle between nozzle axis and model longitudinal axis                deg
+
+
+Acronyms
+
+
+AI         aerodynamic interference
+CFD        computational fluid dynamics
+EDL        entry, descent, and landing
+HIAD       Hypersonic Inflatable Aerodynamic Decelerator
+HPA        high pressure air
+NASA       National Aeronautics and Space Administration
+PSP        pressure-sensitive paint
+SRP        supersonic retropropulsion
+LUPWT      Langley Unitary Plan Wind Tunnel
+
+
+
+
+                                                 2 of 22
+
+                           American Institute of Aeronautics and Astronautics
+I.    Introduction
+    ver the past decade plus, NASA studies of human-scale Mars entry, descent, and landing (EDL) have
+O    concluded that new technologies are needed to enhance or enable delivering payloads to Mars that
+are much larger than is currently possible.      1–7
+                                             One of the enabling technologies is the use of retrorockets,
+starting at supersonic conditions, in place of a parachute. All studies show that powered descent beginning
+at supersonic conditions, or supersonic retropropulsion (SRP), is an enabling Mars descent technology for
+payloads larger than approximately five metric tons. Supersonic parachutes have been used for all of NASA’s
+successful scientific robotic missions to Mars, but they are not scalable for human exploration payloads (ap-
+proximately 20 metric tons). The largest payload to land on Mars, the Perseverance rover, had a total mass
+of approximately one metric ton. Powered flight has been successfully executed at Mars subsonic conditions,
+but it has never been needed at supersonic speeds. The jet interactions between the exhaust plumes and
+surrounding flowfield result in aerodynamic interference (AI) forces and moments imparted on the entry
+vehicle that are different from normal unpowered aerodynamics. The uncertainties in powered descent AI on
+entry vehicle stability, control, and aeroheating are not well understood within the aerosciences community.
+Thus, there is low confidence in using unvalidated computational fluid dynamics (CFD) methods to predict
+the aerodynamic and aeroheating loads on Mars powered descent vehicles. CFD uncertainties must be in-
+vestigated in much more detail than they have been to date, given how significantly they will factor into the
+overall EDL risk and future mission success for landing humans on Mars.
+
+     The current NASA Mars entry system concepts are shown in Figure 1. The reference vehicles are iden-
+tified by the aerodynamic lift-to-drag ratio (L/D) that they can generate during the hypersonic unpowered
+entry phase of EDL. The first reference vehicle (Low-L/D) is based on a Hypersonic Inflatable Aerodynamic
+Decelerator (HIAD) aeroshell that can generate lift-to-drag ratios similar to what the rigid Mars robotic
+aeroshells can generate (0.24 for the Mars Science Laboratory aeroshell at an angle of attack of about 16
+degrees). The second reference vehicle (Mid-L/D) is based on a more slender rigid aeroshell that has body
+flaps and can generate a higher lift-to-drag ratio (0.54 at a hypersonic trim angle of attack of 55 degrees).
+Both vehicles have been analyzed assuming a total of eight liquid oxygen and methane (LO2 /CH4 ) gas gen-
+erator cycle engines, each producing approximately 100 kN of thrust, in order to execute a powered descent
+phase that ends in landing within 50 meters of the target site.5
+
+
+
+
+(a) Low-L/D (16.4-meter inflatable aeroshell diameter)             (b) Mid-L/D (22-meter rigid aeroshell length)
+
+
+                               Figure 1. Concepts for human Mars entry systems.7
+
+
+   Wind tunnel testing, flight testing, and CFD analysis all will play a critical role in advancing powered
+descent aerosciences. A previous project was used to complete two sub-scale SRP wind tunnel tests8, 9 and
+companion flowfield analyses10–12 that showed promising results in the ability of CFD to capture the primary
+SRP flowfield features. Figure 2 shows example results from a SRP test in the Langley Unitary Plan Wind
+Tunnel (LUPWT) in 2010. The figure shows instantaneous snapshots of a high-speed schlieren video and a
+CFD solution for a single-nozzle model with high-pressure air (HPA) jets. Comparisons of general flowfield
+
+
+                                                         3 of 22
+
+                                   American Institute of Aeronautics and Astronautics
+structure, discrete pressures on the model surface, and dynamic frequencies gave confidence in the ability
+of CFD to capture the key features of a relatively simple retropropulsion flowfield. However, AI forces and
+moments were not measured in the test and the model geometries were not based on current flight-scale
+concepts. A subsequent project was focused on comparing CFD analysis to one of SpaceX’s Falcon 9 first
+stage return flights that used SRP to decelerate the vehicle.13–15 This effort greatly advanced the knowledge
+base for generating large grids and running retropropulsion CFD cases on very large domains with a wide
+range of length scales. Despite differences in geometry and engine configuration compared to current NASA
+Mars concepts, the Falcon 9 flight data provided a valuable opportunity to compare Navier-Stokes codes
+against flight data at Mars-relevant conditions. The CFD results were consistent with the available flight
+data, both of which showed that the total drag force was dominated by the engine thrust during powered
+descent. This is in contrast to more recent CFD calculations that show non-negligible aerodynamic drag for
+NASA Mars concepts, due to the Mars vehicles having significant aerodynamic surface area exposed during
+powered descent and the engine nozzle exit pressures being similar to ambient conditions.16
+
+
+
+
+             (a) Schlieren                                                          (b) Overflow CFD solution
+
+
+Figure 2. Schlieren image (a) and Overflow CFD prediction (b) of a single-nozzle SRP model tested in the
+LUPWT in 2010.11 Black vertical bars in the schlieren image are bars in the tunnel test section window.
+
+
+    A new SRP test has been designed for the LUPWT, with improvements in model geometries and data
+products. Portions of the wind tunnel models are scaled versions of the current Low-L/D and Mid-L/D
+reference vehicles. The outer molds lines and sample engine configurations for both full-scale vehicles are
+shown in Figs. 3 and 4. Other configurations have also been explored for the Low-L/D reference vehicle
+with the engines at different locations on the heatshield.16 Figure 5 shows sample reference trajectories for
+both vehicles, including transition to powered flight at supersonic conditions.
+
+
+
+
+                                                     4 of 22
+
+                               American Institute of Aeronautics and Astronautics
+                 (a) Front view14                                              (b) Side view14
+
+
+Figure 3. Low-L/D Mars powered descent vehicle geometry (16.4-meter maximum diameter, evenly spaced
+engines shown).
+
+
+
+
+                (a) Bottom view14                                              (b) Side view14
+
+
+           Figure 4. Mid-L/D Mars powered descent vehicle geometry (22-meter total length).
+
+
+
+
+                                                    5 of 22
+
+                              American Institute of Aeronautics and Astronautics
+            Figure 5. Mars flight reference trajectories. Thicker lines indicate powered descent.
+
+
+    The planned wind tunnel test was designed to address some of the limitations of past ground test data, and
+will provide a richer SRP data set against which to calibrate CFD models. The test itself is part of a larger
+NASA program17 that seeks to evaluate the capabilities of CFD flow solvers to accurately calculate complex
+flowfields, including SRP. A previous paper18 provided an initial overview of the planned test campaign and
+CFD analysis to date. This paper and a companion paper19 provide updates on the test preparations and
+CFD analysis. Other aspects of the test campaign include additional pre-test CFD analysis details,20, 21 an
+experimental plume visualization seeding method,22 and a custom six-component force and moment bal-
+ance23 developed for the test. The following sections describe the test objectives, wind tunnel facility, model
+designs and instrumentation, and test matrix parameters. Future publications will follow after the comple-
+tion of the test and will include detailed results and uncertainty analysis, direct comparisons between the test
+data and CFD results, and an overall assessment of CFD uncertainties for SRP in a wind tunnel environment.
+
+
+
+II.    Test Objectives
+    The main objective of the planned test is to produce high-quality quantitative SRP data in a wind tunnel
+environment by using test articles and conditions that are as relevant to Mars flight conditions as is possible
+and within constraints of the budget, schedule, and facility. Starting with the model design, the main objec-
+tive was to fabricate sub-scale versions of current Low-L/D and Mid-L/D Mars reference powered descent
+vehicles, at a size suitable for testing in the LUPWT. With those models, the primary goal is to explore the
+effects of different simulated engine nozzle parameters (nozzle location, number, pointing direction, size, area
+ratio, and thrust) and tunnel/model conditions (Mach number, model attitude) on the measured data. Each
+model configuration is to be tested across a range of facility and scaling parameter conditions: freestream
+Mach number (M∞ ), angle of attack (α), roll angle (φ), and engine scaling parameters (primarily thrust
+coefficient, CT ). Measurements are to include direct aerodynamic forces and moments from the heatshield,
+steady-state and high-frequency discrete surface pressures on the external model surfaces, and global steady-
+state heatshield surface pressure using pressure-sensitive paint. A new seeding method will be attempted
+that uses oil droplets injected into the model flow path in order to visualize and measure the exhaust plumes.
+The end goal of the test is to quantify the uncertainties of CFD methods for SRP in a supersonic wind tunnel
+environment.19
+
+
+
+
+                                                      6 of 22
+
+                                American Institute of Aeronautics and Astronautics
+III.     Test Facility
+    The test will be conducted in the NASA Langley Research Center Unitary Plan Wind Tunnel, which is a
+closed-circuit continuous-flow pressure tunnel with two test sections that each have a nominal 4-feet square
+cross section. The tunnel consists of a 100,000 horsepower compressor, a dry air supply and evacuation
+system, a cooling system, and paths that circulate air through either of the two test sections (see Figure 6).
+The Mach number ranges are approximately 1.50 to 2.86 in test section 1 and 2.30 to 4.63 in test section
+2. The SRP test will be conducted in test section 2 (see Figure 7), the same section that was used for a
+2010 SRP test. The tunnel stagnation pressure can be varied up to a maximum of 100 psia in test section
+2. The Mach number is controlled using an asymmetric sliding-block nozzle, which is used to select the
+nozzle-throat to test-section area ratio. A re-characterization of the tunnel was recently completed, which
+quantified non-uniform flow in the test section, with varying Mach number and non-zero flow angularity.24–26
+This information will be used to define inflow conditions for CFD analysis of the SRP models with tunnel
+walls included.
+
+
+
+
+                      Figure 6. NASA Langley Unitary Plan Wind Tunnel complex.8
+
+
+
+
+                                                      7 of 22
+
+                                American Institute of Aeronautics and Astronautics
+                                                 (a) Overview
+
+
+
+
+                                          (b) Model support system
+
+
+                  Figure 7. NASA Langley Unitary Plan Wind Tunnel (test section 2).8
+
+
+    The test section envelope of Mach number and dynamic pressure is shown in Figure 8. Also shown are
+the 2010 SRP test points and the two flight reference trajectories, with portions of the unpowered (thin
+lines) and powered (thick lines) segments for each reference vehicle. Neither trajectory’s Mach number and
+dynamic pressure enters the tunnel’s envelope, which is typical when comparing Mars conditions to wind
+tunnel environments.
+
+
+
+
+                                                    8 of 22
+
+                              American Institute of Aeronautics and Astronautics
+                                    Dynamic Pressure vs. Mach Number
+                         103
+                                                                                  Low-L/D Reference
+                                                                                  Mid-L/D Reference
+                                                                                  Langley UPWT TS2
+                                                                                  Langley UPWT (2010 Test)
+                         102
+               q (kPa)
+                         101
+
+
+                         100
+
+
+                         10 1
+                                0               1              2                  3              4           5
+                                                                        M
+Figure 8. Flight reference trajectories compared to UPWT test section 2 Mach number and dynamic pressure
+envelope. Thicker lines indicate powered descent.
+
+
+    Table 1 summarizes three LUPWT nominal conditions that are planned for the test campaign and have
+been used for CFD calculations to date. The test section re-characterization was accomplished using nine-
+teen five-hole probes mounted to a rake that was swept through the test section envelope (Figure 9). The
+measurements confirmed non-uniform flow in the test section and the results will be used to support overall
+test uncertainties. CFD analysis of the tunnel test section also was completed26 and is used in the CFD
+analysis of the retropropulsion models.19
+
+
+                                       Table 1. Planned LUPWT test conditions.
+
+                                    Condition       M∞      T0 (◦ F )    Re∞ /f t     q̄ (lbf /f t2 )
+                                       5            2.386     125            1           210.34
+                                       20           3.477     125            1           153.22
+                                       35           4.568     150           1.5          167.41
+
+
+
+
+                                                               9 of 22
+
+                                      American Institute of Aeronautics and Astronautics
+                  Figure 9. Flow survey rake used for test section re-characterization.24, 25
+
+
+
+IV.      Wind Tunnel Models
+    The primary goal of the wind tunnel model design effort was to make the models as relevant to current
+human-scale Mars flight reference vehicles as possible. The wind tunnel environment itself is different from
+powered flight conditions at Mars in number of ways, including the freestream gas (air in the tunnel versus
+CO2 at Mars), the Mach and Reynolds numbers, and the plume gases (cold air in the tunnel versus hot com-
+bustion products in flight). However, there are a few aspects of the model design that can be controlled to
+make the test closer to flight. The first is the model heatshield outer mold lines, which will be geometrically
+scaled from the flight geometries. Second, the simulated engine nozzle exit locations for some models will be
+placed on the heatshields at the same radial locations that previously were modeled at flight conditions.16
+Also, some of the Low-L/D models, as well as the single Mid-L/D model, will have nozzle exit areas that
+are the same, relative to the heatshield area, as the set of available flight reference vehicles. This approach
+for scaling the model heatshield geometries and nozzles makes the current test campaign more relevant for
+Mars powered flight compared to previous tests. However, there are several scaling parameters that cannot
+be matched with air as the plume gas.
+
+    The three main aspects of Mars powered flight that are significantly different in a wind tunnel test are
+the thermodynamic properties of the plume gas (ratio of specific heats, molecular weight), the plume gas
+temperature, and the nozzle exit-to-throat area ratio. Whereas the flight reference vehicles assume 177:1
+exit-to-throat area ratio nozzles blowing hot combustion products in front of the vehicle, some concessions
+in the nozzle geometry and plume gas modeling must be made in the wind tunnel model design. First, an
+inert gas must be used in the LUPWT in place of real engines, which do not exist nor are they allowed in the
+tunnel. HPA is already available in the facility and will be used as the exhaust simulant, but it cannot be
+heated above about 250◦ F, which is well below the combustion product gas temperature in a flight engine.
+For the proposed flight engines, the combustion product ratio of specific heats is about 1.28 versus 1.4 for
+air. Finally, since the HPA cannot be heated significantly, the model nozzle area ratios must be significantly
+reduced in order to avoid multi-phase air flow due to low temperatures in the expanded plumes. The baseline
+models will have 4:1 area ratio nozzles, which is the same ratio that was used in the 2010 test campaign.
+
+
+                                                     10 of 22
+
+                                American Institute of Aeronautics and Astronautics
+Using air, the nozzle exit Mach number is 2.94 based on isentropic nozzle relations. One of the Low-L/D
+models will have 11:1 nozzles, which give an exit Mach number of 4. However, the expanded plume gas
+temperatures will reach lower temperatures in front of the model and may lead to liquefaction.
+
+    The Low-L/D and Mid-L/D models are shown in Figure 11 with the external geometry and the internal
+flow path for the HPA, which enters the sting at a 90-degree angle. The model sizes are based on past
+experience with blowing models in the LUPWT. The instrument housing and sting will be common between
+the two models and the remaining components are tailored to each model. The main part of the two model
+geometries that is scaled from flight is the front side of the heatshield. The external geometries elsewhere
+were designed to provide enough internal volume for the instrumentation and HPA flow path.
+
+
+
+
+                                                  (a) Low-L/D
+
+
+
+
+                                                  (b) Mid-L/D
+
+
+         Figure 10. Low-L/D (a) and Mid-L/D (b) model external geometries and HPA flow paths.
+
+
+    Figure 11 shows front views of the two model variations: Low-L/D model with interchangeable nozzle
+inserts (1A through 1F) and Mid-L/D model with a single nozzle configuration (2A). The CFD analysis
+that has been completed to date at Mars flight conditions, as well as intuition, suggests that there are a
+few key nozzle parameters that will affect the plume interference characteristics and hence the magnitude of
+AI forces and moments measured in the wind tunnel. The Low-L/D model will be used to explore some of
+these key parameters by using interchangeable nozzle inserts (see Table 2). Only a single set of nozzles will
+be used in the Mid-L/D model.
+
+
+
+                                                    11 of 22
+
+                               American Institute of Aeronautics and Astronautics
+(a) 1A (Ae /At =4,    θcant =0◦ ,            (b) 1B (Ae /At =4,     θcant =20◦ ,         (c) 1C (Ae /At =4,   θcant =0◦ ,
+Rn /Rb =0.434)                               Rn /Rb =0.434)                              Rn /Rb =0.434)
+
+
+
+
+(d) 1D (Ae /At =11,   θcant =0◦ ,            (e) 1E (Ae /At =4,     θcant =20◦ ,         (f) 1F (Ae /At =4,   θcant =5◦ ,
+Rn /Rb =0.434)                               Rn /Rb =0.6)                                Rn /Rb =0.434)
+
+
+
+
+                                              (g) 2A (Ae /At =4, θcant =10◦ )
+
+
+Figure 11. Wind tunnel models with a common heatshield and interchangeable nozzle inserts for the Low-L/D
+model (1A through 1F). Red circles are locations of steady-state pressure measurements. Pink and gray circles
+are locations of high-frequency pressure measurements.
+
+
+    The key nozzle parameters for both models are shown in Table 2: nozzle  P   radial location on the heatshield
+(Rn /Rb ), cant angle (θcant ), nozzle total exit-to-heatshield area ratio ( Ae /Aref ), nozzle exit-to-throat area
+ratio (Ae /At ), and nozzle exit Mach number from compressible flow theory (Me ).
+
+    Figure 12 shows the model 1A design with the HPA flow path visible. The flow path was designed to
+accommodate a single HPA stream that delivers the same plenum conditions to all nozzles at the same
+time. The HPA flow path contours were designed to reduce turning angles, which keeps total pressure and
+temperature losses to an acceptable level. All nozzles will have 15-degree conical convergent and divergent
+sections, with a short straight section for the throat. The nozzle exits are scarfed to follow the heatshield
+surface contour. Figure 13 shows the model 1A design mounted to sting and tunnel support hardware.
+
+
+
+                                                         12 of 22
+
+                                    American Institute of Aeronautics and Astronautics
+                     Table 2. Model parameters compared to flight reference vehicles.
+                                                                      P
+                    Geometry            Rn /Rb          θcant (deg)       Ae /Aref   Ae /At   Me
+                 Low-L/D (Flight)        0.434                5           0.062       177     5.6
+                       1A                0.434                0           0.062         4     2.94
+                       1B                0.434               20           0.062         4     2.94
+                       1C                0.434                0           0.112         4     2.94
+                       1D                0.434                0           0.062        11     4.03
+                       1E                 0.6                20           0.062         4     2.94
+                       1F            0.434 (paired)           5           0.062         4     2.94
+                 Mid-L/D (Flight)       N/A                  10           0.051       177     5.6
+                       2A            Same as flight          10           0.051        4      2.94
+
+
+
+
+                     Figure 12. Low-L/D model design with HPA internal flow path.
+
+
+
+
+                Figure 13. Low-L/D model design mounted to sting and support hardware.
+
+
+   Figure 14 shows pictures of fabricated model hardware taken during inspection. A fit check of all parts
+was completed successfully, including all nozzle inserts and pressure instrumentation connections.
+
+
+
+
+                                                      13 of 22
+
+                               American Institute of Aeronautics and Astronautics
+    (a) Low-L/D heatshield with nozzle inserts removed                  (b) Low-L/D heatshield with nozzle inserts
+
+
+
+
+(c) Low-L/D heatshield with main plenum and instrument              (d) Mid-L/D heatshield with nozzle inserts removed
+housing
+
+
+
+
+        (e) Mid-L/D heatshield with nozzle inserts            (f) Mid-L/D heatshield with main plenum and instrument
+                                                              housing
+
+                                            Figure 14. Model hardware.
+
+
+
+
+                                                         14 of 22
+
+                                  American Institute of Aeronautics and Astronautics
+V.      Instrumentation
+   The upcoming test will incorporate some of the same types of measurements that were last used in the
+2010 UPWT SRP test,8 in addition to new measurement techniques aimed specifically at the SRP problem.
+Table 3 summarizes pressure and temperature measurements to be taken. As was done in 2010, static and
+unsteady pressure will be measured at discrete locations on the external model surfaces and inside the flow
+path. The external measurements will include static pressure taps and Kulites on the heatshield front and
+rear surfaces where the most important interactions between the nozzle plumes and external flow are ex-
+pected to occur; these measurements will be directly compared to unsteady and time-averaged CFD results.
+Pressure measurements inside the model flow path will provide a status of the blowing HPA flowing through
+the models. Finally, pressure measurements on the tunnel upper wall may be used to assess the possible
+impact of the retropropulsion flowfield on the tunnel freestream conditions, such as excessive blockage or
+unstart. Figure 15 shows the model pressure and temperature measurement locations and Figure 16 shows
+pressure tap locations on the tunnel upper wall.
+
+
+        Table 3. Model and tunnel pressure and temperature measurements with number of locations.
+
+                                                   Steady discrete    Unsteady discrete   Steady     Discrete
+                                      Location        pressure            pressure         PSP     Temperature
+                         Model HPA flow path              0                    2          N/A          1
+             Low-L/D model heatshield (front)            20                    6          Yes          0
+              Low-L/D model heatshield (rear)             2                    4          No           0
+                    Mid-L/D model heatshield             20                   15          Yes          0
+                      Model centerbody (side)            29                    4          No           0
+            Tunnel nozzle section (upper wall)           80                    0          N/A         N/A
+               Tunnel test section (upper wall)          21                    0          N/A         N/A
+     Tunnel model support section (upper wall)           18                    0          N/A         N/A
+
+
+
+
+                                                       15 of 22
+
+                                  American Institute of Aeronautics and Astronautics
+               (a) HPA flow path                                      (b) Low-L/D heatshield (front)
+
+
+
+
+  (c) Low-L/D heatshield (rear) and centerbody                 (d) Low-L/D heatshield (rear) and centerbody
+
+
+
+
+         (e) Mid-L/D heatshield (front)                               (f) Mid-L/D heatshield (front)
+
+
+Figure 15. Model discrete pressure (”P” = steady, ”K” = unsteady) and temperature measurements.
+
+
+
+
+                                                  16 of 22
+
+                             American Institute of Aeronautics and Astronautics
+                                 Figure 16. Tunnel pressure measurements.
+
+
+    Pressure-sensitive paint (PSP) will be applied to the front sides of both model heatshields in order to
+provide steady-state pressure distributions that can be directly compared to time-averaged CFD pressures. A
+high-speed digital camera will be used to record schlieren video in order to capture the dynamic interactions
+between the nozzle plumes, model, and tunnel flow. Frame rates between 5,000 and 10,000 frames per second
+were used for the 2010 test; a similar rate is expected to suffice for the upcoming test. The high-speed video
+will provide quantitative data, such as observed unsteady frequencies and bow shock standoff distances, as
+well as a qualitative picture of the overall aerodynamic-propulsive interaction flowfield.
+
+    Delays in the facility and testing schedule allowed time for a new nozzle plume seeding device22 and
+flow-through force and moment balance23 to be designed and built after the models were fabricated. The
+seeding method shown in Figure 17 is based on a Venturi contraction that draws oil particles into the HPA
+flow path and out the nozzles, where a laser sheet is used to observe the particles. The seeding method is
+considered experimental for the upcoming test. The force and moment balance was designed specifically to be
+retro-fitted to the models in order to measure six-component forces and moments during testing. Figure 18
+shows the balance design and hardware. The balance is designed to optimize accuracy in the axial force
+measurement, which is of high interest for powered flight. A shield was designed so that the balance will
+measure forces and moments generated by the heatshield only. The flow adapters are designed to direct the
+flow into and out of the balance section with manageable total pressure loss. Thrust measurements will be
+made on the balance with the tunnel off to provide curves of thrust versus HPA total pressure. The measured
+thrust will be subtracted from the measurements that are taken during the test in order to isolate the aero-
+dynamic contributions from the model heatshield. The balance will provide the first known measurement
+of six-component forces and moments in a retropropulsion wind tunnel test. Direct comparisons between
+the balance measurements and CFD solvers will be the primary metric for assessing predictive modeling
+capabilities.
+
+
+
+
+                                                     17 of 22
+
+                                American Institute of Aeronautics and Astronautics
+                                           Figure 17. Plume seeding concept.
+
+
+
+
+      (a) Balance design with shield and flow adapter                                   (b) Balance
+
+
+
+
+                  (c) Balance and shield                                          (d) Flow adapters
+
+                              Figure 18. Six-component force and moment balance.
+
+
+
+VI.      Test Matrix
+   The test matrix for each model is designed to investigate plume/flowfield interactions as a function of
+the main model and facility parameters: nozzle configuration, nozzle thrust, model angle of attack and roll
+angle, and tunnel Mach number. Each model will be tested with plugged nozzles in order to measure surface
+pressures and aerodynamic forces and moments and to compare to unpowered CFD cases and to previously
+
+
+                                                        18 of 22
+
+                                   American Institute of Aeronautics and Astronautics
+measured values for similar geometries. For blowing cases, the strategy will be to test each model for a
+range of HPA total pressures over a range of model angles of attack and roll angles at each tunnel condition.
+The range of HPA total pressure used for each model will be selected to follow a specific schedule of thrust
+coefficients that is common across all blowing model configurations. The thrust coefficient upper bound for
+each model will be based on whether tunnel interference or blockage is observed.
+
+    The priorities for the test are as follows. First, the Low-L/D model will be given higher priority because
+it is believed to be the more likely full-scale vehicle and because the model was designed to observe the
+effects of various nozzle parameters. Second, the lowest Mach number (2.386 for tunnel condition 5) will be
+prioritized in the test matrix because it is closest to the predicted in-flight Mach number at the start of SRP.
+If the high-speed video and PSP methods do not permit simultaneous operation, due to insufficient room
+for equipment next to the test section window, the video will be given higher priority. Finally, the force and
+moment balance measurements will be given priority over all other measurements due to the importance of
+having those measurements for CFD assessment. The plume seeding technique likely will be done at the end
+of the test campaign due to its experimental nature and the unknown effects of the seeding oil on the model
+and tunnel.
+
+
+                                       Table 4. Test matrix parameters.
+
+                          Parameter              Low-L/D Model                  Mid-L/D Model
+                     Configurations    1 (plugged), 1A, 1B, 1C, 1D, 1E, 1F      2 (plugged), 2A
+                   Tunnel conditions                 5, 20, 35                      5, 20, 35
+                      HPA pc (psia)                 up to 1500                     up to 1500
+                       HPA Tc (◦ F )                 up to 250                     up to 250
+                      Model α (deg)                  -10 to 20                      80 to 110
+                      Model φ (deg)                0, 22.5 or 45                        0
+
+
+    Figure 19 shows example test points at three different tunnel Mach numbers for model 1A for a range of
+HPA total pressures (pc ). During the test at each model angle of attack and roll angle, the HPA pressure
+will be adjusted to select a range of common thrust coefficients in order to explore AI versus that scaling pa-
+rameter. The nozzle exit pressure divided by the freestream stagnation pressure (pe /p0,2 ), another common
+plume scaling parameter, is an indication of how the nozzle plume will behave in terms of overall dimensions
+and dynamic behavior. The plan for the test is to investigate each model for both over-expanded conditions,
+where the nozzle exit pressure is lower than local ambient pressure in the shock layer, and under-expanded
+conditions where the exit pressure is higher. The boundary between over- and under-expanded nozzles is
+not well understood even for simple single-nozzle configurations, and the physics are more complicated for
+multi-engine configurations and non-zero angles of attack.27 Coincidentally, the Low-L/D flight reference
+vehicle with 177:1 engine nozzles has a pressure ratio of unity near the start of powered descent. Finally,
+because the nozzle gas (air) and area ratios for the wind tunnel models are different than a real rocket engine,
+flight values for CT and pe /p0,2 cannot be matched at the same time in the wind tunnel environment. This
+reason, along with others discussed previously, means that the wind tunnel test data cannot be treated as a
+true sub-scale version of flight.
+
+
+
+
+                                                     19 of 22
+
+                                American Institute of Aeronautics and Astronautics
+                                                    Model: AETC 1A, Ae/At = 4.0, Dt = 0.155 in                                             Model: AETC 1A, Ae/At = 4.0, Dt = 0.155 in
+                                              Tc = 250 oF, Neng = 8, cant = 0 deg, cone = 15 deg                                     Tc = 250 oF, Neng = 8, cant = 0 deg, cone = 15 deg
+Vacuum CT = Total Vacuum Thrust / (q Aref)   6                                                                                      6
+
+                                             5                                                         400                          5                                                        400
+
+
+                                             4                                                                                      4
+                                                                                                       300                                                                                   300
+
+
+
+
+                                                                                                           pc (psia)
+
+
+
+
+                                                                                                                                                                                                 pc (psia)
+                                                                                                                       pe / p0, 2
+                                             3                                                                                      3
+                                                                                                       200                                                                                   200
+                                             2                                                                                      2
+                                                                                                       100                                                                                   100
+                                             1                                                                                      1
+
+                                             0                                                         0                            0                                                        0
+                                              1.0     1.5   2.0   2.5   3.0   3.5   4.0    4.5   5.0                                 1.0     1.5   2.0   2.5   3.0   3.5   4.0   4.5   5.0
+                                                                        M                                                                                      M
+                                                                  (a) Thrust coefficient                                (b) Ratio of nozzle exit pressure to freestream post-shock stag-
+                                                                                                                        nation pressure
+
+       Figure 19. Sample Low-L/D model 1A thrust coefficients (a) and nozzle exit pressure ratios (b) for a range
+       of nozzle total pressures (using one-dimensional isentropic nozzle equations). Reference powered flight trajec-
+       tories with 177:1 engine nozzles are shown as black dashed lines.
+
+
+
+
+                                                                                                               20 of 22
+
+                                                                                    American Institute of Aeronautics and Astronautics
+VII.      Summary and Conclusions
+    A sub-scale test will be run in the NASA Langley Research Center Unitary Plan Wind Tunnel test section
+2 in order to investigate aerodynamic interference effects due to simulated retrorocket nozzle plumes at super-
+sonic freestream conditions (supersonic retropropulsion). The main test objective is to collect data on wind
+tunnel models that are derived from current NASA human-scale Mars powered descent vehicles, using air as
+the simulated engine gas. Two wind tunnel models were designed and fabricated to be geometrically-scaled
+versions of the current flight reference vehicles: a blunt sphere-cone vehicle and a more slender geometry.
+Both models accommodate up to eight blowing nozzles, like the flight reference vehicles, and the blunt heat-
+shield has interchangeable nozzle inserts that will allow different nozzle parameters to be investigated for
+their effects on aerodynamic interference: location on heatshield, pointing direction, exit area divided by
+heatshield area, and exit area divided by throat area. The test data will consist of six-component forces
+and moments using a custom flow-through balance, high-speed schlieren video, steady and high-frequency
+discrete surface pressures, global surface pressure using pressure-sensitive paint, and internal flow path pres-
+sure and temperature. An experimental method for visualizing the nozzle plumes was developed and will
+be part of the test campaign. The post-test analysis and documentation will include extensive uncertainty
+quantification of both the data and parallel computational flowfield simulations at tunnel conditions.
+
+
+
+Acknowledgments
+    The wind tunnel model design, fabrication, and facility time are funded by NASA’s Aerosciences Evalu-
+ation and Test Capability program office under the Aeronautics Research Mission Directorate.
+
+  Nicholas Marino and Donald Morr of Millennium Engineering and Integration Services completed the
+model designs for fabrication.
+
+
+
+
+                                                     21 of 22
+
+                                American Institute of Aeronautics and Astronautics
+References
+      1 Braun, R. D., and Manning, R. M., “Mars Exploration Entry, Descent, and Landing Challenges,” Journal of Spacecraft
+
+and Rockets, Vol. 44, No. 2, 2007, pp. 310–323.
+      2 Dwyer-Ciancolo, A. M., et al, “Entry, Descent and Landing Systems Analysis Study: Phase 1 Report,” NASA TM
+
+216720, National Aeronautics and Space Administration, July 2010.
+      3 Dwyer-Ciancolo, A. M., et al, “Entry, Descent and Landing Systems Analysis Study: Phase 2 Report on Exploration
+
+Feed-Forward Systems,” NASA TM 217055, National Aeronautics and Space Administration, February 2011.
+      4 Edquist, K. T., Korzun, A. M., Dyakonov, A. A., Studak, J. W., Kipp, D. M., and Dupzyk, I. C., “Development
+
+of Supersonic Retropropulsion for Future Mars Entry, Descent, and Landing Systems,” Journal of Spacecraft and Rockets,
+Vol. 51, No. 3, 2014, pp. 650–663.
+      5 Cianciolo, A. D., and Polsgrove, T. T., “Human Mars Entry, Descent, and Landing Architecture Study Overview,” AIAA
+
+Paper 2016-5494, September 2016.
+      6 Cianciolo, A. D., and Polsgrove, T. T., “Human Mars Entry, Descent and Landing Architecture Study: Phase 2 Summary,”
+
+AIAA Paper 2018-5191, September 2018.
+      7 Cianciolo, A. D., Korzun, A., Edquist, K., Samareh, J., Sostaric, R., Calderon, D., and Garcia, J. A., “Human Mars
+
+Entry, Descent and Landing Architecture Study: Phase 3 Summary,” AIAA Paper 2020-1509, January 2020.
+      8 Berry, S. A., Rhode, M. R., and Edquist, K. T., “Supersonic Retropropulsion Validation Experiment in the NASA Langley
+
+Unitary Plan Wind Tunnel,” Journal of Spacecraft and Rockets, Vol. 51, No. 3, 2014, pp. 664–679.
+      9 Berry, S. A., Rhode, M. R., and Edquist, K. T., “Supersonic Retropropulsion Experimental Results from NASA Ames
+
+9×7 Foot Supersonic Wind Tunnel,” Journal of Spacecraft and Rockets, Vol. 51, No. 3, 2014, pp. 724–734.
+     10 Zarchi, K. A., Schauerhamer, D. G., Kleb, W. L., Carlson, J.-R., and Edquist, K. T., “Analysis of Navier-Stokes Codes
+
+Applied to Supersonic Retropropulsion Wind–Tunnel Test,” Journal of Spacecraft and Rockets, Vol. 51, No. 3, 2014, pp. 680–
+692.
+     11 Schauerhamer, D. G. Zarchi, K. A., Kleb, W. L. Carlson, J.-R., and Edquist, K. T., “Supersonic Retropropulsion
+
+Computational Fluid Dynamics Validation with Langley 4x4 Foot Test Data,” Journal of Spacecraft and Rockets, Vol. 51,
+No. 3, 2014, pp. 693–714.
+     12 Schauerhamer, D. G. Zarchi, K. A., Kleb, W. L., and Edquist, K. T., “Supersonic Retropropulsion Computational-Fluid-
+
+Dynamics Validation with Ames 9x7 Foot Test Data,” Journal of Spacecraft and Rockets, Vol. 51, No. 3, 2014, pp. 735–749.
+     13 Braun, R. D., Sforzo, B., and Campbell, C., “Advancing Supersonic Retropropulsion Using Mars-Relevant Flight Data:
+
+An Overview,” AIAA Paper 2017-5292, September 2017.
+     14 Edquist, K. T., et al, “Comparison of Navier-Stokes Flow Solvers to Falcon 9 Supersonic Retropropulsion Flight Data,”
+
+AIAA Paper 2017-5296, September 2017.
+     15 Sforzo, B. and Braun, R. D., “Feasibility of Supersonic Retropropulsion Based on Assessment of Mars-Relevant Flight
+
+Data,” AIAA Paper 2017-5295, September 2017.
+     16 Korzun, A., Canabal, F., Tang, C., Childs, R., Van Norman, J., Tynis, J., and Bibb, K., “Powered Descent Aerodynamics
+
+for Low and Mid Lift-to-Drag Human Mars Entry, Descent and Landing Vehicles,” AIAA Paper 2020-1510, January 2020.
+     17 Ross, J. C., et al, “Evaluation of CFD as a Surrogate for Wind-Tunnel Testing for Mach 2.4 to 4.6 - Project Overview,”
+
+AIAA Paper 2021-2961, August 2021.
+     18 Edquist, K. T., Korzun, A. M., Kleb, B., Hawke, V. M., Rizh, Y. M., Olsen, M. E., Canabal, F., “Model Design and
+
+Pre-Test CFD Analysis for a Supersonic Retropropulsion Wind Tunnel Test,” AIAA Paper 2020-2230, January 2020.
+     19 Edquist, K. T., Alter, S. J., Glass, C. E., Kleb, W. L., Korzun, A. M., Wood, W. A., Childs, R. E., Halstrom, L. D.,
+
+Matsuno, K. V., and Canabal, F., “Computational Modeling of Mars Retropropulsion Concepts Tested in the Langley Unitary
+Plan Wind Tunnel,” AIAA Paper 2022-XXXX, January 2022.
+     20 Halstrom, L. D., Pulliam, T. H., Childs, R. E., and Stremel, P. M., “OVERFLOW Analysis of Supersonic Retropropulsion
+
+Testing on a Blunt Mars Entry Vehicle Concept,” AIAA Paper 2022-XXXX, January 2022.
+     21 Matsuno, K. V., Childs, R. E., Stremel, P. M., Garcia, J. A., and Pulliam, T. H., “OVERFLOW Analysis of Supersonic
+
+Retropropulsion Testing on the CobraMRV Mars Entry Vehicle Concept,” AIAA Paper 2022-XXXX, January 2022.
+     22 Acharya, A. S., Lowe, K. Todd, Danehy, P. M., Edquist, K. T., Burns, R. A., and Pham, H. T., “Seeding Method for
+
+Velocimetry and Visualization of Supersonic Retropropulsion Nozzle Plumes,” AIAA Paper 2022-XXXX, January 2022.
+     23 Burns, D. E., Parker, P. A., Cagle, C. M., Hawke, V. M., Tor, K. G., and Kleb, B., “A New Flow-Through Wind Tunnel
+
+Balance for Retropropulsion Testing,” AIAA Paper 2022-XXXX, January 2022.
+     24 Rhode, M. N., et al, “Flow Characterization of the NASA Langley Unitary Plan Wind Tunnel, Test Section 2: Experi-
+
+mental Results,” Aiaa presentation, August 2021.
+     25 Hubbard, E. P., and Houlden, H. P., “Evaluation of CFD as a Surrogate for Wind-Tunnel Testing: Experimental
+
+Uncertainty Quantification for the UPWT Flow Survey Test,” AIAA Paper 2021-2962, August 2021.
+     26 Childs, R. E., et al, “Flow Characterization of the NASA Langley Unitary Plan Wind Tunnel, Test Section 2: Compu-
+
+tational Results,” AIAA Paper 2021-2963, August 2021.
+     27 Korzun, A. M., and Cassel, L. A., “Scaling and Similitude in Single Nozzle Supersonic Retropropulsion Aerodynamics
+
+Interference,” AIAA Paper 2020-0039, January 2020.
+
+
+
+
+                                                           22 of 22
+
+                                    American Institute of Aeronautics and Astronautics
+

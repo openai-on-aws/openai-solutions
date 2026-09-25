@@ -1,0 +1,431 @@
+NASA ERA Integrated CFD for Wind Tunnel
+Testing of Hybrid Wing-Body Configuration
+
+Joseph A. Garcia, John E. Melton, Michael Schuh, Kevin D. James,
+Kurt R. Long
+NASA Ames Research Center
+
+Dan D. Vicroy, Karen A. Deere, James M. Luckring,
+Melissa B. Carter, Jeffrey D. Flamm
+NASA Langley Research Center
+
+Paul M. Stremel, Ben E. Nikaido,
+Robert E. Childs
+Science and Technology Corporation
+
+
+
+
+               AIAA SciTech 2016, Jan 4-8 2016, San Diego, CA
+www.nasa.gov
+Outline
+
+  • Overview
+  • Efficient Use of Multiple CFD tools
+  • CFD Quality Assessment
+  • CFD Wind Tunnel Support
+  • Lessons Learned and Simulation
+    Guidelines
+  • Conclusions
+
+
+
+                                          2
+Overview
+
+• ERA Project explored various
+  enabling technologies to reduce
+  environmental impact of aviation.
+• Wind tunnel tests performed to
+  evaluate propulsion-airframe
+  interference effects.
+• Extensive CFD was used to assist these tests in producing
+  high quality data with minimal hardware interference and
+  extrapolation to flight.
+• High-level summary of how NASA utilized multiple CFD
+  simulations tools in support of the wind tunnel test.
+• CFD simulation guidelines based on post-test aerodynamic
+  data.
+                                                              3
+            CFD Solvers and Methods
+
+                                      • 3 NASA’s CFD Solvers utilized:
+Efficient use of Multiple CFD Tools
+
+
+
+                                         – OVERFLOW
+                                            • Overset grids via the Chimera Grid Tools
+                                            • SA and SST turbulence model
+                                         – USM3D
+                                            • Unstructured tetrahedral meshes via TetrUSS GridTool
+                                            • SA turbulence model
+                                         – FUN3D
+                                            • Unstructured prismatic/tetrahedral meshes via AFLR3
+                                            • SA turbulence model
+                                      • 1 Commercial CFD Solver utilized:
+                                         – STAR-CCM+
+                                            • Unstructured prismatic/polyhedral meshes
+                                            • SST turbulence model                                   4
+            Geometry and Mesh Generation
+                                         Sample Overflow Mesh
+Efficient use of Multiple CFD Tools
+
+
+
+
+                                                                          Sample FUN3D Mesh
+
+
+
+
+                                      Sample USM3D Mesh
+
+
+                                                                Sample STAR-CCM+ Mesh
+
+
+
+
+                                                                                          5
+       CFD Quality Assessment
+                         ‘Miniwall’ Application
+CFD Quality Assessment
+
+
+
+
+                                                  6
+       CFD Wind Tunnel Support
+
+                          CFD was used to provide highest quality
+                          experimental testing
+CFD Wind Tunnel Support
+
+
+
+
+                          • Sting selection
+                          • Ejector selection
+                          • Acoustic array selection
+                          • 40’x80’ sting installation
+
+
+
+
+                                                                    7
+       Sting Selection
+                                     Long Aft Sting    Long Forward Sting
+CFD Wind Tunnel Support
+
+
+
+
+                                     Short Aft Sting   Short Forward Sting
+
+
+
+
+                          OVERFLOW: M∞= 0.2
+
+
+
+
+                                                                   *Simulations run in free air   8
+       Sting Selection
+                           OVERFLOW: M∞= 0.2 α = 12°
+                               ∆Cp= (CpSting_conf - CpClean)
+                          β = 0°                               β = 20°   USM3D: M∞= 0.2 α = 20°
+CFD Wind Tunnel Support
+
+
+
+
+                                                                             Long Forward Sting
+
+
+
+
+                          β = 0°                               β = 20°
+                                                                            Short Forward Sting
+
+
+
+
+                                                                              *Simulations run in free air
+                                                                                                             9
+       Ejector selection
+                                                               Short Ejector   Long Ejector
+                          Overflow: M∞= 0.2 α = 20°
+CFD Wind Tunnel Support
+
+
+
+
+                          ∆Cp= (CpEjector_conf - CpClean)
+
+
+
+
+                                  ∆Cp= (CpShortEject - CpLongEject)
+
+
+
+
+                            *Simulations run in free air                                      10
+       40’x80’ Acoustic array selection
+                                                                                         Vertical Placement
+                          Array at 24” below                                                        Array at 48” below                                   Array at 96” below
+CFD Wind Tunnel Support
+
+
+
+
+                                                         STAR-CCM+: M∞= 0.2                                                                   40’x80’ Wind tunnel data
+                           Pitching Moment Coefficient
+
+
+
+
+                                                                                                                Pitching Moment Coefficient
+
+
+
+                                                            No Array, Landing in 40x80, STAR-CCM+                                                                             40x80 Run 009
+                                                            Array 24 inches below wing, STAR-CCM+                                                   Array 48 inches below wing, 40x80 Run 180
+                                                            Array 48 inches below wing, STAR-CCM+
+                                                            Array 96 inches below wing, STAR-CCM+
+
+
+
+                                                                   Angle of Attack                                                                      Angle of Attack
+
+                                                                                                                                                  * Simulations run with walls and supports     11
+       40’x80’ Acoustic array selection
+                                              Horizontal Placement
+                          60° Directivity          90° Directivity              120° Directivity
+                                               FUN3D: M∞= 0.2 α = 12°
+CFD Wind Tunnel Support
+
+
+
+
+                               Cp comparison with and without Array at ~ 75% Span location
+
+                                            ~ 75%                   ~ 75%                                     ~ 75%
+
+
+
+
+                                                                        * Simulations run with walls and supports     12
+       40’x80’ sting installation
+CFD Wind Tunnel Support
+
+
+
+
+                          Original step collar                   No collar                          Faired collar
+
+
+
+                                                          STAR-CCM+: M∞= 0.2
+                            Pitching Moment Coefficient
+
+
+
+
+                                                                No Collar, STAR-CCM+
+                                                            Original Collar, STAR-CCM+
+                                                             Faired Collar, STAR-CCM+
+
+
+
+
+                                                                 Angle of Attack
+                                                                                         * Simulations run with walls and supports   13
+Lessons Learned & Simulation Guidelines
+
+
+
+
+                                            Lessons Learned
+                                                    &
+                                          Simulation Guidelines
+
+
+
+                                                                  14
+             Support Post Unsteadiness
+                                          Original Post           No Post                  Modified Post
+Lessons Learned & Simulation Guidelines
+
+
+
+
+                                                          FUN3D: M∞= 0.2 α = 12°
+
+
+
+
+                                                                                                  Time accurate run
+                                                          Time accurate run
+
+
+
+
+                                                                          ∆CL %    ∆CD%
+                                                                no post    -4.6%    6.4%
+                                                          modified post   -0.53%   0.35%
+                                                                                              * Simulations run with walls   15
+             High Alpha CFD flow predictions
+                                                        Dependency on time integration process
+Lessons Learned & Simulation Guidelines
+
+
+                                              Landing Krueger
+                                                                                                 Krueger structural bracket
+
+
+
+
+                                                                    FUN3D: M∞= 0.2 α = 20°
+                                                         Non-Time Accurate                 Time Accurate
+                                                                                                              (DT=20, 25 subiteraions)
+                                                                                                                        Experimental Value
+
+
+
+                                                                                                                          ~10% drop in
+                                                                                                                          Lift coefficient
+
+
+
+
+                                          *similar results obtained with Star-CCM+ using the SST turbulence model and with OVERFLOW using SA model.   16
+             High Alpha CFD flow predictions
+                                          Time accuracy study effect on HWB landing configuration
+Lessons Learned & Simulation Guidelines
+
+
+
+                                                           FUN3D: M∞= 0.2 α = 20°
+
+                                                              Experimental Value
+
+
+
+                                                                                     ~10% drop in
+                                                                                     Lift coefficient
+
+
+
+
+                                                                                                        17
+             High Alpha CFD flow predictions
+                                                                          FUN3D: M∞= 0.2 α = 20°
+Lessons Learned & Simulation Guidelines
+
+
+                                               DT=10, 10 subiterations                                            DT=10, 100 subiterations
+                                          Lift coefficient subiteration                                                Lift coefficient subiteration
+
+
+
+
+                                                                          Residual subiteration Convergence
+
+                                                      Turbulence                                              Turbulence
+
+
+
+                                                       Flow variables
+                                                                                                          Flow variables
+
+
+
+
+                                                                                                                                                  18
+Conclusions
+ • CFD was an integral part of NASA’s ERA project.
+    – Supported experimentalists in evaluating interference
+    – Provided alternate support options to reduce unwanted effects
+ • Efficient use of multiple CFD solvers successfully used to
+   provide timely insight.
+    – NASA’s CFD solvers: OVERFLOW, USM3D, and FUN3D
+    – Commercial CFD solver STAR-CCM+
+ • CFD analyst worked side-by-side with wind tunnel
+   experimentalists throughout entire project.
+    – Enabled direct knowledge on specific testing setup
+    – Provided key insight to how test data was measured and post-
+      processed for later CFD analysis.
+ • Lessons Learned and CFD simulation guideline
+   development possible due to available test data.
+                                                                 19
+Acknowledgements
+  • The NASA ARMD Environmentally Responsible
+    Aviation Project provided multi-year funding for both the
+    wind tunnel testing and CFD analysis.
+  • Boeing support staff played an integral part in the
+    success of the tests
+
+
+
+
+                                                                20
+21
+Time Step Selection Rationale
+
+The rationale used to select these CFD time steps was to express them in terms of
+a physical vortex shedding Strouhal number (St) of 0.25. This was done since the
+nominal Strouhal number of many unsteady separated wake flows tends to fall into
+a small range between 0.15 and 0.25. Further, the Strouhal number is defined as:
+St = fL/U. Where, f is the frequency, L is the relevant length scale, and U is the
+relevant velocity. In order to express St in terms mof a CFD time step (DT), the
+Strouhal number equation is rewritten such that the frequency f=1/DT, and the
+velocity U is set to freestream (U∞). In FUN3D, the time step is normalized by the
+sound speed. This will then yield what is referred to as the time step based Strouhal
+number (StDT) as follows: StDT = L/(DT*M∞) in terms of the FUN3D grid units.
+Next, the ratio of the time step Strouhal number (StDT) to the physical Strouhal
+number (St) is used as a coarse measure of time integration accuracy. For good
+time accuracy, this Strouhal ratio, StDT/St must be at least 20, as the second-order
+backwards-difference time-integration scheme requires roughly that many points
+per period assuming a simple sinusoidal oscillation for high accuracy. An even
+higher ratio is needed if any part of the unsteady flow changes more rapidly than
+the gross features like integrated loads, and this is very common. Thus, the ratio of
+Strouhal numbers, StDT/St should be 20 or greater, by an unknown amount, to
+achieve good time accuracy.
+                                                                                    22
+       14’x22’ Wind Tunnel Corrections
+CFD Wind Tunnel Support
+
+
+
+
+                                         23
+       Trip dot selection
+                            Upper Surface Thermal Imaging With Trip Dots
+
+                                           V∞
+CFD Wind Tunnel Support
+
+
+
+
+                               Lighter patch = transition due to bug
+
+
+                              Upper Surface Thermal Imaging Without Trip Dots
+
+                                           V∞
+                                                                       Darker areas on model = laminar
+
+
+
+
+                                                      Lighter patch = transition due to presence of
+                                                      Krueger bracket
+
+
+
+                                                                                                         24
+
