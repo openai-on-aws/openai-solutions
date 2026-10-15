@@ -1,0 +1,10 @@
+{
+  "id": "cache-inline-modern",
+  "required_features": ["prompt_caching", "inline_guardrails"],
+  "models": ["GPT-6.1 Sol"],
+  "apis": ["chat_completions"],
+  "endpoints": ["bedrock-runtime"],
+  "geography": "US",
+  "entry_regions": ["us-east-1"],
+  "cache": {"mode": "explicit", "prefix_tokens": 2048, "breakpoints": 1}
+}

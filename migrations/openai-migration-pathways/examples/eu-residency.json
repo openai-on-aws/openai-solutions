@@ -1,0 +1,13 @@
+{
+  "id": "eu-residency",
+  "required_features": [
+    "prompt_caching"
+  ],
+  "geography": "EU",
+  "entry_regions": [
+    "eu-central-1"
+  ],
+  "cache": {
+    "prefix_tokens": 8000
+  }
+}

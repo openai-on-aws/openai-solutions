@@ -1,0 +1,124 @@
+{
+  "name": "customer-assist",
+  "account_id": "REQUIRED_ACCOUNT_ID",
+  "region": "us-east-1",
+  "availability_zones": ["us-east-1a", "us-east-1b"],
+  "vpc_cidr": "10.80.0.0/16",
+  "client_cidrs": ["192.0.2.0/24"],
+  "alb_internal": true,
+  "certificate_arn": "REQUIRED_ACM_CERTIFICATE_ARN",
+  "hosted_zone_id": "REQUIRED_HOSTED_ZONE_ID",
+  "cognito_auth": {
+    "user_pool_arn": "REQUIRED_COGNITO_USER_POOL_ARN",
+    "user_pool_client_id": "REQUIRED_COGNITO_CLIENT_ID",
+    "user_pool_domain": "REQUIRED_COGNITO_DOMAIN",
+    "session_seconds": 3600
+  },
+  "redis": {
+    "user_group_id": "REQUIRED_REDIS_ACL_USER_GROUP",
+    "node_type": "cache.t4g.small",
+    "engine_version": "7.1"
+  },
+  "image_storage": {
+    "bucket_name": "REQUIRED_NEW_PRIVATE_BUCKET_NAME",
+    "browser_origins": []
+  },
+  "workloads": {
+    "frontend": {
+      "image": "REQUIRED_FRONTEND_ECR_DIGEST",
+      "port": 8080,
+      "cpu_architecture": "REQUIRED_CPU_ARCHITECTURE",
+      "cpu": 256,
+      "memory": 512,
+      "user": "10001",
+      "health_check_command": ["CMD", "node", "/app/healthcheck.js"],
+      "health_path": "/health",
+      "hostname": "app.example.com",
+      "listener_priority": 200,
+      "path_patterns": ["/*"],
+      "authentication_mode": "authenticate",
+      "backend_protocol": "HTTPS",
+      "min_tasks": 2,
+      "max_tasks": 2,
+      "environment": {"SERVICE_TLS": "required", "SERVICE_PORT": "8080"},
+      "secrets": {
+        "TLS_CERTIFICATE_PEM": "REQUIRED_FRONTEND_TLS_CERTIFICATE_SECRET_ARN",
+        "TLS_PRIVATE_KEY_PEM": "REQUIRED_FRONTEND_TLS_PRIVATE_KEY_SECRET_ARN"
+      }
+    },
+    "session": {
+      "image": "REQUIRED_SESSION_ECR_DIGEST",
+      "port": 5000,
+      "cpu_architecture": "REQUIRED_CPU_ARCHITECTURE",
+      "cpu": 512,
+      "memory": 1024,
+      "user": "10001",
+      "health_check_command": ["CMD", "python3", "/src/session_manager/common/utilities/http_healthcheck.py"],
+      "health_path": "/",
+      "hostname": "app.example.com",
+      "listener_priority": 100,
+      "path_patterns": ["/api/*", "/content/*", "/get-speech-token"],
+      "authentication_mode": "deny",
+      "backend_protocol": "HTTPS",
+      "min_tasks": 1,
+      "max_tasks": 1,
+      "uses_redis": true,
+      "uses_image_storage": true,
+      "environment": {
+        "ENVIRONMENT": "PROD",
+        "SERVICE_TLS": "required",
+        "SERVICE_PORT": "5000",
+        "HEALTH_PATH": "/",
+        "SESSION_MANAGER_URI": "https://app.example.com",
+        "ORCHESTRATOR_SERVICE_URI": "http://worker.customer-assist.internal:5102",
+        "REDIS_USERNAME": "session-queue",
+        "REDIS_TASK_QUEUE_CHANNEL": "customer-assist:tasks",
+        "REDIS_MESSAGE_QUEUE_CHANNEL": "customer-assist:replies",
+        "AUTHORIZATION_REDIS_USERNAME": "grant-writer",
+        "DOCUMENT_REGISTRY_NAMESPACE": "customer-assist",
+        "CHAT_MAX_RESPONSE_TIMEOUT_IN_SECONDS": "120"
+      },
+      "secrets": {
+        "REDIS_PASSWORD": "REQUIRED_SESSION_QUEUE_SECRET_ARN",
+        "AUTHORIZATION_REDIS_PASSWORD": "REQUIRED_GRANT_WRITER_SECRET_ARN",
+        "TLS_CERTIFICATE_PEM": "REQUIRED_SESSION_TLS_CERTIFICATE_SECRET_ARN",
+        "TLS_PRIVATE_KEY_PEM": "REQUIRED_SESSION_TLS_PRIVATE_KEY_SECRET_ARN"
+      },
+      "task_policy_json": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"rekognition:DetectModerationLabels\"],\"Resource\":\"*\",\"Condition\":{\"StringEquals\":{\"aws:RequestedRegion\":\"us-east-1\"}}}]}"
+    },
+    "worker": {
+      "image": "REQUIRED_WORKER_ECR_DIGEST",
+      "port": 5102,
+      "cpu_architecture": "REQUIRED_CPU_ARCHITECTURE",
+      "cpu": 1024,
+      "memory": 2048,
+      "user": "10001",
+      "health_check_command": ["CMD", "python3", "/src/customer_assist/orchestrator/common/utilities/http_healthcheck.py"],
+      "health_path": "/health",
+      "min_tasks": 1,
+      "max_tasks": 1,
+      "uses_redis": true,
+      "uses_image_storage": true,
+      "image_storage_owner": "session",
+      "environment": {
+        "ENVIRONMENT": "PROD",
+        "SERVICE_PORT": "5102",
+        "HEALTH_PATH": "/health",
+        "REDIS_USERNAME": "worker-queue",
+        "REDIS_TASK_QUEUE_CHANNEL": "customer-assist:tasks",
+        "REDIS_MESSAGE_QUEUE_CHANNEL": "customer-assist:replies",
+        "AUTHORIZATION_REDIS_USERNAME": "grant-reader",
+        "DOCUMENT_REGISTRY_NAMESPACE": "customer-assist",
+        "AGENT_ORCHESTRATOR_MAX_CONCURRENCY": "4",
+        "LOAN_POLICY_KNOWLEDGE_BASE_ARN": "REQUIRED_KNOWLEDGE_BASE_ARN",
+        "LOAN_POLICY_CORPUS": "loan-policy"
+      },
+      "secrets": {
+        "REDIS_PASSWORD": "REQUIRED_WORKER_QUEUE_SECRET_ARN",
+        "AUTHORIZATION_REDIS_PASSWORD": "REQUIRED_GRANT_READER_SECRET_ARN",
+        "BEDROCK_API_KEY": "REQUIRED_BEDROCK_API_KEY_SECRET_ARN"
+      },
+      "task_policy_json": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"bedrock:Retrieve\"],\"Resource\":\"REQUIRED_KNOWLEDGE_BASE_ARN\",\"Condition\":{\"StringEquals\":{\"aws:RequestedRegion\":\"us-east-1\"}}},{\"Effect\":\"Allow\",\"Action\":[\"textract:AnalyzeDocument\",\"textract:AnalyzeID\"],\"Resource\":\"*\",\"Condition\":{\"StringEquals\":{\"aws:RequestedRegion\":\"us-east-1\"}}}]}"
+    }
+  }
+}

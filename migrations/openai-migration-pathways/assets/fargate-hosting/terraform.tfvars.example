@@ -1,0 +1,41 @@
+# Non-deployable input guide. Copy to a customer-specific .tfvars file and
+# replace required inputs from the accepted design and actual build output.
+# Terraform does not automatically load this .example file.
+name               = "migration"
+account_id         = "REQUIRED_ACCOUNT_ID"
+region             = "us-east-1"
+availability_zones = ["us-east-1a", "us-east-1b"]
+vpc_cidr           = "10.80.0.0/16"
+client_cidrs       = ["192.0.2.0/24"] # Documentation range; replace with real clients.
+alb_internal       = true
+certificate_arn    = "REQUIRED_EXISTING_ACM_CERTIFICATE_ARN"
+hosted_zone_id     = "REQUIRED_EXISTING_ROUTE53_ZONE_ID"
+
+# Optional: see image-storage.md. This creates new storage only when applied.
+# For an authenticated frontend/API on one hostname, see authentication.md.
+# image_storage = {
+#   bucket_name     = "REQUIRED_NEW_IMAGE_BUCKET_NAME"
+#   browser_origins = ["https://app.example.com"]
+# }
+
+workloads = {
+  web = {
+    image                = "REQUIRED_ECR_IMAGE_WITH_ACTUAL_SHA256_DIGEST"
+    port                 = 8080
+    cpu_architecture     = "ARM64" # Must match the built image and its dependencies.
+    cpu                  = 256
+    memory               = 512
+    user                 = "10001"
+    health_check_command = ["CMD", "/app/healthcheck"] # Must exist and test readiness in the image.
+    health_path          = "/health"                  # Must match the application's HTTP route.
+    hostname             = "app.example.com"          # Replace with a certificate/zone-covered name.
+    listener_priority    = 100
+    environment          = {}
+    secrets              = {} # Existing Secrets Manager ARNs only; never plaintext secrets.
+    # uses_image_storage = true # Only with image_storage configured and the application ported.
+    # Declare reviewed runtime permissions via task_policy_json when needed.
+    # Declare DB access with egress = { database = {
+    #   port = 3306, security_group_id = "REQUIRED_DESTINATION_SG", description = "Application database"
+    # }}. Destination ingress and network routes must also exist.
+  }
+}

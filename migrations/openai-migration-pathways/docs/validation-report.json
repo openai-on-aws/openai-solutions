@@ -1,0 +1,53 @@
+{
+  "release": "0.4.2",
+  "verified_at": "2026-10-15T01:57:48.799450+00:00",
+  "scope": "Local offline publication-candidate validation. GitHub checks and installation receipts are recorded separately for their exact commit/package.",
+  "registry_version": "0.4.0",
+  "registry_sha256": "2280604bae19d2861c8331ff188931125103153acd18297c7f2077120579b2bd",
+  "inventory": {
+    "models": 9,
+    "route_definitions": 90,
+    "route_region_entries": 1050,
+    "features": 34,
+    "evidence_snapshots": 48
+  },
+  "checks": {
+    "offline_regressions": {
+      "status": "passed",
+      "tests": 106,
+      "runner": "python3 -B -m unittest discover -s scripts -p 'test_*.py'"
+    },
+    "python_syntax": {
+      "status": "passed",
+      "files": 40
+    },
+    "skill_quick_validate": "passed",
+    "portable_and_compatibility_manifests": "passed: matching identity, version, author, interface and local assets",
+    "generated_catalog_and_adapter_parity": "passed",
+    "workbook_parity": "passed by saved-workbook regression tests; workbook and capability registry unchanged from 0.4.0",
+    "evidence_hashes_and_official_hosts": "passed for all 48 registered snapshots",
+    "shared_discovery_report": "passed: generated tables, native NO retained, proposed design_only orchestration, current and historical replay",
+    "revision_3_code_assessment": "passed synthetic integration: evaluated routes, repository-only exception, gap coverage and canonical service mapping parity",
+    "packaging_regressions": "passed: explicit marketplace identity, ZIP checksum, inventory/hash parity, hidden catalog, invalid input and overwrite rejection",
+    "relative_document_links": {
+      "status": "passed",
+      "links": 42,
+      "checked_at": "2026-10-15T15:43:03.652004+00:00"
+    },
+    "repository_marketplace": "passed: openai-solutions entry resolves to the plugin under migrations",
+    "workflow_structure": "passed YAML parsing, read-only test permissions and canonical-repository release restriction; hosted execution is checked separately"
+  },
+  "not_verified": [
+    "Live model requests and SDK/network integration",
+    "AWS account access, quotas or effective data-boundary settings",
+    "Model quality, latency, cache economics or application parity",
+    "Customer application builds or deployments"
+  ],
+  "known_limitations": [
+    "Codex performs repository discovery; helper checks validate recorded coverage and consistency, not discovery completeness.",
+    "Evidence references and recorded decisions do not prove genuine approval or execution.",
+    "Some model/API/Region/feature combinations remain VERIFY.",
+    "The deployment portal needs an account-specific availability verifier for inference-profile and Mantle routes.",
+    "Application helpers outside model/report scope retain their earlier explicitly dated verification boundaries."
+  ]
+}

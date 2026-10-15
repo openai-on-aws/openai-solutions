@@ -1,0 +1,284 @@
+{
+  "contract": "migration-report-v1",
+  "mode": "discovery",
+  "source_commit": null,
+  "scope": "Fictional internal document assistant: model calls, retrieval, hosting and document storage",
+  "limitations": "Description only. No repository, Azure inventory, AWS account, model invocation or deployment inspected. Source model and retention/residency details remain unconfirmed.",
+  "evidence": [
+    {
+      "id": "summary",
+      "kind": "user_description",
+      "path": "summary.txt",
+      "description": "Synthetic supplied requirements"
+    },
+    {
+      "id": "native-evaluation",
+      "kind": "validation",
+      "path": "compatibility/evaluation.json",
+      "description": "Offline evaluator output, not a live model test"
+    },
+    {
+      "id": "registry",
+      "kind": "official_documentation",
+      "path": "compatibility/data/capabilities.json",
+      "description": "Dated compatibility registry with hash-pinned provider snapshots"
+    }
+  ],
+  "workloads": [
+    {
+      "id": "assistant",
+      "name": "Assistant",
+      "scope_status": "confirmed",
+      "description": "Return tenant-authorized answers and citations from uploaded documents",
+      "evidence": [
+        "summary"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "generate",
+      "workload_id": "assistant",
+      "ai": true,
+      "source_interface": "Azure OpenAI Responses with hosted file_search; source model unconfirmed",
+      "purpose": "Generate a JSON answer with document citations",
+      "rationale": "Native hosted file search is required in this evaluation. No compatible candidate is selected; application retrieval is a separate unaccepted redesign.",
+      "evidence": [
+        "summary"
+      ],
+      "evaluation": {
+        "registry": "compatibility/data/capabilities.json",
+        "requirements": "compatibility/requirements.json",
+        "evaluation": "compatibility/evaluation.json",
+        "selected_candidate_id": null
+      }
+    }
+  ],
+  "blockers": [
+    {
+      "id": "native-file-search",
+      "kind": "incompatibility",
+      "finding": "Required native hosted file search is unavailable on the evaluated Bedrock routes",
+      "impact": "The source request cannot be ported unchanged",
+      "owner": "Application owner",
+      "resolution": "Accept and separately evaluate an application retrieval design, or retain the source route",
+      "priority": "high",
+      "status": "open",
+      "route_ids": [
+        "generate"
+      ],
+      "service_mapping_ids": [
+        "model-service",
+        "retrieval-service"
+      ],
+      "blocks": [
+        "route_selection",
+        "cutover"
+      ],
+      "required_tests": [
+        "Replay original native requirements without deleting the unsupported feature",
+        "Evaluate an explicitly accepted target contract separately"
+      ],
+      "evidence": [
+        "summary",
+        "native-evaluation"
+      ]
+    },
+    {
+      "id": "retrieval-implementation",
+      "kind": "implementation",
+      "finding": "Replacement retrieval flow is a proposal with no implementation or approval",
+      "impact": "Tenant isolation, citations and failure semantics are not established",
+      "owner": "Application and security owners",
+      "resolution": "Review the proposal, record any acceptance, implement it and run semantic/authorization tests",
+      "priority": "high",
+      "status": "open",
+      "route_ids": [
+        "generate"
+      ],
+      "service_mapping_ids": [
+        "retrieval-service"
+      ],
+      "blocks": [
+        "implementation",
+        "validation",
+        "cutover"
+      ],
+      "required_tests": [
+        "Cross-tenant and deleted-document isolation",
+        "Citation fidelity and no-result behavior",
+        "Timeout, retry and duplicate-request behavior"
+      ],
+      "evidence": [
+        "summary"
+      ]
+    },
+    {
+      "id": "source-and-account-details",
+      "kind": "missing_information",
+      "finding": "Exact source contract, deployed Azure resources and AWS route access are unconfirmed",
+      "impact": "Scope, account availability, retention and whole-system data boundaries cannot be finalized",
+      "owner": "Cloud and application owners",
+      "resolution": "Provide exact source configuration and authorize scoped read-only account checks when needed",
+      "priority": "high",
+      "status": "open",
+      "route_ids": [
+        "generate"
+      ],
+      "service_mapping_ids": [
+        "model-service",
+        "hosting-service",
+        "document-storage"
+      ],
+      "blocks": [
+        "validation",
+        "cutover"
+      ],
+      "required_tests": [
+        "Confirm actual model/API and request features",
+        "Verify AWS permissions, route access and quotas",
+        "Trace document, log and state residency"
+      ],
+      "evidence": [
+        "summary"
+      ]
+    }
+  ],
+  "orchestrations": [
+    {
+      "id": "retrieval",
+      "name": "Application-managed document retrieval",
+      "origin": "proposed",
+      "acceptance": "proposed",
+      "implementation_status": "design_only",
+      "route_ids": [
+        "generate"
+      ],
+      "service_mapping_ids": [
+        "model-service",
+        "retrieval-service",
+        "document-storage"
+      ],
+      "blocker_ids": [
+        "native-file-search",
+        "retrieval-implementation"
+      ],
+      "control_flow": [
+        "Authenticate the caller and resolve tenant/document grants",
+        "Retrieve only permitted document chunks from a separately provisioned retrieval tier",
+        "Pass bounded context to the model and collect structured output",
+        "Validate citation identifiers against the authorized retrieval set",
+        "Return an answer or an explicit no-evidence result"
+      ],
+      "state": "Application owns document ingestion/index state, tool transcript and citation identifiers; retention is unresolved",
+      "permissions": "Enforce tenant and document grants before retrieval and again when resolving citations; scope service IAM independently",
+      "failure_handling": "Fail closed on authorization errors. Bound retries and timeouts. Do not invent citations or use unrelated documents.",
+      "behavior_difference": "Ranking, chunking, file ingestion, citations and conversation state will differ from hosted file search; parity is unverified",
+      "required_tests": [
+        "Reject cross-tenant and revoked-document access",
+        "Verify citations resolve to permitted source documents",
+        "Measure retrieval/answer quality against an agreed dataset",
+        "Exercise empty, stale, timeout and duplicate-request cases"
+      ],
+      "evidence": [
+        "summary"
+      ]
+    }
+  ],
+  "service_mappings": [
+    {
+      "id": "model-service",
+      "workload_ids": [
+        "assistant"
+      ],
+      "route_ids": [
+        "generate"
+      ],
+      "source_service": "Azure OpenAI",
+      "target_service": "Amazon Bedrock; exact compatible route unresolved",
+      "source_evidence_state": "reported",
+      "pattern": "replace",
+      "decision": "conditional",
+      "rationale": "Fictional reported source; target requires workload validation and an accepted design.",
+      "required_changes": [
+        "Confirm source model/API and accepted target feature contract",
+        "Port authentication, requests, response parsing and error handling"
+      ],
+      "dependencies": [],
+      "evidence": [
+        "summary"
+      ]
+    },
+    {
+      "id": "retrieval-service",
+      "workload_ids": [
+        "assistant"
+      ],
+      "route_ids": [
+        "generate"
+      ],
+      "source_service": "Azure OpenAI hosted file search and uploaded files",
+      "target_service": "Application retrieval using a separately evaluated Bedrock Knowledge Base / search tier",
+      "source_evidence_state": "reported",
+      "pattern": "refactor",
+      "decision": "conditional",
+      "rationale": "Fictional reported source; target requires workload validation and an accepted design.",
+      "required_changes": [
+        "Select and evaluate retrieval/index/embedding configuration",
+        "Implement authorization, ingestion and citation contracts"
+      ],
+      "dependencies": [
+        "document-storage"
+      ],
+      "evidence": [
+        "summary"
+      ]
+    },
+    {
+      "id": "hosting-service",
+      "workload_ids": [
+        "assistant"
+      ],
+      "route_ids": [
+        "generate"
+      ],
+      "source_service": "Azure App Service",
+      "target_service": "Amazon ECS on Fargate, conditional on packaging and runtime needs",
+      "source_evidence_state": "reported",
+      "pattern": "replatform",
+      "decision": "conditional",
+      "rationale": "Fictional reported source; target requires workload validation and an accepted design.",
+      "required_changes": [
+        "Inspect application build/startup, identity, networking and health checks"
+      ],
+      "dependencies": [],
+      "evidence": [
+        "summary"
+      ]
+    },
+    {
+      "id": "document-storage",
+      "workload_ids": [
+        "assistant"
+      ],
+      "route_ids": [
+        "generate"
+      ],
+      "source_service": "Azure Blob Storage",
+      "target_service": "Amazon S3",
+      "source_evidence_state": "reported",
+      "pattern": "replace",
+      "decision": "conditional",
+      "rationale": "Fictional reported source; target requires workload validation and an accepted design.",
+      "required_changes": [
+        "Map object keys and access grants",
+        "Plan encryption, retention and data transfer"
+      ],
+      "dependencies": [],
+      "evidence": [
+        "summary"
+      ]
+    }
+  ],
+  "empty_reasons": {}
+}

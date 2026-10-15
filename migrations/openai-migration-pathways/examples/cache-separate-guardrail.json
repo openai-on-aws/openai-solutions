@@ -1,0 +1,15 @@
+{
+  "id": "cache-separate-guardrail",
+  "required_features": [
+    "prompt_caching",
+    "independent_guardrail"
+  ],
+  "geography": "US",
+  "entry_regions": [
+    "us-east-1"
+  ],
+  "cache": {
+    "prefix_tokens": 8000
+  },
+  "allow_orchestration": true
+}

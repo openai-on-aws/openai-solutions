@@ -1,0 +1,27 @@
+{
+  "id": "us-shopping-discovery",
+  "required_features": [
+    "prompt_caching",
+    "streaming",
+    "client_tools"
+  ],
+  "geography": "US",
+  "entry_regions": [
+    "us-east-2"
+  ],
+  "residency_scopes": [
+    "processing",
+    "cache",
+    "logs",
+    "abuse_retention"
+  ],
+  "store": false,
+  "cache": {
+    "mode": "explicit",
+    "prefix_tokens": 8000,
+    "breakpoints": 1
+  },
+  "assumptions": [
+    "Ohio is a comparison entry Region; multiple US processing Regions allowed."
+  ]
+}

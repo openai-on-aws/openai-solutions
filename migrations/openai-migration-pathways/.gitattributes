@@ -1,0 +1,14 @@
+# Preserve evidence and third-party license bytes exactly; Markdown trailing
+# spaces and publisher formatting are part of the recorded source hashes.
+* text=auto eol=lf
+data/evidence/*.txt linguist-vendored=true -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+examples/discovery-report/compatibility/data/evidence/*.txt linguist-vendored=true -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+assets/cloud-icons/AWS-LICENSE.txt -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+LICENSE-DOCS.md -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+
+# Generated catalog exports remain available to inspect in GitHub diffs.
+data/capabilities.json linguist-generated=true
+assets/python-bedrock/approved-routes.json linguist-generated=true
+docs/compatibility-catalog.md linguist-generated=true
+examples/discovery-report/compatibility/data/capabilities.json linguist-generated=true
+examples/discovery-report/compatibility/evaluation.json linguist-generated=true

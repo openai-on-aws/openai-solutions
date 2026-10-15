@@ -1,0 +1,7 @@
+{
+  "id": "native-agent-capabilities",
+  "required_features": ["hosted_file_search", "remote_mcp", "websocket_api"],
+  "geography": "US",
+  "entry_regions": ["us-east-1"],
+  "assumptions": ["Requirements describe native provider features; application redesign has not been accepted."]
+}

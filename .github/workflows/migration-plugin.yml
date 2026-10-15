@@ -1,0 +1,119 @@
+name: Migration plugin
+
+on:
+  pull_request:
+    paths:
+      - "migrations/openai-migration-pathways/**"
+      - "migrations/README.md"
+      - ".agents/plugins/marketplace.json"
+      - ".github/workflows/migration-plugin.yml"
+  push:
+    branches:
+      - main
+      - "codex/publish-migration-plugin"
+    tags:
+      - "openai-migration-pathways-v*"
+    paths:
+      - "migrations/openai-migration-pathways/**"
+      - "migrations/README.md"
+      - ".agents/plugins/marketplace.json"
+      - ".github/workflows/migration-plugin.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: migration-plugin-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.13"]
+    defaults:
+      run:
+        working-directory: migrations/openai-migration-pathways
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run offline regressions
+        run: python -B -m unittest discover -s scripts -p 'test_*.py'
+      - name: Verify publication artifacts
+        run: |
+          python -B scripts/export_catalog.py --check
+          python -B scripts/verify_plugin.py --repository-root ../..
+      - name: Verify release tag and main ancestry
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python -B - <<'PY'
+          import json, os
+          from pathlib import Path
+          version = json.loads(Path("plugin.json").read_text())["version"]
+          assert os.environ["RELEASE_TAG"] == "openai-migration-pathways-v" + version, "Tag/version mismatch"
+          assert Path("docs/release-" + version + ".md").is_file(), "Missing versioned release notes"
+          PY
+          git merge-base --is-ancestor HEAD origin/main
+      - name: Build shareable package
+        if: matrix.python == '3.13'
+        run: |
+          python -B - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path("scripts").resolve()))
+          import package_plugin
+          source = Path.cwd()
+          version = package_plugin.validate_source(source)["version"]
+          output = Path(os.environ["RUNNER_TEMP"]) / "migration-plugin-release" / ("openai-migration-pathways-" + version)
+          print(json.dumps(package_plugin.package(source, output, "openai-solutions"), indent=2))
+          PY
+      - name: Save test/release package
+        if: matrix.python == '3.13'
+        uses: actions/upload-artifact@v4
+        with:
+          name: migration-plugin-release
+          path: |
+            ${{ runner.temp }}/migration-plugin-release/*.zip
+            ${{ runner.temp }}/migration-plugin-release/*.zip.sha256
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    needs: verify
+    if: github.repository == 'openai-on-aws/openai-solutions' && startsWith(github.ref, 'refs/tags/openai-migration-pathways-v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: migration-plugin-release
+          path: ${{ runner.temp }}/migration-plugin-release
+      - name: Publish verified tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          version="${RELEASE_TAG#openai-migration-pathways-v}"
+          cd "$RUNNER_TEMP/migration-plugin-release"
+          sha256sum --check ./*.zip.sha256
+          gh release create "$RELEASE_TAG" ./*.zip ./*.zip.sha256 \
+            --verify-tag \
+            --title "OpenAI Migration Pathways v${version}" \
+            --notes-file "$GITHUB_WORKSPACE/migrations/openai-migration-pathways/docs/release-${version}.md"

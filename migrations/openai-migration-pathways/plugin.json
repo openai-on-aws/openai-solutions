@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "openai-migration-pathways",
+  "version": "0.4.2",
+  "description": "Assess nine approved OpenAI Bedrock targets with linked routes, gaps, orchestration and Azure-to-AWS service mappings.",
+  "author": {
+    "name": "Sudeesh and EB Khiyami"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "OpenAI Migration Pathways",
+        "shortDescription": "Discover migration paths, then assess and port code.",
+        "longDescription": "Discover migration paths and assess repositories against nine approved OpenAI Bedrock targets. Produce a common nine-section report with evidence-backed routes, gaps/blockers, orchestration designs and Azure-to-AWS mappings; prepare migration artifacts with explicit readiness limits.",
+        "developerName": "Sudeesh and EB Khiyami",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": [
+          "Help me discover a Bedrock migration path without inspecting code.",
+          "Assess this repository and compare Bedrock routes against my residency, caching and API requirements.",
+          "Create an AWS deployment package and unified architecture."
+        ],
+        "brandColor": "#0078D4",
+        "composerIcon": "./assets/plugin-icon.png",
+        "logo": "./assets/plugin-logo.png",
+        "logoDark": "./assets/plugin-logo.png"
+      }
+    }
+  },
+  "repository": "https://github.com/openai-on-aws/openai-solutions",
+  "homepage": "https://github.com/openai-on-aws/openai-solutions/tree/main/migrations/openai-migration-pathways"
+}

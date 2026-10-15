@@ -1,0 +1,20 @@
+{
+  "name": "openai-solutions",
+  "interface": {
+    "displayName": "OpenAI Solutions on AWS"
+  },
+  "plugins": [
+    {
+      "name": "openai-migration-pathways",
+      "source": {
+        "source": "local",
+        "path": "./migrations/openai-migration-pathways"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Merge into the application's FINAL image stage after installing dependencies.
+# This is an image contract fragment, not a standalone build recipe.
+# Build-time root only; the running application remains non-root.
+USER 0
+RUN mkdir -p /tmp && chmod 1777 /tmp
+VOLUME ["/tmp"]
+# Match this numeric UID to workloads.<service>.user and application ownership.
+USER 10001

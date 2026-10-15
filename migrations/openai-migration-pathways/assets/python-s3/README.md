@@ -1,0 +1,17 @@
+# Session image uploads to S3
+
+`image_store.py` is optional application source, not a plugin installation dependency. It replaces the sample session managers' image-upload path. Visualization files, document ingestion and legacy Blob download helpers are separate ports.
+
+The hosting template can generate the bucket, KMS key, task-role grants and environment together: configure `image_storage` and enable `uses_image_storage` only on ported uploading workloads. See its `image-storage.md`. For externally managed storage, inject `AWS_REGION`, `S3_IMAGE_BUCKET` and `S3_IMAGE_PREFIX`; the prefix should identify its application/environment. Optionally inject `S3_IMAGE_KMS_KEY_ID`, otherwise the existing bucket's default encryption applies. On Fargate, use the task role and do not embed access keys. Do not override generated storage environment names when the managed option is enabled.
+
+For manual bindings, grant the task role `s3:PutObject` and `s3:GetObject` only on its bucket/prefix objects. For a customer-managed KMS key, include `kms:GenerateDataKey` and `kms:Decrypt` on that key with an appropriate S3 service condition and key policy. Preserve the workload's other reviewed permissions. Keep Block Public Access and BucketOwnerEnforced enabled; do not give the uploader bucket-creation or public-ACL permissions. The optional managed binding creates separate image storage; using the sample foundation's document bucket instead requires a reviewed external binding.
+
+Uploads use unpredictable object names and identify PNG/JPEG/GIF/WebP content types from signatures; this is not full image validation or moderation. The supplied adapter limits decoded images to 20 MiB. Existing moderation limits can be smaller. The patched Customer Assist, Release Manager and Sales Analyst paths finish moderation for every image before uploading any. Market Research keeps its existing separate moderation step. Images upload serially within each request, so failures cannot leave sibling uploads running unowned.
+
+URLs are signed GET capabilities, defaulting to 15 minutes. Temporary task credentials can make them expire earlier. Do not log, persist as durable object identifiers, or broadly share these URLs. Long-lived conversations need an authorized refresh path; that is not implemented by this adapter. A cancelled upload can still finish creating an object; cancellation joins the SDK operation and closes its client but is not rollback. Configure an approved retention/cleanup policy for abandoned objects.
+
+The synchronous SDK runs outside the event loop. Each operation owns its client through completion and cleanup; network/retry timeouts are finite, but cancellation waits for that cleanup. No fallback to Azure or bucket/policy creation occurs in the adapter.
+
+Application dependency tested: `boto3==1.43.81` (botocore 1.43.81). Tests use botocore request stubs and actual offline SigV4 signing with synthetic credentials, not an AWS bucket. The developer package index did not contain the newer documentation version, so the available SDK was pinned and its operation shapes tested. Full application dependency resolution, IAM/KMS enforcement, browser URL retrieval and deployed throughput remain verification work.
+
+Sources: [AWS presigned URL guide](https://docs.aws.amazon.com/boto3/latest/guide/s3-presigned-urls.html), [URL permissions and expiry](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html), [PutObject reference](https://docs.aws.amazon.com/boto3/latest/reference/services/s3/client/put_object.html).

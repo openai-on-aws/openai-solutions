@@ -1,0 +1,592 @@
+{
+  "registry_version": "0.4.0",
+  "registry_sha256": "7701d7caa84d06371879651c0827939ac0e7ebd151c4a8c83b6ea1c2d2f9846f",
+  "reviewed_at": "2026-10-14",
+  "scope": "Responses transport configuration only; not application or account verification.",
+  "routes": [
+    {
+      "policy": "gpt-6-astra",
+      "model_id": "us.openai.gpt-6-astra",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6-astra",
+      "model_id": "global.openai.gpt-6-astra",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "eu-central-1",
+        "eu-north-1",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "sa-east-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6-astra",
+      "model_id": "openai.gpt-6-astra",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-6.1-sol",
+      "model_id": "us.openai.gpt-6.1-sol",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6.1-sol",
+      "model_id": "openai.gpt-6.1-sol",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-6-sol",
+      "model_id": "us.openai.gpt-6-sol",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6-sol",
+      "model_id": "global.openai.gpt-6-sol",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "af-south-1",
+        "sa-east-1",
+        "mx-central-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6-sol",
+      "model_id": "openai.gpt-6-sol",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-6-luna",
+      "model_id": "us.openai.gpt-6-luna",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6-luna",
+      "model_id": "global.openai.gpt-6-luna",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "af-south-1",
+        "sa-east-1",
+        "mx-central-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-6-luna",
+      "model_id": "openai.gpt-6-luna",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-sol",
+      "model_id": "us.openai.gpt-5.6-sol",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-sol",
+      "model_id": "global.openai.gpt-5.6-sol",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "me-central-1",
+        "me-south-1",
+        "af-south-1",
+        "sa-east-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-sol",
+      "model_id": "openai.gpt-5.6-sol",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-terra",
+      "model_id": "us.openai.gpt-5.6-terra",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-terra",
+      "model_id": "global.openai.gpt-5.6-terra",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "me-central-1",
+        "me-south-1",
+        "af-south-1",
+        "sa-east-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-terra",
+      "model_id": "in.openai.gpt-5.6-terra",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "in",
+      "entry_regions": [
+        "ap-south-1",
+        "ap-south-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-terra",
+      "model_id": "openai.gpt-5.6-terra",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-terra",
+      "model_id": "openai.gpt-5.6-terra",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-gov-west-1",
+        "us-gov-east-1"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-luna",
+      "model_id": "us.openai.gpt-5.6-luna",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-luna",
+      "model_id": "global.openai.gpt-5.6-luna",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "me-central-1",
+        "me-south-1",
+        "af-south-1",
+        "sa-east-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-luna",
+      "model_id": "in.openai.gpt-5.6-luna",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "in",
+      "entry_regions": [
+        "ap-south-1",
+        "ap-south-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-luna",
+      "model_id": "openai.gpt-5.6-luna",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.6-luna",
+      "model_id": "openai.gpt-5.6-luna",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-gov-west-1",
+        "us-gov-east-1"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.5",
+      "model_id": "us.openai.gpt-5.5",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.5",
+      "model_id": "global.openai.gpt-5.5",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "mx-central-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "me-central-1",
+        "me-south-1",
+        "af-south-1",
+        "sa-east-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.5",
+      "model_id": "openai.gpt-5.5",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.4",
+      "model_id": "us.openai.gpt-5.4",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "us",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.4",
+      "model_id": "global.openai.gpt-5.4",
+      "endpoint": "bedrock-runtime",
+      "inference_scope": "global",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-1",
+        "us-west-2",
+        "ca-central-1",
+        "ca-west-1",
+        "mx-central-1",
+        "eu-central-1",
+        "eu-central-2",
+        "eu-north-1",
+        "eu-south-1",
+        "eu-south-2",
+        "eu-west-1",
+        "eu-west-2",
+        "eu-west-3",
+        "ap-east-2",
+        "ap-northeast-1",
+        "ap-northeast-2",
+        "ap-northeast-3",
+        "ap-south-1",
+        "ap-south-2",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-southeast-3",
+        "ap-southeast-4",
+        "ap-southeast-5",
+        "ap-southeast-6",
+        "ap-southeast-7",
+        "il-central-1",
+        "me-central-1",
+        "me-south-1",
+        "af-south-1",
+        "sa-east-1"
+      ],
+      "base_url_template": "https://bedrock-runtime.{region}.amazonaws.com/openai/v1"
+    },
+    {
+      "policy": "gpt-5.4",
+      "model_id": "openai.gpt-5.4",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    },
+    {
+      "policy": "gpt-5.4",
+      "model_id": "openai.gpt-5.4",
+      "endpoint": "bedrock-mantle",
+      "inference_scope": "in-region",
+      "entry_regions": [
+        "us-gov-west-1"
+      ],
+      "base_url_template": "https://bedrock-mantle.{region}.api.aws/openai/v1"
+    }
+  ]
+}

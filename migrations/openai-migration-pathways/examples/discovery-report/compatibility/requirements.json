@@ -1,0 +1,20 @@
+{
+  "id": "native-document-assistant",
+  "models": [
+    "GPT-6.1 Sol"
+  ],
+  "entry_regions": [
+    "us-east-1"
+  ],
+  "geography": "US",
+  "apis": [
+    "responses"
+  ],
+  "required_features": [
+    "hosted_file_search",
+    "structured_outputs"
+  ],
+  "assumptions": [
+    "Fictional supplied description only; the application retrieval redesign is not accepted."
+  ]
+}

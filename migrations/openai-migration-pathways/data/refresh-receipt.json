@@ -1,0 +1,14 @@
+{
+  "retrieved": 48,
+  "failed": [
+    {
+      "id": "AWS-GUARDRAIL-CHAT",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-chat-completions.md",
+      "publisher": "aws",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found",
+      "review_status": "pending"
+    }
+  ],
+  "note": "Snapshots do not automatically establish claims; reviewed mappings are in build_registry.py and pinned to review-lock.json."
+}

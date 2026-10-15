@@ -1,0 +1,17 @@
+{
+  "id": "zdr-background-conflict",
+  "required_features": [
+    "prompt_caching",
+    "background",
+    "stored_state"
+  ],
+  "geography": "US",
+  "entry_regions": [
+    "us-east-1"
+  ],
+  "retention_mode": "none",
+  "cache": {
+    "prefix_tokens": 8000,
+    "max_retention_minutes": 15
+  }
+}

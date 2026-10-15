@@ -1,0 +1,18 @@
+{
+  "id": "cache-inline-conflict",
+  "required_features": [
+    "prompt_caching",
+    "inline_guardrails"
+  ],
+  "geography": "US",
+  "entry_regions": [
+    "us-east-1"
+  ],
+  "cache": {
+    "prefix_tokens": 8000
+  },
+  "allow_orchestration": false,
+  "models": [
+    "GPT-5.6 Sol"
+  ]
+}

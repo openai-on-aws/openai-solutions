@@ -1,0 +1,9 @@
+{
+  "id": "streaming-schema",
+  "required_features": ["structured_outputs", "streaming"],
+  "models": ["GPT-6.1 Sol", "GPT-6 Sol"],
+  "apis": ["responses"],
+  "geography": "US",
+  "entry_regions": ["us-east-1"],
+  "preferred_models": ["GPT-6.1 Sol"]
+}

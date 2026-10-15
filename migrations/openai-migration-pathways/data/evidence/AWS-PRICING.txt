@@ -1,0 +1,2028 @@
+Amazon Bedrock Pricing
+Skip to main content
+Filter: All
+English
+Contact us
+AWS Marketplace
+Support
+My account
+re:Invent
+Discover AWS
+Products
+Solutions
+Pricing
+Resources
+Search
+Filter: All
+Sign in to console
+Create account
+Explore topics
+re:Invent 2026
+The sessions are set and your seat is waiting. Register now
+Build & Deploy AI Agents
+88% of agent pilots stall. Learn what the rest do differently
+Get started
+Sign up free, connect your coding agent, and start building
+Data for agentic AI
+The 7 essential data capabilities to scale agentic AI
+Analyst Report
+AWS named a Leader in the 2026 Gartner Magic Quadrant for SCPS
+AI for Small Businesses
+Solutions designed for your business. Delivered by AWS Partners
+News & announcements
+AWS blog
+About AWS
+AWS is the world's most comprehensive cloud, enabling organizations to accelerate innovation, reduce costs, and scale more efficiently
+Why AWS
+Getting Started
+Security
+Compliance
+Trust Center
+Sustainability
+Global Infrastructure
+Careers
+Featured Products
+Analytics
+Application Integration
+Artificial Intelligence
+Business Applications
+Compute
+Customer Experience
+Databases
+Developer Tools
+End User Computing
+Game Tech
+Management Tools
+Media Services
+Migration & Modernization
+Multicloud & Hybrid
+Networking & Content Delivery
+Operations
+Security & Identity
+Storage
+Supply Chain
+Browse all products
+Transformation Hubs
+Migrate to modernize → Modernize to unlock data → unlock data to run AI
+Migrate & Modernize
+Clear technical debt, modernize infrastructure, and move to the cloud
+Data & Analytics
+Future proof your data foundation for agentic AI
+Artificial Intelligence
+Get production-ready AI that automates, builds, creates, decides, and engages at scale
+Featured Products
+Get started with one of these featured services or browse all
+Browse all products
+Amazon Quick
+AI-powered assistant for work with research, business insights, automation, and no-code app building
+Transform
+Eliminate tech debt with agentic AI to modernize legacy systems and code
+Aurora
+Serverless relational database service for PostgreSQL, MySQL, and DSQL
+Amazon Bedrock
+The end-to-end platform for building generative AI applications and agents
+Amazon Connect Customer
+AI-native solution for delivering exceptional experiences across customer interactions
+EC2
+Secure and resizable compute capacity for virtually any workload
+What’s new
+Explore new capabilities and the latest technologies
+Customer success stories
+Learn how customers around the world accelerate their cloud
+Featured
+By industry
+By organization type
+Solutions Library
+Solutions for any organization
+From startups to enterprises, find AWS solutions scaled to your needs. Access tailored resources, pricing models, and support levels.
+Analytics Solutions
+Discover curated Solutions that address varied analytics use cases
+AI Solutions
+Discover curated Solutions that address varied artificial intelligence use cases
+Migration & Modernization Solutions
+Discover curated Solutions that address varied migration and modernization use cases
+What's new
+Explore new capabilities and the latest technologies
+Customer success stories
+Learn how customers around the world accelerate their cloud
+Pricing overview & tools
+AWS Pricing
+Learn about pricing and plans in one place
+AWS Pricing Calculator
+Estimate the cost for your architecture solution
+AWS Free Tier
+Get free, hands-on experience with AWS products and services
+AWS Offers
+Explore different offer programs to gain hands-on experience
+AWS Savings Plans
+Flexible pricing model offering lower prices
+Single-product pricing
+Amazon S3
+Amazon Bedrock
+Amazon RDS
+Amazon EC2
+Amazon SageMaker
+Browse all product pricing
+Learn
+Documentation
+Get detailed technical guides and references for all AWS services and tools
+Training & Certification
+Build and validate your AWS cloud skills and technical expertise
+Cloud term glossary
+Learn more about key cloud computing concepts
+Whitepapers
+Expand your knowledge of the cloud with expert guides and diagrams
+Cloud fundamentals
+Step-by-step instructions for common AWS tasks
+Tutorials
+Get started with step-by-step instructions
+Connect & Support
+Builder Center
+Learn, build, and connect with builders in the AWS community
+Events and webinars
+Connect, collaborate, and learn from AWS experts in the cloud computing community
+Partner Network
+Collaborate with AWS partners to grow your business
+Marketplace
+Find, test, buy, and deploy third-party software
+Support
+Access proactive guidance, issue resolution, and helpful tools
+Professional services
+Accelerate business transformation with expert guidance and packaged solutions
+Amazon Bedrock
+Overview
+Getting Started
+Capabilities
+Agents
+Pricing
+Resources
+More
+AWS
+Amazon Bedrock
+Pricing
+Amazon Bedrock pricing
+Get started for free
+Request a pricing quote
+Model Pricing
+Knowledge Bases
+Guardrails
+Model Evaluation
+Data Automation
+Intelligent Prompt Routing
+Prompt Optimization
+Web Search
+Model Pricing
+Model Pricing
+Pricing is dependent on the modality, provider, and model. Please select the model provider to see detailed pricing.
+Amazon Bedrock supports a variety of tiers including Standard, Flex, Priority, and Reserved tiers.
+Click to learn more about service tiers
+.
+Amazon Bedrock offers select foundation models (FMs) from leading AI providers like Anthropic, Meta, Mistral AI, and Amazon for batch inference at a 50% lower price compared to on-demand inference pricing. To learn more about Batch, click
+here
+. Please refer to model list
+here
+.
+AI21 Labs
+Amazon
+Anthropic
+Cohere
+DeepSeek
+Google
+Luma AI
+Meta
+MiniMax AI
+Mistral AI
+Moonshot AI
+NVIDIA
+OpenAI
+Qwen
+Stability AI
+TwelveLabs
+Writer
+xAI
+Z AI
+Custom Model Import
+AI21 Labs
+AI21 Labs
+On-Demand pricing
+Amazon
+Amazon Nova
+Amazon Titan
+Other Amazon
+Amazon Nova
+Amazon Nova
+Pricing for Understanding Models
+Global Cross-region Inference
+Geo Cross-region inference and in-region
+Built-In-Tools
+Pricing for Creative Content Generation models
+Pricing for Speech Understanding and Generation Models
+On-Demand pricing for speech to speech foundation models
+Note:
+*The text tokens input and output pricing applies to specific use cases such as speech-to-text transcription, tool calls for task completion or knowledge grounding, adding conversation history to the session etc.
+On-demand inference for custom Nova models is priced the same as base Nova inference.
+Pricing for Embedding models
+Amazon Titan
+Amazon Titan
+Other Amazon
+Anthropic
+Note: Starting October 7, 2026, cache read pricing for Claude Sonnet 5.5 is reduced by 50% from the prior rate.
+**Non-GA Models: Access to Claude Mythos 5.1, Claude Mythos 5, and Claude Mythos Preview is gated and requires approval. Contact your Anthropic account team to request access on Bedrock.
+Anthropic
+On-Demand and Batch pricing
+Reserved Tier Pricing
+Provisioned Throughput Pricing
+For Provisioned Throughput pricing, please reach out to your account team.
+Cohere
+Cohere
+On-Demand pricing
+Cohere models
+Price per 1,000 queries**
+Rerank 3.5
+$2.00
+**
+You are charged for number of queries where a query can contain up to 100 document chunks. If the query contains more than 100 document chunks, it is counted as multiple queries. For example, if a request contains 350 documents, it will be treated as 4 queries. Please note that each document can only contain upto 500 tokens (inclusive of the query and document’s total tokens), and if the token length is higher than 512 tokens, it is broken down into multiple documents.
+*Total tokens trained = number of tokens in training data corpus x number of epochs
+Provisioned Throughput pricing
+Cohere models
+Price per hour per model
+with no commitment
+Price per hour per model unit for 1-month commitment
+Price per hour per model unit for 6-month commitment
+Cohere Command
+$49.50
+$39.60
+$23.77
+Cohere Command - Light
+$8.56
+$6.85
+$4.11
+Embed 3 English
+$7.12
+$6.76
+$6.41
+Embed 3 Multilingual
+$7.12
+$6.76
+$6.41
+Please reach out to your AWS account or sales team for more details on model units.
+DeepSeek
+DeepSeek
+On-Demand pricing
+Standard
+Priority
+Flex
+Standard
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+DeepSeek models
+Price per 1M input tokens
+Price per 1M output tokens
+DeepSeek v3.2
+$ 0.62
+$ 1.85
+Regions: Asia Pacific (Mumbai), South America (São Paulo), Asia Pacific (Jakarta), Asia Pacific (Tokyo) and Europe (Stockholm)
+DeepSeek models
+Price per 1M input tokens
+Price per 1M output tokens
+DeepSeek v3.2
+$ 0.74
+$ 2.22
+Region: Asia Pacific (Sydney)
+DeepSeek models
+Price per 1M input tokens
+Price per 1M output tokens
+DeepSeek v3.1
+$ 0.5974
+$ 1.7304
+DeepSeek v3.2
+$ 0.6386
+$ 1.9055
+Priority
+Region: Asia Pacific (Sydney)
+DeepSeek models
+Price per 1M input tokens
+Price per 1M output tokens
+DeepSeek v3.1
+$ 1.0455
+$ 3.0282
+Flex
+Region: Asia Pacific (Sydney)
+DeepSeek models
+Price per 1M input tokens
+Price per 1M output tokens
+DeepSeek v3.1
+$ 0.2987
+$ 0.8652
+Google
+Google
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Google models
+Price per 1M input tokens
+Price per 1M output tokens
+Gemma 4 31B
+$0.14
+$0.40
+Gemma 4 26B A4B
+$0.13
+$0.40
+Gemma 4 E2B
+$0.04
+$ 0.08
+Gemma 3 4B
+$ 0.04
+$ 0.08
+Gemma 3 12B
+$ 0.09
+$ 0.29
+Gemma 3 27B
+$ 0.23
+$ 0.38
+Regions: Europe (Frankfurt)
+Google models
+Price per 1M input tokens
+Price per 1M output tokens
+Gemma 4 31B
+$ 0.17
+$ 0.48
+Gemma 4 26B A4B
+$ 0.16
+$ 0.48
+Gemma 4 E2B
+$ 0.05
+$ 0.10
+Regions: Asia Pacific (Mumbai), Europe (Ireland) and Europe (Milan)
+Google models
+Price per 1M input tokens
+Price per 1M output tokens
+Gemma 3 4B
+$ 0.05
+$ 0.09
+Gemma 3 12B
+$ 0.11
+$ 0.34
+Gemma 3 27B
+$ 0.27
+$ 0.45
+Regions: South America (Sao Paulo) and Asia Pacific (Tokyo)
+Google models
+Price per 1M input tokens
+Price per 1M output tokens
+Gemma 3 4B
+$ 0.05
+$ 0.10
+Gemma 3 12B
+$ 0.11
+$ 0.35
+Gemma 3 27B
+$ 0.28
+$ 0.46
+Region: Europe (London)
+Google models
+Price per 1M input tokens
+Price per 1M output tokens
+Gemma 3 4B
+$ 0.06
+$ 0.12
+Gemma 3 12B
+$ 0.14
+$ 0.45
+Gemma 3 27B
+$ 0.36
+$ 0.59
+Region: Asia Pacific (Sydney)
+Google models
+Price per 1M input tokens
+Price per 1M output tokens
+Gemma 3 4B
+$ 0.0412
+$ 0.0824
+Gemma 3 12B
+$ 0.0927
+$ 0.2987
+Gemma 3 27B
+$ 0.2369
+$ 0.3914
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier pricing is at 50% discount to Standard tier pricing
+Luma AI
+Luma AI
+On-Demand pricing
+Meta
+Meta
+Llama 4
+On-Demand and Batch pricing
+Llama 3.3
+On-Demand and Batch pricing
+Llama 3.2
+On-Demand and Batch pricing
+Pricing for model customization (fine-tuning)
+Provisioned Throughput pricing
+Llama 3.1
+On-Demand and Batch pricing
+Pricing for model customization (fine-tuning)
+Provisioned Throughput pricing
+Llama 3
+On-Demand pricing
+Llama 2
+On-Demand pricing
+Region: US East (N. Virginia) and US West (Oregon)
+Meta models
+Price per 1M input tokens
+Price per 1M output tokens
+Llama 2 Chat (13B)
+$0.75
+$1.00
+Llama 2 Chat (70B)
+$1.95
+$2.56
+Pricing for model customization (fine-tuning)
+Meta models
+Price to train 1M tokens
+Price to store each custom model* per month
+Price to infer from a custom model for 1 model unit per hour (with no-commit Provisioned Throughput pricing)
+Llama 2 Pretrained (13B)
+$1.49
+$1.95
+$23.50
+Llama 2 Pretrained (70B)
+$7.99
+$1.95
+$23.50
+*Custom model storage = $1.95
+Provisioned Throughput pricing
+Meta models
+Price per hour per model unit for 1-month commitment
+Price per hour per model unit for 6-month commitment
+Llama 2 Pretrained and Chat (13B)
+$21.18
+$13.08
+Llama 2 Pretrained (70B)
+$21.18
+$13.08
+*Llama 2 Pre-trained models are available only in provisioned throughput after customization.
+Please reach out to your AWS account or sales team for more details on model units.
+MiniMax AI
+MiniMax AI
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Minimax models
+Price per 1M input tokens
+Price per 1M output tokens
+Minimax M2
+$ 0.30
+$ 1.20
+Minimax M2.1
+$ 0.30
+$ 1.20
+MiniMax M2.5
+$ 0.30
+$ 1.20
+Regions: Asia Pacific (Mumbai), Europe (Ireland) and Europe (Milan)
+Minimax models
+Price per 1M input tokens
+Price per 1M output tokens
+Minimax M2
+$ 0.35
+$ 1.41
+Minimax M2.1
+$ 0.36
+$ 1.44
+Minimax M2.5
+$ 0.36
+$ 1.44
+Regions: South America (Sao Paulo) and Asia Pacific (Tokyo)
+Minimax models
+Price per 1M input tokens
+Price per 1M output tokens
+Minimax M2
+$ 0.36
+$ 1.45
+Minimax M2.1
+$ 0.36
+$ 1.44
+Minimax M2.5
+$ 0.36
+$ 1.44
+Region: Europe (London)
+Minimax models
+Price per 1M input tokens
+Price per 1M output tokens
+Minimax M2
+$ 0.47
+$ 1.86
+Minimax M2.1
+$ 0.47
+$ 1.86
+Minimax M2.5
+$ 0.47
+$ 1.86
+Regions: Europe (Frankfurt), Europe (Stockholm), Asia Pacific (Jakarta)
+Minimax models
+Price per 1M input tokens
+Price per 1M output tokens
+Minimax M2.1
+$ 0.36
+$ 1.44
+Minimax M2.5
+$ 0.36
+$ 1.44
+Region: Asia Pacific (Sydney)
+Minimax models
+Price per 1M input tokens
+Price per 1M output tokens
+Minimax M2
+$ 0.3090
+$ 1.2360
+Minimax M2.1
+$ 0.3090
+$ 1.2360
+Minimax M2.5
+$ 0.31
+$ 1.24
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier pricing is at 50% discount to Standard tier pricing
+Mistral AI
+Mistral AI
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.40
+$ 2.00
+Magistral Small 1.2
+$ 0.50
+$ 1.50
+Voxtral Mini 1.0
+$ 0.04
+$ 0.04
+Voxtral Small 1.0
+$ 0.10
+$ 0.30
+Ministral 3B 3.0
+$ 0.10
+$ 0.10
+Ministral 8B 3.0
+$ 0.15
+$ 0.15
+Ministral 14B 3.0
+$ 0.20
+$ 0.20
+Mistral Large 3
+$ 0.50
+$ 1.50
+Regions: Asia Pacific (Mumbai)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.48
+$ 2.40
+Magistral Small 1.2
+$ 0.59
+$ 1.76
+Voxtral Mini 1.0
+$ 0.05
+$ 0.05
+Voxtral Small 1.0
+$ 0.12
+$ 0.35
+Ministral 3B 3.0
+$ 0.12
+$ 0.12
+Ministral 8B 3.0
+$ 0.18
+$ 0.18
+Ministral 14B 3.0
+$ 0.24
+$ 0.24
+Mistral Large 3
+$ 0.59
+$ 1.76
+Regions: South America (Sao Paulo) and Asia Pacific (Tokyo)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.48
+$ 2.40
+Magistral Small 1.2
+$ 0.61
+$ 1.82
+Voxtral Mini 1.0
+$ 0.05
+$ 0.05
+Voxtral Small 1.0
+$ 0.12
+$ 0.36
+Ministral 3B 3.0
+$ 0.12
+$ 0.12
+Ministral 8B 3.0
+$ 0.18
+$ 0.18
+Ministral 14B 3.0
+$ 0.24
+$ 0.24
+Mistral Large 3
+$ 0.61
+$ 1.82
+Regions: Europe (Ireland) and Europe (Milan)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.48
+$ 2.40
+Magistral Small 1.2
+$ 0.59
+$ 1.76
+Voxtral Mini 1.0
+$ 0.05
+$ 0.05
+Voxtral Small 1.0
+$ 0.12
+$ 0.35
+Ministral 3B 3.0
+$ 0.12
+$ 0.12
+Ministral 8B 3.0
+$ 0.18
+$ 0.18
+Ministral 14B 3.0
+$ 0.24
+$ 0.24
+Region: Europe (London)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.62
+$ 3.10
+Magistral Small 1.2
+$ 0.78
+$ 2.33
+Voxtral Mini 1.0
+$ 0.06
+$ 0.06
+Voxtral Small 1.0
+$ 0.16
+$ 0.47
+Ministral 3B 3.0
+$ 0.16
+$ 0.16
+Ministral 8B 3.0
+$ 0.23
+$ 0.23
+Ministral 14B 3.0
+$ 0.31
+$ 0.31
+Region: Asia Pacific (Sydney)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.41
+$ 2.06
+Magistral Small 1.2
+$ 0.5150
+$ 1.5450
+Voxtral Mini 1.0
+$ 0.0412
+$ 0.0412
+Voxtral Small 1.0
+$ 0.1030
+$ 0.3090
+Ministral 3B 3.0
+$ 0.1030
+$ 0.1030
+Ministral 8B 3.0
+$ 0.1545
+$ 0.1545
+Ministral 14B 3.0
+$ 0.2060
+$ 0.2060
+Mistral Large 3
+$ 0.5150
+$ 1.5450
+Regions: Asia Pacific (Jakarta),  Europe (Frankfurt) ,  Europe (Stockholm)
+Mistral models
+Price per 1M input tokens
+Price per 1M output tokens
+Devstral 2 123B
+$ 0.48
+$ 2.40
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier pricing is at 50% discount to Standard tier pricing
+Moonshot AI
+Moonshot AI
+On-Demand pricing
+Kimi 3
+Kimi 2
+Kimi 3
+Inference option
+Input
+Output
+Cache read
+Cache write (30 min)
+Global CRIS
+$3.00
+$15.00
+$0.30
+$3.75
+US CRIS
+$3.30
+$16.50
+$0.33
+$4.125
+All prices are per 1 million tokens. Pricing shown is for the Standard tier.
+Kimi 2
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Kimi models
+Price per 1M input tokens
+Price per 1M output tokens
+Kimi K2 Thinking
+$ 0.60
+$ 2.50
+Kimi K2.5
+$ 0.60
+$ 3.00
+Region: Asia Pacific (Mumbai)
+Kimi models
+Price per 1M input tokens
+Price per 1M output tokens
+Kimi K2 Thinking
+$ 0.71
+$ 2.94
+Kimi K2.5
+$ 0.72
+$ 3.60
+Regions: South America (Sao Paulo) and Asia Pacific (Tokyo)
+Kimi models
+Price per 1M input tokens
+Price per 1M output tokens
+Kimi K2 Thinking
+$ 0.73
+$ 3.03
+Kimi K2.5
+$ 0.72
+$ 3.60
+Regions: Europe (Stockholm), Asia Pacific (Jakarta)
+Kimi models
+Price per 1M input tokens
+Price per 1M output tokens
+Kimi K2.5
+$ 0.72
+$ 3.60
+Region: Asia Pacific (Sydney)
+Kimi models
+Price per 1M input tokens
+Price per 1M output tokens
+Kimi K2 Thinking
+$ 0.6180
+$ 2.5750
+Kimi K2.5
+$ 0.6180
+$ 3.0900
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier pricing is at 50% discount to Standard tier pricing
+NVIDIA
+NVIDIA
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron Nano 2
+$ 0.06
+$ 0.23
+NVIDIA Nemotron Nano 2 VL
+$ 0.20
+$ 0.60
+NVIDIA Nemotron 3 Nano 30B A3B
+$ 0.06
+$ 0.24
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.15
+$ 0.65
+Regions: AWS GovCloud (US-East and US-West)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron Nano 2
+$ 0.072
+$ 0.276
+NVIDIA Nemotron Nano 2 VL
+$ 0.240
+$ 0.720
+NVIDIA Nemotron 3 Nano 30B A3B
+$ 0.072
+$ 0.288
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.180
+$ 0.780
+Regions: Asia Pacific (Mumbai), Europe (Ireland) and Europe (Milan)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron Nano 2
+$ 0.07
+$ 0.27
+NVIDIA Nemotron Nano 2 VL
+$ 0.24
+$ 0.71
+NVIDIA Nemotron 3 Nano 30B A3B
+$ 0.07
+$ 0.28
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.18
+$ 0.78
+Regions: South America (Sao Paulo) and Asia Pacific (Tokyo)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron Nano 2
+$ 0.07
+$ 0.28
+NVIDIA Nemotron Nano 2 VL
+$ 0.24
+$ 0.73
+NVIDIA Nemotron 3 Nano 30B A3B
+$ 0.07
+$ 0.29
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.18
+$ 0.78
+Region: Europe (London)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron Nano 2
+$ 0.09
+$ 0.36
+NVIDIA Nemotron Nano 2 VL
+$ 0.31
+$ 0.93
+NVIDIA Nemotron 3 Nano 30B A3B
+$ 0.09
+$ 0.37
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.23
+$ 1.01
+Region: Asia Pacific (Sydney)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron Nano 2
+$ 0.0618
+$ 0.2369
+NVIDIA Nemotron Nano 2 VL
+$ 0.2060
+$ 0.6180
+NVIDIA Nemotron 3 Nano 30B A3B
+$ 0.0618
+$ 0.2472
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.15
+$ 0.67
+Region: Asia Pacific (Jakarta), Europe (Frankfurt) and Europe (Stockholm)
+NVIDIA models
+Price per 1M input tokens
+Price per 1M output tokens
+NVIDIA Nemotron 3 Super 120B A12B
+$ 0.18
+$ 0.78
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing are at 50% discount to Standard tier pricing
+OpenAI
+OpenAI
+Frontier Models
+gpt-oss-20b, 120b
+gpt-oss-safeguard 20b, 120b
+Frontier Models
+Select a model below to view detailed pricing, capabilities, and supported regions.
+GPT-6.1 Sol
+GPT-6 Astra
+GPT-6 Sol
+GPT-6 Luna
+Daybreak Red: GPT-5.6 Cyber
+Daybreak Blue: GPT-5.6 Sol
+GPT-5.6 Sol
+GPT-5.6 Terra
+GPT-5.6 Luna
+GPT-5.5
+GPT-5.4
+gpt-oss-20b, 120b
+Standard
+Priority
+Flex
+Batch
+Model Customization
+Standard
+Region: Asia Pacific (Sydney)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+gpt-oss-20b
+$ 0.0721
+$ 0.3090
+gpt-oss-120b
+$ 0.1545
+$ 0.6180
+Priority
+Region: Asia Pacific (Sydney)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+gpt-oss-20b
+$ 0.1262
+$ 0.5408
+gpt-oss-120b
+$ 0.2704
+$ 1.0815
+Flex
+Region: Asia Pacific (Sydney)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+gpt-oss-20b
+$ 0.0361
+$ 0.1545
+gpt-oss-120b
+$ 0.0773
+$ 0.3090
+Batch
+Region: Asia Pacific (Sydney)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+gpt-oss-20b
+$ 0.0361
+$ 0.1545
+gpt-oss-120b
+$ 0.0773
+$ 0.3090
+Model Customization
+Model Customization
+Reinforcement Fine Tuning Pricing
+With Reinforcement fine-tuning capability in Amazon Bedrock, you can improve model accuracy without needing deep machine learning expertise or large sums of labeled data. Amazon Bedrock automates the reinforcement fine-tuning workflow: It takes your sample prompts, generates model responses, and scores them using your reward function. These prompts, responses, and scores are then used to train your model through an iterative RFT workflow.
+The entire training workflow is billed at an hourly rate. After training completes, customers can immediately use the resulting fine tuned model for on-demand inference. The on-demand inference option includes a token-based pricing model that charges based on the number of tokens processed during inference.
+Regions: US East (N. Virginia) and US West (Oregon)
+OpenAI models
+Price per training hours
+Price per 1M input tokens
+Price per 1M output tokens
+Price to store each trained model per month
+gpt-oss-20b
+$ 80.00
+$ 0.09
+$ 0.39
+$ 1.95
+gpt-oss-safeguard 20b, 120b
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+GPT OSS Safeguard 20B
+$ 0.07
+$ 0.20
+GPT OSS Safeguard 120B
+$ 0.15
+$ 0.60
+Regions: Asia Pacific (Mumbai), South America (Sao Paulo) and Asia Pacific (Tokyo)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+GPT OSS Safeguard 20B
+$ 0.08
+$ 0.24
+GPT OSS Safeguard 120B
+$ 0.18
+$ 0.71
+Regions: Europe (Ireland) and Europe (Milan)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+GPT OSS Safeguard 20B
+$ 0.08
+$ 0.23
+GPT OSS Safeguard 120B
+$ 0.18
+$ 0.70
+Region: Europe (London)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+GPT OSS Safeguard 20B
+$ 0.11
+$ 0.31
+GPT OSS Safeguard 120B
+$ 0.23
+$ 0.93
+Region: Asia Pacific (Sydney)
+OpenAI models
+Price per 1M input tokens
+Price per 1M output tokens
+GPT OSS Safeguard 20B
+$ 0.0721
+$ 0.2060
+GPT OSS Safeguard 120B
+$ 0.1545
+$ 0.6180
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing is at 50% discount to Standard tier pricing.
+Qwen
+Amazon Bedrock
+Overview
+Getting Started
+Capabilities
+Agents
+Pricing
+Resources
+More
+Qwen
+Qwen3 Coder, 32B, 235B
+Qwen 3 Next, VL, Coder Next
+Qwen3 Coder, 32B, 235B
+Standard
+Priority
+Flex
+Batch
+Model Customization
+Standard
+Region: Asia Pacific (Sydney)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Coder 30B A3B
+$ 0.1545
+$ 0.6180
+Qwen3 32B
+$ 0.1545
+$ 0.6180
+Qwen3 235B A22B 2507
+$ 0.2266
+$ 0.9064
+Priority
+Region: Asia Pacific (Sydney)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Coder 30B A3B
+$ 0.2704
+$ 1.0815
+Qwen3 32B
+$ 0.2704
+$ 1.0815
+Qwen3 235B A22B 2507
+$ 0.3966
+$ 1.5862
+Flex
+Region: Asia Pacific (Sydney)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Coder 30B A3B
+$ 0.0773
+$ 0.3090
+Qwen3 32B
+$ 0.0773
+$ 0.3090
+Qwen3 235B A22B 2507
+$ 0.1133
+$ 0.4532
+Batch
+Region: Asia Pacific (Sydney)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Coder 30B A3B
+$ 0.0773
+$ 0.3090
+Qwen3 32B
+$ 0.0773
+$ 0.3090
+Qwen3 235B A22B 2507
+$ 0.1133
+$ 0.4532
+Model Customization
+Model Customization
+Reinforcement Fine Tuning Pricing
+With Reinforcement fine-tuning capability in Amazon Bedrock, you can improve model accuracy without needing deep machine learning expertise or large sums of labeled data. Amazon Bedrock automates the reinforcement fine-tuning workflow: It takes your sample prompts, generates model responses, and scores them using your reward function. These prompts, responses, and scores are then used to train your model through an iterative RFT workflow.
+The entire training workflow is billed at an hourly rate. After training completes, customers can immediately use the resulting fine tuned model for on-demand inference. The on-demand inference option includes a token-based pricing model that charges based on the number of tokens processed during inference.
+Regions: US East (N. Virginia) and US West (Oregon)
+Qwen models
+Price per training hours
+Price per 1M input tokens
+Price per 1M output tokens
+Price to store each trained model per month
+Qwen3 32B
+$ 80.00
+$ 0.20
+$ 0.78
+$ 1.95
+Qwen 3 Next, VL, Coder Next
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Next 80B A3B
+$ 0.15
+$ 1.20
+Qwen3 VL 235B A22B
+$ 0.53
+$ 2.66
+Qwen3 Coder Next
+$ 0.50
+$ 1.20
+Regions: Asia Pacific (Mumbai), Europe (Ireland) and Europe (Milan)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Next 80B A3B
+$ 0.18
+$ 1.41
+Qwen3 VL 235B A22B
+$ 0.62
+$ 3.13
+Qwen3 Coder Next
+$ 0.60
+$ 1.44
+Regions: South America (Sao Paulo) and Asia Pacific (Tokyo)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Next 80B A3B
+$ 0.18
+$ 1.45
+Qwen3 VL 235B A22B
+$ 0.64
+$ 3.22
+Qwen3 Coder Next
+$ 0.60
+$ 1.44
+Region: Europe (London)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Next 80B A3B
+$ 0.23
+$ 1.86
+Qwen3 VL 235B A22B
+$ 0.82
+$ 4.12
+Qwen3 Coder Next
+$ 0.78
+$ 1.86
+Regions: Europe (Frankfurt) and Asia Pacific (Jakarta)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Coder Next
+$ 0.60
+$ 1.44
+Region: Asia Pacific (Sydney)
+Qwen models
+Price per 1M input tokens
+Price per 1M output tokens
+Qwen3 Next 80B A3B
+$ 0.1545
+$ 1.2360
+Qwen3 VL 235B A22B
+$ 0.5459
+$ 2.7398
+Qwen3 Coder Next
+$ 0.5150
+$ 1.2360
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing is at 50% discount to Standard tier pricing.
+Stability AI
+Stability AI
+On-Demand pricing
+Previous generation of image models offered by Stability AI are priced per image, depending on step count and image resolution.
+Region: Oregon, N. Virginia, Ohio
+Stability AI Image Services
+Price per generation for each model
+Stable Image Remove Background
+$0.07
+Stable Image Erase Object
+$0.07
+Stable Image Control Structure
+$0.07
+Stable Image Control Sketch
+$0.07
+Stable Image Style Guide
+$0.07
+Stable Image Search and Replace
+$0.07
+Stable Image Inpaint
+$0.07
+Stable Image Search and Recolor
+$0.07
+Stable Image Style Transfer
+$0.08
+Stable Image Conservative Upscale
+$0.40
+Stable Image Creative upscale
+$0.60
+Stable Image Fast Upscale
+$0.03
+Stable Image Outpaint
+$0.06
+TwelveLabs
+TwelveLabs
+On-Demand pricing
+Global Cross-region Inference
+Geo and In-region Cross-region Inference
+Global Cross-region Inference
+Geo and In-region Cross-region Inference
+Writer
+Writer
+On-demand pricing
+Writer models
+Price per 1M input tokens
+Price per 1M output tokens
+Palmyra X4
+$2.50
+$10.00
+Palmyra X5
+$0.60
+$6.00
+Palmyra Vision 7B
+$0.15
+$0.60
+xAI
+xAI
+Select a model below to view detailed pricing, capabilities, and supported regions.
+Grok 4.7
+Grok 4.6
+Grok 4.3
+Z AI
+Amazon Bedrock
+Overview
+Getting Started
+Capabilities
+Agents
+Pricing
+Resources
+More
+Z AI
+GLM 5.3
+GLM 5
+GLM 4.7
+GLM 4.7 Flash
+GLM 5.3
+On-Demand pricing
+Inference option
+Price per 1M input tokens
+Price per 1M output tokens
+Cache read
+Cache write - 30m
+Global CRIS
+$ 1.68
+$ 5.28
+$ 0.312
+$ 2.10
+US CRIS
+$ 1.848
+$ 5.808
+$ 0.3432
+$ 2.31
+All prices are per 1 million tokens. Pricing shown is for the Standard tier.
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing is at 50% discount to Standard tier pricing.
+GLM 5
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 5
+$ 1.00
+$ 3.20
+Regions: Asia Pacific (Jakarta), Asia Pacific (Mumbai),  Asia Pacific (Tokyo), South America (Sao Paulo) and Europe (Stockholm)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 5
+$ 1.20
+$ 3.84
+Region: Europe (London)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 5
+$ 1.55
+$ 4.96
+Region: Asia Pacific (Sydney)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 5
+$ 1.03
+$ 3.30
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing is at 50% discount to Standard tier pricing.
+GLM 4.7
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7
+$ 0.60
+$ 2.20
+Regions: Asia Pacific (Jakarta), Asia Pacific (Mumbai),  Asia Pacific (Tokyo), South America (Sao Paulo) and Europe (Stockholm)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7
+$ 0.72
+$ 2.64
+Region: Asia Pacific (Sydney)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7
+$ 0.6180
+$ 2.2660
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing is at 50% discount to Standard tier pricing.
+GLM 4.7 Flash
+On-Demand pricing
+Regions: US East (N. Virginia), US East (Ohio) and US West (Oregon)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7 Flash
+$ 0.07
+$ 0.40
+GLM 5
+$ 1.00
+$ 3.20
+Regions: Asia Pacific (Jakarta), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Europe (Frankfurt), Europe (Ireland), Europe (Milan), Europe (Stockholm) and South America (Sao Paulo)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7 Flash
+$ 0.08
+$ 0.48
+Regions: Asia Pacific (Jakarta), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Europe (Frankfurt), Europe (Stockholm) and South America (Sao Paulo)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 5
+$ 1.20
+$ 3.84
+Region: Europe (London)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7 Flash
+$ 0.11
+$ 0.62
+GLM 5
+$ 1.55
+$ 4.96
+Region: Asia Pacific (Sydney)
+Z AI models
+Price per 1M input tokens
+Price per 1M output tokens
+GLM 4.7 Flash
+$ 0.0721
+$ 0.4120
+GLM 5
+$ 1.03
+$ 3.30
+* Priority tier pricing is at 75% premium to Standard tier pricing
+* Flex tier and Batch pricing is at 50% discount to Standard tier pricing.
+Custom Model Import
+Custom Model Import
+Llama
+Multimodal Llama
+Mistral
+Mixtral
+Flan
+Qwen
+OpenAI
+Llama
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.05718
+Monthly storage cost per Custom Model Unit
+$1.95
+Region: Europe (Frankfurt)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.07144
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+Multimodal Llama
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.05718
+Monthly storage cost per Custom Model Unit
+$1.95
+Region: Europe (Frankfurt)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.07144
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+Mistral
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.05718
+Monthly storage cost per Custom Model Unit
+$1.95
+Region: Europe (Frankfurt)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.07144
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+Mixtral
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.05718
+Monthly storage cost per Custom Model Unit
+$1.95
+Region: Europe (Frankfurt)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.07144
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+Flan
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.05718
+Monthly storage cost per Custom Model Unit
+$1.95
+Region: Europe (Frankfurt)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.07144
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+On-Demand Inference Pricing:
+You are billed in 5-minute windows for the duration your model copy is active starting from the first successful invocation. The maximum throughput and concurrency limit per model copy depends on factors such as input/output token mix, hardware type, model size, architecture, inference optimizations, and is determined during the model import workflow.
+Bedrock automatically scales the number of model copies depending on your usage patterns. If there are no invocations for a 5-minute period, Bedrock will scale down to zero and scale back up when you invoke your model. While scaling back up, you may experience a cold-start duration (in tens of seconds) depending on model size. Bedrock also scales up the number of model copies if your inference volume consistently exceeds the concurrency limits of a single model copy. Note: There is a default maximum of 3 model copies per account per imported model that can be increased through Service Quotas.
+Qwen
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.05718
+Monthly storage cost per Custom Model Unit
+$1.95
+Region: Europe (Frankfurt)
+Custom Model Unit version
+v1.0
+Price per Custom Model Unit per min*
+$0.07144
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+On-Demand Inference Pricing:
+You are billed in 5-minute windows for the duration your model copy is active starting from the first successful invocation. The maximum throughput and concurrency limit per model copy depends on factors such as input/output token mix, hardware type, model size, architecture, inference optimizations, and is determined during the model import workflow.
+Bedrock automatically scales the number of model copies depending on your usage patterns. If there are no invocations for a 5-minute period, Bedrock will scale down to zero and scale back up when you invoke your model. While scaling back up, you may experience a cold-start duration (in tens of seconds) depending on model size. Bedrock also scales up the number of model copies if your inference volume consistently exceeds the concurrency limits of a single model copy. Note: There is a default maximum of 3 model copies per account per imported model that can be increased through Service Quotas.
+OpenAI
+Regions: US East (N. Virginia) and US West (Oregon)
+Custom Model Unit version
+v2.0
+Price per Custom Model Unit per min*
+$0.1433
+Monthly storage cost per Custom Model Unit
+$1.95
+Note:
+The Custom Model Units needed to host a model depend on a variety of factors - notably the model architecture, model parameter count, and context length. The exact number of Custom Model Units needed will be determined at the time of import. For reference, Llama 3.1 8B 128K model requires 2 Custom Model Units, a Llama 3.1 70B 128k model requires 8 Custom Model Units.
+*Billed in 5 minute windows
+On-Demand Inference Pricing:
+You are billed in 5-minute windows for the duration your model copy is active starting from the first successful invocation. The maximum throughput and concurrency limit per model copy depends on factors such as input/output token mix, hardware type, model size, architecture, inference optimizations, and is determined during the model import workflow.
+Bedrock automatically scales the number of model copies depending on your usage patterns. If there are no invocations for a 5-minute period, Bedrock will scale down to zero and scale back up when you invoke your model. While scaling back up, you may experience a cold-start duration (in tens of seconds) depending on model size. Bedrock also scales up the number of model copies if your inference volume consistently exceeds the concurrency limits of a single model copy. Note: There is a default maximum of 3 model copies per account per imported model that can be increased through Service Quotas.
+Knowledge Bases
+Managed Knowledge Bases
+Self-Managed Knowledge Bases
+Managed Knowledge Bases
+Amazon Bedrock Managed Knowledge Base
+Amazon Bedrock Managed Knowledge Base gives your agent the ability to find, reason over, and retrieve the right information from your documents, images, audio, and video — without managing any infrastructure. It is seamlessly integrated with Amazon Bedrock AgentCore for your AI workloads. Whether you are an experienced developer or building your first AI agent, Managed Knowledge Base handles data ingestion, multimodal parsing, vector storage, and intelligent retrieval automatically. You pay only for what you store and retrieve.
+What's included at no extra charge:
+Multimodal document parsing with the managed parser
+Embeddings generation with the managed model
+Re-ranking with the managed reranker
+Note
+: Standard Gateway tool invocation charges apply if you invoke Managed Knowledge Base via AgentCore Gateway. Standard CloudWatch rates apply if Observability is enabled.
+Feature
+Description
+Price
+Index Storage
+Managed search index with native connectors to sync data from S3, SharePoint, Confluence, and more.
+$5.00 per GB of raw data / month
+Multimodal Document Parsing (managed parser)
+Parses text, PDFs, images, tables, audio, and video into searchable content.
+$0
+Embeddings Generation (managed model)
+Converts your content into searchable vectors using the built-in model.
+$0
+Standard Retrieval (Retrieve API)
+Hybrid search combining semantic and keyword search over your indexed content.
+$1.00 per 1,000 API calls
+Re-ranking (managed reranker)*
+Re-orders retrieved passages by relevance.
+$0
+Agentic Retrieval — Managed LLM planning**
+Multi-hop retrieval using the built-in LLM for query planning.
+$4.00 per 1,000 Agentic Retrieve API calls + $1.00 per 1,000 underlying Retrieve API calls
+* If you select a model of your choice for embeddings generation or re-ranking, additional charges apply. Please see the model provider section for pricing.
+** For Agentic Retrieval with an LLM of your choice, you pay $1.00 per 1,000 underlying Retrieve API calls plus model provider pricing for the LLM used for query planning.
+Self-Managed Knowledge Bases
+Structured Data Retrieval (SQL Generation)
+Structured Data Retrieval is charged for each request to generate a SQL query. The SQL query generated is used to retrieve the data from structured data stores.
+Rerank models
+Rerank models are designed to improve the relevance and accuracy of responses in Retrieval Augmented Generation (RAG) applications. They are charged per query.
+**You are charged for number of queries where a query can contain up to 100 document chunks. If the query contains more than 100 document chunks, it is counted as multiple queries. For example, if a request contains 350 documents, it will be treated as 4 queries. Please note that each document can only contain upto 512 tokens (inclusive of the query and document’s total tokens), and if the token length is higher than 512 tokens, it is broken down into multiple documents. A query is equivalent to a search unit.
+Guardrails
+Amazon Bedrock Guardrails
+The pricing for Amazon Bedrock Guardrails is based on the charges incurred by the filter used in the guardrail.
+The pricing is the same for both standard tier and classic tier.
+Bedrock Guardrails safeguard/filter*
+Price
+Content filters for both standard tier and classic tier (text content)
+$0.15 per 1,000 text units
+Content filters (image content)
+$0.00075 per image processed
+Denied topics for both standard tier and classic tier
+$0.15 per 1,000 text units
+Sensitive information filters
+$0.10 per 1,000 text units
+Sensitive information filters (regular expression)
+Free
+Word filters
+Free
+Contextual grounding checks**
+$0.10 per 1,000 text units
+Automated Reasoning checks
+$0.17 per 1,000 text units per Automated Reasoning policy
+The table below lists the prices for Bedrock Guardrails when used with InvokeGuardrailChecks API.
+Bedrock Guardrails safeguard/filter*
+Price
+Content filters (text content only)
+$0.07 per 1,000 text units
+Prompt attack (text content only) ***
+$0.08 per 1,000 text units
+Sensitive information filters
+$0.10 per 1,000 text units
+On-Demand pricing
+* Each guardrail filter is optional and can be enabled based on your application requirements. Charges will be incurred based on the safeguard used. For example, if you use content filters and sensitive information filters, charges will be incurred for these two filters, while there will be no charges associated with any other filter.
+** Contextual grounding check uses a reference source and a query to determine if the model response is grounded based on the source and relevant to the query. The total number of text units charged is calculated by combining all the characters in the source, query, and model response.
+*** With the InvokeGuardrailChecks API, you can use the prompt attack filter separately outside of content filters. This separation is available only with this API.
+Note
+: A text unit can contain up to 1000 characters. If a text input is more than 1000 characters, it is processed as multiple text units, each containing 1000 characters or less. For example, if a text input contains 5600 characters, it will be charged for 6 text units.
+Model Evaluation
+Model Evaluation
+Model evaluation is charged for the inference from your choice of model. Automatically-generated algorithmic scores are provided at no extra charge. For human-based evaluation where you bring your own workstream, you are charged for the model inference in the evaluation, and a charge of $0.21 per completed human task.
+If you use RAG evaluation or LLM-as-a-judge in Model Evaluation, the tokens that the judge model uses are charged based on the on-demand standard tier prices. The judge prompts are charged as part of your token usage and are available in the public documentation. RAG evaluation on a Bedrock Knowledge Base also incurs any regular usage charges from Bedrock Knowledge Bases.
+Model
+Price per 1,000 input tokens
+Price per 1,000 output tokens
+Price per human task
+Model selected for evaluation
+Based on model selected
+Based on model selected
+$0.21
+Data Automation
+Data Automation
+Amazon Bedrock Data Automation transforms unstructured, multimodal content into structured data formats for use cases like intelligent document processing, video analysis, and RAG. Bedrock Data Automation can generate Standard Output content using predefined defaults which are modality specific, like scene-by-scene descriptions of videos, audio transcripts or automated document analysis. Customers can additionally create Custom Outputs by specifying their output requirements in Blueprints based on their own data schema that they can then easily load into an existing database or data warehouse. Through an integration with Knowledge Bases, Bedrock Data Automation can also be used to parse content for RAG applications, improving the accuracy and relevancy of results by including information embedded in both images and text.
+Amazon Bedrock Knowledge Bases offers a Bedrock Data Automation integration to provide more relevant and accurate responses for multimodal data. When setting up a Knowledge Base, you can select Bedrock Data Automation as your parsing method to analyze and extract meaningful insights from images or documents, which can include figures, charts, and diagrams. During processing, Bedrock Data Automation extracts meaningful information from ingested documents and images, which is then used in subsequent Knowledge Base steps for chunking, embedding, and storage. When integrated with Knowledge Bases, Bedrock Data Automation delivers and charges for standardized output.
+Intelligent Prompt Routing
+Price Point
+Pricing Dimension
+Pricing Plan
+Intelligent Prompt Routing
+$1 per 1,000 requests
+On-Demand
+Intelligent Prompt Routing
+Intelligent Prompt Routing allows you to use a combination of foundation models (FMs) from the same model family to help optimize for quality and cost. For example, with the
+Anthropic’s Claude
+model family, Amazon Bedrock can intelligently route requests between Claude 3.5 Sonnet and Claude 3 Haiku depending on the complexity of the prompt. Similarly, Amazon Bedrock can route requests between
+Meta Llama
+3.3 70B and 3.18B, and Nova Pro and Nova Lite. The prompt router predicts which model will provide the best performance for each request while helping optimize the quality of response and cost. This is particularly useful for applications such as customer service assistants, where uncomplicated queries can be handled by smaller, faster, and more cost-effective models, and complex queries are routed to more capable models. Intelligent Prompt Routing can reduce costs by up to 30 percent without compromising on accuracy.
+Prompt Optimization
+Prompt Optimization for Amazon Bedrock
+Amazon Bedrock offers two prompt optimizers.
+Simple Prompt Optimizer
+The simple prompt optimizer is available with a single click in the playground and Prompt Manager. It is also available through the OptimizePrompt API. You are only charged for the total number of input prompt tokens and the resulting optimized prompts.
+The price is $0.03 per 1,000 tokens
+Advanced Prompt Optimizer
+Bedrock’s Advanced Prompt Optimization is available in the Advanced Prompt Optimization section of the Bedrock Conole and the CreateAdvancedPromptOptimizationJob API. You are charged for on-demand standard tier tokens used in the optimization. To estimate your usage, the following is important: The prompt optimizer uses LLMs as rewriters and evaluators that work in iterative loops between inference, evaluation, and rewriting. Use the following equations to estimate your costs, where N = the number of dataset records in your evaluation dataset for each prompt template, P is the input token count in your prompt templates, O = estimated target model output token count, G = ground truth reference response token count.
+Lambda function evaluator:
+If you choose to bring a Lambda function as an evaluator, the following formulas can be used to estimate total tokens and cost per prompt template:
+Lambda invocations per prompt template = 16*N.
+Number of Total Target Model Tokens = 16*N*(P+O).
+Number of optimizer LLM Input tokens (currently Anthropic Claude Sonnet 4.6) = 101 * (3700+0.35P).
+LLM-as-a-judge evaluator:
+If you choose the LLM-as-a-judge or natural language steering criteria option, the following formulas can be used to estimate total tokens per prompt templateNumber of Total Target Model Tokens = 16*N*(P+O).
+Number of optimizer LLM Input tokens (currently Anthropic Claude Sonnet 4.6) = 101 * (3700+0.35P).
+Number of LLMJudge tokens = 16*N*(P+O+G + Judge prompt)
+Note: This is a generative AI feature; exact output token counts are unknown until runtime and vary based on what the prompt is designed to output.
+Web Search
+Web Search
+Web Search lets your models and agents retrieve current information from the web to ground responses in up-to-date content.  You are charged per query, where a query represents a single web search request.
+Pricing examples
+AI21 labs
+An application developer makes the following API calls to Amazon Bedrock: a request to AI21’s Jurassic-2 Mid model to summarize an input of 10K tokens of input text to an output of 2K tokens.
+Total cost incurred = 10K tokens/1000 * $0.0125 + 2K tokens/1000 * $0.0125 = $0.15
+Amazon
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock on an hourly basis: a request to Amazon Titan Text Lite model to summarize an input of 2K tokens of input text to an output of 1K tokens.
+Total hourly cost incurred is = 2K tokens/1000 * $0.0003 + 1K tokens/1000 * $0.0004 = $0.001.
+An application developer makes the following API calls to Amazon Bedrock: a request to the Amazon Titan Image Generator base model to generate 1000 images of 1024 x 1024 in size of standard quality.
+Total cost incurred = 1000 images * $0.01 per image = $10
+Customization (fine-tuning and continued pretraining) pricing
+An application developer customizes an Amazon Titan Image Generator model using 1000 image-text pairs. After training, the developer uses custom model provisioned throughput for 1 hour to evaluate the performance of the model. The fine-tuned model is stored for 1 month. After evaluation, the developer uses provisioned throughput (1-month commitment term) to host the customized model.
+Monthly cost incurred for fine-tuning = fine-tuning training ($.005 * 500 * 64), where $0.005 is the price per image seen, 500 is the number of steps, and 64 is the batch size, + custom model storage per month ($1.95) + 1 hour of custom model inference ($21) = $160 + $1.95 + 21 = $182.95
+Provisioned Throughput pricing
+An application developer buys two model units of Amazon Titan Text Express with a 1-month commitment for their text summarization use case.
+Total monthly cost incurred = 2 model units * $18.40/hour * 24 hours * 31 days = $27,379.20
+An application developer buys one model unit of the base Amazon Titan Image Generator model with a 1-month commitment.
+Total cost incurred = 1 model unit * $16.20 * 24 hours * 31 days = $12,052.80
+Amazon Bedrock Guardrails
+Example 1: Customer support chatbot
+An application developer creates a customer support chatbot and uses content filters to block harmful content and denied topics to filter undesirable queries and responses.
+The chatbot serves 1000 user queries per hour. Each user query has an average input length of 200 characters and receives a FM response of 1500 characters.
+Each user query of 200 characters correspond to 1 text unit.
+Each FM response of 1,500 characters correspond to 2 text units.
+Text units processed each hour = (1 + 2) * 1000 queries = 3000 text units
+Total cost incurred per hour for content filters and denied topics = 3000 * ($0.15 + $0.15) / 1000 = $0.90
+Example 2: Call center transcript summarization
+An application developer creates an application to summarize chat transcripts between users and support agents. It uses sensitive information filter to redact personally identifiable information (PII) in the generated summaries for 10,000 conversations.
+Each generated summary has an average of 3,500 characters that corresponds to 4 text units.
+Total cost incurred to summarize 10,000 conversations = 10000 * 4 * ($0.1/1000) = $4
+Example 3: Medical Protocol Verification Engine
+A healthcare technology company implements Automated Reasoning checks in their clinical decision support system to validate treatment suggestions against medical guidelines.
+The system processes 5,000 patient cases per month. Each case involves:
+Patient data summary: 500 characters (1 text unit)
+Diagnostic assessment: 2,000 characters (2 text units)
+Treatment recommendation: 4,500 characters (5 text units)
+Text units processed per month = (1 + 2 + 5) 5,000 cases = 40,000 text units
+Total cost incurred per month for Automated Reasoning checks = 40,000 ($0.17) / 1000 = $6.80
+Amazon Bedrock Knowledge Bases
+Pricing Examples
+Example 1: Customer Support Chatbot (using Standard Retrieval)
+You index 50 GB of content from your SharePoint site — approximately 100,000 documents including PDFs, presentations, Word files, and images. Your agent handles 100,000 standard retrieval queries per month.
+Line Item
+Calculation
+Cost
+Index Storage
+50 GB × $5.00
+$250.00
+Multimodal Document Parsing (managed parser)
+Included
+$0
+Embeddings Generation (managed model)
+Included
+$0
+Standard Retrieval
+100,000 ÷ 1,000 × $1.00
+$100.00
+Re-ranking (managed reranker)
+Included
+$0
+Monthly Total
+$350.00
+Example 2: Enterprise Research Assistant (using Agentic Retrieval)
+You index 50 GB of content from your SharePoint site — approximately 100,000 documents including PDFs, presentations, Word files, and images. Your agent handles 100,000 Agentic Retrieve API calls per month. On average, each agentic call makes 2 underlying Retrieve API calls.
+Line Item
+Calculation
+Cost
+Index Storage
+50 GB × $5.00
+$250.00
+Multimodal Document Parsing (managed parser)
+Included
+$0
+Embeddings Generation (managed model)
+Included
+$0
+Agentic Retrieve API calls
+100,000 ÷ 1,000 × $4.00
+$400.00
+Underlying Retrieve API calls
+(100,000 × 2) ÷ 1,000 × $1.00
+$200.00
+Re-ranking (managed reranker)
+Included
+$0
+Monthly Total
+$850.00
+Anthropic
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock in the US West (Oregon) Region: a request to Anthropic’s Claude model to summarize an input of 11K tokens of input text to an output of 4K tokens.
+Total cost incurred = 11K tokens/1000 * $0.008 + 4K tokens/1000 * $0.024 = $0.088 + $0.096 = $0.184
+Provisioned Throughput pricing
+An application developer buys one model unit of Anthropic Claude Instant in the US West (Oregon) Region:
+Total monthly cost incurred = 1 model unit * $39.60 * 24 hours * 31 days = $29,462.40
+Cohere
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock: a request to Cohere’s Command model to summarize an input of 6K tokens of input text to an output of 2K tokens.
+Total cost incurred = 6K tokens/1,000 * $0.0015 + 2K tokens/1,000 * $0.0020 = $0.013
+An application developer makes the following API calls to Amazon Bedrock: A request to Cohere’s Command - Light model to summarize an input of 6K tokens of input text to an output of 2K tokens.
+Total cost incurred = 6K tokens/1000 * $0.0003 + 2K tokens/1000 * $0.0006 = $0.003
+An application developer makes the following API calls to Amazon Bedrock: A request to either Cohere’s Embed English or Embed Multilingual model to generate embeddings for 10K tokens of input.
+Total cost incurred = 10K tokens/1000 * $0.0001 = $.001
+Customization (fine-tuning) pricing
+An application developer customizes a Cohere Command model using 1000 tokens of data. After training, uses custom model provisioned throughput for 1 hour to evaluate the performance of the model. The fine-tuned model is stored for 1 month. After evaluation, the developer uses provisioned throughput (1mo commit) to host the customized model.
+Monthly cost incurred for fine-tuning = Fine-tuning training ($0.004 * 1000) + custom model storage per month ($1.95) + 1 hour of custom model inference ($49.50) = $55.45
+Monthly cost incurred for provisioned throughput (1-month commitment) of custom model = $39.60
+Provisioned Throughput pricing
+An application developer, buys one model unit of Cohere Command with a 1-month commitment for their text summarization use case.
+Total monthly cost incurred = 1 model unit * $39.60 * 24 hours * 31 days = $29,462.40
+Custom Model Import
+Pricing Example
+: An application developer imports a customized Llama 3.1 type model that is 8B parameter in size with a 128K sequence length in us-east-1 region and deletes the model after 1 month. This requires 2 Custom Model Units. So, the price per minute will be $0.1570 because 2 Custom Model Units are required. The model storage costs for 2 Custom Model Units would be $3.90 for the month.
+There is no charge to import the model. The first successful invocation is at 8:03 AM, at which time the metering starts. The 5-minute metering windows are from 8:03 AM - 8:07 AM; 8:07 AM - 8:11 AM, and so on. If there is at least one invocation during any 5-minute period, the window will be considered active for billing. If there is an invocation at 8:03 AM and no further invocations after 8:07 AM, the metering will stop at 8:07 AM. In this case, the bill would be calculated as follows: $0.1570 * 5 minutes * 1 five minute windows =
+$0.785
+.
+Data Automation
+Pricing example 1:
+Let’s say you process a 1,000 page document using BDA Custom Output. All 1,000 pages are processed using blueprint 1 which has 15 fields. The per page price for any blueprint with 30 fields or less is $0.040. The total cost would be $40.
+Total pages processed = 1,000
+Price per page for blueprints with less than 30 fields = $0.040
+Total charge = 1,000 * $0.040 = $40
+Pricing example 2:
+Let’s say you process 2 documents using BDA Custom Output. Document 1 has 40 pages and is processed using blueprint 1 which has 20 fields. Document 2 has 10 pages and is processed using blueprint 2, which has 40 fields. The per page price of blueprint 1 is $0.040 since it contains 30 fields or less. The per page price of blueprint 2 is $0.045. The processing cost for Document 1 using blueprint 1 is $1.60. The processing cost for Document 2 using blueprint 2 is $0.45. The total cost of processing both documents would be $2.05.
+Total pages processed = 50
+Price per page for Blueprint 1 with less than 30 fields = $0.040
+Price per page for Blueprint 2 with 40 fields = $0.040 + (# of additional fields above 30 *$0.0005 per field)
+Number of additional fields above 30 = 40 - 30 = 10
+Price per page for Blueprint 2 with 40 fields = $0.040 + (10 *$0.0005 per field) = $0.045
+Charge for Document 1 using Blueprint 1 = 40 pages x $0.040 per page = $1.6
+Charge for Document 2 using Blueprint 2 = 10 pages x $0.045 per page = $0.45
+Total charge = Charge for Document 1 + Charge for Document 2 = $1.6 + $0.45 = $2.05
+Pricing Example 3:
+Let’s say you setup Bedrock Knowledge Bases to use Bedrock Data Automation as a parser and then ingest a 1,000 page document. Note, cost structures differ between the Knowledge Bases parsing options. BDA uses per-page pricing, while Foundational Model parsers charge based on input and output tokens. For context, processing 1,000 pages, where 30% contain tables and 30% contain figures, typically requires 2,900 input tokens and 750 output tokens. Token consumption varies by content type, so customers are encouraged to test using their own data to get more accurate estimates. Bedrock Knowledge Bases and Bedrock Data Automation integration uses standard output, where the per page price is $0.010. The total cost would be $10.
+Total pages processed = 1,000
+Price per page for standard output = $0.010
+Total charge = 1,000 * $0.010 = $10
+Pricing example 4:
+Let’s say you process a 60 minute video using BDA Standard Output. The per minute price for video standard output is $0.050. The total cost would be $3.00.
+Total minutes processed = 60
+Price per minute for video standard output = $0.050
+Total charge = 60 * $0.050 = $3.00
+Pricing example 5:
+Let’s say you process 2,000 images using BDA Custom Output. The first 1,000 images are processed using blueprint 1, which has 10 fields. The last 1,000 pages are processed using blueprint 2, which has 40 fields. The per image price for blueprint 1 is $0.005, since it contains 30 fields or less. The per image price of blueprint 2 is $0.01. The processing cost for the first 1,000 images using blueprint 1 is $5.00. The processing cost for the second 1,000 images using blueprint 2 is $10.00. The total cost of processing all 2,000 images would be $15.00
+Cost for first 1000 images = 1,000 images * $0.005 per image = $5.00
+Cost for second 1,000 images = 1,000 images * ($0.005 + (# of additional fields above 30 *$0.0005 per field))
+= 1,000 * ($0.005 + ((40-30)*$0.0005))
+= 1,000 * ($0.005 + (10*$0.0005)) = $10.00
+Total cost = $5.00 + $10.00 = $15.00
+Pricing example 6:
+Let’s assume that you want to use Bedrock Data Automation Standard Output to process 15,000 minutes of meeting audio recordings in your organization. The total cost of processing all 15,000 audio minutes would be $90.
+Total minutes processed = 15,000 minutes
+Total charge = 15,000 min × $0.006 = $90
+DeepSeek
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock on an hourly basis: a request to the DeepSeek-R1 model to summarize an input of 2K tokens of input text to an output of 1K tokens (including reasoning tokens):
+Total hourly cost incurred = 2K tokens/1000 * $0.00135 + 1K tokens/1000 * $0.0054 = $0.0081
+Flows
+Example: News summarization
+An application developer creates a flow to automate news summarization for traders. The flow includes an Input node that takes in an S3 location, and a S3 retrieval node that retrieves 10 files that include articles from 10 major news agency in S3 (2 node transitions). It then uses an iterator node to invoke a model with a prompt node to summarize each file (+ 10 files x 2 node transitions). It then collects all the results using a collector node, write the results to S3 using S3 storage node, and complete in an Output node (+ 3 node transition). They run this flow every half hour of every week day.
+The number of node transition per flow execution is: 2+1+10*2 + 3 = 25 node transitions/flow execution
+The number of flow execution per month is: 24 hours *2* 5 days * 4 weeks = 960 flow executions/month.
+Total monthly bill is: 25 * 960 * $0.035/1000 = $0.84
+Additional charges
+The bill will also include additional charges for AWS services used in the workflow execution, including Amazon S3 usages in the retrieval and storage nodes, and Amazon Bedrock foundation model usage in the prompt node.
+Meta
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock: a request to Meta’s Llama 2 Chat (13B) model to summarize an input of 2K tokens of input text to an output of 500 tokens.
+Total cost incurred = 2K tokens/1000 * $0.00075 + 500 tokens/1000 * $0.001 = $0.002
+Customization (fine-tuning) pricing
+An application developer customizes the Llama 2 Pretrained (70B) model using 1000 tokens of data. After training, uses custom model provisioned throughput for 1 hour to evaluate the performance of the model. The fine-tuned model is stored for 1 month. After evaluation, the developer uses provisioned throughput (1mo commit) to host the customized model.
+Monthly cost incurred for fine-tuning = Fine tuning training ($0.00799 * 1000) + custom model storage per month ($1.95) + 1 hour of custom model inference ($23.50) = $33.44
+Monthly cost incurred for provisioned throughput (a 1-month commit) of custom model = $21.18
+Provisioned Throughput pricing
+An application developer buys one model unit of Meta Llama 2 with a 1-month commitment for their text summarization use case.
+Total monthly cost incurred = 1 model unit * $21.18 * 24 hours * 31 days = $15,757.92
+Mistral AI
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock on an hourly basis: a request to Mistral 7B model to summarize an input of 2K tokens of input text to an output of 1K tokens.
+Total hourly cost incurred = 2K tokens/1000 * $0.00015 + 1K tokens/1000 * $0.0002 = $0.0005
+An application developer makes the following API calls to Amazon Bedrock on an hourly basis: a request to Mixtral 8x7B model to summarize an input of 2K tokens of input text to an output of 1K tokens.
+Total hourly cost incurred = 2K tokens/1000 * $0.00045 + 1K tokens/1000 * $0.0007 = $0.0016
+An application developer makes the following API calls to Amazon Bedrock on an hourly basis: a request to Mistral Large model to summarize an input of 2K tokens of input text to an output of 1K tokens.
+Total hourly cost incurred = 2K tokens/1000 * $0.008 + 1K tokens/1000 * $0.024 = $0.04
+Model evaluation
+Model evaluation example 1:
+On-demand pricing
+An application developer submits a dataset for human-based model evaluation using Anthropic Claude 2.1 and Anthropic Claude Instant in the US East (N. Virginia) AWS Region.
+The dataset contains 50 prompts, and the developer requires one worker to rate each prompt-response set (configurable in the evaluation job creation as “workers per prompt” parameter).
+There will be 50 tasks in this evaluation job (one task for each prompt-response set per each worker). The 50 prompts combine to 5000 input tokens, and the associated responses combine to 15,000 tokens for Anthropic Claude Instant and 20,000 tokens for Anthropic Claude 2.1.
+The following charges are incurred for this model evaluation job:
+Item
+Number of input tokens
+Price per 1000 input tokens
+Cost of input
+Number of output tokens
+Price per 1000 output tokens
+Cost of output
+Number of human tasks
+Price per human task
+Cost of human tasks
+Total
+Claude Instant Inference
+5000
+$0.0008
+$0.004
+15000
+$0.0024
+$0.036
+$0.04
+Claude 2.1 Inference
+5000
+$0.008
+$0.04
+20000
+$0.024
+$0.48
+$0.52
+Human Tasks
+50
+$0.21
+$10.50
+$10.50
+Total
+$11.06
+Model evaluation example 2:
+On-demand pricing
+An application developer submits a dataset for human-based model evaluation using Anthropic Claude 2.1 and Anthropic Claude Instant in the US East (N. Virginia) AWS Region.
+The dataset contains 50 prompts, and the developer requires two workers to rate each prompt-response set (configurable in the evaluation job creation as “workers per prompt” parameter). There will be 100 tasks in this evaluation job (1 task for each prompt-response set per each worker: 2 workers x 50 prompt-response sets = 100 human tasks).
+The 50 prompts combine to 5000 input tokens, and the associated responses combine to 15000 tokens for Anthropic Claude Instant and 20000 tokens for Anthropic Claude 2.1.
+The following charges are incurred for this model evaluation job:
+Item
+Number of input tokens
+Price per 1000 input tokens
+Cost of input
+Number of output tokens
+Price per 1000 output tokens
+Cost of output
+Number of human tasks
+Price per human task
+Cost of human tasks
+Total
+Claude Instant Inference
+5000
+$0.0008
+$0.0040
+15000
+$0.0024
+$0.036
+$0.04
+Claude 2.1 Inference
+5000
+$0.008
+$0.0400
+20000
+$0.024
+$0.48
+$0.52
+Human Tasks
+100
+$0.21
+$21.00
+$21.00
+Total
+$21.56
+Prompt Optimization
+Example: News summarization
+An application developer creates a prompt to summarize news for traders using Claude 3.5. The original prompt includes 429 tokens. The optimized prompt has 511 tokens, and includes more specific instructions and examples to generate more concise answer from the FMs. He uses the optimized prompt with 511 tokens as the input for prompt optimizer, and creates 2 new variants for Claude 3.7 and Nova Pro with 582 and 579 tokens.
+The total number of input and output tokens for prompt optimization: 429 + 511 + 511 + 582 + 511 + 579 = 3,123
+Total monthly bill is: 3,123 / 1000 * $0.03 = $0.09
+Stability AI
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock: a request to the SDXL model to generate a 512 x 512 image with a step size of 70 (premium quality).
+Total cost incurred = 1 image * $0.036 per image = $0.036
+An application developer makes the following API calls to Amazon Bedrock: A request to the SDXL 1.0 model to generate a 1024 x 1024 image with a step size of 70 (premium quality).
+Total cost incurred = 1 image * $0.08 per image = $0.08
+Provisioned Throughput pricing
+An application developer buys one model unit of SDXL 1.0 with a 1-month commitment.
+Total cost incurred = 1 * $49.86 * 24 hours * 31 days = $37,095.84
+TwelveLabs
+On-Demand pricing
+An application developer makes the following API calls to Amazon Bedrock: a request to the
+Pegasus 1.2
+model to describe what a 10-second-long video entails, which provides an output of 2,000 tokens.
+Total cost incurred = 10 seconds * $0.00049 + 2K tokens / 1000 * $0.0075 = $0.0199
+An application developer makes the following API calls to Amazon Bedrock: a request to the
+Marengo Embed [3.0 or 2.7]
+model to embed 10 videos, with a combined duration of 100 minutes.
+Total cost incurred = 100 minutes (i.e. 6000 secs) * $0.00070 = $4.2
+An application developer makes the following API calls to Amazon Bedrock: a request to the
+Marengo Embed 3.0
+model to by providing a text and image together, to generate an embedding that they could use to find the clip that has the bag shown in the given image, across the embedding repository that they would have crated using above example.
+Total cost incurred = 1 text request * $0.00007 +1 image request * $0.0001 = $0.00017
+An application developer makes the following API calls to Amazon Bedrock: a request to the
+Marengo Embed [3.0 or 2.7]
+model to by providing a text to generate an embedding that they could use to find matching clips from an the embedding repository that they would have crated using above example.
+Total cost incurred = 1 text request * $0.00007 = $0.00007
+Writer
+An application developer makes the following API calls to Amazon Bedrock: a request to Writer’s Palmyra X5 model to summarize an input of 10K tokens of input text to an output of 2K tokens.
+Total cost incurred = 10K tokens/1000 * $0.003 + 2K tokens/1000 * $0.015 = $0.06
+Next steps
+Workshop
+Explore common Amazon Bedrock use cases with a guided workshop
+View workshop
+Demo
+View demos of Amazon Bedrock capabilities
+Explore the demo library
+Create an AWS account
+Learn
+What Is AWS?
+What Is Cloud Computing?
+What Is Agentic AI?
+Cloud Computing Concepts Hub
+AWS Cloud Security
+What's New
+Blogs
+Press Releases
+Careers
+Resources
+Getting Started
+Training
+AWS Trust Center
+AWS Solutions Library
+Architecture Center
+Product and Technical FAQs
+Analyst Reports
+AWS Partners
+Developers
+Builder Center
+SDKs & Tools
+.NET on AWS
+Python on AWS
+Java on AWS
+PHP on AWS
+JavaScript on AWS
+Help
+Contact Us
+File a Support Ticket
+AWS re:Post
+Knowledge Center
+AWS Support Overview
+AWS Accessibility
+Legal
+Event Code of Conduct
+Event Terms & Conditions
+English
+Back to top
+Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.
+x
+facebook
+linkedin
+instagram
+twitch
+youtube
+podcasts
+email
+Privacy
+Site terms
+Your Privacy Choices
+California Consumer Privacy Act (CCPA) Opt-Out Icon
+Cookie Preferences
+© 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved.

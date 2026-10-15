@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AWS migration report</title>
+<style>body{max-width:1000px;margin:48px auto;padding:24px;font:16px/1.6 system-ui;color:#172b3a;background:#f4f7fa}pre{white-space:pre-wrap;font:inherit;background:white;padding:24px;border:1px solid #dce3e9;border-radius:8px}button{padding:16px 24px;background:#0069bd;color:white;border:0;border-radius:6px;font:600 16px system-ui;cursor:pointer}button:disabled{opacity:.5}button:focus-visible{outline:3px solid #ed9d22;outline-offset:3px}#error{color:#a32020}</style>
+<h1>AWS migration report</h1><p id="status" role="status">Connecting to your deployment session…</p><pre id="assessment"></pre><p id="error" role="alert"></p><button id="deploy" disabled>Prepare AWS deployment</button>
+<script>
+const token=location.hash.slice(1)||sessionStorage.getItem('deployment-token');if(token)sessionStorage.setItem('deployment-token',token);history.replaceState(null,'',location.pathname);
+const button=document.getElementById('deploy'),status=document.getElementById('status'),error=document.getElementById('error');
+async function verify(){const response=await fetch('/assessment',{headers:{'X-Portal-Token':token||''}});if(!response.ok)throw Error('The deployment session is unavailable or the package changed. Ask Codex to reopen this report.');return response.json()}
+verify().then(data=>{document.getElementById('assessment').textContent=data.assessment;button.textContent=data.button;button.disabled=false;status.textContent='Deployment session connected · '+data.readiness.replaceAll('_',' ')}).catch(e=>{status.textContent='Session unavailable';error.textContent=e.message});
+button.onclick=async()=>{button.disabled=true;try{await verify();location.assign('/#'+token)}catch(e){error.textContent=e.message;button.disabled=false}};
+</script></html>

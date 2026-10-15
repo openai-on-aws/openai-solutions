@@ -1,0 +1,2369 @@
+{
+  "schema_version": 2,
+  "evaluated_at": "2026-10-14",
+  "registry_version": "0.4.0",
+  "registry_sha256": "7701d7caa84d06371879651c0827939ac0e7ebd151c4a8c83b6ea1c2d2f9846f",
+  "registry_snapshot": "2026-10-14",
+  "scope": "Nine approved OpenAI Bedrock targets. GPT-OSS and Daybreak excluded. Documentation compatibility only.",
+  "requirements": {
+    "id": "native-document-assistant",
+    "models": [
+      "GPT-6.1 Sol"
+    ],
+    "entry_regions": [
+      "us-east-1"
+    ],
+    "geography": "US",
+    "apis": [
+      "responses"
+    ],
+    "required_features": [
+      "hosted_file_search",
+      "structured_outputs"
+    ],
+    "assumptions": [
+      "Fictional supplied description only; the application retrieval redesign is not accepted."
+    ]
+  },
+  "summary": {
+    "YES": 0,
+    "ORCHESTRATED": 0,
+    "VERIFY": 0,
+    "NO": 10
+  },
+  "selection_policy": "Hard compatibility first, then explicit preference matches. Ties are alphabetical, not a quality/cost recommendation.",
+  "no_candidates_reason": null,
+  "results": [
+    {
+      "route_id": "gpt-6.1-sol:bedrock-mantle:chat_completions:in_region:US:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "openai.gpt-6.1-sol",
+        "endpoint": "bedrock-mantle",
+        "api": "chat_completions",
+        "inference_mode": "in_region",
+        "inference_path": "/openai/v1/chat/completions",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "US",
+        "base_url": "https://bedrock-mantle.us-east-1.api.aws/openai/v1"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "YES",
+          "reason": "Documented processing scope: US; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-mantle:responses:in_region:US:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "openai.gpt-6.1-sol",
+        "endpoint": "bedrock-mantle",
+        "api": "responses",
+        "inference_mode": "in_region",
+        "inference_path": "/openai/v1/responses",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "US",
+        "base_url": "https://bedrock-mantle.us-east-1.api.aws/openai/v1"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "YES",
+          "reason": "Documented processing scope: US; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:chat_completions:geographic:US:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "us.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "chat_completions",
+        "inference_mode": "geographic",
+        "inference_path": "/openai/v1/chat/completions",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "US",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com/openai/v1"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "YES",
+          "reason": "Documented processing scope: US; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:chat_completions:global:global:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "global.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "chat_completions",
+        "inference_mode": "global",
+        "inference_path": "/openai/v1/chat/completions",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "global",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com/openai/v1"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "NO",
+          "reason": "Documented processing scope: global; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:converse:geographic:US:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "us.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "converse",
+        "inference_mode": "geographic",
+        "inference_path": "/model/us.openai.gpt-6.1-sol/converse",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "US",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "YES",
+          "reason": "Documented processing scope: US; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:converse:global:global:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "global.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "converse",
+        "inference_mode": "global",
+        "inference_path": "/model/global.openai.gpt-6.1-sol/converse",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "global",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "NO",
+          "reason": "Documented processing scope: global; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:invoke:geographic:US:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "us.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "invoke",
+        "inference_mode": "geographic",
+        "inference_path": "/model/us.openai.gpt-6.1-sol/invoke",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "US",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "YES",
+          "reason": "Documented processing scope: US; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:invoke:global:global:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "global.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "invoke",
+        "inference_mode": "global",
+        "inference_path": "/model/global.openai.gpt-6.1-sol/invoke",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "global",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "api is outside allowed values",
+          "sources": []
+        },
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "NO",
+          "reason": "Documented processing scope: global; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:responses:geographic:US:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "us.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "responses",
+        "inference_mode": "geographic",
+        "inference_path": "/openai/v1/responses",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "US",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com/openai/v1"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "YES",
+          "reason": "Documented processing scope: US; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    },
+    {
+      "route_id": "gpt-6.1-sol:bedrock-runtime:responses:global:global:aws:us-east-1",
+      "route": {
+        "model_name": "GPT-6.1 Sol",
+        "model_id": "global.openai.gpt-6.1-sol",
+        "endpoint": "bedrock-runtime",
+        "api": "responses",
+        "inference_mode": "global",
+        "inference_path": "/openai/v1/responses",
+        "partition": "aws",
+        "region": "us-east-1",
+        "processing_geography": "global",
+        "base_url": "https://bedrock-runtime.us-east-1.amazonaws.com/openai/v1"
+      },
+      "status": "NO",
+      "checks": [
+        {
+          "status": "NO",
+          "reason": "OpenAI Bedrock integration guide lists this native capability as unavailable. Application redesign is separate.",
+          "sources": [
+            "AWS-61-SOL",
+            "OAI-BEDROCK"
+          ],
+          "feature": "hosted_file_search"
+        },
+        {
+          "status": "YES",
+          "reason": "Exact JSON-schema configuration is documented.",
+          "sources": [
+            "AWS-61-SOL",
+            "S16"
+          ],
+          "feature": "structured_outputs"
+        },
+        {
+          "status": "NO",
+          "reason": "Documented processing scope: global; required: US",
+          "sources": [
+            "AWS-61-SOL",
+            "S04"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        },
+        {
+          "status": "VERIFY",
+          "reason": "Card lists Global profile but does not enumerate its source Regions; verify this entry Region.",
+          "sources": [
+            "AWS-61-SOL"
+          ]
+        }
+      ],
+      "preference_matches": [],
+      "account_access": "not_tested",
+      "runtime_behavior": "not_tested",
+      "quality_latency": "not_measured",
+      "pricing": {
+        "sources": [
+          "AWS-61-SOL"
+        ],
+        "rows": [
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.2,
+            "cache_write": 2.75,
+            "cache_read": 0.11,
+            "output": 11.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 2.0,
+            "cache_write": 2.5,
+            "cache_read": 0.1,
+            "output": 10.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Regional (bedrock-mantle in US East (N. Virginia))",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.4,
+            "cache_write": 5.5,
+            "cache_read": 0.22,
+            "output": 16.5,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Standard \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 4.0,
+            "cache_write": 5.0,
+            "cache_read": 0.2,
+            "output": 15.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 13.2,
+            "cache_write": 16.5,
+            "cache_read": 0.66,
+            "output": 66.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, short context (272K input tokens or fewer)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 12.0,
+            "cache_write": 15.0,
+            "cache_read": 0.6,
+            "output": 60.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "In-Region (bedrock-mantle in us-east-1)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "US CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 26.4,
+            "cache_write": 33.0,
+            "cache_read": 1.32,
+            "output": 99.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          },
+          {
+            "section": "Ultrafast \u2014 Commercial Regions, long context (more than 272K input tokens)",
+            "inference_option": "Global CRIS (bedrock-runtime)",
+            "currency": "USD",
+            "unit": "1M tokens",
+            "input": 24.0,
+            "cache_write": 30.0,
+            "cache_read": 1.2,
+            "output": 90.0,
+            "sources": [
+              "AWS-61-SOL"
+            ],
+            "reviewed_at": "2026-10-14"
+          }
+        ],
+        "note": "Model-card rate rows; match inference option, partition, tier and context before estimating. Missing rates remain unknown."
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "structured-output",
+  "required_features": [
+    "structured_outputs"
+  ],
+  "geography": "US",
+  "entry_regions": [
+    "us-east-1"
+  ]
+}

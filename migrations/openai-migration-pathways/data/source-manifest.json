@@ -1,0 +1,242 @@
+[
+  {
+    "id": "S01",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-sol.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S02",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-terra.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S03",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-luna.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S04",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S05",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-responses-api.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S06",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-chat-completions.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S07",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S08",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-converse-api.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S09",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-independent-api.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S10",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use-client-side.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S11",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/web-search.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S12",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/projects.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S13",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-retention.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S14",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S15",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S16",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/structured-output.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S17",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-mantle-metrics.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S18",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/logging-cloudtrail-mantle.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S19",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/cost-mgmt-application-inference-profiles.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S20",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/vpc-interface-endpoints.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "S21",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-CATALOG",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-ASTRA",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-61-SOL",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-1-sol.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-6-SOL",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-sol.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-6-LUNA",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-luna.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-55",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-55.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-54",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-54.md",
+    "publisher": "aws"
+  },
+  {
+    "id": "OAI-GPT-6-ASTRA",
+    "url": "https://developers.openai.com/api/docs/models/gpt-6-astra.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-6.1-SOL",
+    "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-6-SOL",
+    "url": "https://developers.openai.com/api/docs/models/gpt-6-sol.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-6-LUNA",
+    "url": "https://developers.openai.com/api/docs/models/gpt-6-luna.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-5.6-SOL",
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-5.6-TERRA",
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-5.6-LUNA",
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-5.5",
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.5.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-GPT-5.4",
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.4.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-CATALOG",
+    "url": "https://developers.openai.com/api/docs/models.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-BEDROCK",
+    "url": "https://developers.openai.com/api/docs/guides/amazon-bedrock.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-CACHE",
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-SCHEMA",
+    "url": "https://developers.openai.com/api/docs/guides/structured-outputs.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-TOOLS",
+    "url": "https://developers.openai.com/api/docs/guides/function-calling.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-DATA",
+    "url": "https://developers.openai.com/api/docs/guides/your-data.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-DEPRECATIONS",
+    "url": "https://developers.openai.com/api/docs/deprecations.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-PRICING",
+    "url": "https://developers.openai.com/api/docs/pricing.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "OAI-BACKGROUND",
+    "url": "https://developers.openai.com/api/docs/guides/background.md",
+    "publisher": "openai"
+  },
+  {
+    "id": "AWS-PRICING",
+    "url": "https://aws.amazon.com/bedrock/pricing/",
+    "publisher": "aws"
+  },
+  {
+    "id": "AWS-TOOL-USE",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.md",
+    "publisher": "aws"
+  }
+]
